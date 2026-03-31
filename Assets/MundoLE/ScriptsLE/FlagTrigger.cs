@@ -1,19 +1,28 @@
 using UnityEngine;
 
-public class DoorTrigger : MonoBehaviour
+public class FlagTrigger : MonoBehaviour
 {
-    // public QuizManager quizManager;
+    [Header("Canvas del quiz")]
+    public GameObject quizCanvas;
 
-    // private bool activated = false;
+    [Header("Jugador")]
+    public PlayerController playerController;
 
-    // private void OnTriggerEnter2D(Collider2D collision)
-    // {
-    //     if (activated) return;
+    private bool activated = false;
 
-    //     if (collision.CompareTag("Player"))
-    //     {
-    //         activated = true;
-    //         quizManager.ShowQuestion();
-    //     }
-    // }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (activated) return;
+
+        if (other.CompareTag("Player"))
+        {
+            activated = true;
+
+            if (quizCanvas != null)
+                quizCanvas.SetActive(true);
+
+            if (playerController != null)
+                playerController.enabled = false;
+        }
+    }
 }
