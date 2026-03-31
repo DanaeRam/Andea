@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class JumpOnlyPlayer : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [Header("Movimiento")]
     public float velocidad = 5f;
@@ -18,6 +18,9 @@ public class JumpOnlyPlayer : MonoBehaviour
     public float distanciaSuelo = 0.15f;
     public float distanciaPared = 0.1f;
 
+    [Header("Animación")]
+    public Animator animator;
+
     private Rigidbody2D rigidBody;
     private BoxCollider2D boxCollider;
 
@@ -28,12 +31,17 @@ public class JumpOnlyPlayer : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
+
+        if (animator == null)
+            animator = GetComponent<Animator>();
+
         saltosRestantes = saltosMaximos;
     }
 
-    void Update()
+    private void Update()
     {
         ProcesarSalto();
+        ActualizarAnimaciones();
     }
 
     private void FixedUpdate()
@@ -41,7 +49,7 @@ public class JumpOnlyPlayer : MonoBehaviour
         ProcesarMovimiento();
     }
 
-    bool EstaEnSuelo()
+    private bool EstaEnSuelo()
     {
         RaycastHit2D raycastHit = Physics2D.BoxCast(
             boxCollider.bounds.center,
@@ -55,7 +63,7 @@ public class JumpOnlyPlayer : MonoBehaviour
         return raycastHit.collider != null;
     }
 
-    bool TocaParedDerecha()
+    private bool TocaParedDerecha()
     {
         RaycastHit2D raycastHit = Physics2D.BoxCast(
             boxCollider.bounds.center,
@@ -69,7 +77,7 @@ public class JumpOnlyPlayer : MonoBehaviour
         return raycastHit.collider != null;
     }
 
-    bool TocaParedIzquierda()
+    private bool TocaParedIzquierda()
     {
         RaycastHit2D raycastHit = Physics2D.BoxCast(
             boxCollider.bounds.center,
@@ -83,14 +91,13 @@ public class JumpOnlyPlayer : MonoBehaviour
         return raycastHit.collider != null;
     }
 
-    void ProcesarSalto()
+    private void ProcesarSalto()
     {
         bool enSuelo = EstaEnSuelo();
         bool paredDerecha = TocaParedDerecha();
         bool paredIzquierda = TocaParedIzquierda();
         bool tocandoPared = paredDerecha || paredIzquierda;
 
-        // Solo recarga el salto normal cuando toca el suelo
         if (enSuelo)
         {
             saltosRestantes = saltosMaximos;
@@ -98,14 +105,17 @@ public class JumpOnlyPlayer : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            // Salto normal desde suelo
+            // Salto normal
             if (enSuelo && saltosRestantes > 0)
             {
                 saltosRestantes--;
+
                 rigidBody.linearVelocity = new Vector2(rigidBody.linearVelocity.x, 0f);
                 rigidBody.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
+
+                animator.SetTrigger("jump");
             }
-            // Wall jump si está en el aire tocando pared
+            // Wall jump
             else if (!enSuelo && tocandoPared)
             {
                 float direccionSalida = paredDerecha ? -1f : 1f;
@@ -118,45 +128,31 @@ public class JumpOnlyPlayer : MonoBehaviour
                     new Vector2(direccionSalida * fuerzaWallJumpX, fuerzaWallJumpY),
                     ForceMode2D.Impulse
                 );
+
+                animator.SetTrigger("jump");
             }
         }
     }
 
-    void ProcesarMovimiento()
+    private void ProcesarMovimiento()
     {
-        bool enSuelo = EstaEnSuelo();
-        bool paredFrontal = (mirandoDerecha && TocaParedDerecha()) || (!mirandoDerecha && TocaParedIzquierda());
+        bool paredFrontal =
+            (mirandoDerecha && TocaParedDerecha()) ||
+            (!mirandoDerecha && TocaParedIzquierda());
 
         float velocidadX = mirandoDerecha ? velocidad : -velocidad;
 
-        // En suelo: corre automáticamente, pero si hay pared enfrente se detiene
-        if (enSuelo)
+        if (paredFrontal)
         {
-            if (paredFrontal)
-            {
-                rigidBody.linearVelocity = new Vector2(0f, rigidBody.linearVelocity.y);
-            }
-            else
-            {
-                rigidBody.linearVelocity = new Vector2(velocidadX, rigidBody.linearVelocity.y);
-            }
+            rigidBody.linearVelocity = new Vector2(0f, rigidBody.linearVelocity.y);
         }
         else
         {
-            // En el aire NO sigas empujando fuerte contra la pared
-            // así evitamos que se "pegue"
-            if (paredFrontal)
-            {
-                rigidBody.linearVelocity = new Vector2(0f, rigidBody.linearVelocity.y);
-            }
-            else
-            {
-                rigidBody.linearVelocity = new Vector2(velocidadX, rigidBody.linearVelocity.y);
-            }
+            rigidBody.linearVelocity = new Vector2(velocidadX, rigidBody.linearVelocity.y);
         }
     }
 
-    void ActualizarOrientacionVisual()
+    private void ActualizarOrientacionVisual()
     {
         Vector3 escala = transform.localScale;
 
@@ -166,5 +162,17 @@ public class JumpOnlyPlayer : MonoBehaviour
             escala.x = -Mathf.Abs(escala.x);
 
         transform.localScale = escala;
+    }
+
+    private void ActualizarAnimaciones()
+    {
+        bool enSuelo = EstaEnSuelo();
+
+        animator.SetBool("isGrounded", enSuelo);
+        animator.SetFloat("velocidadY", rigidBody.linearVelocity.y);
+
+        float velocidadHorizontal = Mathf.Abs(rigidBody.linearVelocity.x);
+
+        animator.SetFloat("speed", velocidadHorizontal > 0.1f ? 1f : 0f);
     }
 }
