@@ -105,7 +105,6 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            // Salto normal
             if (enSuelo && saltosRestantes > 0)
             {
                 saltosRestantes--;
@@ -113,9 +112,9 @@ public class PlayerController : MonoBehaviour
                 rigidBody.linearVelocity = new Vector2(rigidBody.linearVelocity.x, 0f);
                 rigidBody.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
 
-                animator.SetTrigger("jump");
+                if (animator != null)
+                    animator.SetTrigger("jump");
             }
-            // Wall jump
             else if (!enSuelo && tocandoPared)
             {
                 float direccionSalida = paredDerecha ? -1f : 1f;
@@ -129,7 +128,8 @@ public class PlayerController : MonoBehaviour
                     ForceMode2D.Impulse
                 );
 
-                animator.SetTrigger("jump");
+                if (animator != null)
+                    animator.SetTrigger("jump");
             }
         }
     }
@@ -166,13 +166,15 @@ public class PlayerController : MonoBehaviour
 
     private void ActualizarAnimaciones()
     {
+        if (animator == null)
+            return;
+
         bool enSuelo = EstaEnSuelo();
 
         animator.SetBool("isGrounded", enSuelo);
         animator.SetFloat("velocidadY", rigidBody.linearVelocity.y);
 
         float velocidadHorizontal = Mathf.Abs(rigidBody.linearVelocity.x);
-
         animator.SetFloat("speed", velocidadHorizontal > 0.1f ? 1f : 0f);
     }
 }
