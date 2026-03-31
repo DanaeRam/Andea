@@ -2788,7 +2788,7 @@ GameObject:
   - component: {fileID: 1670912263}
   - component: {fileID: 1670912268}
   m_Layer: 0
-  m_Name: player_0
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2816,6 +2816,7 @@ MonoBehaviour:
     m_Bits: 8
   distanciaSuelo: 0.15
   distanciaPared: 0.1
+  animator: {fileID: 0}
 --- !u!61 &1670912264
 BoxCollider2D:
   m_ObjectHideFlags: 0
