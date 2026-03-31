@@ -26,6 +26,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MundoLE/ScenesLE/Intermedio/Nivel3.unity
     guid: e89e1fbe858578f41aa012c43d250d04
+  - enabled: 1
+    path: Assets/MundoLE/ScenesLE/Avanzado/Nivel1.unity
+    guid: 35ad317b438e2b74e9352f5438a61477
+  - enabled: 1
+    path: Assets/MundoLE/ScenesLE/Avanzado/Nivel2.unity
+    guid: b165a4a615dc3734a912606e443f5191
+  - enabled: 1
+    path: Assets/MundoLE/ScenesLE/Avanzado/Nivel3.unity
+    guid: af42c2ae7bd80c64b9e0d4828494ab33
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
