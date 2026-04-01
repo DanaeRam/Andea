@@ -23,6 +23,11 @@ public class PlayerHealth : MonoBehaviour
 
         if (animator == null)
             animator = GetComponent<Animator>();
+
+        if (GameManager.instancia != null)
+        {
+            GameManager.instancia.ReiniciarVidas(vidaMaxima);
+        }
     }
 
     public void RecibirDanio(int cantidad)
@@ -31,7 +36,10 @@ public class PlayerHealth : MonoBehaviour
 
         vidaActual -= cantidad;
 
-        Debug.Log("Vida jugador: " + vidaActual);
+        if (GameManager.instancia != null)
+        {
+            GameManager.instancia.RestarVida(cantidad);
+        }
 
         if (vidaActual <= 0)
         {
@@ -67,6 +75,11 @@ public class PlayerHealth : MonoBehaviour
 
         vidaActual = vidaMaxima;
         muerto = false;
+
+        if (GameManager.instancia != null)
+        {
+            GameManager.instancia.ReiniciarVidas(vidaMaxima);
+        }
 
         if (animator != null)
         {
