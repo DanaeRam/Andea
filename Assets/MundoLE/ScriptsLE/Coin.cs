@@ -39,6 +39,7 @@ public class Coin : MonoBehaviour
             // Activar animación
             if (animator != null)
                 animator.SetTrigger("collect");
+
             // Destruir después de la animación
             Destroy(gameObject, tiempoAntesDeDestruir);
         }
