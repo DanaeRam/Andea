@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 4945312529677817831}
   - component: {fileID: 6082389846112967957}
   - component: {fileID: -4987843392527435550}
-  - component: {fileID: 4277807957932101159}
+  - component: {fileID: -3533334714285721747}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f598702738560f849942189496a22574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JumpOnlyPlayer
-  audioSource: {fileID: 4277807957932101159}
+  audioSource: {fileID: 0}
   sonidoSalto: {fileID: 8300000, guid: 4a3a3bdaecf414744a6dc6315362de14, type: 3}
   velocidad: 5
   fuerzaSalto: 12
@@ -271,7 +271,7 @@ MonoBehaviour:
   vidaMaxima: 5
   animator: {fileID: 0}
   tiempoAntesDeRespawn: 2
---- !u!82 &4277807957932101159
+--- !u!82 &-3533334714285721747
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -283,8 +283,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 4a3a3bdaecf414744a6dc6315362de14, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
