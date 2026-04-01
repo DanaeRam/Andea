@@ -177,3 +177,9 @@ MonoBehaviour:
   vidaMaxima: 3
   animator: {fileID: 6078446893644016531}
   tiempoAntesDeDestruir: 1
+  rangoAtaque: 1.2
+  danio: 1
+  tiempoEntreAtaques: 1.5
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 1
