@@ -216,7 +216,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::JumpOnlyPlayer
   audioSource: {fileID: 0}
   sonidoSalto: {fileID: 8300000, guid: 4a3a3bdaecf414744a6dc6315362de14, type: 3}
-  sonidoAtaque: {fileID: 8300000, guid: 4e4cbaeab66c98b44be01a5bb839a483, type: 3}
   velocidad: 5
   fuerzaSalto: 12
   saltosMaximos: 1
