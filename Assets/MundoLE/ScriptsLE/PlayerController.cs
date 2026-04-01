@@ -18,6 +18,13 @@ public class PlayerController : MonoBehaviour
     public float distanciaSuelo = 0.15f;
     public float distanciaPared = 0.1f;
 
+    [Header("Ataque")]
+    public Transform attackPoint;
+    public float attackRange = 0.5f;
+    public LayerMask enemyLayers;
+    public int attackDamage = 1;
+    public float attackCooldown = 0.5f;
+
     [Header("Animación")]
     public Animator animator;
 
@@ -26,6 +33,7 @@ public class PlayerController : MonoBehaviour
 
     private bool mirandoDerecha = true;
     private int saltosRestantes;
+    private bool puedeAtacar = true;
 
     private void Start()
     {
@@ -41,6 +49,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         ProcesarSalto();
+        ProcesarAtaque();
         ActualizarAnimaciones();
     }
 
@@ -51,7 +60,7 @@ public class PlayerController : MonoBehaviour
 
     private bool EstaEnSuelo()
     {
-        RaycastHit2D raycastHit = Physics2D.BoxCast(
+        return Physics2D.BoxCast(
             boxCollider.bounds.center,
             boxCollider.bounds.size,
             0f,
@@ -59,13 +68,11 @@ public class PlayerController : MonoBehaviour
             distanciaSuelo,
             capaSuelo
         );
-
-        return raycastHit.collider != null;
     }
 
     private bool TocaParedDerecha()
     {
-        RaycastHit2D raycastHit = Physics2D.BoxCast(
+        return Physics2D.BoxCast(
             boxCollider.bounds.center,
             boxCollider.bounds.size,
             0f,
@@ -73,13 +80,11 @@ public class PlayerController : MonoBehaviour
             distanciaPared,
             capaSuelo
         );
-
-        return raycastHit.collider != null;
     }
 
     private bool TocaParedIzquierda()
     {
-        RaycastHit2D raycastHit = Physics2D.BoxCast(
+        return Physics2D.BoxCast(
             boxCollider.bounds.center,
             boxCollider.bounds.size,
             0f,
@@ -87,8 +92,6 @@ public class PlayerController : MonoBehaviour
             distanciaPared,
             capaSuelo
         );
-
-        return raycastHit.collider != null;
     }
 
     private void ProcesarSalto()
@@ -112,8 +115,7 @@ public class PlayerController : MonoBehaviour
                 rigidBody.linearVelocity = new Vector2(rigidBody.linearVelocity.x, 0f);
                 rigidBody.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
 
-                if (animator != null)
-                    animator.SetTrigger("jump");
+                animator.SetTrigger("jump");
             }
             else if (!enSuelo && tocandoPared)
             {
@@ -128,47 +130,80 @@ public class PlayerController : MonoBehaviour
                     ForceMode2D.Impulse
                 );
 
-                if (animator != null)
-                    animator.SetTrigger("jump");
+                animator.SetTrigger("jump");
             }
         }
     }
 
+    private void ProcesarAtaque()
+    {
+        if (Input.GetKeyDown(KeyCode.X) && puedeAtacar)
+        {
+            Atacar();
+        }
+    }
+
+    private void Atacar()
+    {
+        puedeAtacar = false;
+
+        animator.SetTrigger("attack");
+
+        if (attackPoint != null)
+        {
+            Collider2D[] enemigosGolpeados = Physics2D.OverlapCircleAll(
+                attackPoint.position,
+                attackRange,
+                enemyLayers
+            );
+
+            foreach (Collider2D enemigo in enemigosGolpeados)
+            {
+                Enemy enemyScript = enemigo.GetComponent<Enemy>();
+
+                if (enemyScript != null)
+                {
+                    enemyScript.RecibirDanio(attackDamage);
+                }
+            }
+        }
+
+        Invoke(nameof(ReiniciarAtaque), attackCooldown);
+    }
+
+    private void ReiniciarAtaque()
+    {
+        puedeAtacar = true;
+    }
+
     private void ProcesarMovimiento()
     {
+        if (!puedeAtacar)
+        {
+            rigidBody.linearVelocity = new Vector2(0f, rigidBody.linearVelocity.y);
+            return;
+        }
+
         bool paredFrontal =
             (mirandoDerecha && TocaParedDerecha()) ||
             (!mirandoDerecha && TocaParedIzquierda());
 
         float velocidadX = mirandoDerecha ? velocidad : -velocidad;
 
-        if (paredFrontal)
-        {
-            rigidBody.linearVelocity = new Vector2(0f, rigidBody.linearVelocity.y);
-        }
-        else
-        {
-            rigidBody.linearVelocity = new Vector2(velocidadX, rigidBody.linearVelocity.y);
-        }
+        rigidBody.linearVelocity = paredFrontal
+            ? new Vector2(0f, rigidBody.linearVelocity.y)
+            : new Vector2(velocidadX, rigidBody.linearVelocity.y);
     }
 
     private void ActualizarOrientacionVisual()
     {
         Vector3 escala = transform.localScale;
-
-        if (mirandoDerecha)
-            escala.x = Mathf.Abs(escala.x);
-        else
-            escala.x = -Mathf.Abs(escala.x);
-
+        escala.x = mirandoDerecha ? Mathf.Abs(escala.x) : -Mathf.Abs(escala.x);
         transform.localScale = escala;
     }
 
     private void ActualizarAnimaciones()
     {
-        if (animator == null)
-            return;
-
         bool enSuelo = EstaEnSuelo();
 
         animator.SetBool("isGrounded", enSuelo);
@@ -176,5 +211,13 @@ public class PlayerController : MonoBehaviour
 
         float velocidadHorizontal = Mathf.Abs(rigidBody.linearVelocity.x);
         animator.SetFloat("speed", velocidadHorizontal > 0.1f ? 1f : 0f);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null) return;
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 }
