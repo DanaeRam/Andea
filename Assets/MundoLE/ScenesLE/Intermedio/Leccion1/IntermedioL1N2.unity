@@ -283,6 +283,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Moneda3
       objectReference: {fileID: 0}
+    - target: {fileID: 2178519335593277642, guid: 394198e5e3c02431682364f1d32bef7f, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1592459241}
     - target: {fileID: 3879286129468552643, guid: 394198e5e3c02431682364f1d32bef7f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.8571644
@@ -4212,6 +4216,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Moneda1
       objectReference: {fileID: 0}
+    - target: {fileID: 2178519335593277642, guid: 394198e5e3c02431682364f1d32bef7f, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1592459241}
     - target: {fileID: 3879286129468552643, guid: 394198e5e3c02431682364f1d32bef7f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.16
@@ -4274,6 +4282,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Moneda2
       objectReference: {fileID: 0}
+    - target: {fileID: 2178519335593277642, guid: 394198e5e3c02431682364f1d32bef7f, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1592459241}
     - target: {fileID: 3879286129468552643, guid: 394198e5e3c02431682364f1d32bef7f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.44
@@ -4451,6 +4463,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d05e07900c483423b9a5d40f28568cf3, type: 3}
+--- !u!82 &1592459241 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1818383897977836068, guid: d05e07900c483423b9a5d40f28568cf3, type: 3}
+  m_PrefabInstance: {fileID: 1592459240}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1816645975
 GameObject:
   m_ObjectHideFlags: 0
@@ -4817,6 +4834,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Moneda0
       objectReference: {fileID: 0}
+    - target: {fileID: 2178519335593277642, guid: 394198e5e3c02431682364f1d32bef7f, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1592459241}
     - target: {fileID: 3879286129468552643, guid: 394198e5e3c02431682364f1d32bef7f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.34

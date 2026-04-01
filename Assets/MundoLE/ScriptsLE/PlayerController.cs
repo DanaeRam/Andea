@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public AudioSource audioSource;
+    public AudioClip sonidoSalto;
+
     [Header("Movimiento")]
     public float velocidad = 5f;
 
@@ -116,6 +119,7 @@ public class PlayerController : MonoBehaviour
                 rigidBody.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
 
                 animator.SetTrigger("jump");
+                audioSource.PlayOneShot(sonidoSalto);
             }
             else if (!enSuelo && tocandoPared)
             {
@@ -131,6 +135,7 @@ public class PlayerController : MonoBehaviour
                 );
 
                 animator.SetTrigger("jump");
+                audioSource.PlayOneShot(sonidoSalto);
             }
         }
     }
