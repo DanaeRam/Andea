@@ -131,10 +131,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Moneda3
       objectReference: {fileID: 0}
-    - target: {fileID: 2178519335593277642, guid: 394198e5e3c02431682364f1d32bef7f, type: 3}
-      propertyPath: audioSource
-      value: 
-      objectReference: {fileID: 241429126}
     - target: {fileID: 3879286129468552643, guid: 394198e5e3c02431682364f1d32bef7f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.13
@@ -255,10 +251,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4945312529677817831, guid: d05e07900c483423b9a5d40f28568cf3, type: 3}
-      propertyPath: audioSource
-      value: 
-      objectReference: {fileID: 241429126}
     - target: {fileID: 5619230287574534033, guid: d05e07900c483423b9a5d40f28568cf3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.67
@@ -308,11 +300,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d05e07900c483423b9a5d40f28568cf3, type: 3}
---- !u!82 &241429126 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: -3533334714285721747, guid: d05e07900c483423b9a5d40f28568cf3, type: 3}
-  m_PrefabInstance: {fileID: 241429125}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &264480234
 GameObject:
   m_ObjectHideFlags: 0
@@ -720,10 +707,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Moneda1
       objectReference: {fileID: 0}
-    - target: {fileID: 2178519335593277642, guid: 394198e5e3c02431682364f1d32bef7f, type: 3}
-      propertyPath: audioSource
-      value: 
-      objectReference: {fileID: 241429126}
     - target: {fileID: 3879286129468552643, guid: 394198e5e3c02431682364f1d32bef7f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.72
@@ -3120,10 +3103,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Moneda5
       objectReference: {fileID: 0}
-    - target: {fileID: 2178519335593277642, guid: 394198e5e3c02431682364f1d32bef7f, type: 3}
-      propertyPath: audioSource
-      value: 
-      objectReference: {fileID: 241429126}
     - target: {fileID: 3879286129468552643, guid: 394198e5e3c02431682364f1d32bef7f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.3
@@ -3502,10 +3481,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Moneda6
       objectReference: {fileID: 0}
-    - target: {fileID: 2178519335593277642, guid: 394198e5e3c02431682364f1d32bef7f, type: 3}
-      propertyPath: audioSource
-      value: 
-      objectReference: {fileID: 241429126}
     - target: {fileID: 3879286129468552643, guid: 394198e5e3c02431682364f1d32bef7f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.3
@@ -3765,10 +3740,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Moneda2
       objectReference: {fileID: 0}
-    - target: {fileID: 2178519335593277642, guid: 394198e5e3c02431682364f1d32bef7f, type: 3}
-      propertyPath: audioSource
-      value: 
-      objectReference: {fileID: 241429126}
     - target: {fileID: 3879286129468552643, guid: 394198e5e3c02431682364f1d32bef7f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.5
@@ -4318,10 +4289,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Moneda0
       objectReference: {fileID: 0}
-    - target: {fileID: 2178519335593277642, guid: 394198e5e3c02431682364f1d32bef7f, type: 3}
-      propertyPath: audioSource
-      value: 
-      objectReference: {fileID: 241429126}
     - target: {fileID: 3879286129468552643, guid: 394198e5e3c02431682364f1d32bef7f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.05
@@ -4384,10 +4351,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
-    - target: {fileID: 4074528554468168696, guid: ec017e24338414e049474e2d8f15d6c3, type: 3}
-      propertyPath: textoVidas
-      value: 
-      objectReference: {fileID: 1974804085}
     - target: {fileID: 4074528554468168696, guid: ec017e24338414e049474e2d8f15d6c3, type: 3}
       propertyPath: textoMonedas
       value: 
@@ -5067,17 +5030,6 @@ PrefabInstance:
 --- !u!114 &1974804084 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7093263446119465129, guid: 801bbb02f9dc741b988ad5e39504dd1b, type: 3}
-  m_PrefabInstance: {fileID: 1974804083}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
---- !u!114 &1974804085 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3566559824199473271, guid: 801bbb02f9dc741b988ad5e39504dd1b, type: 3}
   m_PrefabInstance: {fileID: 1974804083}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
