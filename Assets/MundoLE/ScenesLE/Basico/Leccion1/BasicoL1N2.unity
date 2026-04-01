@@ -666,6 +666,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &433755466 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3566559824199473271, guid: 801bbb02f9dc741b988ad5e39504dd1b, type: 3}
+  m_PrefabInstance: {fileID: 433755464}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &452697512
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5030,6 +5041,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4074528554468168696, guid: ec017e24338414e049474e2d8f15d6c3, type: 3}
+      propertyPath: textoVidas
+      value: 
+      objectReference: {fileID: 433755466}
     - target: {fileID: 4074528554468168696, guid: ec017e24338414e049474e2d8f15d6c3, type: 3}
       propertyPath: textoMonedas
       value: 
