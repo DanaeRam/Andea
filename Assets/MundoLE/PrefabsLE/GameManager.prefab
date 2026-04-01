@@ -45,4 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   monedas: 0
+  vidas: 3
   textoMonedas: {fileID: 0}
+  textoVidas: {fileID: 0}

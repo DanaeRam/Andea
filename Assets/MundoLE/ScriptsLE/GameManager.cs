@@ -5,11 +5,15 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instancia;
 
-    [Header("Contador")]
+    [Header("Monedas")]
     public int monedas = 0;
+
+    [Header("Vidas")]
+    public int vidas = 3;
 
     [Header("UI")]
     public TextMeshProUGUI textoMonedas;
+    public TextMeshProUGUI textoVidas;
 
     private void Awake()
     {
@@ -26,12 +30,23 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         ActualizarTextoMonedas();
+        ActualizarTextoVidas();
     }
 
     public void SumarMoneda(int cantidad = 1)
     {
         monedas += cantidad;
         ActualizarTextoMonedas();
+    }
+
+    public void RestarVida(int cantidad = 1)
+    {
+        vidas -= cantidad;
+
+        if (vidas < 0)
+            vidas = 0;
+
+        ActualizarTextoVidas();
     }
 
     private void ActualizarTextoMonedas()
@@ -41,4 +56,19 @@ public class GameManager : MonoBehaviour
             textoMonedas.text = ": " + monedas;
         }
     }
+
+    private void ActualizarTextoVidas()
+    {
+        if (textoVidas != null)
+        {
+            textoVidas.text = ": " + vidas;
+        }
+    }
+
+    public void ReiniciarVidas(int cantidad)
+    {
+        vidas = cantidad;
+        ActualizarTextoVidas();
+    }
+
 }
