@@ -130,6 +130,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   vidaMaxima: 3
   animator: {fileID: 0}
+  tiempoAntesDeDestruir: 1
+  rangoAtaque: 1.2
+  danio: 1
+  tiempoEntreAtaques: 1.5
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!61 &4221167994588678045
 BoxCollider2D:
   m_ObjectHideFlags: 0
