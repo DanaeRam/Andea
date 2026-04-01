@@ -2,9 +2,6 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    public AudioSource audioSource;
-    public AudioClip sonidoMoneda;
-
     [Header("Animación")]
     public Animator animator;
 
@@ -42,7 +39,6 @@ public class Coin : MonoBehaviour
             // Activar animación
             if (animator != null)
                 animator.SetTrigger("collect");
-                audioSource.PlayOneShot(sonidoMoneda);
             // Destruir después de la animación
             Destroy(gameObject, tiempoAntesDeDestruir);
         }
