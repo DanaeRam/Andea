@@ -165,4 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Coin
   animator: {fileID: 0}
+  valor: 1
   tiempoAntesDeDestruir: 0.4
+  sonidoRecoger: {fileID: 8300000, guid: c2514a259fc3a46b4a87402f4c57d12f, type: 3}
+  volumen: 0.4
