@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 306c7a071b22a0a4a9ba9699b275cbbe
+guid: 251775b8052e6334bad9f1146796a385
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8331928611556367778
-    second: sala-portales_0
+      213: -8789219923782180321
+    second: BackgrounsSalaPortales_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sala-portales_0
+      name: BackgrounsSalaPortales_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e52e44e721b0f5c80800000000000000
-      internalID: -8331928611556367778
+      spriteID: f126d2eeb0b660680800000000000000
+      internalID: -8789219923782180321
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      sala-portales_0: -8331928611556367778
+      BackgrounsSalaPortales_0: -8789219923782180321
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
