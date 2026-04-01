@@ -4,6 +4,7 @@ public class PlayerController : MonoBehaviour
 {
     public AudioSource audioSource;
     public AudioClip sonidoSalto;
+    public AudioClip sonidoAtaque;
 
     [Header("Movimiento")]
     public float velocidad = 5f;
@@ -119,7 +120,9 @@ public class PlayerController : MonoBehaviour
                 rigidBody.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
 
                 animator.SetTrigger("jump");
-                audioSource.PlayOneShot(sonidoSalto);
+
+                if (audioSource != null && sonidoSalto != null)
+                    audioSource.PlayOneShot(sonidoSalto);
             }
             else if (!enSuelo && tocandoPared)
             {
@@ -135,7 +138,9 @@ public class PlayerController : MonoBehaviour
                 );
 
                 animator.SetTrigger("jump");
-                audioSource.PlayOneShot(sonidoSalto);
+
+                if (audioSource != null && sonidoSalto != null)
+                    audioSource.PlayOneShot(sonidoSalto);
             }
         }
     }
@@ -153,6 +158,9 @@ public class PlayerController : MonoBehaviour
         puedeAtacar = false;
 
         animator.SetTrigger("attack");
+
+        if (audioSource != null && sonidoAtaque != null)
+            audioSource.PlayOneShot(sonidoAtaque);
 
         if (attackPoint != null)
         {

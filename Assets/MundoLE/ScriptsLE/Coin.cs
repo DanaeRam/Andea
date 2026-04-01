@@ -9,6 +9,10 @@ public class Coin : MonoBehaviour
     public int valor = 1;
     public float tiempoAntesDeDestruir = 0.4f;
 
+    [Header("Sonido")]
+    public AudioClip sonidoRecoger;
+    [Range(0f, 1f)] public float volumen = 1f;
+
     private bool recogida = false;
     private CircleCollider2D col;
 
@@ -28,17 +32,21 @@ public class Coin : MonoBehaviour
         {
             recogida = true;
 
-            // Desactiva el collider para evitar múltiples activaciones
+            // Desactivar collider para evitar múltiples activaciones
             if (col != null)
                 col.enabled = false;
 
-            // Sumar al contador
+            // 🔊 Reproducir sonido
+            if (sonidoRecoger != null)
+                AudioSource.PlayClipAtPoint(sonidoRecoger, Camera.main.transform.position, volumen);
+            // Sumar moneda
             if (GameManager.instancia != null)
                 GameManager.instancia.SumarMoneda(valor);
 
             // Activar animación
             if (animator != null)
                 animator.SetTrigger("collect");
+
             // Destruir después de la animación
             Destroy(gameObject, tiempoAntesDeDestruir);
         }
