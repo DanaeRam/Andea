@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: e3b351646781c4a43a903648f78f4d29
+guid: b4caebe87c9e9bb44862ff14bc59916c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 953086033685639922
-    second: 20250420manaTabB-Sheet_0
-  - first:
-      213: 8096767326163911119
-    second: 20250420manaTabB-Sheet_1
-  - first:
-      213: -929853308150317709
-    second: 20250420manaTabB-Sheet_2
+      213: -1664445474404280773
+    second: Cuadro1Escena1 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -43,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -54,10 +48,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -119,89 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 20250420manaTabB-Sheet_0
+      name: Cuadro1Escena1 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 31
-        height: 45
+        width: 1360
+        height: 768
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2f2f73ea2ba0a3d00800000000000000
-      internalID: 953086033685639922
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 20250420manaTabB-Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 31
-        y: 0
-        width: 31
-        height: 45
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fc14df01cfe7d5070800000000000000
-      internalID: 8096767326163911119
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 20250420manaTabB-Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 62
-        y: 0
-        width: 31
-        height: 45
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 37d7a72c75f7813f0800000000000000
-      internalID: -929853308150317709
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 20250420manaTabB-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 93
-        y: 0
-        width: 31
-        height: 45
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8d9c3ed9562ff9a4e9c98f22cb85a94f
-      internalID: 1935211143
+      spriteID: b36502ed8a3b6e8e0800000000000000
+      internalID: -1664445474404280773
       vertices: []
       indices: 
       edges: []
@@ -210,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e1729e176ae78714e9e479d2f731e266
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -218,14 +146,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":31.0,"y":45.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      20250420manaTabB-Sheet_0: 953086033685639922
-      20250420manaTabB-Sheet_1: 8096767326163911119
-      20250420manaTabB-Sheet_2: -929853308150317709
-      20250420manaTabB-Sheet_3: 1935211143
+      Cuadro1Escena1 1_0: -1664445474404280773
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
