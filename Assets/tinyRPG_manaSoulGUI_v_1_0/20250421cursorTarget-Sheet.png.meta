@@ -94,7 +94,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -105,10 +105,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -173,12 +173,12 @@ TextureImporter:
       name: 20250421cursorTarget-Sheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 52
-        width: 24
-        height: 12
+        x: 1
+        y: 53
+        width: 22
+        height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -195,12 +195,12 @@ TextureImporter:
       name: 20250421cursorTarget-Sheet_1
       rect:
         serializedVersion: 2
-        x: 24
-        y: 54
-        width: 15
-        height: 9
+        x: 25
+        y: 55
+        width: 13
+        height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -217,12 +217,12 @@ TextureImporter:
       name: 20250421cursorTarget-Sheet_2
       rect:
         serializedVersion: 2
-        x: 39
-        y: 52
-        width: 24
-        height: 12
+        x: 40
+        y: 53
+        width: 22
+        height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -239,12 +239,12 @@ TextureImporter:
       name: 20250421cursorTarget-Sheet_3
       rect:
         serializedVersion: 2
-        x: 62
-        y: 53
-        width: 24
-        height: 11
+        x: 63
+        y: 54
+        width: 22
+        height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -261,12 +261,12 @@ TextureImporter:
       name: 20250421cursorTarget-Sheet_4
       rect:
         serializedVersion: 2
-        x: 87
-        y: 55
-        width: 15
-        height: 9
+        x: 88
+        y: 56
+        width: 13
+        height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -283,12 +283,12 @@ TextureImporter:
       name: 20250421cursorTarget-Sheet_5
       rect:
         serializedVersion: 2
-        x: 103
-        y: 53
-        width: 24
-        height: 11
+        x: 104
+        y: 54
+        width: 22
+        height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -305,12 +305,12 @@ TextureImporter:
       name: 20250421cursorTarget-Sheet_6
       rect:
         serializedVersion: 2
-        x: 126
-        y: 52
-        width: 24
-        height: 12
+        x: 127
+        y: 53
+        width: 22
+        height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -327,12 +327,12 @@ TextureImporter:
       name: 20250421cursorTarget-Sheet_7
       rect:
         serializedVersion: 2
-        x: 150
-        y: 54
-        width: 15
-        height: 9
+        x: 151
+        y: 55
+        width: 13
+        height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -349,12 +349,12 @@ TextureImporter:
       name: 20250421cursorTarget-Sheet_8
       rect:
         serializedVersion: 2
-        x: 165
-        y: 52
-        width: 24
-        height: 12
+        x: 166
+        y: 53
+        width: 22
+        height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -371,12 +371,12 @@ TextureImporter:
       name: 20250421cursorTarget-Sheet_9
       rect:
         serializedVersion: 2
-        x: 191
-        y: 51
-        width: 24
-        height: 12
+        x: 192
+        y: 52
+        width: 22
+        height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -393,12 +393,12 @@ TextureImporter:
       name: 20250421cursorTarget-Sheet_10
       rect:
         serializedVersion: 2
-        x: 213
-        y: 51
-        width: 37
-        height: 12
+        x: 214
+        y: 52
+        width: 35
+        height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -415,12 +415,12 @@ TextureImporter:
       name: 20250421cursorTarget-Sheet_11
       rect:
         serializedVersion: 2
-        x: 255
-        y: 51
-        width: 57
-        height: 12
+        x: 256
+        y: 52
+        width: 55
+        height: 10
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -437,12 +437,12 @@ TextureImporter:
       name: 20250421cursorTarget-Sheet_12
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 31
-        height: 22
+        x: 1
+        y: 1
+        width: 29
+        height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -459,12 +459,12 @@ TextureImporter:
       name: 20250421cursorTarget-Sheet_13
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 31
-        height: 22
+        x: 33
+        y: 1
+        width: 29
+        height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -481,12 +481,12 @@ TextureImporter:
       name: 20250421cursorTarget-Sheet_14
       rect:
         serializedVersion: 2
-        x: 62
+        x: 63
         y: 0
-        width: 31
-        height: 21
+        width: 29
+        height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -503,12 +503,12 @@ TextureImporter:
       name: 20250421cursorTarget-Sheet_15
       rect:
         serializedVersion: 2
-        x: 96
+        x: 97
         y: 0
-        width: 31
-        height: 21
+        width: 29
+        height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -525,12 +525,12 @@ TextureImporter:
       name: 20250421cursorTarget-Sheet_16
       rect:
         serializedVersion: 2
-        x: 127
-        y: 1
-        width: 31
-        height: 22
+        x: 128
+        y: 2
+        width: 29
+        height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -547,12 +547,12 @@ TextureImporter:
       name: 20250421cursorTarget-Sheet_17
       rect:
         serializedVersion: 2
-        x: 157
-        y: 1
-        width: 31
-        height: 22
+        x: 158
+        y: 2
+        width: 29
+        height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -569,12 +569,12 @@ TextureImporter:
       name: 20250421cursorTarget-Sheet_18
       rect:
         serializedVersion: 2
-        x: 191
-        y: 2
-        width: 59
-        height: 22
+        x: 192
+        y: 3
+        width: 57
+        height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -591,12 +591,12 @@ TextureImporter:
       name: 20250421cursorTarget-Sheet_19
       rect:
         serializedVersion: 2
-        x: 254
-        y: 3
-        width: 59
-        height: 22
+        x: 255
+        y: 4
+        width: 57
+        height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -613,7 +613,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: cede33f4df2b37142b97e7eb2c8db739
     internalID: 0
     vertices: []
     indices: 
@@ -621,7 +621,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":256.0,"y":256.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       20250421cursorTarget-Sheet_0: 7924226576364082840
       20250421cursorTarget-Sheet_1: 9213964886348366182
