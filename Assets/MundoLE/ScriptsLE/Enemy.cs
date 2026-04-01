@@ -8,6 +8,9 @@ public class Enemy : MonoBehaviour
     [Header("Animación")]
     public Animator animator;
 
+    [Header("Destrucción")]
+    public float tiempoAntesDeDestruir = 1f;
+
     private int vidaActual;
     private bool muerto = false;
 
@@ -25,7 +28,12 @@ public class Enemy : MonoBehaviour
 
         vidaActual -= cantidad;
 
-        if (vidaActual <= 0)
+        if (vidaActual > 0)
+        {
+            if (animator != null)
+                animator.SetTrigger("hurt");
+        }
+        else
         {
             Morir();
         }
@@ -33,11 +41,13 @@ public class Enemy : MonoBehaviour
 
     private void Morir()
     {
+        if (muerto) return;
+
         muerto = true;
 
         if (animator != null)
             animator.SetTrigger("dead");
 
-        Destroy(gameObject, 1f);
+        Destroy(gameObject, tiempoAntesDeDestruir);
     }
 }
