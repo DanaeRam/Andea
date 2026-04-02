@@ -2,8 +2,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class MathQuizManager : MonoBehaviour
+public class PreguntaDivision : MonoBehaviour
 {
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     [Header("UI")]
     [SerializeField] private GameObject quizPanel;
     [SerializeField] private TMP_Text questionText;
@@ -90,7 +91,7 @@ public class MathQuizManager : MonoBehaviour
 
     private void GenerateQuestion()
     {
-        // Generamos el resultado primero (para asegurar división exacta)
+         // Generamos el resultado primero (para asegurar división exacta)
         int resultado = Random.Range(1, 11); // respuestas de 1 a 10
 
         int divisor = Random.Range(1, 11); // divisor de 1 a 10
@@ -202,3 +203,4 @@ public class MathQuizManager : MonoBehaviour
             cameraZoom.SetZoom(quizZoom);
     }
 }
+
