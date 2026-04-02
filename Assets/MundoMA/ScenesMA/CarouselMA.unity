@@ -2064,7 +2064,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: BasicoL1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1650447687
@@ -2446,7 +2446,7 @@ MonoBehaviour:
   - {fileID: 6456598576602856241, guid: fd8465bbee7dabb46a830013e6635f9d, type: 3}
   ribbonText: {fileID: 263852185}
   buttonL1: {fileID: 1650447686}
-  buttonL2: {fileID: 0}
+  buttonL2: {fileID: 1883428268}
   lessonPanel: {fileID: 1889281347}
   panelTitleText: {fileID: 1095270771}
   descriptionLessonText: {fileID: 2051205448}
@@ -2455,6 +2455,13 @@ MonoBehaviour:
   playButton: {fileID: 1684350407}
   learnButtonText: {fileID: 457449148}
   playButtonText: {fileID: 2010774614}
+  learnSceneName: MathLearnScene
+  basicLesson1Scene: BasicoL1
+  basicLesson2Scene: BasicoL2
+  intermediateLesson1Scene: IntermedioL1
+  intermediateLesson2Scene: IntermedioL2
+  advancedLesson1Scene: AvanzadoL1
+  advancedLesson2Scene: AvanzadoL2
 --- !u!1 &1819615349
 GameObject:
   m_ObjectHideFlags: 0
@@ -2594,16 +2601,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LectoCarouselManager, Assembly-CSharp
-        m_MethodName: OpenLesson2
+      - m_Target: {fileID: 1808565806}
+        m_TargetAssemblyTypeName: MathCarouselManager, Assembly-CSharp
+        m_MethodName: OpenLesson2Panel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: BasicoL2
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1883428269
@@ -2626,7 +2633,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5458505343865086332, guid: 782bbfb5589953b46bfef1a0144e90bc, type: 3}
+  m_Sprite: {fileID: 4286694138364075543, guid: 7a37e567a7525a547bd3d8b7949628c0, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2659,9 +2666,9 @@ RectTransform:
   - {fileID: 1198594009}
   m_Father: {fileID: 1249627525}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 650, y: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 350, y: 0}
   m_SizeDelta: {x: 400, y: 270}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1889281347

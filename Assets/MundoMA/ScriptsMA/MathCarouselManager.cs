@@ -28,7 +28,21 @@ public class MathCarouselManager : MonoBehaviour
     public TextMeshProUGUI learnButtonText;
     public TextMeshProUGUI playButtonText;
 
-    private int currentIndex = 0;
+    [Header("Escena de aprender")]
+    public string learnSceneName = "MathLearnScene";
+
+    [Header("Escenas de jugar por nivel y lección")]
+    public string basicLesson1Scene = "BasicoL1";
+    public string basicLesson2Scene = "BasicoL2";
+
+    public string intermediateLesson1Scene = "IntermedioL1";
+    public string intermediateLesson2Scene = "IntermedioL2";
+
+    public string advancedLesson1Scene = "AvanzadoL1";
+    public string advancedLesson2Scene = "AvanzadoL2";
+
+    private int currentIndex = 0;   // 0 = Básico, 1 = Intermedio, 2 = Avanzado
+    private int selectedLesson = 1; // 1 o 2
 
     private void Start()
     {
@@ -40,6 +54,21 @@ public class MathCarouselManager : MonoBehaviour
             lessonPanel.SetActive(false);
 
         UpdatePanelButtonsText();
+
+        if (closePanelButton != null)
+            closePanelButton.onClick.AddListener(CloseLessonPanel);
+
+        if (learnButton != null)
+            learnButton.onClick.AddListener(OnLearnButton);
+
+        if (playButton != null)
+            playButton.onClick.AddListener(OnPlayButton);
+
+        if (buttonL1 != null)
+            buttonL1.onClick.AddListener(OpenLesson1Panel);
+
+        if (buttonL2 != null)
+            buttonL2.onClick.AddListener(OpenLesson2Panel);
     }
 
     public void NextImage()
@@ -51,11 +80,10 @@ public class MathCarouselManager : MonoBehaviour
 
         UpdateCarousel();
         UpdateRibbonText();
+        UpdateMainButtons();
 
         if (lessonPanel != null && lessonPanel.activeSelf)
-        {
-            UpdateLessonPanelContent(1);
-        }
+            UpdateLessonPanelContent(selectedLesson);
     }
 
     public void PreviousImage()
@@ -70,11 +98,10 @@ public class MathCarouselManager : MonoBehaviour
 
         UpdateCarousel();
         UpdateRibbonText();
+        UpdateMainButtons();
 
         if (lessonPanel != null && lessonPanel.activeSelf)
-        {
-            UpdateLessonPanelContent(1);
-        }
+            UpdateLessonPanelContent(selectedLesson);
     }
 
     private void UpdateCarousel()
@@ -115,7 +142,7 @@ public class MathCarouselManager : MonoBehaviour
         if (buttonL2 != null)
         {
             buttonL2.gameObject.SetActive(true);
-            buttonL2.interactable = false;
+            buttonL2.interactable = true;
         }
     }
 
@@ -132,34 +159,45 @@ public class MathCarouselManager : MonoBehaviour
     {
         if (lessonPanel == null) return;
 
+        selectedLesson = 1;
         lessonPanel.SetActive(true);
-        UpdateLessonPanelContent(1);
+        UpdateLessonPanelContent(selectedLesson);
     }
 
     public void OpenLesson2Panel()
     {
-        Debug.Log("La lección 2 aún no está disponible.");
+        if (lessonPanel == null) return;
+
+        selectedLesson = 2;
+        lessonPanel.SetActive(true);
+        UpdateLessonPanelContent(selectedLesson);
     }
 
     private void UpdateLessonPanelContent(int lessonNumber)
     {
         if (panelTitleText != null)
-        {
-            panelTitleText.text = "Lección 1";
-        }
+            panelTitleText.text = "Lección " + lessonNumber;
 
         if (descriptionLessonText != null)
         {
             switch (currentIndex)
             {
                 case 0:
-                    descriptionLessonText.text = "Explora el nivel básico de matemáticas y comienza con retos sencillos.";
+                    descriptionLessonText.text = lessonNumber == 1
+                        ? "Lección 1 del nivel básico de matemáticas."
+                        : "Lección 2 del nivel básico de matemáticas.";
                     break;
+
                 case 1:
-                    descriptionLessonText.text = "Explora el nivel intermedio de matemáticas y fortalece tus habilidades.";
+                    descriptionLessonText.text = lessonNumber == 1
+                        ? "Lección 1 del nivel intermedio de matemáticas."
+                        : "Lección 2 del nivel intermedio de matemáticas.";
                     break;
+
                 case 2:
-                    descriptionLessonText.text = "Explora el nivel avanzado de matemáticas y resuelve retos más complejos.";
+                    descriptionLessonText.text = lessonNumber == 1
+                        ? "Lección 1 del nivel avanzado de matemáticas."
+                        : "Lección 2 del nivel avanzado de matemáticas.";
                     break;
             }
         }
@@ -173,33 +211,45 @@ public class MathCarouselManager : MonoBehaviour
 
     public void OnLearnButton()
     {
-        switch (currentIndex)
+        if (!string.IsNullOrEmpty(learnSceneName))
         {
-            case 0:
-                Debug.Log("Aprender - Matemáticas Básico");
-                break;
-            case 1:
-                Debug.Log("Aprender - Matemáticas Intermedio");
-                break;
-            case 2:
-                Debug.Log("Aprender - Matemáticas Avanzado");
-                break;
+            SceneManager.LoadScene(learnSceneName);
+        }
+        else
+        {
+            Debug.LogWarning("No se asignó la escena de Learn.");
         }
     }
 
     public void OnPlayButton()
     {
-        switch (currentIndex)
+        string sceneToLoad = GetPlaySceneName(currentIndex, selectedLesson);
+
+        if (!string.IsNullOrEmpty(sceneToLoad))
+        {
+            SceneManager.LoadScene(sceneToLoad);
+        }
+        else
+        {
+            Debug.LogWarning("No se encontró una escena válida para Play.");
+        }
+    }
+
+    private string GetPlaySceneName(int levelIndex, int lessonNumber)
+    {
+        switch (levelIndex)
         {
             case 0:
-                SceneManager.LoadScene("BasicoMAL1N1");
-                break;
+                return lessonNumber == 1 ? basicLesson1Scene : basicLesson2Scene;
+
             case 1:
-                SceneManager.LoadScene("IntermedioMAL1N1");
-                break;
+                return lessonNumber == 1 ? intermediateLesson1Scene : intermediateLesson2Scene;
+
             case 2:
-                SceneManager.LoadScene("AvanzadoMAL1N1");
-                break;
+                return lessonNumber == 1 ? advancedLesson1Scene : advancedLesson2Scene;
+
+            default:
+                return "";
         }
     }
 }
