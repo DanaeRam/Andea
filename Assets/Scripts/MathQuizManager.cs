@@ -1,0 +1,216 @@
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
+public class MathQuizManager : MonoBehaviour
+{
+    [Header("UI")]
+    [SerializeField] private GameObject quizPanel;
+    [SerializeField] private TMP_Text questionText;
+    [SerializeField] private TMP_InputField answerInput;
+    [SerializeField] private Button submitButton;
+    [SerializeField] private TMP_Text feedbackText;
+
+    [Header("Camera")]
+    [SerializeField] private CameraZoom2D cameraZoom;
+    [SerializeField] private float quizZoom = 3f;
+    [SerializeField] private float fallbackNormalZoom = 5f;
+
+    [Header("Time")]
+    [SerializeField] private float slowMotionScale = 0.25f;
+
+    private int correctAnswer;
+    private PlayerControlLock currentPlayerControl;
+    private float previousZoom = 5f;
+    private bool quizActive = false;
+
+    private void Start()
+    {
+        if (quizPanel != null)
+            quizPanel.SetActive(false);
+
+        if (submitButton != null)
+        {
+            submitButton.onClick.RemoveAllListeners();
+            submitButton.onClick.AddListener(CheckAnswer);
+        }
+        else
+        {
+            Debug.LogError("MathQuizManager: falta asignar Submit Button");
+        }
+
+        if (quizPanel == null) Debug.LogError("MathQuizManager: falta asignar Quiz Panel");
+        if (questionText == null) Debug.LogError("MathQuizManager: falta asignar Question Text");
+        if (answerInput == null) Debug.LogError("MathQuizManager: falta asignar Answer Input");
+        if (feedbackText == null) Debug.LogError("MathQuizManager: falta asignar Feedback Text");
+        if (cameraZoom == null) Debug.LogWarning("MathQuizManager: falta asignar Camera Zoom");
+    }
+
+    public void StartQuiz(GameObject player)
+    {
+        Debug.Log("MathQuizManager -> StartQuiz con: " + player.name);
+
+        if (quizActive) return;
+
+        currentPlayerControl = player.GetComponent<PlayerControlLock>();
+
+        if (currentPlayerControl == null)
+        {
+            Debug.LogError("MathQuizManager: el jugador no tiene PlayerControlLock");
+            return;
+        }
+
+        quizActive = true;
+
+        SaveCurrentZoom();
+        currentPlayerControl.LockForQuiz();
+        ActivateQuizMode();
+        GenerateQuestion();
+
+        if (quizPanel != null)
+            quizPanel.SetActive(true);
+
+        if (feedbackText != null)
+            feedbackText.text = "";
+
+        if (answerInput != null)
+        {
+            answerInput.text = "";
+            answerInput.ActivateInputField();
+        }
+    }
+
+    private void SaveCurrentZoom()
+    {
+        if (cameraZoom != null && cameraZoom.cam != null)
+            previousZoom = cameraZoom.cam.orthographicSize;
+        else
+            previousZoom = fallbackNormalZoom;
+    }
+
+    private void GenerateQuestion()
+    {
+        int a = Random.Range(1, 21);
+        int b = Random.Range(1, 21);
+        bool isAddition = Random.value > 0.5f;
+
+        if (isAddition)
+        {
+            correctAnswer = a + b;
+            if (questionText != null)
+                questionText.text = $"¿Cuánto es {a} + {b}?";
+        }
+        else
+        {
+            if (b > a)
+            {
+                int temp = a;
+                a = b;
+                b = temp;
+            }
+
+            correctAnswer = a - b;
+            if (questionText != null)
+                questionText.text = $"¿Cuánto es {a} - {b}?";
+        }
+
+        Debug.Log("Pregunta generada. Respuesta correcta: " + correctAnswer);
+    }
+
+    public void CheckAnswer()
+    {
+        if (!quizActive) return;
+        if (answerInput == null) return;
+
+        if (!int.TryParse(answerInput.text, out int playerAnswer))
+        {
+            if (feedbackText != null)
+            {
+                feedbackText.text = "Respuesta no válida";
+                feedbackText.color = Color.yellow;
+            }
+
+            answerInput.ActivateInputField();
+            return;
+        }
+
+        if (playerAnswer == correctAnswer)
+        {
+            if (feedbackText != null)
+            {
+                feedbackText.text = "Correcto";
+                feedbackText.color = Color.green;
+            }
+
+            Invoke(nameof(EndQuizSuccess), 0.5f);
+        }
+        else
+        {
+            if (feedbackText != null)
+            {
+                feedbackText.text = "Falso";
+                feedbackText.color = Color.red;
+            }
+
+            if (currentPlayerControl != null)
+                currentPlayerControl.LockFailedAnswer();
+
+            answerInput.text = "";
+            answerInput.ActivateInputField();
+        }
+    }
+
+    private void EndQuizSuccess()
+    {
+        Debug.Log("Respuesta correcta. Cerrando quiz.");
+
+        quizActive = false;
+
+        if (quizPanel != null)
+            quizPanel.SetActive(false);
+
+        Time.timeScale = 1f;
+        Time.fixedDeltaTime = 0.02f;
+
+        if (cameraZoom != null)
+            cameraZoom.SetZoom(previousZoom);
+
+        if (currentPlayerControl != null)
+        {
+            currentPlayerControl.UnlockAfterQuiz();
+            Debug.Log("Jugador desbloqueado");
+        }
+        else
+        {
+            Debug.LogError("currentPlayerControl es null al terminar el quiz");
+        }
+    }
+
+    public void ForceCloseQuiz()
+    {
+        quizActive = false;
+
+        if (quizPanel != null)
+            quizPanel.SetActive(false);
+
+        Time.timeScale = 1f;
+        Time.fixedDeltaTime = 0.02f;
+
+        if (cameraZoom != null)
+            cameraZoom.SetZoom(previousZoom);
+
+        if (currentPlayerControl != null)
+            currentPlayerControl.ForceUnlock();
+
+        Debug.Log("Quiz cerrado forzadamente");
+    }
+
+    private void ActivateQuizMode()
+    {
+        Time.timeScale = slowMotionScale;
+        Time.fixedDeltaTime = 0.02f * Time.timeScale;
+
+        if (cameraZoom != null)
+            cameraZoom.SetZoom(quizZoom);
+    }
+}
