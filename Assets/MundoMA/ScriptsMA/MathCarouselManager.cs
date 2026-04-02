@@ -29,7 +29,7 @@ public class MathCarouselManager : MonoBehaviour
     public TextMeshProUGUI playButtonText;
 
     [Header("Escena de aprender")]
-    public string learnSceneName = "MathLearnScene";
+    public string learnSceneName = "LessonScene";
 
     [Header("Escenas de jugar por nivel y lección")]
     public string basicLesson1Scene = "BasicoL1";

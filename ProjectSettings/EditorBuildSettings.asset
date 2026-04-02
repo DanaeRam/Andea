@@ -71,6 +71,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MundoMA/ScenesMA/Avanzado/AvanzadoL2.unity
     guid: f29f77333bea8a14992666c7b8376128
+  - enabled: 1
+    path: Assets/MainScene/LessonScene.unity
+    guid: 9ae3f74fd29f2b246bc61f8f7554cf3f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
