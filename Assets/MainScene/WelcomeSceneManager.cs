@@ -33,7 +33,7 @@ public class WelcomeSceneManager : MonoBehaviour
     private string[] messages =
     {
         "Bienvenido, explorador…",
-        "Has encontrado el Santuario de Andea, no es un lugar común…",
+        "Has encontrado el Santuario de Andea, este no es un lugar común…",
         "Es un portal que conecta tres mundos mágicos: ",
         "El mundo de las historias, el mundo de las emociones y el mundo de los números.",
         "Pero algo extraño está ocurriendo…\nla magia de estos mundos está desapareciendo.",
