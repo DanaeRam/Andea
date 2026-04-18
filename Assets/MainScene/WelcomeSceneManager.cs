@@ -16,14 +16,6 @@ public class WelcomeSceneManager : MonoBehaviour
     public Button nextButton;
     public Button startAdventureButton;
 
-    [Header("Panel de nombre y código")]
-    public GameObject nameCodePanel;
-    public TextMeshProUGUI titleText;
-    public TMP_InputField inputFieldName;
-    public Button acceptNameButton;
-    public TMP_InputField inputFieldCode;
-    public Button acceptCodeButton;
-
     [Header("Configuración")]
     public string mainSceneName = "EscenaPrincipal";
     public float delayBeforePopup = 3f;
@@ -34,7 +26,7 @@ public class WelcomeSceneManager : MonoBehaviour
     {
         "Bienvenido, explorador…",
         "Has encontrado el Santuario de Andea, este no es un lugar común…",
-        "Es un portal que conecta tres mundos mágicos: ",
+        "Es un portal que conecta tres mundos mágicos:",
         "El mundo de las historias, el mundo de las emociones y el mundo de los números.",
         "Pero algo extraño está ocurriendo…\nla magia de estos mundos está desapareciendo.",
         "Solo alguien valiente, curioso y con gran imaginación puede ayudar a restaurarlos.",
@@ -45,20 +37,14 @@ public class WelcomeSceneManager : MonoBehaviour
     {
         skipButton.SetActive(false);
         welcomePanel.SetActive(false);
-        nameCodePanel.SetActive(false);
-        
-        skipButton.GetComponent<Button>().onClick.AddListener(SkipToMainScene);
-        startAdventureButton.gameObject.SetActive(false);
 
-        inputFieldCode.gameObject.SetActive(false);
-        acceptCodeButton.gameObject.SetActive(false);
+        skipButton.GetComponent<Button>().onClick.AddListener(SkipToMainScene);
 
         prevButton.onClick.AddListener(PreviousMessage);
         nextButton.onClick.AddListener(NextMessage);
-        startAdventureButton.onClick.AddListener(OpenNamePanel);
+        startAdventureButton.onClick.AddListener(StartAdventure);
 
-        acceptNameButton.onClick.AddListener(ConfirmName);
-        acceptCodeButton.onClick.AddListener(ConfirmCode);
+        startAdventureButton.gameObject.SetActive(false);
 
         StartCoroutine(ShowWelcomePanelAfterDelay());
     }
@@ -68,7 +54,7 @@ public class WelcomeSceneManager : MonoBehaviour
         yield return new WaitForSeconds(delayBeforePopup);
 
         welcomePanel.SetActive(true);
-        skipButton.SetActive(true); 
+        skipButton.SetActive(true);
 
         currentMessageIndex = 0;
         UpdateMessage();
@@ -81,7 +67,7 @@ public class WelcomeSceneManager : MonoBehaviour
         prevButton.gameObject.SetActive(currentMessageIndex > 0);
         nextButton.gameObject.SetActive(currentMessageIndex < messages.Length - 1);
 
-        // Solo mostrar el botón de iniciar aventura en el último mensaje
+        // Mostrar botón solo en el último mensaje
         startAdventureButton.gameObject.SetActive(currentMessageIndex == messages.Length - 1);
     }
 
@@ -103,55 +89,8 @@ public class WelcomeSceneManager : MonoBehaviour
         }
     }
 
-    public void OpenNamePanel()
+    public void StartAdventure()
     {
-        welcomePanel.SetActive(false);
-        nameCodePanel.SetActive(true);
-
-        titleText.text = "Ingresa el nombre del niño";
-        inputFieldName.gameObject.SetActive(true);
-        acceptNameButton.gameObject.SetActive(true);
-
-        inputFieldCode.gameObject.SetActive(false);
-        acceptCodeButton.gameObject.SetActive(false);
-
-        inputFieldName.text = "";
-        inputFieldCode.text = "";
-    }
-
-    public void ConfirmName()
-    {
-        string playerName = inputFieldName.text.Trim();
-
-        if (string.IsNullOrEmpty(playerName))
-        {
-            titleText.text = "Por favor, ingresa el nombre del niño";
-            return;
-        }
-
-        PlayerPrefs.SetString("PlayerName", playerName);
-
-        titleText.text = "Ingresa el código de jugador";
-
-        inputFieldName.gameObject.SetActive(false);
-        acceptNameButton.gameObject.SetActive(false);
-
-        inputFieldCode.gameObject.SetActive(true);
-        acceptCodeButton.gameObject.SetActive(true);
-    }
-
-    public void ConfirmCode()
-    {
-        string playerCode = inputFieldCode.text.Trim();
-
-        if (string.IsNullOrEmpty(playerCode))
-        {
-            titleText.text = "Por favor, ingresa el código de jugador";
-            return;
-        }
-
-        PlayerPrefs.SetString("PlayerCode", playerCode);
-
         SceneManager.LoadScene(mainSceneName);
     }
 

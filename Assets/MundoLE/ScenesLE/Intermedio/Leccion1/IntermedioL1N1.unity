@@ -3958,7 +3958,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Incorrect
+  m_text: I
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 790f8d7c12ff30348bce862d9f5b01fa, type: 2}
   m_sharedMaterial: {fileID: 5487993463395257906, guid: 790f8d7c12ff30348bce862d9f5b01fa, type: 2}
@@ -4359,7 +4359,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Incorrect
+  m_text: U
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 790f8d7c12ff30348bce862d9f5b01fa, type: 2}
   m_sharedMaterial: {fileID: 5487993463395257906, guid: 790f8d7c12ff30348bce862d9f5b01fa, type: 2}
@@ -4646,7 +4646,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: What is Lorem Ipsum?
+  m_text: "\xBFCu\xE1l es la letra que completa la siguiente palabra:  C A S _ ?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 790f8d7c12ff30348bce862d9f5b01fa, type: 2}
   m_sharedMaterial: {fileID: 5487993463395257906, guid: 790f8d7c12ff30348bce862d9f5b01fa, type: 2}
@@ -4907,7 +4907,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Correct
+  m_text: A
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 790f8d7c12ff30348bce862d9f5b01fa, type: 2}
   m_sharedMaterial: {fileID: 5487993463395257906, guid: 790f8d7c12ff30348bce862d9f5b01fa, type: 2}
@@ -5340,7 +5340,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Incorrect
+  m_text: E
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 790f8d7c12ff30348bce862d9f5b01fa, type: 2}
   m_sharedMaterial: {fileID: 5487993463395257906, guid: 790f8d7c12ff30348bce862d9f5b01fa, type: 2}
