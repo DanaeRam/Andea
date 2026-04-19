@@ -90,17 +90,13 @@ public class MathQuizManager : MonoBehaviour
 
     private void GenerateQuestion()
     {
-        // Generamos el resultado primero (para asegurar división exacta)
-        int resultado = Random.Range(1, 11); // respuestas de 1 a 10
+        int addendA = Random.Range(1, 11); // primer sumando 1 a 10
+        int addendB = Random.Range(1, 11); // segundo sumando 1 a 10
 
-        int divisor = Random.Range(1, 11); // divisor de 1 a 10
-
-        int dividendo = resultado * divisor; // asegura división exacta
-
-        correctAnswer = resultado;
+        correctAnswer = addendA + addendB;
 
         if (questionText != null)
-            questionText.text = $"¿Cuánto es {dividendo} ÷ {divisor}?";
+            questionText.text = $"¿Cuánto es {addendA} + {addendB}?";
 
         Debug.Log("Pregunta generada. Respuesta correcta: " + correctAnswer);
     }
