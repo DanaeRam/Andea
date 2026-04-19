@@ -241,4 +241,17 @@ public class GameManager : MonoBehaviour
         if (textoMonedasTienda != null)
             textoMonedasTienda.text = ": " + monedasTienda;
     }
+    public void AsignarTextosUI(
+    TextMeshProUGUI nuevoTextoMonedas,
+    TextMeshProUGUI nuevoTextoVidas,
+    TextMeshProUGUI nuevoTextoPuntos,
+    TextMeshProUGUI nuevoTextoMonedasTienda)
+{
+    textoMonedas = nuevoTextoMonedas;
+    textoVidas = nuevoTextoVidas;
+    textoPuntos = nuevoTextoPuntos;
+    textoMonedasTienda = nuevoTextoMonedasTienda;
+
+    ActualizarTodoElTexto();
+}
 }

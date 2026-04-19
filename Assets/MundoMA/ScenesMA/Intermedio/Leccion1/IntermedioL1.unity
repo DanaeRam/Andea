@@ -861,6 +861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edc10038935c044cca258a7558bc03e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwordAttackInput
+  swordVisual: {fileID: 0}
   attackDuration: 0.2
 --- !u!1 &150079922
 GameObject:
@@ -3764,6 +3765,71 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 904662962}
   m_CullTransparentMesh: 1
+--- !u!1001 &904760854
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5629185129718526292, guid: 850c616b2c3b84f9395e075d4f146c15, type: 3}
+      propertyPath: textoVidas
+      value: 
+      objectReference: {fileID: 1831065927}
+    - target: {fileID: 5629185129718526292, guid: 850c616b2c3b84f9395e075d4f146c15, type: 3}
+      propertyPath: textoMonedas
+      value: 
+      objectReference: {fileID: 1831065928}
+    - target: {fileID: 7985201534130103281, guid: 850c616b2c3b84f9395e075d4f146c15, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 799.8612
+      objectReference: {fileID: 0}
+    - target: {fileID: 7985201534130103281, guid: 850c616b2c3b84f9395e075d4f146c15, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 583.9431
+      objectReference: {fileID: 0}
+    - target: {fileID: 7985201534130103281, guid: 850c616b2c3b84f9395e075d4f146c15, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7985201534130103281, guid: 850c616b2c3b84f9395e075d4f146c15, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7985201534130103281, guid: 850c616b2c3b84f9395e075d4f146c15, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7985201534130103281, guid: 850c616b2c3b84f9395e075d4f146c15, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7985201534130103281, guid: 850c616b2c3b84f9395e075d4f146c15, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7985201534130103281, guid: 850c616b2c3b84f9395e075d4f146c15, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7985201534130103281, guid: 850c616b2c3b84f9395e075d4f146c15, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7985201534130103281, guid: 850c616b2c3b84f9395e075d4f146c15, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8294243583868673334, guid: 850c616b2c3b84f9395e075d4f146c15, type: 3}
+      propertyPath: m_Name
+      value: UIBinder
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 850c616b2c3b84f9395e075d4f146c15, type: 3}
 --- !u!1 &921667955
 GameObject:
   m_ObjectHideFlags: 0
@@ -5663,3 +5729,4 @@ SceneRoots:
   - {fileID: 1584130008}
   - {fileID: 383877844}
   - {fileID: 2116070056}
+  - {fileID: 904760854}
