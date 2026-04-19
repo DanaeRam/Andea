@@ -1392,6 +1392,7 @@ MonoBehaviour:
   FeedbackText: {fileID: 497682542}
   feedbackDuration: 2.5
   Button1IsCorrect: 1
+  maxAttempts: 3
 --- !u!4 &659923425
 Transform:
   m_ObjectHideFlags: 0
@@ -5469,6 +5470,10 @@ PrefabInstance:
       propertyPath: textoVidas
       value: 
       objectReference: {fileID: 433755466}
+    - target: {fileID: 4074528554468168696, guid: ec017e24338414e049474e2d8f15d6c3, type: 3}
+      propertyPath: textoPuntos
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4074528554468168696, guid: ec017e24338414e049474e2d8f15d6c3, type: 3}
       propertyPath: textoMonedas
       value: 

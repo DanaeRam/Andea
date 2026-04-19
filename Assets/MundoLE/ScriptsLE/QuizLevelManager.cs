@@ -113,14 +113,13 @@ public class QuizLevelManager : MonoBehaviour
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;
 
-        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        if (GameManager.instancia != null)
         {
-            SceneManager.LoadScene(nextSceneIndex);
+            GameManager.instancia.CompletarNivel();
+            GameManager.instancia.GuardarSiguienteNivel(nextSceneIndex);
         }
-        else
-        {
-            Debug.Log("No hay un siguiente nivel configurado en Build Settings.");
-        }
+
+        SceneManager.LoadScene("ResultadosNivel");
     }
 
     private IEnumerator RestartLevelAfterDelay()

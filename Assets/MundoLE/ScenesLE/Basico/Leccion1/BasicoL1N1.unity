@@ -2474,6 +2474,7 @@ MonoBehaviour:
   FeedbackText: {fileID: 467544515}
   feedbackDuration: 2.5
   Button1IsCorrect: 1
+  maxAttempts: 3
 --- !u!4 &806249680
 Transform:
   m_ObjectHideFlags: 0
@@ -4303,6 +4304,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 178867595761939179, guid: d05e07900c483423b9a5d40f28568cf3, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5619230287574534033, guid: d05e07900c483423b9a5d40f28568cf3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.94

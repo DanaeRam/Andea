@@ -39,7 +39,10 @@ public class Coin : MonoBehaviour
                 AudioSource.PlayClipAtPoint(sonidoRecoger, Camera.main.transform.position, volumen);
 
             if (GameManager.instancia != null)
+            {
                 GameManager.instancia.SumarMoneda(valor);
+                GameManager.instancia.RegistrarMonedaRecolectada();
+            }
 
             if (animator != null)
                 animator.SetTrigger("collect");

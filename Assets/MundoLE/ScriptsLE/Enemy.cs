@@ -58,18 +58,22 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void Morir()
+   private void Morir()
     {
         if (muerto) return;
 
         muerto = true;
+
+        if (GameManager.instancia != null)
+        {
+            GameManager.instancia.RegistrarEnemigoDerrotado();
+        }
 
         if (animator != null)
             animator.SetTrigger("dead");
 
         Destroy(gameObject, tiempoAntesDeDestruir);
     }
-
     private void IntentarAtacar()
     {
         if (!puedeAtacar || jugador == null) return;
