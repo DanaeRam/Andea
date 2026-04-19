@@ -7,45 +7,107 @@ public class Pausa : MonoBehaviour
 {
     public bool estaPausado = false;
 
+    private UIDocument pausaDocument;
     private VisualElement pausa;
     private Button btnContinuar;
     private Button btnMenu;
 
     [SerializeField] private string nombreEscenaMenu = "MenuPrincipal";
 
-    void OnEnable()
+    [SerializeField] private GameObject quizCanvas;
+
+    void Start()
     {
-        var root = GetComponent<UIDocument>().rootVisualElement;
+        pausaDocument = GetComponent<UIDocument>();
+
+        if (pausaDocument == null)
+        {
+            Debug.LogError("No hay UIDocument en el objeto de Pausa.");
+            return;
+        }
+
+        PrepararUI();
+        OcultarPausaTotalmente();
+    }
+
+    private void PrepararUI()
+    {
+        if (pausaDocument == null) return;
+
+        var root = pausaDocument.rootVisualElement;
 
         pausa = root.Q<VisualElement>("Pausa");
-        pausa.style.visibility = Visibility.Hidden;
-
         btnContinuar = root.Q<Button>("BotonContinuar");
         btnMenu = root.Q<Button>("BotonMenu");
 
         if (btnContinuar != null)
-            btnContinuar.clicked += Pausar;
+        {
+            btnContinuar.clicked -= Reanudar;
+            btnContinuar.clicked += Reanudar;
+        }
 
         if (btnMenu != null)
+        {
+            btnMenu.clicked -= IrAlMenu;
             btnMenu.clicked += IrAlMenu;
+        }
     }
 
-    void OnDisable()
+    private bool QuizActivo()
     {
-        if (btnContinuar != null)
-            btnContinuar.clicked -= Pausar;
-
-        if (btnMenu != null)
-            btnMenu.clicked -= IrAlMenu;
+        return quizCanvas != null && quizCanvas.activeInHierarchy;
     }
 
     public void Pausar()
     {
-        estaPausado = !estaPausado;
-        pausa.style.visibility = estaPausado ? Visibility.Visible : Visibility.Hidden;
+        if (QuizActivo())
+        {
+            return;
+        }
 
-        Time.timeScale = estaPausado ? 0f : 1f;
-        AudioListener.pause = estaPausado;
+        if (estaPausado)
+            Reanudar();
+        else
+            MostrarPausa();
+    }
+
+    private void MostrarPausa()
+    {
+        estaPausado = true;
+
+        pausaDocument.enabled = true;
+        PrepararUI();
+
+        if (pausa != null)
+        {
+            pausa.style.display = DisplayStyle.Flex;
+            pausa.pickingMode = PickingMode.Position;
+        }
+
+        Time.timeScale = 0f;
+        AudioListener.pause = true;
+    }
+
+    public void Reanudar()
+    {
+        estaPausado = false;
+
+        Time.timeScale = 1f;
+        AudioListener.pause = false;
+
+        OcultarPausaTotalmente();
+    }
+
+    private void OcultarPausaTotalmente()
+    {
+        if (pausa != null)
+        {
+            pausa.style.display = DisplayStyle.None;
+            pausa.pickingMode = PickingMode.Ignore;
+        }
+
+        if (pausaDocument != null)
+            pausaDocument.enabled = false;
     }
 
     public void IrAlMenu()
@@ -57,7 +119,18 @@ public class Pausa : MonoBehaviour
 
     void Update()
     {
-        if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
+        if (Keyboard.current == null) return;
+
+        if (QuizActivo())
+        {
+            if (estaPausado)
+                Reanudar();
+
+            OcultarPausaTotalmente();
+            return;
+        }
+
+        if (Keyboard.current.escapeKey.wasPressedThisFrame)
         {
             Pausar();
         }

@@ -76,7 +76,7 @@ public class QuizLevelManager : MonoBehaviour
 
     private IEnumerator SecondChance()
     {
-        yield return new WaitForSeconds(feedbackDuration);
+        yield return new WaitForSecondsRealtime(feedbackDuration);
 
         answered = false;
 
@@ -89,7 +89,7 @@ public class QuizLevelManager : MonoBehaviour
 
     private IEnumerator LoadNextLevelAfterDelay()
     {
-        yield return new WaitForSeconds(feedbackDuration);
+        yield return new WaitForSecondsRealtime(feedbackDuration);
 
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;
@@ -106,7 +106,7 @@ public class QuizLevelManager : MonoBehaviour
 
     private IEnumerator RestartLevelAfterDelay()
     {
-        yield return new WaitForSeconds(feedbackDuration);
+        yield return new WaitForSecondsRealtime(feedbackDuration);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

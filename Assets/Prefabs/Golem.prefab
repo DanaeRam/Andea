@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eec8609d48ad84f46bb2ce92ca751308, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  vidaMaxima: 3
+  vidaMaxima: 10
   animator: {fileID: 0}
   tiempoAntesDeDestruir: 1
   rangoAtaque: 1.2
