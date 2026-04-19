@@ -19,12 +19,15 @@ public class QuizLevelManager : MonoBehaviour
 
     [Header("Configuración")]
     public bool Button1IsCorrect = true;
+    public int maxAttempts = 3;
 
-    private int attempts = 0;
     private bool answered = false;
+    private QuizAttemptSystem attemptSystem;
 
     private void Start()
     {
+        attemptSystem = new QuizAttemptSystem(maxAttempts);
+
         if (FeedbackBox != null)
             FeedbackBox.SetActive(false);
 
@@ -41,6 +44,10 @@ public class QuizLevelManager : MonoBehaviour
     {
         if (answered) return;
 
+        // Si ya se bloquearon los intentos, no permite responder más
+        if (attemptSystem != null && !attemptSystem.CanAnswer())
+            return;
+
         answered = true;
 
         if (FeedbackBox != null)
@@ -55,28 +62,40 @@ public class QuizLevelManager : MonoBehaviour
         }
         else
         {
-            attempts++;
-
-            if (attempts == 1)
-            {
-                if (FeedbackText != null)
-                    FeedbackText.text = "Respuesta incorrecta. Intenta otra vez.";
-
-                StartCoroutine(SecondChance());
-            }
-            else
-            {
-                if (FeedbackText != null)
-                    FeedbackText.text = "Fallaste de nuevo. Reiniciando...";
-
-                StartCoroutine(RestartLevelAfterDelay());
-            }
+            HandleWrongAnswer();
         }
     }
 
-    private IEnumerator SecondChance()
+    private void HandleWrongAnswer()
     {
-        yield return new WaitForSecondsRealtime(feedbackDuration);
+        attemptSystem.RegisterWrongAnswer();
+
+        if (attemptSystem.HintShown && attemptSystem.AttemptsUsed == 1)
+        {
+            if (FeedbackText != null)
+                FeedbackText.text = "Respuesta incorrecta. Pista: lee con calma la pregunta e intenta identificar la opción más relacionada.";
+
+            StartCoroutine(AllowNextAttemptAfterDelay());
+        }
+        else if (attemptSystem.CanAnswer())
+        {
+            if (FeedbackText != null)
+                FeedbackText.text = "Respuesta incorrecta. Te queda " + attemptSystem.RemainingAttempts + " intento.";
+
+            StartCoroutine(AllowNextAttemptAfterDelay());
+        }
+        else
+        {
+            if (FeedbackText != null)
+                FeedbackText.text = "Fallaste de nuevo. Reiniciando...";
+
+            StartCoroutine(RestartLevelAfterDelay());
+        }
+    }
+
+    private IEnumerator AllowNextAttemptAfterDelay()
+    {
+        yield return new WaitForSeconds(feedbackDuration);
 
         answered = false;
 
@@ -89,7 +108,7 @@ public class QuizLevelManager : MonoBehaviour
 
     private IEnumerator LoadNextLevelAfterDelay()
     {
-        yield return new WaitForSecondsRealtime(feedbackDuration);
+        yield return new WaitForSeconds(feedbackDuration);
 
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         int nextSceneIndex = currentSceneIndex + 1;
@@ -106,7 +125,13 @@ public class QuizLevelManager : MonoBehaviour
 
     private IEnumerator RestartLevelAfterDelay()
     {
-        yield return new WaitForSecondsRealtime(feedbackDuration);
+        yield return new WaitForSeconds(feedbackDuration);
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public QuizAttemptSystem GetAttemptSystem()
+    {
+        return attemptSystem;
     }
 }

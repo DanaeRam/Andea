@@ -3,6 +3,18 @@ using NUnit.Framework;
 public class QuizAttemptSystemTests
 {
     [Test]
+    public void TC23_PrimerIntentoFallido_PermiteNuevoIntentoYMuestraPista()
+    {
+        QuizAttemptSystem quiz = new QuizAttemptSystem(3);
+
+        quiz.RegisterWrongAnswer();
+
+        Assert.IsTrue(quiz.CanAnswer());
+        Assert.IsTrue(quiz.HintShown);
+        Assert.AreEqual(1, quiz.AttemptsUsed);
+        Assert.AreEqual(2, quiz.RemainingAttempts);
+    }
+    [Test]
     public void TC24_LimiteDeIntentos_AlFallarTresVeces_BloqueaNuevosIntentos()
     {
         QuizAttemptSystem quiz = new QuizAttemptSystem(3);
