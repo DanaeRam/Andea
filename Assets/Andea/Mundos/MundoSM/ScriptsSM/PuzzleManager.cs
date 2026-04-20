@@ -3,6 +3,9 @@ using UnityEngine;
 public class PuzzleManager : MonoBehaviour
 {
     public PuzzleSlot[] slots;
+    public GalleryProgressManager galleryProgressManager;
+
+    private bool puzzleAlreadyCompleted = false;
 
     public bool IsPuzzleComplete()
     {
@@ -17,5 +20,22 @@ public class PuzzleManager : MonoBehaviour
         }
 
         return true;
+    }
+
+    public void CheckPuzzleCompletion()
+    {
+        if (puzzleAlreadyCompleted)
+            return;
+
+        if (IsPuzzleComplete())
+        {
+            puzzleAlreadyCompleted = true;
+            Debug.Log("¡Rompecabezas completado!");
+
+            if (galleryProgressManager != null)
+            {
+                galleryProgressManager.MarkCurrentPuzzleCompleted();
+            }
+        }
     }
 }
