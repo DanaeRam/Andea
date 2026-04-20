@@ -327,7 +327,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1436840188892913753, guid: cff83c7b064eb4a6e97f512687e22fb3, type: 3}
       propertyPath: volumen
-      value: 0.1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1436840188892913753, guid: cff83c7b064eb4a6e97f512687e22fb3, type: 3}
       propertyPath: musicaEscena
