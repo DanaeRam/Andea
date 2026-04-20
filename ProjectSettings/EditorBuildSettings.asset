@@ -80,6 +80,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScene/ResultadosNivel.unity
     guid: 3cbf0315dface43d39480fe21d33d0c3
+  - enabled: 1
+    path: Assets/Scenes/Tienda/Tienda.unity
+    guid: 054081416d219482ba4a328d3bcbd7ac
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
