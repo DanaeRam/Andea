@@ -8,5 +8,95 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScene/MenuInicial.unity
     guid: d0db9bc2648e97241ab434024302b975
+  - enabled: 1
+    path: Assets/Scenes/MainScene/LessonScene.unity
+    guid: 9ae3f74fd29f2b246bc61f8f7554cf3f
+  - enabled: 1
+    path: Assets/Scenes/MainScene/ResultadosNivel.unity
+    guid: 3cbf0315dface43d39480fe21d33d0c3
+  - enabled: 1
+    path: Assets/Scenes/MainScene/WelcomeScene.unity
+    guid: 909563ad1be7ded47b958d34db57b9db
+  - enabled: 1
+    path: Assets/Scenes/MainScene/MainScene.unity
+    guid: 4b943df9cfafba049b6cd24a74b04d4d
+  - enabled: 1
+    path: Assets/Scenes/Tienda/Tienda.unity
+    guid: 054081416d219482ba4a328d3bcbd7ac
+  - enabled: 1
+    path: Assets/Andea/Mundos/MundoLE/ScenesLE/Template.unity
+    guid: 592c2d0ca135d70449849616b252a626
+  - enabled: 1
+    path: Assets/Andea/Mundos/MundoLE/ScenesLE/Carousel/CarouselLE.unity
+    guid: 055a655e865246b4392821a920092e73
+  - enabled: 1
+    path: Assets/Andea/Mundos/MundoLE/ScenesLE/Basico/Leccion1/BasicoL1N1.unity
+    guid: c1607955fd0ed1a47a134173fa197096
+  - enabled: 1
+    path: Assets/Andea/Mundos/MundoLE/ScenesLE/Basico/Leccion1/BasicoL1N2.unity
+    guid: b7387fa4457b3b746b267db79d3a9274
+  - enabled: 1
+    path: Assets/Andea/Mundos/MundoLE/ScenesLE/Basico/Leccion1/BasicoL1N3.unity
+    guid: d4afc7747b443c144b591abd0cc24ede
+  - enabled: 1
+    path: Assets/Andea/Mundos/MundoLE/ScenesLE/Intermedio/Leccion1/IntermedioL1N1.unity
+    guid: ad4f029c85c7c7243a0de0ce5fc2dae8
+  - enabled: 1
+    path: Assets/Andea/Mundos/MundoLE/ScenesLE/Intermedio/Leccion1/IntermedioL1N2.unity
+    guid: c40a75c04a35e6e48807da6acc3fd2c5
+  - enabled: 1
+    path: Assets/Andea/Mundos/MundoLE/ScenesLE/Intermedio/Leccion1/IntermedioL1N3.unity
+    guid: e89e1fbe858578f41aa012c43d250d04
+  - enabled: 1
+    path: Assets/Andea/Mundos/MundoLE/ScenesLE/Avanzado/Leccion1/AvanzadoL1N1.unity
+    guid: 35ad317b438e2b74e9352f5438a61477
+  - enabled: 1
+    path: Assets/Andea/Mundos/MundoLE/ScenesLE/Avanzado/Leccion1/AvanzadoL1N2.unity
+    guid: b165a4a615dc3734a912606e443f5191
+  - enabled: 1
+    path: Assets/Andea/Mundos/MundoLE/ScenesLE/Avanzado/Leccion1/AvanzadoL1N3.unity
+    guid: af42c2ae7bd80c64b9e0d4828494ab33
+  - enabled: 1
+    path: Assets/Andea/Mundos/MundoMA/ScenesMA/CarouselMA.unity
+    guid: b30af62580f46544cadbfd2e0c7b5f07
+  - enabled: 1
+    path: Assets/Andea/Mundos/MundoMA/ScenesMA/Basico/BasicoL1.unity
+    guid: 25caa20e7a050a64599df4a8925d59d9
+  - enabled: 1
+    path: Assets/Andea/Mundos/MundoMA/ScenesMA/Basico/BasicoL2.unity
+    guid: 8077fc96261726442b09b2a3a482d841
+  - enabled: 1
+    path: Assets/Andea/Mundos/MundoMA/ScenesMA/Intermedio/Leccion1/IntermedioL1.unity
+    guid: aa79e2ff9fd205c4583977858ed005c7
+  - enabled: 1
+    path: Assets/Andea/Mundos/MundoMA/ScenesMA/Intermedio/Leccion1/IntermedioL1N3.unity
+    guid: 29bed1ac23831654d89d8134c8fc92ac
+  - enabled: 1
+    path: Assets/Andea/Mundos/MundoMA/ScenesMA/Intermedio/Leccion1/IntermedioL2.unity
+    guid: 8085ad8dd5d89d74aaf28606320ab0e1
+  - enabled: 1
+    path: Assets/Andea/Mundos/MundoMA/ScenesMA/Avanzado/AvanzadoL1.unity
+    guid: de05f7d4c69e7a649b24b967e733baa5
+  - enabled: 1
+    path: Assets/Andea/Mundos/MundoMA/ScenesMA/Avanzado/AvanzadoL2.unity
+    guid: f29f77333bea8a14992666c7b8376128
+  - enabled: 1
+    path: Assets/Andea/Mundos/MundoSM/ScenesSM/MainSceneSM.unity
+    guid: bee12693a0c36f743944b85ef21a0d06
+  - enabled: 1
+    path: Assets/Andea/Mundos/MundoSM/ScenesSM/StoryPainting1.unity
+    guid: 3724cd63e2089ee4bafdf58cb15e07ce
+  - enabled: 1
+    path: Assets/Andea/Mundos/MundoSM/ScenesSM/SMPainting1.unity
+    guid: b2cf41a9245b87849aaf959924029179
+  - enabled: 1
+    path: Assets/Andea/Mundos/MundoSM/ScenesSM/SMPainting2.unity
+    guid: 1f0953a48405a1044aa2eff483b33435
+  - enabled: 1
+    path: Assets/Andea/Mundos/MundoSM/ScenesSM/SMPainting3.unity
+    guid: 03f6b9708fc36fe43b191355179c305d
+  - enabled: 1
+    path: Assets/Andea/Mundos/MundoSM/ScenesSM/SMPainting4.unity
+    guid: e2aec6568fd3ab54f9bab758de6f33d0
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
