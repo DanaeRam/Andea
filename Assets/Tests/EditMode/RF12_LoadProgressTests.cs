@@ -1,27 +1,47 @@
 using NUnit.Framework;
 
-
-public class RF12_LoadProgressTests 
+public class FakeProgressStorageRF12 : IProgressStorage
 {
+    public PlayerProgressData savedData;
+    public bool forceFail = false;
+
+    public bool SaveProgress(PlayerProgressData progress)
+    {
+        if (forceFail)
+            return false;
+
+        savedData = progress;
+        return true;
+    }
+
+    public PlayerProgressData LoadProgress(string userId)
+    {
+        if (forceFail)
+            return null;
+
+        return savedData;
+    }
+}
+
+public class RF12_LoadProgressTests
+{
+    // TC-43
     [Test]
     public void TC43_RetornoAlJuego_IniciarSesion_RecuperaProgresoCorrectamente()
     {
-        FakeProgressStorage fakeDb = new FakeProgressStorage();
+        var fakeDb = new FakeProgressStorageRF12();
 
-        GameProgressSystem firstSession = new GameProgressSystem(fakeDb);
+        var firstSession = new GameProgressSystem(fakeDb);
 
-        PlayerProgressData savedProgress = new PlayerProgressData(
-            "usuario_1",
-            4,
-            2200,
-            12
+        var savedProgress = new PlayerProgressData(
+            "usuario_1", 4, 2200, 12
         );
 
         firstSession.SaveProgress(savedProgress);
 
-        GameProgressSystem secondSession = new GameProgressSystem(fakeDb);
+        var secondSession = new GameProgressSystem(fakeDb);
 
-        PlayerProgressData loaded = secondSession.LoadProgress("usuario_1");
+        var loaded = secondSession.LoadProgress("usuario_1");
 
         Assert.IsNotNull(loaded);
         Assert.AreEqual(4, loaded.levelReached);
@@ -29,30 +49,102 @@ public class RF12_LoadProgressTests
         Assert.AreEqual(12, loaded.completedActivities);
     }
 
+    // TC-44
     [Test]
     public void TC44_CierreDeSesion_SalirDelJuego_ProgresoPermaneceGuardado()
     {
-        FakeProgressStorage fakeDb = new FakeProgressStorage();
+        var fakeDb = new FakeProgressStorageRF12();
 
-        GameProgressSystem activeSession = new GameProgressSystem(fakeDb);
+        var activeSession = new GameProgressSystem(fakeDb);
 
-        PlayerProgressData progressBeforeExit = new PlayerProgressData(
-            "usuario_1",
-            5,
-            3000,
-            15
+        var progressBeforeExit = new PlayerProgressData(
+            "usuario_1", 5, 3000, 15
         );
 
         bool saved = activeSession.SaveProgress(progressBeforeExit);
 
-        GameProgressSystem newSessionAfterExit = new GameProgressSystem(fakeDb);
+        var newSession = new GameProgressSystem(fakeDb);
 
-        PlayerProgressData loaded = newSessionAfterExit.LoadProgress("usuario_1");
+        var loaded = newSession.LoadProgress("usuario_1");
 
         Assert.IsTrue(saved);
         Assert.IsNotNull(loaded);
         Assert.AreEqual(5, loaded.levelReached);
         Assert.AreEqual(3000, loaded.score);
         Assert.AreEqual(15, loaded.completedActivities);
+    }
+
+    // TC-45
+    [Test]
+    public void TC45_ErrorDeRecuperacion_SimularFallo_ElSistemaManejaError()
+    {
+        var fakeDb = new FakeProgressStorageRF12();
+
+        var system = new GameProgressSystem(fakeDb);
+
+        var progress = new PlayerProgressData(
+            "usuario_1", 3, 1500, 10
+        );
+
+        system.SaveProgress(progress);
+
+        fakeDb.forceFail = true;
+
+        var loaded = system.LoadProgress("usuario_1");
+
+        Assert.IsNull(loaded);
+    }
+
+    // TC-46
+    [Test]
+    public void TC46_ReinicioAplicacion_CerrarYAbrirJuego_ProgresoSeMantiene()
+    {
+        var fakeDb = new FakeProgressStorageRF12();
+
+        var session1 = new GameProgressSystem(fakeDb);
+
+        var progress = new PlayerProgressData(
+            "usuario_1", 6, 4000, 20
+        );
+
+        session1.SaveProgress(progress);
+
+        var session2 = new GameProgressSystem(fakeDb);
+
+        var loaded = session2.LoadProgress("usuario_1");
+
+        Assert.IsNotNull(loaded);
+        Assert.AreEqual(6, loaded.levelReached);
+        Assert.AreEqual(4000, loaded.score);
+        Assert.AreEqual(20, loaded.completedActivities);
+    }
+
+    // TC-47
+    [Test]
+    public void TC47_RecuperacionTrasError_DatosSeMantienenConsistentes()
+    {
+        var fakeDb = new FakeProgressStorageRF12();
+
+        var system = new GameProgressSystem(fakeDb);
+
+        var progress = new PlayerProgressData(
+            "usuario_1", 7, 5000, 25
+        );
+
+        system.SaveProgress(progress);
+
+        fakeDb.forceFail = true;
+        var failedLoad = system.LoadProgress("usuario_1");
+
+        Assert.IsNull(failedLoad);
+
+        fakeDb.forceFail = false;
+
+        var recovered = system.LoadProgress("usuario_1");
+
+        Assert.IsNotNull(recovered);
+        Assert.AreEqual(7, recovered.levelReached);
+        Assert.AreEqual(5000, recovered.score);
+        Assert.AreEqual(25, recovered.completedActivities);
     }
 }
