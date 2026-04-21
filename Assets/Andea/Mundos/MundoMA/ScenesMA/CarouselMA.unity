@@ -268,6 +268,7 @@ GameObject:
   - component: {fileID: 145251349}
   - component: {fileID: 145251348}
   - component: {fileID: 145251347}
+  - component: {fileID: 145251350}
   m_Layer: 5
   m_Name: LeftArrowButton
   m_TagString: Untagged
@@ -389,6 +390,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 145251345}
   m_CullTransparentMesh: 1
+--- !u!114 &145251350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145251345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b703ee1fff4c4808b4377970b298099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIHoverPulseEffect
+  hoverScale: 1.08
+  pressedScale: 0.94
+  animationSpeed: 10
+  usePulse: 1
+  pulseAmount: 0.04
+  pulseSpeed: 2
+  changeColor: 1
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
 --- !u!1 &184304396
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,6 +768,7 @@ GameObject:
   - component: {fileID: 321654272}
   - component: {fileID: 321654271}
   - component: {fileID: 321654270}
+  - component: {fileID: 321654273}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -867,6 +890,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 321654268}
   m_CullTransparentMesh: 1
+--- !u!114 &321654273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321654268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b703ee1fff4c4808b4377970b298099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIHoverPulseEffect
+  hoverScale: 1.08
+  pressedScale: 0.94
+  animationSpeed: 10
+  usePulse: 1
+  pulseAmount: 0.04
+  pulseSpeed: 2
+  changeColor: 1
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
 --- !u!1 &333806317
 GameObject:
   m_ObjectHideFlags: 0
@@ -2251,6 +2295,7 @@ GameObject:
   - component: {fileID: 1391536272}
   - component: {fileID: 1391536271}
   - component: {fileID: 1391536270}
+  - component: {fileID: 1391536273}
   m_Layer: 5
   m_Name: RightArrowButton
   m_TagString: Untagged
@@ -2372,6 +2417,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1391536268}
   m_CullTransparentMesh: 1
+--- !u!114 &1391536273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1391536268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b703ee1fff4c4808b4377970b298099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIHoverPulseEffect
+  hoverScale: 1.08
+  pressedScale: 0.94
+  animationSpeed: 10
+  usePulse: 1
+  pulseAmount: 0.04
+  pulseSpeed: 2
+  changeColor: 1
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
 --- !u!1 &1650447685
 GameObject:
   m_ObjectHideFlags: 0
@@ -2384,6 +2450,7 @@ GameObject:
   - component: {fileID: 1650447688}
   - component: {fileID: 1650447687}
   - component: {fileID: 1650447686}
+  - component: {fileID: 1650447690}
   m_Layer: 5
   m_Name: ButtonL1
   m_TagString: Untagged
@@ -2505,6 +2572,27 @@ RectTransform:
   m_AnchoredPosition: {x: -450, y: -225}
   m_SizeDelta: {x: 400, y: 270}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1650447690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650447685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b703ee1fff4c4808b4377970b298099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIHoverPulseEffect
+  hoverScale: 1.08
+  pressedScale: 0.94
+  animationSpeed: 10
+  usePulse: 1
+  pulseAmount: 0.04
+  pulseSpeed: 2
+  changeColor: 1
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
 --- !u!1 &1684350405
 GameObject:
   m_ObjectHideFlags: 0
@@ -2930,6 +3018,7 @@ GameObject:
   - component: {fileID: 1883428270}
   - component: {fileID: 1883428269}
   - component: {fileID: 1883428268}
+  - component: {fileID: 1883428272}
   m_Layer: 5
   m_Name: ButtonL2
   m_TagString: Untagged
@@ -3051,6 +3140,27 @@ RectTransform:
   m_AnchoredPosition: {x: 350, y: 0}
   m_SizeDelta: {x: 400, y: 270}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1883428272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883428267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b703ee1fff4c4808b4377970b298099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIHoverPulseEffect
+  hoverScale: 1.08
+  pressedScale: 0.94
+  animationSpeed: 10
+  usePulse: 1
+  pulseAmount: 0.04
+  pulseSpeed: 2
+  changeColor: 1
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
 --- !u!1 &1889281347
 GameObject:
   m_ObjectHideFlags: 0

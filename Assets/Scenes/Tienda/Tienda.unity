@@ -1468,6 +1468,7 @@ GameObject:
   - component: {fileID: 302216505}
   - component: {fileID: 302216508}
   - component: {fileID: 302216506}
+  - component: {fileID: 302216509}
   m_Layer: 5
   m_Name: BotonCerrar
   m_TagString: Untagged
@@ -1560,6 +1561,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 302216504}
   m_CullTransparentMesh: 1
+--- !u!114 &302216509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302216504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b703ee1fff4c4808b4377970b298099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIHoverPulseEffect
+  hoverScale: 1.08
+  pressedScale: 0.94
+  animationSpeed: 10
+  usePulse: 1
+  pulseAmount: 0.04
+  pulseSpeed: 2
+  changeColor: 1
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
 --- !u!1 &326494099
 GameObject:
   m_ObjectHideFlags: 0
@@ -5060,6 +5082,7 @@ GameObject:
   - component: {fileID: 1585992636}
   - component: {fileID: 1585992639}
   - component: {fileID: 1585992637}
+  - component: {fileID: 1585992640}
   m_Layer: 5
   m_Name: BotonCerrarDialogo
   m_TagString: Untagged
@@ -5152,6 +5175,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1585992635}
   m_CullTransparentMesh: 1
+--- !u!114 &1585992640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585992635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b703ee1fff4c4808b4377970b298099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIHoverPulseEffect
+  hoverScale: 1.08
+  pressedScale: 0.94
+  animationSpeed: 10
+  usePulse: 1
+  pulseAmount: 0.04
+  pulseSpeed: 2
+  changeColor: 1
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
 --- !u!1 &1595974979
 GameObject:
   m_ObjectHideFlags: 0
@@ -6050,6 +6094,7 @@ GameObject:
   - component: {fileID: 1788527840}
   - component: {fileID: 1788527839}
   - component: {fileID: 1788527838}
+  - component: {fileID: 1788527841}
   m_Layer: 5
   m_Name: ButtonMain
   m_TagString: Untagged
@@ -6171,6 +6216,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1788527836}
   m_CullTransparentMesh: 1
+--- !u!114 &1788527841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788527836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b703ee1fff4c4808b4377970b298099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIHoverPulseEffect
+  hoverScale: 1.08
+  pressedScale: 0.94
+  animationSpeed: 10
+  usePulse: 1
+  pulseAmount: 0.04
+  pulseSpeed: 2
+  changeColor: 1
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
 --- !u!1 &1789652412
 GameObject:
   m_ObjectHideFlags: 0
