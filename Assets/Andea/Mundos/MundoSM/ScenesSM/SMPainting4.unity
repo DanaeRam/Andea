@@ -222,6 +222,7 @@ GameObject:
   - component: {fileID: 63667401}
   - component: {fileID: 63667400}
   - component: {fileID: 63667399}
+  - component: {fileID: 63667402}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -343,6 +344,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 63667397}
   m_CullTransparentMesh: 1
+--- !u!114 &63667402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63667397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b703ee1fff4c4808b4377970b298099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIHoverPulseEffect
+  hoverScale: 1.08
+  pressedScale: 0.94
+  animationSpeed: 10
+  usePulse: 1
+  pulseAmount: 0.04
+  pulseSpeed: 2
+  changeColor: 1
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
 --- !u!1 &113124211
 GameObject:
   m_ObjectHideFlags: 0
@@ -3592,6 +3614,7 @@ GameObject:
   - component: {fileID: 1360727346}
   - component: {fileID: 1360727345}
   - component: {fileID: 1360727347}
+  - component: {fileID: 1360727348}
   m_Layer: 5
   m_Name: ProgressButton
   m_TagString: Untagged
@@ -3701,6 +3724,27 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1360727348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360727343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b703ee1fff4c4808b4377970b298099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIHoverPulseEffect
+  hoverScale: 1.08
+  pressedScale: 0.94
+  animationSpeed: 10
+  usePulse: 1
+  pulseAmount: 0.04
+  pulseSpeed: 2
+  changeColor: 1
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
 --- !u!1 &1388983431
 GameObject:
   m_ObjectHideFlags: 0

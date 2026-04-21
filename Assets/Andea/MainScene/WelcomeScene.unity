@@ -413,6 +413,7 @@ GameObject:
   - component: {fileID: 276596683}
   - component: {fileID: 276596682}
   - component: {fileID: 276596684}
+  - component: {fileID: 276596685}
   m_Layer: 5
   m_Name: NextButton
   m_TagString: Untagged
@@ -521,6 +522,27 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &276596685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276596680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b703ee1fff4c4808b4377970b298099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIHoverPulseEffect
+  hoverScale: 1.08
+  pressedScale: 0.94
+  animationSpeed: 10
+  usePulse: 1
+  pulseAmount: 0.04
+  pulseSpeed: 2
+  changeColor: 1
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
 --- !u!1 &323679701
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,6 +850,7 @@ GameObject:
   - component: {fileID: 606540346}
   - component: {fileID: 606540345}
   - component: {fileID: 606540344}
+  - component: {fileID: 606540347}
   m_Layer: 5
   m_Name: SkipButton
   m_TagString: Untagged
@@ -937,6 +960,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 606540342}
   m_CullTransparentMesh: 1
+--- !u!114 &606540347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606540342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b703ee1fff4c4808b4377970b298099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIHoverPulseEffect
+  hoverScale: 1.08
+  pressedScale: 0.94
+  animationSpeed: 10
+  usePulse: 1
+  pulseAmount: 0.04
+  pulseSpeed: 2
+  changeColor: 1
+  normalColor: {r: 0, g: 0, b: 0, a: 0.39215687}
+  hoverColor: {r: 0, g: 0, b: 0, a: 0.39215687}
 --- !u!1 &681731930
 GameObject:
   m_ObjectHideFlags: 0
@@ -1677,6 +1721,7 @@ GameObject:
   - component: {fileID: 1277365715}
   - component: {fileID: 1277365714}
   - component: {fileID: 1277365716}
+  - component: {fileID: 1277365717}
   m_Layer: 5
   m_Name: PrevButton
   m_TagString: Untagged
@@ -1785,6 +1830,27 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1277365717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277365712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b703ee1fff4c4808b4377970b298099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIHoverPulseEffect
+  hoverScale: 1.08
+  pressedScale: 0.94
+  animationSpeed: 10
+  usePulse: 1
+  pulseAmount: 0.04
+  pulseSpeed: 2
+  changeColor: 1
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
 --- !u!1 &1350568978
 GameObject:
   m_ObjectHideFlags: 0
@@ -2386,6 +2452,7 @@ GameObject:
   - component: {fileID: 1649523184}
   - component: {fileID: 1649523183}
   - component: {fileID: 1649523185}
+  - component: {fileID: 1649523186}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -2495,6 +2562,27 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1649523186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649523181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b703ee1fff4c4808b4377970b298099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIHoverPulseEffect
+  hoverScale: 1.08
+  pressedScale: 0.94
+  animationSpeed: 10
+  usePulse: 1
+  pulseAmount: 0.04
+  pulseSpeed: 2
+  changeColor: 1
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
 --- !u!1 &1728540812
 GameObject:
   m_ObjectHideFlags: 0

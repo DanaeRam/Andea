@@ -236,6 +236,7 @@ GameObject:
   - component: {fileID: 332512430}
   - component: {fileID: 332512429}
   - component: {fileID: 332512428}
+  - component: {fileID: 332512431}
   m_Layer: 5
   m_Name: ButtonTienda
   m_TagString: Untagged
@@ -357,6 +358,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 332512426}
   m_CullTransparentMesh: 1
+--- !u!114 &332512431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332512426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b703ee1fff4c4808b4377970b298099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIHoverPulseEffect
+  hoverScale: 1.08
+  pressedScale: 0.94
+  animationSpeed: 10
+  usePulse: 1
+  pulseAmount: 0.04
+  pulseSpeed: 2
+  changeColor: 1
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
 --- !u!1 &604136252
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,6 +756,7 @@ GameObject:
   - component: {fileID: 958273751}
   - component: {fileID: 958273750}
   - component: {fileID: 958273749}
+  - component: {fileID: 958273752}
   m_Layer: 5
   m_Name: ButtonLE
   m_TagString: Untagged
@@ -855,6 +878,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 958273747}
   m_CullTransparentMesh: 1
+--- !u!114 &958273752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958273747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b703ee1fff4c4808b4377970b298099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIHoverPulseEffect
+  hoverScale: 1.08
+  pressedScale: 0.94
+  animationSpeed: 10
+  usePulse: 1
+  pulseAmount: 0.04
+  pulseSpeed: 2
+  changeColor: 1
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
 --- !u!1 &983859385
 GameObject:
   m_ObjectHideFlags: 0
@@ -1278,6 +1322,7 @@ GameObject:
   - component: {fileID: 1924806475}
   - component: {fileID: 1924806474}
   - component: {fileID: 1924806473}
+  - component: {fileID: 1924806476}
   m_Layer: 5
   m_Name: ButtonMA
   m_TagString: Untagged
@@ -1399,6 +1444,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1924806471}
   m_CullTransparentMesh: 1
+--- !u!114 &1924806476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924806471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b703ee1fff4c4808b4377970b298099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIHoverPulseEffect
+  hoverScale: 1.08
+  pressedScale: 0.94
+  animationSpeed: 10
+  usePulse: 1
+  pulseAmount: 0.04
+  pulseSpeed: 2
+  changeColor: 1
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
 --- !u!1 &1928165169
 GameObject:
   m_ObjectHideFlags: 0
@@ -1455,6 +1521,7 @@ GameObject:
   - component: {fileID: 2019312223}
   - component: {fileID: 2019312222}
   - component: {fileID: 2019312221}
+  - component: {fileID: 2019312224}
   m_Layer: 5
   m_Name: ButtonSM
   m_TagString: Untagged
@@ -1576,6 +1643,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2019312219}
   m_CullTransparentMesh: 1
+--- !u!114 &2019312224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019312219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b703ee1fff4c4808b4377970b298099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIHoverPulseEffect
+  hoverScale: 1.08
+  pressedScale: 0.94
+  animationSpeed: 10
+  usePulse: 1
+  pulseAmount: 0.04
+  pulseSpeed: 2
+  changeColor: 1
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
 --- !u!1 &2050920292
 GameObject:
   m_ObjectHideFlags: 0
