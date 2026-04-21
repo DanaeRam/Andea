@@ -32,10 +32,10 @@ public class GalleryProgressManager : MonoBehaviour
     public Image painting4;
 
     [Header("Claves de progreso")]
-    public string puzzle1Key = "SMBasicoL1P1";
-    public string puzzle2Key = "SMBasicoL1P2";
-    public string puzzle3Key = "SMBasicoL1P3";
-    public string puzzle4Key = "SMBasicoL1P4";
+    public string puzzle1Key = "SMPainting1";
+    public string puzzle2Key = "SMPainting2";
+    public string puzzle3Key = "SMPainting3";
+    public string puzzle4Key = "SMPainting4";
 
     private void Start()
     {

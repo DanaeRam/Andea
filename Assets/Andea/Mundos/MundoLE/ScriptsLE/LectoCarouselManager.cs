@@ -12,9 +12,10 @@ public class LectoCarouselManager : MonoBehaviour
     [Header("Ribbon superior")]
     public TextMeshProUGUI ribbonText;
 
-    [Header("Botones principales del menú")]
-    public Button buttonL1;
-    public Button buttonL2;
+    [Header("Contenedores de botones por nivel")]
+    public GameObject botonesBasico;
+    public GameObject botonesIntermedio;
+    public GameObject botonesAvanzado;
 
     [Header("Panel de lección")]
     public GameObject lessonPanel;
@@ -28,18 +29,18 @@ public class LectoCarouselManager : MonoBehaviour
     public TextMeshProUGUI learnButtonText;
     public TextMeshProUGUI playButtonText;
 
-    private int currentIndex = 0;
+    private int currentIndex = 0;   // 0 = Básico, 1 = Intermedio, 2 = Avanzado
+    private int currentLesson = 0;  // Lección seleccionada dentro del nivel actual
 
     private void Start()
     {
         UpdateCarousel();
         UpdateRibbonText();
-        UpdateMainButtons();
+        UpdateVisibleLessonButtons();
+        UpdatePanelButtonsText();
 
         if (lessonPanel != null)
             lessonPanel.SetActive(false);
-
-        UpdatePanelButtonsText();
     }
 
     public void NextImage()
@@ -51,11 +52,11 @@ public class LectoCarouselManager : MonoBehaviour
 
         UpdateCarousel();
         UpdateRibbonText();
+        UpdateVisibleLessonButtons();
 
-        // Si el panel está abierto, actualiza su contenido al cambiar de nivel
         if (lessonPanel != null && lessonPanel.activeSelf)
         {
-            UpdateLessonPanelContent(1);
+            lessonPanel.SetActive(false);
         }
     }
 
@@ -71,10 +72,11 @@ public class LectoCarouselManager : MonoBehaviour
 
         UpdateCarousel();
         UpdateRibbonText();
+        UpdateVisibleLessonButtons();
 
         if (lessonPanel != null && lessonPanel.activeSelf)
         {
-            UpdateLessonPanelContent(1);
+            lessonPanel.SetActive(false);
         }
     }
 
@@ -105,19 +107,16 @@ public class LectoCarouselManager : MonoBehaviour
         }
     }
 
-    private void UpdateMainButtons()
+    private void UpdateVisibleLessonButtons()
     {
-        // Por ahora solo tienes una lección
-        if (buttonL1 != null)
-        {
-            buttonL1.gameObject.SetActive(true);
-            buttonL1.interactable = true;
-        }
+        if (botonesBasico != null)
+            botonesBasico.SetActive(currentIndex == 0);
 
-        if (buttonL2 != null)
-        {
-            buttonL2.gameObject.SetActive(false);
-        }
+        if (botonesIntermedio != null)
+            botonesIntermedio.SetActive(currentIndex == 1);
+
+        if (botonesAvanzado != null)
+            botonesAvanzado.SetActive(currentIndex == 2);
     }
 
     private void UpdatePanelButtonsText()
@@ -129,49 +128,79 @@ public class LectoCarouselManager : MonoBehaviour
             playButtonText.text = "Jugar";
     }
 
-    public void OpenLesson1Panel()
+    public void OpenLessonPanel(int lessonNumber)
     {
-        if (lessonPanel == null) return;
+        currentLesson = lessonNumber;
 
-        lessonPanel.SetActive(true);
-        UpdateLessonPanelContent(1);
+        if (lessonPanel != null)
+            lessonPanel.SetActive(true);
+
+        UpdateLessonPanelContent();
     }
 
-    public void OpenLesson2Panel()
-    {
-        Debug.Log("La lección 2 aún no está disponible.");
-    }
-
-    private void UpdateLessonPanelContent(int lessonNumber)
+    private void UpdateLessonPanelContent()
     {
         if (panelTitleText != null)
         {
-            switch (currentIndex)
-            {
-                case 0:
-                    panelTitleText.text = "Lección 1";
-                    break;
-                case 1:
-                    panelTitleText.text = "Lección 1";
-                    break;
-                case 2:
-                    panelTitleText.text = "Lección 1";
-                    break;
-            }
+            panelTitleText.text = "Lección " + currentLesson;
         }
 
         if (descriptionLessonText != null)
         {
             switch (currentIndex)
             {
-                case 0:
-                    descriptionLessonText.text = "Explora el nivel básico y comienza la primera aventura de lecto-escritura.";
+                case 0: // Básico
+                    switch (currentLesson)
+                    {
+                        case 1:
+                            descriptionLessonText.text = "Explora la lección 1 del nivel básico y comienza tu aventura de lecto-escritura.";
+                            break;
+                        case 2:
+                            descriptionLessonText.text = "Explora la lección 2 del nivel básico y sigue practicando habilidades iniciales.";
+                            break;
+                        case 3:
+                            descriptionLessonText.text = "Explora la lección 3 del nivel básico y refuerza lo aprendido.";
+                            break;
+                        default:
+                            descriptionLessonText.text = "Lección del nivel básico.";
+                            break;
+                    }
                     break;
-                case 1:
-                    descriptionLessonText.text = "Explora el nivel intermedio y continúa desarrollando tus habilidades de lecto-escritura.";
+
+                case 1: // Intermedio
+                    switch (currentLesson)
+                    {
+                        case 1:
+                            descriptionLessonText.text = "Explora la lección 1 del nivel intermedio y desarrolla nuevas habilidades.";
+                            break;
+                        case 2:
+                            descriptionLessonText.text = "Explora la lección 2 del nivel intermedio y continúa avanzando.";
+                            break;
+                        default:
+                            descriptionLessonText.text = "Lección del nivel intermedio.";
+                            break;
+                    }
                     break;
-                case 2:
-                    descriptionLessonText.text = "Explora el nivel avanzado y enfrenta un reto mayor de lecto-escritura.";
+
+                case 2: // Avanzado
+                    switch (currentLesson)
+                    {
+                        case 1:
+                            descriptionLessonText.text = "Explora la lección 1 del nivel avanzado y enfréntate a nuevos retos.";
+                            break;
+                        case 2:
+                            descriptionLessonText.text = "Explora la lección 2 del nivel avanzado y fortalece tu comprensión.";
+                            break;
+                        case 3:
+                            descriptionLessonText.text = "Explora la lección 3 del nivel avanzado y resuelve desafíos más complejos.";
+                            break;
+                        case 4:
+                            descriptionLessonText.text = "Explora la lección 4 del nivel avanzado y domina el contenido.";
+                            break;
+                        default:
+                            descriptionLessonText.text = "Lección del nivel avanzado.";
+                            break;
+                    }
                     break;
             }
         }
@@ -188,20 +217,50 @@ public class LectoCarouselManager : MonoBehaviour
         switch (currentIndex)
         {
             case 0:
-                Debug.Log("Aprender - Nivel Básico");
+                switch (currentLesson)
+                {
+                    case 1:
+                        Debug.Log("Aprender - Básico Lección 1");
+                        break;
+                    case 2:
+                        Debug.Log("Aprender - Básico Lección 2");
+                        break;
+                    case 3:
+                        Debug.Log("Aprender - Básico Lección 3");
+                        break;
+                }
                 break;
+
             case 1:
-                Debug.Log("Aprender - Nivel Intermedio");
+                switch (currentLesson)
+                {
+                    case 1:
+                        Debug.Log("Aprender - Intermedio Lección 1");
+                        break;
+                    case 2:
+                        Debug.Log("Aprender - Intermedio Lección 2");
+                        break;
+                }
                 break;
+
             case 2:
-                Debug.Log("Aprender - Nivel Avanzado");
+                switch (currentLesson)
+                {
+                    case 1:
+                        Debug.Log("Aprender - Avanzado Lección 1");
+                        break;
+                    case 2:
+                        Debug.Log("Aprender - Avanzado Lección 2");
+                        break;
+                    case 3:
+                        Debug.Log("Aprender - Avanzado Lección 3");
+                        break;
+                    case 4:
+                        Debug.Log("Aprender - Avanzado Lección 4");
+                        break;
+                }
                 break;
         }
-
-        // Aquí después puedes:
-        // - abrir otro panel
-        // - mostrar instrucciones
-        // - cargar una escena de explicación
     }
 
     public void OnPlayButton()
@@ -209,13 +268,39 @@ public class LectoCarouselManager : MonoBehaviour
         switch (currentIndex)
         {
             case 0:
-                SceneManager.LoadScene("BasicoL1N1");
+                // Básico
                 break;
+
             case 1:
-                SceneManager.LoadScene("IntermedioL1N1");
+                // Intermedio
                 break;
+
             case 2:
-                SceneManager.LoadScene("AvanzadoL1N1");
+                // Avanzado
+                switch (currentLesson)
+                {
+                    case 1:
+                        if (LectoGameSessionManager.Instance != null)
+                        {
+                            LectoGameSessionManager.Instance.StartLessonSession(
+                                "Avanzado",
+                                "Uso correcto de signos de puntuación"
+                            );
+                        }
+                        break;
+
+                    case 2:
+                        Debug.Log("Falta configurar banco JSON para Avanzado Lección 2");
+                        break;
+
+                    case 3:
+                        Debug.Log("Falta configurar banco JSON para Avanzado Lección 3");
+                        break;
+
+                    case 4:
+                        Debug.Log("Falta configurar banco JSON para Avanzado Lección 4");
+                        break;
+                }
                 break;
         }
     }

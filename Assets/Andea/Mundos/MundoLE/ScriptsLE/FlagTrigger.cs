@@ -2,9 +2,6 @@ using UnityEngine;
 
 public class FlagTrigger : MonoBehaviour
 {
-    [Header("Canvas del quiz")]
-    public GameObject quizCanvas;
-
     [Header("Jugador")]
     public PlayerController playerController;
 
@@ -18,11 +15,18 @@ public class FlagTrigger : MonoBehaviour
         {
             activated = true;
 
-            if (quizCanvas != null)
-                quizCanvas.SetActive(true);
-
             if (playerController != null)
                 playerController.enabled = false;
+
+            if (LectoGameSessionManager.Instance != null)
+            {
+                Debug.Log("Meta alcanzada. Cargando escena de pregunta...");
+                LectoGameSessionManager.Instance.LoadQuizSceneForCurrentRound();
+            }
+            else
+            {
+                Debug.LogError("No existe LectoGameSessionManager en la escena.");
+            }
         }
     }
 }
