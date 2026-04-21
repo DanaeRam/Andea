@@ -1,0 +1,13 @@
+:root {
+}
+
+.boton {
+}
+
+.boton:hover {
+    scale: 1.09 1.09;
+    background-color: rgb(95, 95, 95);
+    transition-property: scale, background-color;
+    transition-duration: 0.15s, 0.15s;
+    transition-timing-function: ease-out, ease-out;
+}
