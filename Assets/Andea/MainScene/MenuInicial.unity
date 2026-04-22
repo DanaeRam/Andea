@@ -721,7 +721,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 705684751}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8d8f6adfad0ca54ca29bb15aedc42e6, type: 3}
+  m_Script: {fileID: 11500000, guid: fa5039469670c8149a9cd5a4df2fdee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu
   panelMenuInicial: {fileID: 795728745}
@@ -736,7 +736,7 @@ MonoBehaviour:
   stateText: {fileID: 959295421}
   backButton: {fileID: 886349565}
   mainSceneName: MainScene
-  WelcomeSceneName: WelcomeScene
+  welcomeSceneName: WelcomeScene
   apiUrl: https://andea.vercel.app/api/validar-codigo
 --- !u!4 &705684753
 Transform:
@@ -997,7 +997,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 8085924197113133115, guid: a703090be2d98a84f80a98cd362674ca, type: 3}
+  m_Sprite: {fileID: 8085924197113133115, guid: 96590661c6b61424a81d1f31316cfb27, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2977,7 +2977,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1556682803}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 705684752}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: OnLoginPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1556682803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3309,7 +3321,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1609302229}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 705684752}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: OpenNameCodePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1609302229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3485,7 +3509,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2738253521464851856, guid: 73c4442b2b3630044be51fea504abd29, type: 3}
+  m_Sprite: {fileID: 2738253521464851856, guid: d4e433e941f68b747b19fc89b3964c6e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

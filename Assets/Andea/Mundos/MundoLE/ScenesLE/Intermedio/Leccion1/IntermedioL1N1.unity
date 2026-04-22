@@ -3227,7 +3227,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c665ee40402241c48846592d386fe202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlagTrigger
-  quizCanvas: {fileID: 1133731923}
   playerController: {fileID: 192265339}
 --- !u!61 &660385942
 BoxCollider2D:
@@ -4631,6 +4630,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23659d7fc63d4544db82c20df25e1257, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::QuizLevelManager
+  questionText: {fileID: 0}
+  button1Text: {fileID: 0}
+  button2Text: {fileID: 0}
+  button3Text: {fileID: 0}
+  button4Text: {fileID: 0}
   Button1: {fileID: 607053067}
   Button2: {fileID: 1644439863}
   Button3: {fileID: 558595869}
@@ -4638,7 +4642,6 @@ MonoBehaviour:
   FeedbackBox: {fileID: 91598655}
   FeedbackText: {fileID: 606636936}
   feedbackDuration: 2.5
-  Button1IsCorrect: 1
   maxAttempts: 3
 --- !u!4 &1400044875
 Transform:
@@ -5617,7 +5620,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -1732828848487552111, guid: 9fdfb26726d014cfb83ca81d3a164e35, type: 3}
+  m_Sprite: {fileID: -7680109580899800626, guid: 9749c71c8dd3baf4d93ede7be44c9abf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5636,8 +5639,8 @@ Transform:
   m_GameObject: {fileID: 2098120747}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0197, y: -0.0023, z: 0}
-  m_LocalScale: {x: 0.6417208, y: 0.66059065, z: 3.3785713}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 3.3785713}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
