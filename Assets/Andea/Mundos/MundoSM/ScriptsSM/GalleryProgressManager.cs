@@ -6,8 +6,8 @@ using TMPro;
 public class GalleryProgressManager : MonoBehaviour
 {
     [Header("Datos del puzzle actual")]
-    public string currentPuzzleKey;   // Ej: SMBasicoL1P1
-    public string nextSceneName;      // Ej: SMBasicoL1P2
+    public string currentPuzzleKey;   
+    public string nextSceneName;     
     public bool isLastPuzzle = false;
 
     [Header("Panel principal")]

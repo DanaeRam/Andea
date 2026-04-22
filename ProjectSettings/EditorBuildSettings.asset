@@ -5,24 +5,33 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainScene/MenuInicial.unity
     guid: d0db9bc2648e97241ab434024302b975
-  - enabled: 1
-    path: Assets/Scenes/MainScene/LessonScene.unity
-    guid: 9ae3f74fd29f2b246bc61f8f7554cf3f
-  - enabled: 1
-    path: Assets/Scenes/MainScene/ResultadosNivel.unity
-    guid: 3cbf0315dface43d39480fe21d33d0c3
-  - enabled: 1
-    path: Assets/Scenes/MainScene/WelcomeScene.unity
-    guid: 909563ad1be7ded47b958d34db57b9db
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainScene/MainScene.unity
     guid: 4b943df9cfafba049b6cd24a74b04d4d
   - enabled: 1
+    path: Assets/Andea/MainScene/MenuInicial.unity
+    guid: 1830d267cab65e94695d2ad908caeee8
+  - enabled: 1
+    path: Assets/Andea/MainScene/MainScene.unity
+    guid: a57070ca2d0808842a7976c4c756a130
+  - enabled: 1
+    path: Assets/Andea/MainScene/WelcomeScene.unity
+    guid: ce36c2102098155488020fc8c77409fc
+  - enabled: 1
     path: Assets/Scenes/Tienda/Tienda.unity
     guid: 054081416d219482ba4a328d3bcbd7ac
+  - enabled: 1
+    path: Assets/Andea/MainScene/ResultadosNivel.unity
+    guid: 3cbf0315dface43d39480fe21d33d0c3
+  - enabled: 0
+    path: Assets/Scenes/MainScene/WelcomeScene.unity
+    guid: 909563ad1be7ded47b958d34db57b9db
+  - enabled: 0
+    path: Assets/Scenes/MainScene/LessonScene.unity
+    guid: 9ae3f74fd29f2b246bc61f8f7554cf3f
   - enabled: 1
     path: Assets/Andea/Mundos/MundoLE/ScenesLE/SceneQuizLE.unity
     guid: 592c2d0ca135d70449849616b252a626
@@ -103,7 +112,7 @@ EditorBuildSettings:
     guid: cad0dd3539da9604788b7051a8694d9d
   - enabled: 1
     path: Assets/Andea/Mundos/MundoLE/ScenesLE/Avanzado/A4.unity
-    guid: b99645bf960dd4040a2ce2bdd7c5e68e
+    guid: af6f5ee6dd0ea9e419ed75d99eec3f8d
   - enabled: 1
     path: Assets/Andea/Mundos/MundoLE/ScenesLE/Avanzado/A6.unity
     guid: 1db25758e0f13644a832548e6236a4d7
