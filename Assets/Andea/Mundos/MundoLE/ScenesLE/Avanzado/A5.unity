@@ -565,6 +565,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Contadores
       objectReference: {fileID: 0}
+    - target: {fileID: 6816105853608722969, guid: 801bbb02f9dc741b988ad5e39504dd1b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1406,8 +1410,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2026260632}
   - {fileID: 2132450023}
+  - {fileID: 2026260632}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1163374640
@@ -1969,6 +1973,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIBinder
       objectReference: {fileID: 0}
+    - target: {fileID: 8294243583868673334, guid: 850c616b2c3b84f9395e075d4f146c15, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2319,7 +2327,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

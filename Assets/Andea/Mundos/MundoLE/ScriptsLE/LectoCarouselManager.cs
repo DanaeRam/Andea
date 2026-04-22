@@ -186,23 +186,23 @@ public class LectoCarouselManager : MonoBehaviour
                     switch (currentLesson)
                     {
                         case 1:
-                            descriptionLessonText.text = "Explora la lección 1 del nivel avanzado y enfréntate a nuevos retos.";
+                            descriptionLessonText.text = "Explora la lección 1 del nivel avanzado: Uso correcto de signos de puntuación.";
                             break;
                         case 2:
-                            descriptionLessonText.text = "Explora la lección 2 del nivel avanzado y fortalece tu comprensión.";
+                            descriptionLessonText.text = "Explora la lección 2 del nivel avanzado: Comprensión Lectora.";
                             break;
                         case 3:
-                            descriptionLessonText.text = "Explora la lección 3 del nivel avanzado y resuelve desafíos más complejos.";
+                            descriptionLessonText.text = "Explora la lección 3 del nivel avanzado: Identificar la idea principal.";
                             break;
                         case 4:
-                            descriptionLessonText.text = "Explora la lección 4 del nivel avanzado y domina el contenido.";
+                            descriptionLessonText.text = "Explora la lección 4 del nivel avanzado: Inferencias de un texto.";
                             break;
                         default:
                             descriptionLessonText.text = "Lección del nivel avanzado.";
                             break;
                     }
                     break;
-            }
+                            }
         }
     }
 
@@ -263,45 +263,71 @@ public class LectoCarouselManager : MonoBehaviour
         }
     }
 
-    public void OnPlayButton()
+ public void OnPlayButton()
+{
+    switch (currentIndex)
     {
-        switch (currentIndex)
-        {
-            case 0:
-                // Básico
-                break;
+        case 0:
+            // Básico
+            break;
 
-            case 1:
-                // Intermedio
-                break;
+        case 1:
+            // Intermedio
+            break;
 
-            case 2:
-                // Avanzado
-                switch (currentLesson)
-                {
-                    case 1:
-                        if (LectoGameSessionManager.Instance != null)
-                        {
-                            LectoGameSessionManager.Instance.StartLessonSession(
-                                "Avanzado",
-                                "Uso correcto de signos de puntuación"
-                            );
-                        }
-                        break;
+        case 2:
+            // Avanzado
+            switch (currentLesson)
+            {
+                case 1:
+                    // Lección 1: Uso correcto de signos de puntuación
+                    if (LectoGameSessionManager.Instance != null)
+                    {
+                        LectoGameSessionManager.Instance.StartLessonSession(
+                            "Avanzado",
+                            "Uso correcto de signos de puntuación"
+                        );
+                    }
+                    break;
 
-                    case 2:
-                        Debug.Log("Falta configurar banco JSON para Avanzado Lección 2");
-                        break;
+                case 2:
+                    // Lección 2: Comprensión Lectora
+                    if (LectoGameSessionManager.Instance != null)
+                    {
+                        LectoGameSessionManager.Instance.StartLessonSession(
+                            "Avanzado",
+                            "Comprensión Lectora"
+                        );
+                    }
+                    break;
 
-                    case 3:
-                        Debug.Log("Falta configurar banco JSON para Avanzado Lección 3");
-                        break;
+                case 3:
+                    // Lección 3: Identificar la idea principal
+                    if (LectoGameSessionManager.Instance != null)
+                    {
+                        LectoGameSessionManager.Instance.StartLessonSession(
+                            "Avanzado",
+                            "Identificar la idea principal"
+                        );
+                    }
+                    break;
 
-                    case 4:
-                        Debug.Log("Falta configurar banco JSON para Avanzado Lección 4");
-                        break;
-                }
-                break;
-        }
+                case 4:
+                    // Lección 4: Inferencias de un texto
+                    if (LectoGameSessionManager.Instance != null)
+                    {
+                        LectoGameSessionManager.Instance.StartLessonSession(
+                            "Avanzado",
+                            "Inferencias de un texto"
+                        );
+                    }
+                    break;
+
+                default:
+                    Debug.LogError("Lección no configurada para el nivel avanzado.");
+                    break;
+            }
+            break;
     }
+}
 }

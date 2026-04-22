@@ -13,7 +13,7 @@ public class LectoGameSessionManager : MonoBehaviour
 
     [Header("Configuración de partida")]
     public int roundsPerSession = 6;
-    public string quizSceneName = "EscenaPreguntaLecto";
+    public string quizSceneName = "SceneQuizLE";
 
     [Header("Estado actual")]
     public string currentLevelName;
@@ -145,6 +145,15 @@ public class LectoGameSessionManager : MonoBehaviour
     {
         if (levelName == "Avanzado" && lessonName == "Uso correcto de signos de puntuación")
             return "QuestionsBank/AvanzadoL1";
+
+        if (levelName == "Avanzado" && lessonName == "Comprensión Lectora")
+            return "QuestionsBank/AvanzadoL2";
+
+        if (levelName == "Avanzado" && lessonName == "Identificar la idea principal")
+            return "QuestionsBank/AvanzadoL3";
+
+        if (levelName == "Avanzado" && lessonName == "Inferencias de un texto")
+            return "QuestionsBank/AvanzadoL4";
 
         return null;
     }
