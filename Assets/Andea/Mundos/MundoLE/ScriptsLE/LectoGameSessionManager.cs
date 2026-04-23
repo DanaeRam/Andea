@@ -143,6 +143,12 @@ public class LectoGameSessionManager : MonoBehaviour
 
     private string GetQuestionBankJsonPath(string levelName, string lessonName)
     {
+        if (levelName == "Intermedio" && lessonName == "Identificar sustantivos, verbos y adjetivos")
+            return "QuestionsBank/IntermedioL1";
+
+        if (levelName == "Intermedio" && lessonName == "Sinónimos y Antónimos")
+            return "QuestionsBank/IntermedioL2";
+
         if (levelName == "Avanzado" && lessonName == "Uso correcto de signos de puntuación")
             return "QuestionsBank/AvanzadoL1";
 

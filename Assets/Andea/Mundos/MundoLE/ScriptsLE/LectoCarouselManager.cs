@@ -171,10 +171,10 @@ public class LectoCarouselManager : MonoBehaviour
                     switch (currentLesson)
                     {
                         case 1:
-                            descriptionLessonText.text = "Explora la lección 1 del nivel intermedio y desarrolla nuevas habilidades.";
+                            descriptionLessonText.text = "Explora la lección 1 del nivel intermedio: Identificar sustantivos, verbos y adjetivos.";
                             break;
                         case 2:
-                            descriptionLessonText.text = "Explora la lección 2 del nivel intermedio y continúa avanzando.";
+                            descriptionLessonText.text = "Explora la lección 2 del nivel intermedio: Sinónimos y Antónimos.";
                             break;
                         default:
                             descriptionLessonText.text = "Lección del nivel intermedio.";
