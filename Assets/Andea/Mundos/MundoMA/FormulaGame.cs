@@ -20,8 +20,9 @@ public class FormulaGame : MonoBehaviour
     public Image iconResult1, iconResult2, iconResult3; // Iconos para los resultados de las fórmulas
     public TextMeshProUGUI textRetro; // Texto de retroalimentación
 
-    public Image imageFormula1, imageFormula2, imageFormula3; // Imágenes para las fórmulas
-    public Sprite[] imageBank; // Banco de imágenes
+    // Comentado: Cargar las imágenes de las fórmulas y los iconos
+    // public Image imageFormula1, imageFormula2, imageFormula3; // Imágenes para las fórmulas
+    // public Sprite[] potionSprites; // Sprite array para las pociones
 
     private int correctAnswer;
     private int currentFormulaIndex = 0;
@@ -29,8 +30,12 @@ public class FormulaGame : MonoBehaviour
 
     void Start()
     {
-        // Cargar las imágenes del banco (asegúrate de que la carpeta sea accesible)
-        imageBank = Resources.LoadAll<Sprite>("BancoDeImagenes");
+        // Comentado para probar lo demás
+        // potionSprites = Resources.LoadAll<Sprite>("MundoMA/Resources");
+
+        // Temporarily set to empty to avoid errors while testing
+        Debug.Log("Número de sprites cargados (comentado): 0");
+
         ShowNextFormula();
     }
 
@@ -54,8 +59,8 @@ public class FormulaGame : MonoBehaviour
         if (currentFormulaIndex == 1) formula2.SetActive(true);
         if (currentFormulaIndex == 2) formula3.SetActive(true);
 
-        // Elegir una imagen aleatoria (sin repetir) para cada fórmula
-        SetRandomImageForFormula();
+        // Comentado: Asignar las imágenes de las fórmulas
+        // SetRandomPotionForFormula();
 
         // Generar los números aleatorios para la suma
         int num1 = Random.Range(1, 10);
@@ -138,17 +143,19 @@ public class FormulaGame : MonoBehaviour
         int selectedAnswer = int.Parse(GetButtonText(buttonIndex));
         if (selectedAnswer == correctAnswer)
         {
-            if (currentFormulaIndex == 0) iconResult1.sprite = Resources.Load<Sprite>("RightIcon");
-            if (currentFormulaIndex == 1) iconResult2.sprite = Resources.Load<Sprite>("RightIcon");
-            if (currentFormulaIndex == 2) iconResult3.sprite = Resources.Load<Sprite>("RightIcon");
+            // Comentado para pruebas
+            // if (currentFormulaIndex == 0) iconResult1.sprite = Resources.Load<Sprite>("RightIcon");
+            // if (currentFormulaIndex == 1) iconResult2.sprite = Resources.Load<Sprite>("RightIcon");
+            // if (currentFormulaIndex == 2) iconResult3.sprite = Resources.Load<Sprite>("RightIcon");
 
             isCorrectAnswer = true;
         }
         else
         {
-            if (currentFormulaIndex == 0) iconResult1.sprite = Resources.Load<Sprite>("WrongIcon");
-            if (currentFormulaIndex == 1) iconResult2.sprite = Resources.Load<Sprite>("WrongIcon");
-            if (currentFormulaIndex == 2) iconResult3.sprite = Resources.Load<Sprite>("WrongIcon");
+            // Comentado para pruebas
+            // if (currentFormulaIndex == 0) iconResult1.sprite = Resources.Load<Sprite>("WrongIcon");
+            // if (currentFormulaIndex == 1) iconResult2.sprite = Resources.Load<Sprite>("WrongIcon");
+            // if (currentFormulaIndex == 2) iconResult3.sprite = Resources.Load<Sprite>("WrongIcon");
 
             isCorrectAnswer = false;
         }
@@ -191,14 +198,15 @@ public class FormulaGame : MonoBehaviour
         }
     }
 
-    // Función para obtener una imagen aleatoria del banco sin repetir
-    void SetRandomImageForFormula()
+    // Función para obtener una imagen aleatoria de la hoja de sprites para las fórmulas
+    void SetRandomPotionForFormula()
     {
-        Sprite randomImage = imageBank[Random.Range(0, imageBank.Length)];
+        // Comentado para pruebas
+        // Sprite randomPotion = potionSprites[Random.Range(0, potionSprites.Length)];
 
         // Asignar la imagen aleatoria a la fórmula
-        if (currentFormulaIndex == 0) imageFormula1.sprite = randomImage;
-        if (currentFormulaIndex == 1) imageFormula2.sprite = randomImage;
-        if (currentFormulaIndex == 2) imageFormula3.sprite = randomImage;
+        // if (currentFormulaIndex == 0) imageFormula1.sprite = randomPotion;
+        // if (currentFormulaIndex == 1) imageFormula2.sprite = randomPotion;
+        // if (currentFormulaIndex == 2) imageFormula3.sprite = randomPotion;
     }
 }
