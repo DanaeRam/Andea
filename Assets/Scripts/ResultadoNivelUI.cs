@@ -16,9 +16,23 @@ public class ResultadoNivelUI : MonoBehaviour
     [Header("Escena de respaldo")]
     public string escenaRespaldo = "BasicoL1N2";
 
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip sonidoResultados;
+
     private void Start()
     {
         MostrarResultados();
+
+        AudioListener.pause = false;
+
+        if (audioSource == null)
+            audioSource = GetComponent<AudioSource>();
+
+        if (audioSource != null && sonidoResultados != null)
+            audioSource.PlayOneShot(sonidoResultados);
+        else
+            Debug.LogWarning("Falta AudioSource o sonidoResultados en ResultadoNivelUI.");
 
         if (botonContinuar != null)
         {
@@ -51,31 +65,31 @@ public class ResultadoNivelUI : MonoBehaviour
     }
 
     public void Continuar()
-{
-    Debug.Log("Se presionó el botón Continuar.");
-
-    if (GameManager.instancia != null)
     {
-        int index = GameManager.instancia.siguienteNivelIndex;
+        Debug.Log("Se presionó el botón Continuar.");
 
-        Debug.Log("Siguiente nivel guardado: " + index);
-        Debug.Log("Total escenas en Build Settings: " + SceneManager.sceneCountInBuildSettings);
-
-        if (index >= 0 && index < SceneManager.sceneCountInBuildSettings)
+        if (GameManager.instancia != null)
         {
-            string scenePath = SceneUtility.GetScenePathByBuildIndex(index);
-            Debug.Log("Cargando directamente la escena: " + scenePath);
+            int index = GameManager.instancia.siguienteNivelIndex;
 
-            SceneManager.LoadScene(index, LoadSceneMode.Single);
+            Debug.Log("Siguiente nivel guardado: " + index);
+            Debug.Log("Total escenas en Build Settings: " + SceneManager.sceneCountInBuildSettings);
+
+            if (index >= 0 && index < SceneManager.sceneCountInBuildSettings)
+            {
+                string scenePath = SceneUtility.GetScenePathByBuildIndex(index);
+                Debug.Log("Cargando directamente la escena: " + scenePath);
+
+                SceneManager.LoadScene(index, LoadSceneMode.Single);
+            }
+            else
+            {
+                Debug.LogError("Índice de escena inválido: " + index);
+            }
         }
         else
         {
-            Debug.LogError("Índice de escena inválido: " + index);
+            Debug.LogError("No existe GameManager.");
         }
     }
-    else
-    {
-        Debug.LogError("No existe GameManager.");
-    }
-}
 }
