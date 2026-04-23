@@ -37,6 +37,8 @@ public class GameManager : MonoBehaviour
 
     private LevelRewardSystem rewardSystem;
 
+    private const string MonedasTiendaKey = "MonedasTienda";
+
     private void Awake()
     {
         if (instancia == null)
@@ -45,7 +47,6 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
 
             rewardSystem = new LevelRewardSystem();
-
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else
@@ -57,22 +58,19 @@ public class GameManager : MonoBehaviour
     private void OnDestroy()
     {
         if (instancia == this)
-        {
             SceneManager.sceneLoaded -= OnSceneLoaded;
-        }
     }
 
     private void Start()
     {
+        CargarDatosTienda();
         ActualizarTodoElTexto();
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (scene.name == nombreEscenaResultados)
-        {
             return;
-        }
 
         ReiniciarDatosDelNivel();
     }
@@ -86,7 +84,6 @@ public class GameManager : MonoBehaviour
             rewardSystem = new LevelRewardSystem();
 
         rewardSystem.ResetLevelProgress();
-
         puntosNivelActual = 0;
 
         ActualizarTodoElTexto();
@@ -145,6 +142,10 @@ public class GameManager : MonoBehaviour
 
         SincronizarRecompensas();
 
+        // Convierte monedas obtenidas durante la partida en monedas de tienda
+        CanjearMonedasPartidaATienda();
+        GuardarDatosTienda();
+
         rewardSystem.ResetLevelProgress();
     }
 
@@ -160,6 +161,10 @@ public class GameManager : MonoBehaviour
         puntosSobrantes = rewardSystem.LastRemainingPoints;
 
         SincronizarRecompensas();
+
+        // Convierte monedas obtenidas durante la partida en monedas de tienda
+        CanjearMonedasPartidaATienda();
+        GuardarDatosTienda();
 
         rewardSystem.ResetLevelProgress();
     }
@@ -178,7 +183,6 @@ public class GameManager : MonoBehaviour
         {
             string scenePath = SceneUtility.GetScenePathByBuildIndex(siguienteNivelIndex);
             Debug.Log("Cargando escena: " + scenePath);
-
             SceneManager.LoadScene(siguienteNivelIndex, LoadSceneMode.Single);
         }
         else
@@ -197,11 +201,11 @@ public class GameManager : MonoBehaviour
         puntos = 0;
         monedasTienda = 0;
         puntosNivelActual = 0;
-
         ultimoPuntajeGanado = 0;
         ultimasMonedasGanadas = 0;
         puntosSobrantes = 0;
 
+        GuardarDatosTienda();
         ActualizarTodoElTexto();
     }
 
@@ -241,17 +245,81 @@ public class GameManager : MonoBehaviour
         if (textoMonedasTienda != null)
             textoMonedasTienda.text = ": " + monedasTienda;
     }
-    public void AsignarTextosUI(
-    TextMeshProUGUI nuevoTextoMonedas,
-    TextMeshProUGUI nuevoTextoVidas,
-    TextMeshProUGUI nuevoTextoPuntos,
-    TextMeshProUGUI nuevoTextoMonedasTienda)
-{
-    textoMonedas = nuevoTextoMonedas;
-    textoVidas = nuevoTextoVidas;
-    textoPuntos = nuevoTextoPuntos;
-    textoMonedasTienda = nuevoTextoMonedasTienda;
 
-    ActualizarTodoElTexto();
-}
+    public void AsignarTextosUI(
+        TextMeshProUGUI nuevoTextoMonedas,
+        TextMeshProUGUI nuevoTextoVidas,
+        TextMeshProUGUI nuevoTextoPuntos,
+        TextMeshProUGUI nuevoTextoMonedasTienda)
+    {
+        textoMonedas = nuevoTextoMonedas;
+        textoVidas = nuevoTextoVidas;
+        textoPuntos = nuevoTextoPuntos;
+        textoMonedasTienda = nuevoTextoMonedasTienda;
+
+        ActualizarTodoElTexto();
+    }
+
+    // =========================
+    // MONEDAS DE TIENDA
+    // =========================
+
+    public bool TieneMonedasTiendaSuficientes(int costo)
+    {
+        return monedasTienda >= costo;
+    }
+
+    public bool GastarMonedasTienda(int costo)
+    {
+        if (costo < 0)
+            return false;
+
+        if (monedasTienda < costo)
+            return false;
+
+        monedasTienda -= costo;
+        GuardarDatosTienda();
+        ActualizarTodoElTexto();
+        return true;
+    }
+
+    public void AgregarMonedasTienda(int cantidad)
+    {
+        if (cantidad <= 0)
+            return;
+
+        monedasTienda += cantidad;
+        GuardarDatosTienda();
+        ActualizarTodoElTexto();
+    }
+
+    public void CanjearMonedasPartidaATienda()
+    {
+        if (monedas <= 0)
+            return;
+
+        monedasTienda += monedas;
+        ultimasMonedasGanadas = monedas;
+        monedas = 0;
+
+        GuardarDatosTienda();
+        ActualizarTodoElTexto();
+    }
+
+    public int ObtenerMonedasTienda()
+    {
+        return monedasTienda;
+    }
+
+    public void GuardarDatosTienda()
+    {
+        PlayerPrefs.SetInt(MonedasTiendaKey, monedasTienda);
+        PlayerPrefs.Save();
+    }
+
+    public void CargarDatosTienda()
+    {
+        monedasTienda = PlayerPrefs.GetInt(MonedasTiendaKey, monedasTienda);
+        ActualizarTodoElTexto();
+    }
 }

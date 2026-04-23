@@ -2,46 +2,30 @@ using UnityEngine;
 
 public class SceneAudioManager : MonoBehaviour
 {
-    [Header("Música de esta escena")]
-    public AudioClip musicaEscena;
-
-    [Header("Configuración")]
-    [Range(0f, 1f)] public float volumen = 0.5f;
-    public bool reproducirAlIniciar = true;
-    public bool repetir = true;
+    public static SceneAudioManager instancia;
 
     private AudioSource audioSource;
 
     private void Awake()
     {
+        // Evita duplicados
+        if (instancia != null && instancia != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instancia = this;
+        DontDestroyOnLoad(gameObject);
+
+        // Busca el AudioSource ya existente en el objeto
         audioSource = GetComponent<AudioSource>();
 
+        // Si no existe, muestra error para que lo agregues manualmente
         if (audioSource == null)
-            audioSource = gameObject.AddComponent<AudioSource>();
-
-        audioSource.clip = musicaEscena;
-        audioSource.volume = volumen;
-        audioSource.loop = repetir;
-        audioSource.playOnAwake = false;
-    }
-
-    private void Start()
-    {
-        if (reproducirAlIniciar && musicaEscena != null)
         {
-            audioSource.Play();
+            Debug.LogError("SceneAudioManager necesita un AudioSource en el mismo objeto.");
+            return;
         }
-    }
-
-    public void DetenerMusica()
-    {
-        audioSource.Stop();
-    }
-
-    public void CambiarMusica(AudioClip nuevaMusica)
-    {
-        audioSource.Stop();
-        audioSource.clip = nuevaMusica;
-        audioSource.Play();
     }
 }

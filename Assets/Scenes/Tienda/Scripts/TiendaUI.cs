@@ -1,51 +1,78 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class TiendaUI : MonoBehaviour
 {
     public GameObject fondoPrincipal;
-    public GameObject panelDialogo;
     public GameObject panelArticulos;
-    public GameObject ButtonMain;
+    public GameObject panelDialogo;
+    public GameObject botonViejo;
 
-    void Start()
+    [Header("Mensaje tienda")]
+    public ShopItemButton[] botonesTienda;
+
+    private void Start()
     {
         if (fondoPrincipal != null)
             fondoPrincipal.SetActive(true);
 
-        if (panelDialogo != null)
-            panelDialogo.SetActive(false);
-
         if (panelArticulos != null)
             panelArticulos.SetActive(false);
-    }
 
-    public void AbrirDialogo()
-    {
-        if (fondoPrincipal != null) fondoPrincipal.SetActive(false);
-        if (panelDialogo != null) panelDialogo.SetActive(true);
-        if(ButtonMain != null) ButtonMain.SetActive(false);
-
-    }
-
-    public void CerrarDialogo()
-    {
-        if (panelDialogo != null) panelDialogo.SetActive(false);
-        if (fondoPrincipal != null) fondoPrincipal.SetActive(true);
-        if(ButtonMain != null) ButtonMain.SetActive(true);
+        if (panelDialogo != null)
+            panelDialogo.SetActive(false);
     }
 
     public void AbrirArticulos()
     {
-        if (panelDialogo != null) panelDialogo.SetActive(false);
-        if (panelArticulos != null) panelArticulos.SetActive(true);
-        if(ButtonMain != null) ButtonMain.SetActive(false);
+        if (fondoPrincipal != null)
+            fondoPrincipal.SetActive(false);
+
+        if (botonViejo != null)
+            botonViejo.SetActive(false);
+
+        if (panelDialogo != null)
+            panelDialogo.SetActive(false);
+
+        LimpiarMensajesTienda();
+
+        if (panelArticulos != null)
+            panelArticulos.SetActive(true);
     }
 
     public void CerrarArticulos()
     {
-        if (panelArticulos != null) panelArticulos.SetActive(false);
-        if (fondoPrincipal != null) fondoPrincipal.SetActive(true);
-        if(ButtonMain != null) ButtonMain.SetActive(true);
+        LimpiarMensajesTienda();
+
+        if (panelArticulos != null)
+            panelArticulos.SetActive(false);
+
+        if (fondoPrincipal != null)
+            fondoPrincipal.SetActive(true);
+
+        if (botonViejo != null)
+            botonViejo.SetActive(true);
+    }
+
+    public void AbrirDialogoViejo()
+    {
+        if (panelDialogo != null)
+            panelDialogo.SetActive(true);
+    }
+
+    public void CerrarDialogoViejo()
+    {
+        if (panelDialogo != null)
+            panelDialogo.SetActive(false);
+    }
+
+    private void LimpiarMensajesTienda()
+    {
+        if (botonesTienda == null) return;
+
+        for (int i = 0; i < botonesTienda.Length; i++)
+        {
+            if (botonesTienda[i] != null)
+                botonesTienda[i].LimpiarMensajeInstantaneo();
+        }
     }
 }
