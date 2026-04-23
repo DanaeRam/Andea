@@ -11,6 +11,9 @@ public class PlayerHealth : MonoBehaviour
 
     [Header("Respawn")]
     public float tiempoAntesDeRespawn = 2f;
+    [Header("Audio Game Over")]
+    public AudioSource audioSource;
+    public AudioClip sonidoMuerte;
 
     private int vidaActual;
     private bool muerto = false;
@@ -28,6 +31,9 @@ public class PlayerHealth : MonoBehaviour
         {
             GameManager.instancia.ReiniciarVidas(vidaMaxima);
         }
+
+        if (audioSource == null)
+            audioSource = GetComponent<AudioSource>();
     }
 
     public void RecibirDanio(int cantidad)
@@ -63,6 +69,9 @@ public class PlayerHealth : MonoBehaviour
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         if (rb != null)
             rb.linearVelocity = Vector2.zero;
+
+        if (audioSource != null && sonidoMuerte != null)
+            audioSource.PlayOneShot(sonidoMuerte);
 
         StartCoroutine(RespawnCoroutine());
     }
