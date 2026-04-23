@@ -1,0 +1,156 @@
+{
+  "levelName": "Intermedio",
+  "lessonName": "Sinónimos y Antónimos",
+  "questions": [
+    {
+      "questionText": "¿Qué es un sinónimo?",
+      "option1": "Palabras que tienen significados opuestos",
+      "option2": "Palabras que tienen el mismo o parecido significado",
+      "option3": "Palabras que suenan igual pero se escriben diferente",
+      "option4": "Palabras que se usan en contextos similares",
+      "correctOption": 2,
+      "correctFeedback": "¡Correcto! Los sinónimos son palabras que tienen el mismo o un significado similar.",
+      "wrongFeedback": "Recuerda que los sinónimos no tienen significados opuestos, sino parecidos."
+    },
+    {
+      "questionText": "¿Qué es un antónimo?",
+      "option1": "Palabras que tienen significados similares",
+      "option2": "Palabras que tienen significados opuestos",
+      "option3": "Palabras que se usan solo en contextos específicos",
+      "option4": "Palabras que se escriben de manera diferente",
+      "correctOption": 2,
+      "correctFeedback": "¡Correcto! Los antónimos son palabras que tienen significados opuestos.",
+      "wrongFeedback": "Piensa en palabras que expresan lo contrario de algo."
+    },
+    {
+      "questionText": "¿Cuál es la diferencia entre un sinónimo y un antónimo?",
+      "option1": "Los sinónimos tienen significados opuestos, y los antónimos son similares",
+      "option2": "Los sinónimos tienen significados similares, y los antónimos tienen significados opuestos",
+      "option3": "Los sinónimos y antónimos son lo mismo",
+      "option4": "Los antónimos tienen significados similares, y los sinónimos son opuestos",
+      "correctOption": 2,
+      "correctFeedback": "¡Exacto! Los sinónimos tienen significados similares, y los antónimos tienen significados opuestos.",
+      "wrongFeedback": "Recuerda la diferencia básica entre sinónimos y antónimos."
+    },
+    {
+      "questionText": "¿Por qué es importante conocer los sinónimos y antónimos de una palabra?",
+      "option1": "Porque ayudan a ampliar el vocabulario y mejorar la expresión",
+      "option2": "Porque permiten escribir más rápido",
+      "option3": "Porque hacen que el texto sea más largo",
+      "option4": "Porque facilitan el aprendizaje de otros idiomas",
+      "correctOption": 1,
+      "correctFeedback": "¡Correcto! Conocer sinónimos y antónimos ayuda a expresarse de manera más precisa y variada.",
+      "wrongFeedback": "Piensa en cómo el conocimiento de sinónimos y antónimos mejora tu comunicación."
+    },
+    {
+      "questionText": "En la oración 'El niño estaba contento y alegre', ¿cuál es el sinónimo de 'contento'?",
+      "option1": "Triste",
+      "option2": "Feliz",
+      "option3": "Enfadado",
+      "option4": "Cansado",
+      "correctOption": 2,
+      "correctFeedback": "¡Correcto! 'Alegre' es un sinónimo de 'contento'.",
+      "wrongFeedback": "Recuerda que los sinónimos tienen significados similares."
+    },
+    {
+      "questionText": "En la oración 'La niña estaba cansada, pero feliz', ¿cuál es el antónimo de 'cansada'?",
+      "option1": "Enferma",
+      "option2": "Feliz",
+      "option3": "Descansada",
+      "option4": "Triste",
+      "correctOption": 3,
+      "correctFeedback": "¡Correcto! 'Descansada' es el antónimo de 'cansada'.",
+      "wrongFeedback": "Piensa en la palabra que significa lo contrario de estar cansada."
+    },
+    {
+      "questionText": "En la oración 'El paisaje era hermoso y pintoresco', ¿qué palabra es un sinónimo de 'hermoso'?",
+      "option1": "Feo",
+      "option2": "Sencillo",
+      "option3": "Bello",
+      "option4": "Oscuro",
+      "correctOption": 3,
+      "correctFeedback": "¡Correcto! 'Bello' es un sinónimo de 'hermoso'.",
+      "wrongFeedback": "Piensa en una palabra que signifique lo mismo que 'hermoso'."
+    },
+    {
+      "questionText": "En la oración 'El sol estaba brillante y radiante', ¿cuál es el sinónimo de 'brillante'?",
+      "option1": "Oscuro",
+      "option2": "Radiante",
+      "option3": "Frío",
+      "option4": "Tímido",
+      "correctOption": 2,
+      "correctFeedback": "¡Correcto! 'Radiante' es un sinónimo de 'brillante'.",
+      "wrongFeedback": "Piensa en cómo 'radiante' también describe algo brillante."
+    },
+    {
+      "questionText": "En la oración 'El invierno es frío, pero el verano es caluroso', ¿cuál es el antónimo de 'frío'?",
+      "option1": "Cálido",
+      "option2": "Caluroso",
+      "option3": "Templado",
+      "option4": "Frío",
+      "correctOption": 2,
+      "correctFeedback": "¡Correcto! 'Caluroso' es el antónimo de 'frío'.",
+      "wrongFeedback": "Piensa en el clima que es lo contrario del invierno."
+    },
+    {
+      "questionText": "En la oración 'El libro estaba aburrido y largo', ¿qué es el antónimo de 'aburrido'?",
+      "option1": "Interesante",
+      "option2": "Divertido",
+      "option3": "Pesado",
+      "option4": "Aburrido",
+      "correctOption": 1,
+      "correctFeedback": "¡Correcto! 'Interesante' es el antónimo de 'aburrido'.",
+      "wrongFeedback": "Piensa en un libro que te resulte atractivo o emocionante."
+    },
+    {
+      "questionText": "En la oración 'El perro estaba tranquilo y relajado', ¿qué es el antónimo de 'relajado'?",
+      "option1": "Cansado",
+      "option2": "Tenso",
+      "option3": "Feliz",
+      "option4": "Relajado",
+      "correctOption": 2,
+      "correctFeedback": "¡Exacto! 'Tenso' es el antónimo de 'relajado'.",
+      "wrongFeedback": "Piensa en una palabra que exprese lo contrario de estar relajado."
+    },
+    {
+      "questionText": "En la oración 'El río fluía tranquilo y sereno', ¿cuál es el antónimo de 'tranquilo'?",
+      "option1": "Agitado",
+      "option2": "Calmo",
+      "option3": "Sereno",
+      "option4": "Lento",
+      "correctOption": 1,
+      "correctFeedback": "¡Correcto! 'Agitado' es el antónimo de 'tranquilo'.",
+      "wrongFeedback": "Piensa en cómo describirías un río que no está tranquilo."
+    },
+    {
+      "questionText": "En la oración 'El campo era grande y vasto', ¿qué es el sinónimo de 'grande'?",
+      "option1": "Pequeño",
+      "option2": "Enorme",
+      "option3": "Ancho",
+      "option4": "Largo",
+      "correctOption": 2,
+      "correctFeedback": "¡Correcto! 'Enorme' es un sinónimo de 'grande'.",
+      "wrongFeedback": "Piensa en una palabra que signifique lo mismo que 'grande'."
+    },
+    {
+      "questionText": "En la oración 'El castillo era antiguo y misterioso', ¿qué es el antónimo de 'antiguo'?",
+      "option1": "Nuevo",
+      "option2": "Viejísimo",
+      "option3": "Moderno",
+      "option4": "Eterno",
+      "correctOption": 1,
+      "correctFeedback": "¡Exacto! 'Nuevo' es el antónimo de 'antiguo'.",
+      "wrongFeedback": "Piensa en lo opuesto a algo antiguo."
+    },
+    {
+      "questionText": "En la oración 'La montaña era alta y escarpada', ¿qué es el sinónimo de 'alta'?",
+      "option1": "Baja",
+      "option2": "Alta",
+      "option3": "Grande",
+      "option4": "Elevada",
+      "correctOption": 4,
+      "correctFeedback": "¡Correcto! 'Elevada' es un sinónimo de 'alta'.",
+      "wrongFeedback": "Piensa en cómo se describe una montaña que es muy alta."
+    }
+  ]
+}

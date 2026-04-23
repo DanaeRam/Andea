@@ -1,0 +1,106 @@
+{
+  "levelName": "Avanzado",
+  "lessonName": "Identificar la idea principal",
+  "questions": [
+    {
+      "questionText": "¿Qué es la idea principal de un texto?",
+      "option1": "La información secundaria",
+      "option2": "La idea que se repite varias veces",
+      "option3": "Lo más importante que el autor quiere comunicar",
+      "option4": "Los detalles que se mencionan al final",
+      "correctOption": 3,
+      "correctFeedback": "¡Correcto! La idea principal es lo más importante que el autor quiere transmitir.",
+      "wrongFeedback": "Recuerda que la idea principal resume el mensaje central del texto."
+    },
+    {
+      "questionText": "¿Dónde se encuentra generalmente la idea principal en un texto?",
+      "option1": "Al principio o al final",
+      "option2": "En cualquier parte del texto",
+      "option3": "En el medio del texto",
+      "option4": "Solo en las conclusiones",
+      "correctOption": 1,
+      "correctFeedback": "¡Exacto! Usualmente la idea principal está al principio o al final del texto.",
+      "wrongFeedback": "Piensa en las partes del texto donde se menciona el mensaje más importante."
+    },
+    {
+      "questionText": "¿Qué te ayuda a identificar la idea principal de un texto?",
+      "option1": "Leer solo los detalles",
+      "option2": "Fijarte en los títulos y subtítulos",
+      "option3": "Leer solo las primeras y últimas frases del texto",
+      "option4": "Leer todo el texto y encontrar la parte más importante",
+      "correctOption": 4,
+      "correctFeedback": "¡Correcto! Leer todo el texto ayuda a identificar el mensaje principal.",
+      "wrongFeedback": "Piensa en cómo se presentan las ideas principales a lo largo de un texto."
+    },
+    {
+      "questionText": "Cuando se lee un texto, ¿qué tipo de información suele ser secundaria?",
+      "option1": "Las ideas que respaldan la idea principal",
+      "option2": "La idea principal",
+      "option3": "Las emociones expresadas en el texto",
+      "option4": "Los detalles que no aportan al mensaje principal",
+      "correctOption": 4,
+      "correctFeedback": "¡Correcto! La información secundaria son los detalles que no aportan al mensaje principal.",
+      "wrongFeedback": "Recuerda que los detalles que no explican la idea central son secundarios."
+    },
+    {
+      "questionText": "¿Por qué es importante identificar la idea principal de un texto?",
+      "option1": "Para poder resumir el texto de manera correcta",
+      "option2": "Para entender todos los detalles",
+      "option3": "Para hacer que el texto sea más largo",
+      "option4": "Para confundir la información",
+      "correctOption": 1,
+      "correctFeedback": "¡Correcto! Identificar la idea principal te ayuda a resumir y entender mejor el texto.",
+      "wrongFeedback": "Piensa en cómo identificar lo más importante te facilita entender el texto."
+    },
+    {
+      "questionText": "Lee este texto y selecciona la idea principal: 'En Andea, los niños aprenden jugando mientras exploran mundos mágicos y enfrentan desafíos educativos.'",
+      "option1": "Los niños aprenden jugando",
+      "option2": "Andea tiene mundos mágicos",
+      "option3": "Los niños enfrentan desafíos educativos",
+      "option4": "El juego es educativo",
+      "correctOption": 1,
+      "correctFeedback": "¡Correcto! La idea principal es que los niños aprenden jugando.",
+      "wrongFeedback": "Piensa en qué es lo más importante que los niños hacen en Andea."
+    },
+    {
+      "questionText": "Lee este texto y selecciona la idea principal: 'El mundo de las letras en Andea ayuda a los niños a mejorar sus habilidades de lectura mientras exploran historias fantásticas.'",
+      "option1": "Los niños mejoran sus habilidades de lectura",
+      "option2": "El mundo de las letras es divertido",
+      "option3": "Las historias son fantásticas",
+      "option4": "Andea es un mundo de letras",
+      "correctOption": 1,
+      "correctFeedback": "¡Correcto! La idea principal es que los niños mejoran sus habilidades de lectura.",
+      "wrongFeedback": "Piensa en qué aprenden los niños en el mundo de las letras."
+    },
+    {
+      "questionText": "Lee este texto y selecciona la idea principal: 'El juego educativo de Andea permite a los niños aprender mientras exploran nuevos mundos y resuelven acertijos.'",
+      "option1": "Andea permite aprender mientras se juega",
+      "option2": "El juego es educativo",
+      "option3": "Los niños resuelven acertijos",
+      "option4": "Andea tiene mundos para explorar",
+      "correctOption": 1,
+      "correctFeedback": "¡Correcto! La idea principal es que los niños aprenden mientras juegan en Andea.",
+      "wrongFeedback": "Piensa en qué hace el juego educativo para los niños."
+    },
+    {
+      "questionText": "Lee este texto y selecciona la idea principal: 'Los niños exploran el mundo mágico de Andea donde cada aventura les enseña algo nuevo, como matemáticas o emociones.'",
+      "option1": "Los niños exploran aventuras mágicas",
+      "option2": "Cada aventura les enseña algo nuevo",
+      "option3": "El mundo de Andea es mágico",
+      "option4": "Los niños aprenden sobre matemáticas y emociones",
+      "correctOption": 2,
+      "correctFeedback": "¡Correcto! La idea principal es que cada aventura enseña algo nuevo.",
+      "wrongFeedback": "Piensa en lo que los niños aprenden a través de sus aventuras."
+    },
+    {
+      "questionText": "Lee este texto y selecciona la idea principal: 'El héroe se enfrenta a desafíos que lo enseñan sobre trabajo en equipo, perseverancia y valentía.'",
+      "option1": "El héroe enfrenta desafíos",
+      "option2": "Los niños aprenden sobre trabajo en equipo",
+      "option3": "El héroe aprende sobre perseverancia",
+      "option4": "El héroe aprende sobre trabajo en equipo, perseverancia y valentía",
+      "correctOption": 4,
+      "correctFeedback": "¡Correcto! La idea principal es que el héroe aprende sobre trabajo en equipo, perseverancia y valentía.",
+      "wrongFeedback": "Revisa los valores que se enseñan en el viaje del héroe."
+    }
+  ]
+}

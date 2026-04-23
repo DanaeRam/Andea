@@ -6,7 +6,7 @@ public class BookUIReveal : MonoBehaviour
     [Header("Animator del libro")]
     public Animator bookAnimator;
     public string openAnimationName = "BookTest2";
-    public float openAnimationDuration = 2.6f;
+    public float openAnimationDuration = 3.6f;
 
     [Header("Elementos que deben aparecer después")]
     public GameObject RibbonTitle;

@@ -1,0 +1,206 @@
+{
+  "levelName": "Avanzado",
+  "lessonName": "Uso correcto de signos de puntuación",
+  "questions": [
+    {
+      "questionText": "¿Cuál oración usa correctamente el punto final?",
+      "option1": "El niño entró al portal mágico",
+      "option2": "El niño entró al portal mágico.",
+      "option3": "El niño entró al portal mágico,",
+      "option4": "El niño entró al portal mágico!",
+      "correctOption": 2,
+      "correctFeedback": "¡Correcto! El punto final cierra una idea completa.",
+      "wrongFeedback": "Recuerda que las oraciones completas terminan con punto."
+    },
+    {
+      "questionText": "¿Qué signo falta en la oración: Vamos a la librería encantada__?",
+      "option1": ".",
+      "option2": "!",
+      "option3": "?",
+      "option4": ",",
+      "correctOption": 1,
+      "correctFeedback": "¡Muy bien! Las oraciones enunciativas terminan con punto.",
+      "wrongFeedback": "Piensa qué signo cierra una oración normal."
+    },
+    {
+      "questionText": "¿Cuál oración está bien escrita?",
+      "option1": "¿Dónde está el portal mágico?",
+      "option2": "Dónde está el portal mágico?",
+      "option3": "¿Dónde está el portal mágico.",
+      "option4": "Dónde está el portal mágico.",
+      "correctOption": 1,
+      "correctFeedback": "¡Correcto! Las preguntas llevan signos de apertura y cierre.",
+      "wrongFeedback": "Recuerda usar ¿ al inicio y ? al final."
+    },
+    {
+      "questionText": "¿Qué signo falta: Qué emocionante es este juego de Andea__?",
+      "option1": ".",
+      "option2": "?",
+      "option3": "!",
+      "option4": ",",
+      "correctOption": 3,
+      "correctFeedback": "¡Excelente! Es una exclamación.",
+      "wrongFeedback": "Piensa si la oración expresa emoción."
+    },
+    {
+      "questionText": "¿Cuál oración es correcta?",
+      "option1": "El niño jugó, corrió y saltó.",
+      "option2": "El niño jugó corrió y saltó.",
+      "option3": "El niño jugó corrió, y saltó",
+      "option4": "El niño jugó, corrió y, saltó",
+      "correctOption": 1,
+      "correctFeedback": "¡Muy bien! Las comas separan elementos en una lista.",
+      "wrongFeedback": "Revisa cómo se separan acciones en una lista."
+    },
+    {
+      "questionText": "¿Qué signo falta: Hola mamá__ estoy jugando Andea?",
+      "option1": ".",
+      "option2": ",",
+      "option3": "!",
+      "option4": "?",
+      "correctOption": 2,
+      "correctFeedback": "¡Correcto! La coma separa el saludo.",
+      "wrongFeedback": "Piensa en cómo separar el saludo del mensaje."
+    },
+    {
+      "questionText": "¿Cuál oración es correcta?",
+      "option1": "¡Cuidado con el portal!",
+      "option2": "Cuidado con el portal!",
+      "option3": "¡Cuidado con el portal.",
+      "option4": "Cuidado con el portal.",
+      "correctOption": 1,
+      "correctFeedback": "¡Bien! Las exclamaciones llevan signos completos.",
+      "wrongFeedback": "Recuerda usar ¡ y ! en exclamaciones."
+    },
+    {
+      "questionText": "¿Qué signo falta: Los niveles son fácil, medio__ difícil?",
+      "option1": ".",
+      "option2": ",",
+      "option3": "!",
+      "option4": "?",
+      "correctOption": 2,
+      "correctFeedback": "¡Correcto! Es una lista separada por comas.",
+      "wrongFeedback": "Revisa cómo separar elementos en una lista."
+    },
+    {
+      "questionText": "¿Cuál oración es correcta?",
+      "option1": "El niño dijo \"vamos al portal\".",
+      "option2": "El niño dijo: \"vamos al portal\".",
+      "option3": "El niño dijo \"vamos al portal:\".",
+      "option4": "El niño dijo vamos al portal.",
+      "correctOption": 2,
+      "correctFeedback": "¡Excelente! Los dos puntos introducen lo que alguien dice.",
+      "wrongFeedback": "Piensa cómo introducir un diálogo."
+    },
+    {
+      "questionText": "¿Qué signo falta: ¿Quieres jugar en la galería de emociones__?",
+      "option1": ".",
+      "option2": "!",
+      "option3": "?",
+      "option4": ",",
+      "correctOption": 3,
+      "correctFeedback": "¡Muy bien! Las preguntas terminan con signo de interrogación.",
+      "wrongFeedback": "Recuerda cómo terminan las preguntas."
+    },
+    {
+      "questionText": "¿Cuál oración es correcta?",
+      "option1": "El juego es divertido, educativo y emocionante.",
+      "option2": "El juego es divertido educativo y emocionante",
+      "option3": "El juego es divertido, educativo y, emocionante",
+      "option4": "El juego es divertido educativo, y emocionante",
+      "correctOption": 1,
+      "correctFeedback": "¡Correcto! La lista está bien separada.",
+      "wrongFeedback": "Revisa el uso de comas en listas."
+    },
+    {
+      "questionText": "¿Qué signo falta: ¡Ganaste el nivel__?",
+      "option1": ".",
+      "option2": "!",
+      "option3": "?",
+      "option4": ",",
+      "correctOption": 2,
+      "correctFeedback": "¡Excelente! Es una exclamación.",
+      "wrongFeedback": "Piensa en el signo que expresa emoción."
+    },
+    {
+      "questionText": "¿Cuál oración es correcta?",
+      "option1": "Mañana iremos al mundo de letras.",
+      "option2": "Mañana iremos al mundo de letras",
+      "option3": "Mañana iremos al mundo de letras,",
+      "option4": "Mañana iremos al mundo de letras!",
+      "correctOption": 1,
+      "correctFeedback": "¡Bien! Oración completa con punto final.",
+      "wrongFeedback": "Recuerda cerrar la oración correctamente."
+    },
+    {
+      "questionText": "¿Qué signo falta: Niños__ entren al portal?",
+      "option1": ".",
+      "option2": "!",
+      "option3": ",",
+      "option4": "?",
+      "correctOption": 3,
+      "correctFeedback": "¡Correcto! La coma separa el llamado.",
+      "wrongFeedback": "Piensa cómo separar a quién hablas."
+    },
+    {
+      "questionText": "¿Cuál oración es correcta?",
+      "option1": "¿Qué aprendiste hoy en Andea?",
+      "option2": "Qué aprendiste hoy en Andea?",
+      "option3": "¿Qué aprendiste hoy en Andea.",
+      "option4": "Qué aprendiste hoy en Andea.",
+      "correctOption": 1,
+      "correctFeedback": "¡Muy bien! Usa signos de interrogación correctamente.",
+      "wrongFeedback": "Recuerda abrir y cerrar la pregunta."
+    },
+  {
+    "questionText": "¿Qué signo debe ir al final de una pregunta?",
+    "option1": "Punto",
+    "option2": "Coma",
+    "option3": "Signo de interrogación",
+    "option4": "Dos puntos",
+    "correctOption": 3,
+    "correctFeedback": "¡Correcto! Las preguntas terminan con signo de interrogación.",
+    "wrongFeedback": "Piensa en el signo que usamos cuando hacemos una pregunta."
+  },
+  {
+    "questionText": "¿Para qué se usan las comas en una lista?",
+    "option1": "Para terminar una oración",
+    "option2": "Para separar elementos",
+    "option3": "Para hacer preguntas",
+    "option4": "Para expresar emoción",
+    "correctOption": 2,
+    "correctFeedback": "¡Muy bien! Las comas separan elementos dentro de una lista.",
+    "wrongFeedback": "Recuerda que las comas ayudan a organizar varios elementos."
+  },
+  {
+    "questionText": "¿Qué signo se usa para expresar emoción o sorpresa?",
+    "option1": "Punto",
+    "option2": "Coma",
+    "option3": "Signo de admiración",
+    "option4": "Dos puntos",
+    "correctOption": 3,
+    "correctFeedback": "¡Excelente! Las exclamaciones usan signos de admiración.",
+    "wrongFeedback": "Piensa en el signo que usamos cuando gritamos o mostramos emoción."
+  },
+  {
+    "questionText": "¿Para qué se usan los dos puntos (:) en una oración?",
+    "option1": "Para terminar una idea",
+    "option2": "Para separar palabras",
+    "option3": "Para introducir una explicación o lo que alguien dice",
+    "option4": "Para hacer una pregunta",
+    "correctOption": 3,
+    "correctFeedback": "¡Correcto! Los dos puntos introducen información importante.",
+    "wrongFeedback": "Recuerda que los dos puntos anuncian algo que viene después."
+  },
+  {
+    "questionText": "¿Qué signo se usa para separar dos ideas relacionadas en una misma oración?",
+    "option1": "Coma",
+    "option2": "Punto y coma",
+    "option3": "Signo de interrogación",
+    "option4": "Signo de admiración",
+    "correctOption": 2,
+    "correctFeedback": "¡Muy bien! El punto y coma separa ideas relacionadas.",
+    "wrongFeedback": "Piensa en un signo que separa ideas más largas que una coma."
+  }
+  ]
+}

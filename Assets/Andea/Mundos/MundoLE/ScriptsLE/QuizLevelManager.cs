@@ -1,16 +1,24 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using TMPro;
 using System.Collections;
 
 public class QuizLevelManager : MonoBehaviour
 {
+    [Header("Pregunta")]
+    public TextMeshProUGUI questionText;
+
+    [Header("Textos de respuestas")]
+    public TextMeshProUGUI button1Text;
+    public TextMeshProUGUI button2Text;
+    public TextMeshProUGUI button3Text;
+    public TextMeshProUGUI button4Text;
+
     [Header("Botones")]
-    public Button Button1; // Respuesta correcta
-    public Button Button2; // Respuesta incorrecta
-    public Button Button3; // Respuesta incorrecta
-    public Button Button4; // Respuesta incorrecta
+    public Button Button1;
+    public Button Button2;
+    public Button Button3;
+    public Button Button4;
 
     [Header("Feedback")]
     public GameObject FeedbackBox;
@@ -18,11 +26,11 @@ public class QuizLevelManager : MonoBehaviour
     public float feedbackDuration = 1.5f;
 
     [Header("Configuración")]
-    public bool Button1IsCorrect = true;
     public int maxAttempts = 3;
 
     private bool answered = false;
     private QuizAttemptSystem attemptSystem;
+    private LessonQuestionData currentQuestionData;
 
     private void Start()
     {
@@ -34,17 +42,73 @@ public class QuizLevelManager : MonoBehaviour
         if (FeedbackText != null)
             FeedbackText.text = "";
 
-        if (Button1 != null) Button1.onClick.AddListener(() => CheckAnswer(Button1IsCorrect));
-        if (Button2 != null) Button2.onClick.AddListener(() => CheckAnswer(false));
-        if (Button3 != null) Button3.onClick.AddListener(() => CheckAnswer(false));
-        if (Button4 != null) Button4.onClick.AddListener(() => CheckAnswer(false));
+        LoadCurrentQuestion();
+        SetupButtons();
     }
 
-    private void CheckAnswer(bool isCorrect)
+    private void LoadCurrentQuestion()
+    {
+        if (LectoGameSessionManager.Instance == null)
+        {
+            Debug.LogError("No existe LectoGameSessionManager.");
+            return;
+        }
+
+        currentQuestionData = LectoGameSessionManager.Instance.CurrentQuestion;
+
+        if (currentQuestionData == null)
+        {
+            Debug.LogError("No hay pregunta actual.");
+            return;
+        }
+
+        if (questionText != null)
+            questionText.text = currentQuestionData.questionText;
+
+        if (button1Text != null)
+            button1Text.text = currentQuestionData.option1;
+
+        if (button2Text != null)
+            button2Text.text = currentQuestionData.option2;
+
+        if (button3Text != null)
+            button3Text.text = currentQuestionData.option3;
+
+        if (button4Text != null)
+            button4Text.text = currentQuestionData.option4;
+    }
+
+    private void SetupButtons()
+    {
+        if (Button1 != null)
+        {
+            Button1.onClick.RemoveAllListeners();
+            Button1.onClick.AddListener(() => CheckAnswer(1));
+        }
+
+        if (Button2 != null)
+        {
+            Button2.onClick.RemoveAllListeners();
+            Button2.onClick.AddListener(() => CheckAnswer(2));
+        }
+
+        if (Button3 != null)
+        {
+            Button3.onClick.RemoveAllListeners();
+            Button3.onClick.AddListener(() => CheckAnswer(3));
+        }
+
+        if (Button4 != null)
+        {
+            Button4.onClick.RemoveAllListeners();
+            Button4.onClick.AddListener(() => CheckAnswer(4));
+        }
+    }
+
+    private void CheckAnswer(int selectedOption)
     {
         if (answered) return;
 
-        // Si ya se bloquearon los intentos, no permite responder más
         if (attemptSystem != null && !attemptSystem.CanAnswer())
             return;
 
@@ -53,12 +117,14 @@ public class QuizLevelManager : MonoBehaviour
         if (FeedbackBox != null)
             FeedbackBox.SetActive(true);
 
+        bool isCorrect = selectedOption == currentQuestionData.correctOption;
+
         if (isCorrect)
         {
             if (FeedbackText != null)
-                FeedbackText.text = "¡Correcto!";
+                FeedbackText.text = currentQuestionData.correctFeedback;
 
-            StartCoroutine(LoadNextLevelAfterDelay());
+            StartCoroutine(LoadNextAfterDelay());
         }
         else
         {
@@ -70,26 +136,19 @@ public class QuizLevelManager : MonoBehaviour
     {
         attemptSystem.RegisterWrongAnswer();
 
-        if (attemptSystem.HintShown && attemptSystem.AttemptsUsed == 1)
+        if (attemptSystem.CanAnswer())
         {
             if (FeedbackText != null)
-                FeedbackText.text = "Respuesta incorrecta. Pista: lee con calma la pregunta e intenta identificar la opción más relacionada.";
-
-            StartCoroutine(AllowNextAttemptAfterDelay());
-        }
-        else if (attemptSystem.CanAnswer())
-        {
-            if (FeedbackText != null)
-                FeedbackText.text = "Respuesta incorrecta. Te queda " + attemptSystem.RemainingAttempts + " intento.";
+                FeedbackText.text = currentQuestionData.wrongFeedback + "\nTe queda " + attemptSystem.RemainingAttempts + " intento.";
 
             StartCoroutine(AllowNextAttemptAfterDelay());
         }
         else
         {
             if (FeedbackText != null)
-                FeedbackText.text = "Fallaste de nuevo. Reiniciando...";
+                FeedbackText.text = currentQuestionData.wrongFeedback + "\nFallaste de nuevo. Intenta otra vez esta pregunta.";
 
-            StartCoroutine(RestartLevelAfterDelay());
+            StartCoroutine(RestartQuestionAfterDelay());
         }
     }
 
@@ -106,31 +165,26 @@ public class QuizLevelManager : MonoBehaviour
             FeedbackText.text = "";
     }
 
-    private IEnumerator LoadNextLevelAfterDelay()
+    private IEnumerator LoadNextAfterDelay()
     {
         yield return new WaitForSeconds(feedbackDuration);
 
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        int nextSceneIndex = currentSceneIndex + 1;
-
-        if (GameManager.instancia != null)
+        if (LectoGameSessionManager.Instance != null)
         {
-            GameManager.instancia.CompletarNivel();
-            GameManager.instancia.GuardarSiguienteNivel(nextSceneIndex);
+            LectoGameSessionManager.Instance.GoToNextRoundOrResults();
         }
-
-        SceneManager.LoadScene("ResultadosNivel");
     }
 
-    private IEnumerator RestartLevelAfterDelay()
+    private IEnumerator RestartQuestionAfterDelay()
     {
         yield return new WaitForSeconds(feedbackDuration);
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
+        answered = false;
 
-    public QuizAttemptSystem GetAttemptSystem()
-    {
-        return attemptSystem;
+        if (FeedbackBox != null)
+            FeedbackBox.SetActive(false);
+
+        if (FeedbackText != null)
+            FeedbackText.text = "";
     }
 }
