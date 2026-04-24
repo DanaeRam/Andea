@@ -379,6 +379,9 @@ MonoBehaviour:
   changeColor: 1
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
+  audioSource: {fileID: 0}
+  clickSound: {fileID: 0}
+  clickVolume: 1
 --- !u!1 &650394567
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,6 +441,9 @@ MonoBehaviour:
   changeColor: 1
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   hoverColor: {r: 0.96155995, g: 0.9496831, b: 0.96981126, a: 1}
+  audioSource: {fileID: 0}
+  clickSound: {fileID: 0}
+  clickVolume: 1
 --- !u!212 &650394570
 SpriteRenderer:
   serializedVersion: 2
@@ -631,6 +637,9 @@ MonoBehaviour:
   changeColor: 1
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
+  audioSource: {fileID: 0}
+  clickSound: {fileID: 0}
+  clickVolume: 1
 --- !u!1 &800952624
 GameObject:
   m_ObjectHideFlags: 0
@@ -1060,6 +1069,9 @@ MonoBehaviour:
   changeColor: 1
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
+  audioSource: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: d94d3f1fcb89c40ddb3a67275fa307c5, type: 3}
+  clickVolume: 1
 --- !u!1 &983859385
 GameObject:
   m_ObjectHideFlags: 0
@@ -1460,6 +1472,9 @@ MonoBehaviour:
   changeColor: 1
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
+  audioSource: {fileID: 0}
+  clickSound: {fileID: 0}
+  clickVolume: 1
 --- !u!1 &1481965958
 GameObject:
   m_ObjectHideFlags: 0
@@ -1677,6 +1692,9 @@ MonoBehaviour:
   changeColor: 1
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
+  audioSource: {fileID: 0}
+  clickSound: {fileID: 0}
+  clickVolume: 1
 --- !u!1 &1559099422
 GameObject:
   m_ObjectHideFlags: 0
@@ -2007,6 +2025,9 @@ MonoBehaviour:
   changeColor: 1
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
+  audioSource: {fileID: 0}
+  clickSound: {fileID: 0}
+  clickVolume: 1
 --- !u!1 &1928165169
 GameObject:
   m_ObjectHideFlags: 0
@@ -2206,6 +2227,9 @@ MonoBehaviour:
   changeColor: 1
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
+  audioSource: {fileID: 0}
+  clickSound: {fileID: 0}
+  clickVolume: 1
 --- !u!1 &2050920292
 GameObject:
   m_ObjectHideFlags: 0

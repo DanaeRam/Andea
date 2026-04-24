@@ -20,6 +20,11 @@ public class UIHoverPulseEffect : MonoBehaviour,
     public Color normalColor = Color.white;
     public Color hoverColor = new Color(1f, 0.95f, 0.65f, 1f);
 
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip clickSound;
+    [Range(0f, 1f)] public float clickVolume = 1f;
+
     private RectTransform rectTransform;
     private Graphic graphic;
 
@@ -38,6 +43,12 @@ public class UIHoverPulseEffect : MonoBehaviour,
 
         if (graphic != null && changeColor)
             graphic.color = normalColor;
+
+        if (audioSource == null)
+            audioSource = GetComponent<AudioSource>();
+
+        if (clickSound == null)
+            clickSound = Resources.Load<AudioClip>("Audio/clickUI");
     }
 
     private void Update()
@@ -84,6 +95,9 @@ public class UIHoverPulseEffect : MonoBehaviour,
     {
         isPressed = true;
         targetScale = pressedScale;
+
+        if (audioSource != null && clickSound != null)
+            audioSource.PlayOneShot(clickSound, clickVolume);
     }
 
     public void OnPointerUp(PointerEventData eventData)
