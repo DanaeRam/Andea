@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -13,6 +14,18 @@ public class FormulaGame : MonoBehaviour
     public TextMeshProUGUI textFormula2;
     public TextMeshProUGUI textFormula3;
 
+    [Header("Imágenes de fórmulas")]
+    public Image imageFormula1;
+    public Image imageFormula2;
+    public Image imageFormula3;
+
+    [Header("Banco de pociones")]
+    public Sprite[] potionSprites;
+
+    [Header("Iconos")]
+    public Sprite rightIcon;
+    public Sprite wrongIcon;
+
     public Button button1_1, button1_2, button1_3;
     public Button button2_1, button2_2, button2_3;
     public Button button3_1, button3_2, button3_3;
@@ -23,10 +36,18 @@ public class FormulaGame : MonoBehaviour
     private int correctAnswer;
     private int currentFormulaIndex = 0;
     private bool isCorrectAnswer;
+    private List<Sprite> availablePotions;
+
+    private Coroutine hideIconCoroutine;
 
     void Start()
     {
-        Debug.Log("Número de sprites cargados (comentado): 0");
+        availablePotions = new List<Sprite>(potionSprites);
+
+        iconResult1.gameObject.SetActive(false);
+        iconResult2.gameObject.SetActive(false);
+        iconResult3.gameObject.SetActive(false);
+
         ShowNextFormula();
     }
 
@@ -38,13 +59,32 @@ public class FormulaGame : MonoBehaviour
             return;
         }
 
-        formula1.SetActive(false);
-        formula2.SetActive(false);
-        formula3.SetActive(false);
+        if (currentFormulaIndex == 0)
+        {
+            formula1.SetActive(true);
+            formula2.SetActive(false);
+            formula3.SetActive(false);
 
-        if (currentFormulaIndex == 0) formula1.SetActive(true);
-        if (currentFormulaIndex == 1) formula2.SetActive(true);
-        if (currentFormulaIndex == 2) formula3.SetActive(true);
+            imageFormula1.sprite = GetRandomPotion();
+        }
+
+        if (currentFormulaIndex == 1)
+        {
+            formula1.SetActive(true);
+            formula2.SetActive(true);
+            formula3.SetActive(false);
+
+            imageFormula2.sprite = GetRandomPotion();
+        }
+
+        if (currentFormulaIndex == 2)
+        {
+            formula1.SetActive(true);
+            formula2.SetActive(true);
+            formula3.SetActive(true);
+
+            imageFormula3.sprite = GetRandomPotion();
+        }
 
         int num1 = Random.Range(1, 10);
         int num2 = Random.Range(1, 10);
@@ -58,8 +98,8 @@ public class FormulaGame : MonoBehaviour
 
         int[] answers = new int[3];
         answers[0] = correctAnswer;
-        answers[1] = correctAnswer + Random.Range(1, 3);
-        answers[2] = correctAnswer + Random.Range(3, 5);
+        answers[1] = correctAnswer + 1;
+        answers[2] = correctAnswer - 1;
 
         ShuffleArray(answers);
 
@@ -109,6 +149,22 @@ public class FormulaGame : MonoBehaviour
         }
     }
 
+    Sprite GetRandomPotion()
+    {
+        if (availablePotions == null || availablePotions.Count == 0)
+        {
+            Debug.LogWarning("No hay pociones disponibles en potionSprites.");
+            return null;
+        }
+
+        int index = Random.Range(0, availablePotions.Count);
+        Sprite selectedPotion = availablePotions[index];
+
+        availablePotions.RemoveAt(index);
+
+        return selectedPotion;
+    }
+
     void CheckAnswer(int buttonIndex)
     {
         int selectedAnswer = int.Parse(GetButtonText(buttonIndex));
@@ -118,22 +174,92 @@ public class FormulaGame : MonoBehaviour
             textRetro.text = "¡Correcto!";
             isCorrectAnswer = true;
 
-            // Comentado para pruebas
-            // if (currentFormulaIndex == 0) iconResult1.sprite = Resources.Load<Sprite>("RightIcon");
-            // if (currentFormulaIndex == 1) iconResult2.sprite = Resources.Load<Sprite>("RightIcon");
-            // if (currentFormulaIndex == 2) iconResult3.sprite = Resources.Load<Sprite>("RightIcon");
+            ShowCurrentIcon(rightIcon);
 
-            StartCoroutine(WaitForNextFormula(5));
+            DisableCurrentButtons();
+
+            StartCoroutine(WaitForNextFormula(2));
         }
         else
         {
             textRetro.text = "Intenta otra vez.";
             isCorrectAnswer = false;
 
-            // Comentado para pruebas
-            // if (currentFormulaIndex == 0) iconResult1.sprite = Resources.Load<Sprite>("WrongIcon");
-            // if (currentFormulaIndex == 1) iconResult2.sprite = Resources.Load<Sprite>("WrongIcon");
-            // if (currentFormulaIndex == 2) iconResult3.sprite = Resources.Load<Sprite>("WrongIcon");
+            ShowCurrentIcon(wrongIcon);
+
+            if (hideIconCoroutine != null)
+            {
+                StopCoroutine(hideIconCoroutine);
+            }
+
+            hideIconCoroutine = StartCoroutine(HideCurrentIconAfterSeconds(2));
+        }
+    }
+
+    void ShowCurrentIcon(Sprite icon)
+{
+    if (currentFormulaIndex == 0)
+    {
+        iconResult1.gameObject.SetActive(true);
+        iconResult1.sprite = icon;
+    }
+
+    if (currentFormulaIndex == 1)
+    {
+        iconResult2.gameObject.SetActive(true);
+        iconResult2.sprite = icon;
+    }
+
+    if (currentFormulaIndex == 2)
+    {
+        iconResult3.gameObject.SetActive(true);
+        iconResult3.sprite = icon;
+    }
+}
+
+IEnumerator HideCurrentIconAfterSeconds(float seconds)
+{
+    int formulaIndexAtClick = currentFormulaIndex;
+
+    yield return new WaitForSeconds(seconds);
+
+    if (formulaIndexAtClick == 0)
+    {
+        iconResult1.gameObject.SetActive(false);
+    }
+
+    if (formulaIndexAtClick == 1)
+    {
+        iconResult2.gameObject.SetActive(false);
+    }
+
+    if (formulaIndexAtClick == 2)
+    {
+        iconResult3.gameObject.SetActive(false);
+    }
+}
+
+    void DisableCurrentButtons()
+    {
+        if (currentFormulaIndex == 0)
+        {
+            button1_1.interactable = false;
+            button1_2.interactable = false;
+            button1_3.interactable = false;
+        }
+
+        if (currentFormulaIndex == 1)
+        {
+            button2_1.interactable = false;
+            button2_2.interactable = false;
+            button2_3.interactable = false;
+        }
+
+        if (currentFormulaIndex == 2)
+        {
+            button3_1.interactable = false;
+            button3_2.interactable = false;
+            button3_3.interactable = false;
         }
     }
 
@@ -179,15 +305,5 @@ public class FormulaGame : MonoBehaviour
             array[i] = array[randomIndex];
             array[randomIndex] = tmp;
         }
-    }
-
-    void SetRandomPotionForFormula()
-    {
-        // Comentado para pruebas
-        // Sprite randomPotion = potionSprites[Random.Range(0, potionSprites.Length)];
-
-        // if (currentFormulaIndex == 0) imageFormula1.sprite = randomPotion;
-        // if (currentFormulaIndex == 1) imageFormula2.sprite = randomPotion;
-        // if (currentFormulaIndex == 2) imageFormula3.sprite = randomPotion;
     }
 }
