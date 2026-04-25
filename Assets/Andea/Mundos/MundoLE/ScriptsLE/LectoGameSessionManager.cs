@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,6 +15,7 @@ public class LectoGameSessionManager : MonoBehaviour
     [Header("Configuración de partida")]
     public int roundsPerSession = 6;
     public string quizSceneName = "SceneQuizLE";
+    public string resultsSceneName = "ResultadosNivel";
 
     [Header("Estado actual")]
     public string currentLevelName;
@@ -101,6 +103,9 @@ public class LectoGameSessionManager : MonoBehaviour
             return;
         }
 
+        if (GameManager.instancia != null)
+            GameManager.instancia.IniciarNuevaSesion();
+
         selectedScenesThisSession = GetRandomUniqueScenes(sceneBank.platformSceneNames, roundsPerSession);
         selectedQuestionsThisSession = GetRandomUniqueQuestions(questionBank.questions, roundsPerSession);
 
@@ -118,7 +123,7 @@ public class LectoGameSessionManager : MonoBehaviour
 
         if (currentRoundIndex >= roundsPerSession)
         {
-            SceneManager.LoadScene("ResultadosNivel");
+            StartCoroutine(FinalizarSesionYMostrarResultados());
         }
         else
         {
@@ -126,18 +131,26 @@ public class LectoGameSessionManager : MonoBehaviour
         }
     }
 
+    private IEnumerator FinalizarSesionYMostrarResultados()
+    {
+        if (GameManager.instancia != null)
+        {
+            yield return StartCoroutine(
+                GameManager.instancia.CompletarNivelCoroutine()
+            );
+        }
+
+        SceneManager.LoadScene(resultsSceneName);
+    }
+
     private LevelSceneBank GetSceneBank(string levelName)
     {
         switch (levelName)
         {
-            case "Basico":
-                return basicoSceneBank;
-            case "Intermedio":
-                return intermedioSceneBank;
-            case "Avanzado":
-                return avanzadoSceneBank;
-            default:
-                return null;
+            case "Basico": return basicoSceneBank;
+            case "Intermedio": return intermedioSceneBank;
+            case "Avanzado": return avanzadoSceneBank;
+            default: return null;
         }
     }
 
@@ -163,6 +176,7 @@ public class LectoGameSessionManager : MonoBehaviour
 
         return null;
     }
+
     private List<string> GetRandomUniqueScenes(string[] source, int amount)
     {
         List<string> pool = new List<string>(source);

@@ -1,31 +1,27 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instancia;
 
-    [Header("Monedas normales del nivel")]
+    [Header("Monedas normales de la sesión")]
     public int monedas = 0;
 
     [Header("Vidas")]
     public int vidas = 3;
     public int vidasIniciales = 3;
 
-    [Header("Recompensas locales del nivel")]
+    [Header("Recompensas locales de la sesión")]
     public int puntos = 0;
     public int monedasTienda = 0;
     public int puntosNivelActual = 0;
 
-    [Header("Resultado del último nivel")]
+    [Header("Resultado de la última sesión")]
     public int ultimoPuntajeGanado = 0;
     public int ultimasMonedasGanadas = 0;
     public int puntosSobrantes = 0;
-
-    [Header("Siguiente nivel")]
-    public int siguienteNivelIndex = -1;
 
     [Header("Escena de resultados")]
     public string nombreEscenaResultados = "ResultadosNivel";
@@ -45,6 +41,7 @@ public class GameManager : MonoBehaviour
 
     private LevelRewardSystem rewardSystem;
     private bool sincronizandoProgreso = false;
+    private bool progresoInicialSolicitado = false;
 
     private void Awake()
     {
@@ -52,9 +49,7 @@ public class GameManager : MonoBehaviour
         {
             instancia = this;
             DontDestroyOnLoad(gameObject);
-
             rewardSystem = new LevelRewardSystem();
-            SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else
         {
@@ -62,24 +57,31 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
-    {
-        if (instancia == this)
-            SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-
     private void Start()
     {
         ActualizarTodoElTexto();
-        StartCoroutine(CargarProgresoInicialSiExisteCodigo());
+        SolicitarProgresoInicialSiExisteCodigo();
     }
 
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    // =========================
+    // INICIO / SESIÓN
+    // =========================
+
+    public void SolicitarProgresoInicialSiExisteCodigo()
     {
-        if (scene.name == nombreEscenaResultados)
+        if (progresoInicialSolicitado)
             return;
 
-        ReiniciarDatosDelNivel();
+        string codigoJugador = PlayerPrefs.GetString("PlayerCode", "");
+
+        if (string.IsNullOrEmpty(codigoJugador))
+        {
+            Debug.Log("Aún no hay PlayerCode, no se solicita progreso todavía.");
+            return;
+        }
+
+        progresoInicialSolicitado = true;
+        StartCoroutine(CargarProgresoInicialSiExisteCodigo());
     }
 
     private IEnumerator CargarProgresoInicialSiExisteCodigo()
@@ -91,12 +93,14 @@ public class GameManager : MonoBehaviour
         if (string.IsNullOrEmpty(codigoJugador))
         {
             Debug.Log("No hay PlayerCode guardado todavía.");
+            progresoInicialSolicitado = false;
             yield break;
         }
 
         if (PlayerProgressApi.Instance == null)
         {
             Debug.LogWarning("PlayerProgressApi no existe en la escena.");
+            progresoInicialSolicitado = false;
             yield break;
         }
 
@@ -118,29 +122,44 @@ public class GameManager : MonoBehaviour
                     else
                     {
                         Debug.LogWarning("No se pudo cargar el progreso inicial.");
+                        progresoInicialSolicitado = false;
                     }
                 },
                 onError: (error) =>
                 {
                     Debug.LogError("Error al cargar progreso inicial: " + error);
+                    progresoInicialSolicitado = false;
                 }
             )
         );
     }
 
-    private void ReiniciarDatosDelNivel()
+    public void IniciarNuevaSesion()
     {
         monedas = 0;
         vidas = vidasIniciales;
 
         if (rewardSystem == null)
             rewardSystem = new LevelRewardSystem();
+        else
+            rewardSystem.Reset();
 
-        rewardSystem.ResetLevelProgress();
+        puntos = 0;
         puntosNivelActual = 0;
 
+        ultimoPuntajeGanado = 0;
+        ultimasMonedasGanadas = 0;
+        puntosSobrantes = 0;
+
+        monedasTienda = runasServidor;
+
         ActualizarTodoElTexto();
+        Debug.Log("Nueva sesión iniciada.");
     }
+
+    // =========================
+    // PROGRESO LOCAL DE SESIÓN
+    // =========================
 
     public void SumarMoneda(int cantidad = 1)
     {
@@ -182,7 +201,11 @@ public class GameManager : MonoBehaviour
         SincronizarRecompensasLocales();
     }
 
-    public void CompletarNivel()
+    // =========================
+    // CIERRE DE SESIÓN / NIVEL
+    // =========================
+
+    public IEnumerator CompletarNivelCoroutine(System.Action onFinished = null)
     {
         if (rewardSystem == null)
             rewardSystem = new LevelRewardSystem();
@@ -190,25 +213,34 @@ public class GameManager : MonoBehaviour
         bool completado = rewardSystem.CompleteLevel(true);
 
         if (!completado)
-            return;
+        {
+            onFinished?.Invoke();
+            yield break;
+        }
 
         ultimoPuntajeGanado = rewardSystem.LastPointsEarned;
-        ultimasMonedasGanadas = rewardSystem.LastShopCoinsEarned;
         puntosSobrantes = rewardSystem.LastRemainingPoints;
+        ultimasMonedasGanadas = 0;
 
         SincronizarRecompensasLocales();
 
         if (ultimoPuntajeGanado > 0)
         {
-            StartCoroutine(SincronizarPuntosConServidor(ultimoPuntajeGanado, "nivel_completado"));
+            yield return StartCoroutine(
+                SincronizarPuntosConServidor(
+                    ultimoPuntajeGanado,
+                    "nivel_completado"
+                )
+            );
         }
 
-        rewardSystem.ResetLevelProgress();
         puntosNivelActual = 0;
         ActualizarTodoElTexto();
+
+        onFinished?.Invoke();
     }
 
-    public void CompletarActividad()
+    public IEnumerator CompletarActividadCoroutine(System.Action onFinished = null)
     {
         if (rewardSystem == null)
             rewardSystem = new LevelRewardSystem();
@@ -216,22 +248,31 @@ public class GameManager : MonoBehaviour
         bool completado = rewardSystem.CompleteActivity(true);
 
         if (!completado)
-            return;
+        {
+            onFinished?.Invoke();
+            yield break;
+        }
 
         ultimoPuntajeGanado = rewardSystem.LastPointsEarned;
-        ultimasMonedasGanadas = rewardSystem.LastShopCoinsEarned;
         puntosSobrantes = rewardSystem.LastRemainingPoints;
+        ultimasMonedasGanadas = 0;
 
         SincronizarRecompensasLocales();
 
         if (ultimoPuntajeGanado > 0)
         {
-            StartCoroutine(SincronizarPuntosConServidor(ultimoPuntajeGanado, "actividad_completada"));
+            yield return StartCoroutine(
+                SincronizarPuntosConServidor(
+                    ultimoPuntajeGanado,
+                    "actividad_completada"
+                )
+            );
         }
 
-        rewardSystem.ResetLevelProgress();
         puntosNivelActual = 0;
         ActualizarTodoElTexto();
+
+        onFinished?.Invoke();
     }
 
     private IEnumerator SincronizarPuntosConServidor(int puntosGanados, string motivo)
@@ -273,7 +314,6 @@ public class GameManager : MonoBehaviour
                         );
 
                         ultimasMonedasGanadas = data.runas_generadas;
-
                         Debug.Log("Puntos sincronizados correctamente con servidor.");
                     }
                     else
@@ -295,15 +335,17 @@ public class GameManager : MonoBehaviour
     {
         puntos = rewardSystem.TotalPoints;
         puntosNivelActual = rewardSystem.CurrentLevelPoints;
-
-        // El saldo real de tienda ahora viene del servidor
         monedasTienda = runasServidor;
-
         ActualizarTextoRecompensas();
     }
 
     public void ActualizarProgresoServidor(long nuevoJugadorId, int puntosTotales, int runas, int residuales)
     {
+        Debug.Log("ActualizarProgresoServidor -> jugadorId: " + nuevoJugadorId +
+                " | puntosTotales: " + puntosTotales +
+                " | runas: " + runas +
+                " | residuales: " + residuales);
+
         jugadorId = nuevoJugadorId;
         puntosTotalesServidor = puntosTotales;
         runasServidor = runas;
@@ -315,28 +357,9 @@ public class GameManager : MonoBehaviour
 
         ActualizarTodoElTexto();
     }
-
-    public void GuardarSiguienteNivel(int index)
-    {
-        siguienteNivelIndex = index;
-        Debug.Log("Siguiente nivel guardado: " + siguienteNivelIndex);
-    }
-
-    public void CargarSiguienteNivel()
-    {
-        Debug.Log("Intentando cargar siguiente nivel: " + siguienteNivelIndex);
-
-        if (siguienteNivelIndex >= 0 && siguienteNivelIndex < SceneManager.sceneCountInBuildSettings)
-        {
-            string scenePath = SceneUtility.GetScenePathByBuildIndex(siguienteNivelIndex);
-            Debug.Log("Cargando escena: " + scenePath);
-            SceneManager.LoadScene(siguienteNivelIndex, LoadSceneMode.Single);
-        }
-        else
-        {
-            Debug.LogError("Índice de siguiente nivel inválido: " + siguienteNivelIndex);
-        }
-    }
+    // =========================
+    // RESETEO GENERAL
+    // =========================
 
     public void ResetearRecompensasGlobales()
     {
@@ -351,14 +374,17 @@ public class GameManager : MonoBehaviour
         ultimoPuntajeGanado = 0;
         ultimasMonedasGanadas = 0;
         puntosSobrantes = 0;
+        monedas = 0;
+        vidas = vidasIniciales;
 
-        puntosTotalesServidor = 0;
-        runasServidor = 0;
-        puntosResidualesServidor = 0;
-        progresoServidorCargado = false;
+        progresoInicialSolicitado = false;
 
         ActualizarTodoElTexto();
     }
+
+    // =========================
+    // UI
+    // =========================
 
     private void ActualizarTodoElTexto()
     {
@@ -370,22 +396,29 @@ public class GameManager : MonoBehaviour
     private void ActualizarTextoMonedas()
     {
         if (textoMonedas != null)
-            textoMonedas.text = ": " + monedas;
+            textoMonedas.text = monedas.ToString();
     }
 
     private void ActualizarTextoVidas()
     {
         if (textoVidas != null)
-            textoVidas.text = ": " + vidas;
+            textoVidas.text = vidas.ToString();
     }
 
     private void ActualizarTextoRecompensas()
     {
         if (textoPuntos != null)
-            textoPuntos.text = ": " + puntosNivelActual;
+            textoPuntos.text = puntosNivelActual.ToString();
 
         if (textoMonedasTienda != null)
-            textoMonedasTienda.text = ": " + runasServidor;
+        {
+            textoMonedasTienda.text = runasServidor.ToString();
+            Debug.Log("UI runas actualizada a: " + runasServidor + " | objeto texto: " + textoMonedasTienda.name);
+        }
+        else
+        {
+            Debug.LogWarning("textoMonedasTienda es NULL en GameManager");
+        }
     }
 
     public void AsignarTextosUI(
@@ -413,8 +446,6 @@ public class GameManager : MonoBehaviour
 
     public bool GastarMonedasTienda(int costo)
     {
-        // Este método luego deberá llamar una API de compra real.
-        // Por ahora solo evita usar PlayerPrefs como fuente oficial.
         if (costo < 0)
             return false;
 
@@ -440,5 +471,11 @@ public class GameManager : MonoBehaviour
     public int ObtenerMonedasTienda()
     {
         return runasServidor;
+    }
+
+    public void ForzarRecargaProgresoServidor()
+    {
+        progresoInicialSolicitado = false;
+        SolicitarProgresoInicialSiExisteCodigo();
     }
 }

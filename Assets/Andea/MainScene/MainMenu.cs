@@ -26,12 +26,14 @@ public class MainMenu : MonoBehaviour
     public TextMeshProUGUI stateText;
 
     [Header("Botón Volver")]
-    public Button backButton;  
+    public Button backButton;
 
     [Header("Configuración")]
     public string mainSceneName = "MainScene";
     public string welcomeSceneName = "WelcomeScene";
     public string apiUrl = "https://andea.vercel.app/api/validar-codigo";
+
+    private bool loginDirecto = false;
 
     private void Start()
     {
@@ -42,27 +44,28 @@ public class MainMenu : MonoBehaviour
         acceptCodeButton.gameObject.SetActive(false);
 
         if (stateText != null)
-        {
             stateText.text = "";
-        }
 
-        buttonNewPlayer.onClick.AddListener(OpenNameCodePanel);
-        acceptNameButton.onClick.AddListener(ConfirmName);
-        acceptCodeButton.onClick.AddListener(ConfirmCode);
+        if (buttonNewPlayer != null)
+            buttonNewPlayer.onClick.AddListener(OpenNameCodePanel);
 
         if (buttonLogin != null)
-        {
-            buttonLogin.onClick.AddListener(OnLoginPressed);
-        }
+            buttonLogin.onClick.AddListener(OpenCodeOnlyPanel);
 
-        if (backButton != null)  // Asegúrate de que el botón "Back" esté asignado en el Inspector
-        {
-            backButton.onClick.AddListener(GoBackToMenu);  // Conecta el botón de regreso
-        }
+        if (acceptNameButton != null)
+            acceptNameButton.onClick.AddListener(ConfirmName);
+
+        if (acceptCodeButton != null)
+            acceptCodeButton.onClick.AddListener(ConfirmCode);
+
+        if (backButton != null)
+            backButton.onClick.AddListener(GoBackToMenu);
     }
 
     public void OpenNameCodePanel()
     {
+        loginDirecto = false;
+
         panelMenuInicial.SetActive(false);
         nameCodePanel.SetActive(true);
 
@@ -78,9 +81,28 @@ public class MainMenu : MonoBehaviour
         inputFieldCode.text = "";
 
         if (stateText != null)
-        {
             stateText.text = "";
-        }
+    }
+
+    public void OpenCodeOnlyPanel()
+    {
+        loginDirecto = true;
+
+        panelMenuInicial.SetActive(false);
+        nameCodePanel.SetActive(true);
+
+        titleText.text = "Ingresa tu código de jugador";
+
+        inputFieldName.gameObject.SetActive(false);
+        acceptNameButton.gameObject.SetActive(false);
+
+        inputFieldCode.gameObject.SetActive(true);
+        acceptCodeButton.gameObject.SetActive(true);
+
+        inputFieldCode.text = "";
+
+        if (stateText != null)
+            stateText.text = "";
     }
 
     public void ConfirmName()
@@ -104,9 +126,7 @@ public class MainMenu : MonoBehaviour
         acceptCodeButton.gameObject.SetActive(true);
 
         if (stateText != null)
-        {
             stateText.text = "";
-        }
     }
 
     public void ConfirmCode()
@@ -122,12 +142,10 @@ public class MainMenu : MonoBehaviour
         StartCoroutine(ValidateCode(playerCode));
     }
 
-    IEnumerator ValidateCode(string playerCode)
+    private IEnumerator ValidateCode(string playerCode)
     {
         if (stateText != null)
-        {
             stateText.text = "Validando código...";
-        }
 
         string json = "{\"codigo\":\"" + playerCode + "\"}";
 
@@ -145,9 +163,7 @@ public class MainMenu : MonoBehaviour
             Debug.LogError("Error de conexión: " + request.error);
 
             if (stateText != null)
-            {
                 stateText.text = "Error de conexión con el servidor";
-            }
 
             yield break;
         }
@@ -158,32 +174,42 @@ public class MainMenu : MonoBehaviour
         if (response.Contains("\"valid\":true"))
         {
             PlayerPrefs.SetString("PlayerCode", playerCode);
+            PlayerPrefs.Save();
 
-            if (stateText != null)
+            if (GameManager.instancia != null)
             {
-                stateText.text = "Código correcto";
+                GameManager.instancia.SolicitarProgresoInicialSiExisteCodigo();
+            }
+            else
+            {
+                Debug.LogWarning("No existe GameManager al validar el código.");
             }
 
+            if (stateText != null)
+                stateText.text = "Código correcto";
+
             yield return new WaitForSeconds(1f);
-            SceneManager.LoadScene(welcomeSceneName);
+
+            if (loginDirecto)
+                SceneManager.LoadScene(mainSceneName);
+            else
+                SceneManager.LoadScene(welcomeSceneName);
         }
         else
         {
             if (stateText != null)
-            {
                 stateText.text = "Código incorrecto";
-            }
         }
-    }
-
-    public void OnLoginPressed()
-    {
-        SceneManager.LoadScene(mainSceneName);
     }
 
     public void GoBackToMenu()
     {
-        nameCodePanel.SetActive(false);  // Desactiva el panel de código
-        panelMenuInicial.SetActive(true);  // Activa el panel del menú inicial
+        loginDirecto = false;
+
+        nameCodePanel.SetActive(false);
+        panelMenuInicial.SetActive(true);
+
+        if (stateText != null)
+            stateText.text = "";
     }
 }
