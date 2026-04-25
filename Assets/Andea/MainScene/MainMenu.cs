@@ -25,7 +25,7 @@ public class MainMenu : MonoBehaviour
     [Header("Mensaje de estado")]
     public TextMeshProUGUI stateText;
 
-    [Header("Botón Volver")]
+    [Header("Botón volver")]
     public Button backButton;
 
     [Header("Configuración")]
@@ -69,7 +69,8 @@ public class MainMenu : MonoBehaviour
         panelMenuInicial.SetActive(false);
         nameCodePanel.SetActive(true);
 
-        titleText.text = "Ingresa el nombre del niño";
+        if (titleText != null)
+            titleText.text = "Ingresa el nombre del niño";
 
         inputFieldName.gameObject.SetActive(true);
         acceptNameButton.gameObject.SetActive(true);
@@ -91,7 +92,8 @@ public class MainMenu : MonoBehaviour
         panelMenuInicial.SetActive(false);
         nameCodePanel.SetActive(true);
 
-        titleText.text = "Ingresa tu código de jugador";
+        if (titleText != null)
+            titleText.text = "Ingresa tu código de jugador";
 
         inputFieldName.gameObject.SetActive(false);
         acceptNameButton.gameObject.SetActive(false);
@@ -111,13 +113,15 @@ public class MainMenu : MonoBehaviour
 
         if (string.IsNullOrEmpty(playerName))
         {
-            titleText.text = "Por favor, ingresa el nombre del niño";
+            if (titleText != null)
+                titleText.text = "Por favor, ingresa el nombre del niño";
             return;
         }
 
         PlayerPrefs.SetString("PlayerName", playerName);
 
-        titleText.text = "Ingresa el código del jugador";
+        if (titleText != null)
+            titleText.text = "Ingresa el código del jugador";
 
         inputFieldName.gameObject.SetActive(false);
         acceptNameButton.gameObject.SetActive(false);
@@ -135,7 +139,8 @@ public class MainMenu : MonoBehaviour
 
         if (string.IsNullOrEmpty(playerCode))
         {
-            titleText.text = "Por favor, ingresa el código del jugador";
+            if (titleText != null)
+                titleText.text = "Por favor, ingresa el código del jugador";
             return;
         }
 
@@ -149,7 +154,7 @@ public class MainMenu : MonoBehaviour
 
         string json = "{\"codigo\":\"" + playerCode + "\"}";
 
-        UnityWebRequest request = new UnityWebRequest(apiUrl, "POST");
+        using UnityWebRequest request = new UnityWebRequest(apiUrl, "POST");
         byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(json);
 
         request.uploadHandler = new UploadHandlerRaw(bodyRaw);
@@ -173,7 +178,15 @@ public class MainMenu : MonoBehaviour
 
         if (response.Contains("\"valid\":true"))
         {
+            string nombreCompleto = ExtraerValorJson(response, "nombre_completo");
+
             PlayerPrefs.SetString("PlayerCode", playerCode);
+
+            if (!string.IsNullOrEmpty(nombreCompleto))
+            {
+                PlayerPrefs.SetString("PlayerFullName", nombreCompleto);
+            }
+
             PlayerPrefs.Save();
 
             if (GameManager.instancia != null)
@@ -200,6 +213,23 @@ public class MainMenu : MonoBehaviour
             if (stateText != null)
                 stateText.text = "Código incorrecto";
         }
+    }
+
+    private string ExtraerValorJson(string json, string clave)
+    {
+        string patron = "\"" + clave + "\":\"";
+        int inicio = json.IndexOf(patron);
+
+        if (inicio == -1)
+            return "";
+
+        inicio += patron.Length;
+        int fin = json.IndexOf("\"", inicio);
+
+        if (fin == -1)
+            return "";
+
+        return json.Substring(inicio, fin - inicio);
     }
 
     public void GoBackToMenu()
