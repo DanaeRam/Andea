@@ -342,6 +342,53 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cff83c7b064eb4a6e97f512687e22fb3, type: 3}
+--- !u!1 &138986039
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 138986040}
+  - component: {fileID: 138986041}
+  m_Layer: 0
+  m_Name: PlayerProgressApi
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &138986040
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138986039}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1281.3119, y: 761.33514, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &138986041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138986039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bf5bdce89b6c47649493f55bb621f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerProgressApi
+  obtenerProgresoUrl: https://andea.vercel.app/api/progreso/obtener-progreso
+  agregarPuntosUrl: https://andea.vercel.app/api/progreso/agregar-puntos
+  timeoutSegundos: 15
 --- !u!1 &253705877
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,6 +742,69 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 625625526}
   m_CullTransparentMesh: 1
+--- !u!1 &673420783
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 673420785}
+  - component: {fileID: 673420784}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &673420784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673420783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4fbfd9b3c12f4dd6a871ce464064241, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  monedas: 0
+  vidas: 3
+  vidasIniciales: 3
+  puntos: 0
+  monedasTienda: 0
+  puntosNivelActual: 0
+  ultimoPuntajeGanado: 0
+  ultimasMonedasGanadas: 0
+  puntosSobrantes: 0
+  nombreEscenaResultados: ResultadosNivel
+  jugadorId: 0
+  puntosTotalesServidor: 0
+  runasServidor: 0
+  puntosResidualesServidor: 0
+  progresoServidorCargado: 0
+  textoMonedas: {fileID: 0}
+  textoVidas: {fileID: 0}
+  textoPuntos: {fileID: 0}
+  textoMonedasTienda: {fileID: 0}
+--- !u!4 &673420785
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673420783}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1549.9675, y: 931.8895, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705684751
 GameObject:
   m_ObjectHideFlags: 0
@@ -1402,6 +1512,9 @@ MonoBehaviour:
   changeColor: 1
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
+  audioSource: {fileID: 0}
+  clickSound: {fileID: 0}
+  clickVolume: 1
 --- !u!114 &886349565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3049,6 +3162,9 @@ MonoBehaviour:
   changeColor: 1
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
+  audioSource: {fileID: 0}
+  clickSound: {fileID: 0}
+  clickVolume: 1
 --- !u!1 &1567451483
 GameObject:
   m_ObjectHideFlags: 0
@@ -3393,6 +3509,9 @@ MonoBehaviour:
   changeColor: 1
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
+  audioSource: {fileID: 0}
+  clickSound: {fileID: 0}
+  clickVolume: 1
 --- !u!1 &2060089941
 GameObject:
   m_ObjectHideFlags: 0
@@ -3537,3 +3656,5 @@ SceneRoots:
   - {fileID: 409823074}
   - {fileID: 705684753}
   - {fileID: 135478653}
+  - {fileID: 138986040}
+  - {fileID: 673420785}

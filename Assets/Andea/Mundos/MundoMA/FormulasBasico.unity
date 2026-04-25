@@ -3961,7 +3961,23 @@ MonoBehaviour:
   imageFormula1: {fileID: 1406377375}
   imageFormula2: {fileID: 786788516}
   imageFormula3: {fileID: 825495897}
-  imageBank: []
+  potionSprites:
+  - {fileID: 3297585555174440841, guid: 60e9b93be6745d149b7e81a8e35cc493, type: 3}
+  - {fileID: -3346773488081324144, guid: 60e9b93be6745d149b7e81a8e35cc493, type: 3}
+  - {fileID: 8831746135146821720, guid: 60e9b93be6745d149b7e81a8e35cc493, type: 3}
+  - {fileID: -1523089238846465720, guid: 60e9b93be6745d149b7e81a8e35cc493, type: 3}
+  - {fileID: 2497590116491891023, guid: 60e9b93be6745d149b7e81a8e35cc493, type: 3}
+  - {fileID: 5811929803927803277, guid: 60e9b93be6745d149b7e81a8e35cc493, type: 3}
+  - {fileID: -4532036840153704695, guid: 60e9b93be6745d149b7e81a8e35cc493, type: 3}
+  - {fileID: 7591935078407533541, guid: 60e9b93be6745d149b7e81a8e35cc493, type: 3}
+  - {fileID: -7268664377483134106, guid: 60e9b93be6745d149b7e81a8e35cc493, type: 3}
+  - {fileID: 7894466258968090231, guid: 60e9b93be6745d149b7e81a8e35cc493, type: 3}
+  - {fileID: -8582486354900742623, guid: 60e9b93be6745d149b7e81a8e35cc493, type: 3}
+  - {fileID: 621750760078467131, guid: 60e9b93be6745d149b7e81a8e35cc493, type: 3}
+  - {fileID: 8980129317788469432, guid: 60e9b93be6745d149b7e81a8e35cc493, type: 3}
+  - {fileID: 7017781858501460309, guid: 60e9b93be6745d149b7e81a8e35cc493, type: 3}
+  - {fileID: 4309177846958345308, guid: 60e9b93be6745d149b7e81a8e35cc493, type: 3}
+  - {fileID: 1950885349051246496, guid: 60e9b93be6745d149b7e81a8e35cc493, type: 3}
 --- !u!4 &1835206434
 Transform:
   m_ObjectHideFlags: 0

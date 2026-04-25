@@ -13,8 +13,8 @@ public class ResultadoNivelUI : MonoBehaviour
     [Header("Botón")]
     public Button botonContinuar;
 
-    [Header("Escena de respaldo")]
-    public string escenaRespaldo = "BasicoL1N2";
+    [Header("Escena de salida")]
+    public string escenaSalida = "MainScene";
 
     [Header("Audio")]
     public AudioSource audioSource;
@@ -38,7 +38,6 @@ public class ResultadoNivelUI : MonoBehaviour
         {
             botonContinuar.onClick.RemoveAllListeners();
             botonContinuar.onClick.AddListener(Continuar);
-            Debug.Log("Botón continuar conectado correctamente.");
         }
         else
         {
@@ -58,7 +57,7 @@ public class ResultadoNivelUI : MonoBehaviour
             textoPuntaje.text = "Puntos obtenidos: " + GameManager.instancia.ultimoPuntajeGanado;
 
         if (textoMonedas != null)
-            textoMonedas.text = "Monedas ganadas: " + GameManager.instancia.ultimasMonedasGanadas;
+            textoMonedas.text = "Runas ganadas: " + GameManager.instancia.ultimasMonedasGanadas;
 
         if (textoSobrantes != null)
             textoSobrantes.text = "Puntos sobrantes: " + GameManager.instancia.puntosSobrantes;
@@ -66,30 +65,6 @@ public class ResultadoNivelUI : MonoBehaviour
 
     public void Continuar()
     {
-        Debug.Log("Se presionó el botón Continuar.");
-
-        if (GameManager.instancia != null)
-        {
-            int index = GameManager.instancia.siguienteNivelIndex;
-
-            Debug.Log("Siguiente nivel guardado: " + index);
-            Debug.Log("Total escenas en Build Settings: " + SceneManager.sceneCountInBuildSettings);
-
-            if (index >= 0 && index < SceneManager.sceneCountInBuildSettings)
-            {
-                string scenePath = SceneUtility.GetScenePathByBuildIndex(index);
-                Debug.Log("Cargando directamente la escena: " + scenePath);
-
-                SceneManager.LoadScene(index, LoadSceneMode.Single);
-            }
-            else
-            {
-                Debug.LogError("Índice de escena inválido: " + index);
-            }
-        }
-        else
-        {
-            Debug.LogError("No existe GameManager.");
-        }
+        SceneManager.LoadScene(escenaSalida);
     }
 }
