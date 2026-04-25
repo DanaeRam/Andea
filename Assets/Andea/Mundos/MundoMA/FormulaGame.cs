@@ -20,8 +20,9 @@ public class FormulaGame : MonoBehaviour
     public Image iconResult1, iconResult2, iconResult3; // Iconos para los resultados de las fórmulas
     public TextMeshProUGUI textRetro; // Texto de retroalimentación
 
-    public Image imageFormula1, imageFormula2, imageFormula3; // Imágenes para las fórmulas
-    public Sprite[] imageBank; // Banco de imágenes
+    // Comentado: Cargar las imágenes de las fórmulas y los iconos
+    // public Image imageFormula1, imageFormula2, imageFormula3; // Imágenes para las fórmulas
+    // public Sprite[] potionSprites; // Sprite array para las pociones
 
     private int correctAnswer;
     private int currentFormulaIndex = 0;
@@ -29,8 +30,12 @@ public class FormulaGame : MonoBehaviour
 
     void Start()
     {
-        // Cargar las imágenes del banco (asegúrate de que la carpeta sea accesible)
-        imageBank = Resources.LoadAll<Sprite>("BancoDeImagenes");
+        // Comentado para probar lo demás
+        // potionSprites = Resources.LoadAll<Sprite>("MundoMA/Resources");
+
+        // Temporarily set to empty to avoid errors while testing
+        Debug.Log("Número de sprites cargados (comentado): 0");
+
         ShowNextFormula();
     }
 
@@ -54,8 +59,8 @@ public class FormulaGame : MonoBehaviour
         if (currentFormulaIndex == 1) formula2.SetActive(true);
         if (currentFormulaIndex == 2) formula3.SetActive(true);
 
-        // Elegir una imagen aleatoria (sin repetir) para cada fórmula
-        SetRandomImageForFormula();
+        // Comentado: Asignar las imágenes de las fórmulas
+        // SetRandomPotionForFormula();
 
         // Generar los números aleatorios para la suma
         int num1 = Random.Range(1, 10);
@@ -136,32 +141,25 @@ public class FormulaGame : MonoBehaviour
     void CheckAnswer(int buttonIndex)
     {
         int selectedAnswer = int.Parse(GetButtonText(buttonIndex));
+
+        // Si la respuesta es correcta
         if (selectedAnswer == correctAnswer)
         {
-            if (currentFormulaIndex == 0) iconResult1.sprite = Resources.Load<Sprite>("RightIcon");
-            if (currentFormulaIndex == 1) iconResult2.sprite = Resources.Load<Sprite>("RightIcon");
-            if (currentFormulaIndex == 2) iconResult3.sprite = Resources.Load<Sprite>("RightIcon");
+            textRetro.text = "¡Correcto!";
 
-            isCorrectAnswer = true;
+            // Esperar 5 segundos antes de pasar a la siguiente fórmula
+            StartCoroutine(WaitForNextFormula(5));
         }
         else
         {
-            if (currentFormulaIndex == 0) iconResult1.sprite = Resources.Load<Sprite>("WrongIcon");
-            if (currentFormulaIndex == 1) iconResult2.sprite = Resources.Load<Sprite>("WrongIcon");
-            if (currentFormulaIndex == 2) iconResult3.sprite = Resources.Load<Sprite>("WrongIcon");
-
-            isCorrectAnswer = false;
+            textRetro.text = "Intenta otra vez.";
         }
-
-        textRetro.text = isCorrectAnswer ? "¡Correcto!" : "Intenta otra vez.";
-
-        StartCoroutine(WaitForNextFormula());
     }
 
     // Esperar un momento antes de pasar a la siguiente fórmula
-    IEnumerator WaitForNextFormula()
+    IEnumerator WaitForNextFormula(int waitTime)
     {
-        yield return new WaitForSeconds(1.5f); // Espera 1.5 segundos
+        yield return new WaitForSeconds(waitTime); // Espera de 5 segundos
         currentFormulaIndex++;
         ShowNextFormula();
     }
@@ -189,16 +187,5 @@ public class FormulaGame : MonoBehaviour
             array[i] = array[randomIndex];
             array[randomIndex] = tmp;
         }
-    }
-
-    // Función para obtener una imagen aleatoria del banco sin repetir
-    void SetRandomImageForFormula()
-    {
-        Sprite randomImage = imageBank[Random.Range(0, imageBank.Length)];
-
-        // Asignar la imagen aleatoria a la fórmula
-        if (currentFormulaIndex == 0) imageFormula1.sprite = randomImage;
-        if (currentFormulaIndex == 1) imageFormula2.sprite = randomImage;
-        if (currentFormulaIndex == 2) imageFormula3.sprite = randomImage;
     }
 }
