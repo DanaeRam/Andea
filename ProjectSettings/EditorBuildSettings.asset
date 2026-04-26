@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Andea/MainScene/WelcomeScene.unity
     guid: ce36c2102098155488020fc8c77409fc
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Tienda/Tienda.unity
     guid: 054081416d219482ba4a328d3bcbd7ac
   - enabled: 1
@@ -140,5 +140,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Andea/Inventario/Inventario.unity
     guid: 392130a8f180f4fae8b54393e5ad62ba
+  - enabled: 1
+    path: Assets/Andea/MainScene/LessonScene.unity
+    guid: 4666a9805efccad48baffe96c2126b70
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
