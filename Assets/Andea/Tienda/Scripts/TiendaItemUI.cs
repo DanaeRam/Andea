@@ -21,6 +21,9 @@ public class TiendaItemUI : MonoBehaviour
         itemData = data;
         tienda = tiendaRef;
 
+        AutoAsignarReferencias();
+        DesactivarScriptsViejos();
+
         if (textoNombre != null)
             textoNombre.text = data.nombre;
 
@@ -35,15 +38,112 @@ public class TiendaItemUI : MonoBehaviour
         }
 
         SetDisponible();
+
+        Debug.Log(
+            "TiendaItemUI configurado: " +
+            gameObject.name +
+            " -> " +
+            data.idRecompensa +
+            " | " +
+            data.nombre
+        );
+    }
+
+    private void AutoAsignarReferencias()
+    {
+        if (botonComprar == null)
+            botonComprar = GetComponentInChildren<Button>(true);
+
+        if (textoEstado == null && botonComprar != null)
+            textoEstado = botonComprar.GetComponentInChildren<TextMeshProUGUI>(true);
+
+        if (textoEstado == null)
+        {
+            TextMeshProUGUI[] textos = GetComponentsInChildren<TextMeshProUGUI>(true);
+
+            foreach (TextMeshProUGUI texto in textos)
+            {
+                if (texto.text.Contains("Comprar") ||
+                    texto.text.Contains("Comprado") ||
+                    texto.text.Contains("Equipada") ||
+                    texto.text.Contains("Equipado") ||
+                    texto.text.Contains("No disponible"))
+                {
+                    textoEstado = texto;
+                    break;
+                }
+            }
+        }
+
+        if (textoNombre == null)
+        {
+            TextMeshProUGUI[] textos = GetComponentsInChildren<TextMeshProUGUI>(true);
+
+            foreach (TextMeshProUGUI texto in textos)
+            {
+                string nombreObjeto = texto.gameObject.name.ToLower();
+
+                if (nombreObjeto.Contains("nombre"))
+                {
+                    textoNombre = texto;
+                    break;
+                }
+            }
+        }
+
+        if (textoCosto == null)
+        {
+            TextMeshProUGUI[] textos = GetComponentsInChildren<TextMeshProUGUI>(true);
+
+            foreach (TextMeshProUGUI texto in textos)
+            {
+                string nombreObjeto = texto.gameObject.name.ToLower();
+
+                if (nombreObjeto.Contains("precio") || nombreObjeto.Contains("costo"))
+                {
+                    textoCosto = texto;
+                    break;
+                }
+            }
+        }
+    }
+
+    private void DesactivarScriptsViejos()
+    {
+        MonoBehaviour[] scripts = GetComponentsInChildren<MonoBehaviour>(true);
+
+        foreach (MonoBehaviour script in scripts)
+        {
+            if (script == null)
+                continue;
+
+            if (script == this)
+                continue;
+
+            if (script.GetType().Name == "ShopItemButton")
+            {
+                script.enabled = false;
+                Debug.Log("Desactivado script viejo ShopItemButton en: " + script.gameObject.name);
+            }
+        }
     }
 
     private void Comprar()
     {
         if (tienda == null || itemData == null)
         {
-            Debug.LogWarning("Falta tienda o itemData en " + gameObject.name);
+            Debug.LogWarning("TiendaItemUI: falta tienda o itemData en " + gameObject.name);
             return;
         }
+
+        Debug.Log(
+            "BOTÓN PRESIONADO: " +
+            gameObject.name +
+            " -> " +
+            itemData.idRecompensa +
+            " | " +
+            itemData.nombre
+        );
 
         tienda.IntentarComprar(itemData);
     }
@@ -61,6 +161,8 @@ public class TiendaItemUI : MonoBehaviour
 
         if (textoEstado != null)
             textoEstado.text = "Comprado";
+
+        CambiarTextosViejos("Comprado");
     }
 
     public void SetDisponible()
@@ -70,5 +172,37 @@ public class TiendaItemUI : MonoBehaviour
 
         if (textoEstado != null)
             textoEstado.text = "Comprar";
+
+        CambiarTextosViejos("Comprar");
+    }
+
+    public void SetNoDisponible()
+    {
+        if (botonComprar != null)
+            botonComprar.interactable = false;
+
+        if (textoEstado != null)
+            textoEstado.text = "No disponible";
+
+        CambiarTextosViejos("No disponible");
+    }
+
+    private void CambiarTextosViejos(string nuevoTexto)
+    {
+        TextMeshProUGUI[] textos = GetComponentsInChildren<TextMeshProUGUI>(true);
+
+        foreach (TextMeshProUGUI texto in textos)
+        {
+            if (texto == null)
+                continue;
+
+            if (texto.text.Contains("Equipada") ||
+                texto.text.Contains("Equipado") ||
+                texto.text.Contains("Comprado") ||
+                texto.text.Contains("No disponible"))
+            {
+                texto.text = nuevoTexto;
+            }
+        }
     }
 }
