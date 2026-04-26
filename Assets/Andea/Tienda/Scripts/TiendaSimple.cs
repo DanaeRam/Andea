@@ -23,6 +23,10 @@ public class TiendaSimple : MonoBehaviour
     [Header("Fondo del mensaje general")]
     public GameObject fondoMensajeTienda;
 
+    [Header("Ventana de espadas")]
+    public GameObject panelEspadas;
+    public GameObject botonMenuPrincipal;
+
     [Header("Tiempo visible del mensaje")]
     public float duracionMensaje = 2.5f;
 
@@ -42,6 +46,12 @@ public class TiendaSimple : MonoBehaviour
     {
         ConfigurarItems();
 
+        if (panelEspadas != null)
+            panelEspadas.SetActive(false);
+
+        if (botonMenuPrincipal != null)
+            botonMenuPrincipal.SetActive(true);
+
         OcultarMensajeInstantaneo();
 
         LimpiarTextosEquipadosEnEscena();
@@ -59,22 +69,9 @@ public class TiendaSimple : MonoBehaviour
             AutoAsignarItemUI(item);
 
             if (item.itemUI != null)
-            {
                 item.itemUI.Configurar(item, this);
-
-                Debug.Log(
-                    "TiendaSimple configuró: " +
-                    item.idRecompensa +
-                    " | " +
-                    item.nombre +
-                    " -> " +
-                    item.itemUI.gameObject.name
-                );
-            }
             else
-            {
                 Debug.LogWarning("Falta asignar ItemUI en: " + item.idRecompensa);
-            }
         }
     }
 
@@ -95,14 +92,7 @@ public class TiendaSimple : MonoBehaviour
             TiendaItemUI encontrado = BuscarItemUIEnEscena(nombreEsperado);
 
             if (encontrado != null)
-            {
                 item.itemUI = encontrado;
-                Debug.Log("Autoasignado " + item.idRecompensa + " a " + nombreEsperado);
-            }
-            else
-            {
-                Debug.LogWarning("No encontré en escena: " + nombreEsperado);
-            }
         }
     }
 
@@ -155,6 +145,28 @@ public class TiendaSimple : MonoBehaviour
         }
     }
 
+    public void AbrirPanelEspadas()
+    {
+        if (panelEspadas != null)
+            panelEspadas.SetActive(true);
+
+        if (botonMenuPrincipal != null)
+            botonMenuPrincipal.SetActive(false);
+
+        OcultarMensajeInstantaneo();
+    }
+
+    public void CerrarPanelEspadas()
+    {
+        if (panelEspadas != null)
+            panelEspadas.SetActive(false);
+
+        if (botonMenuPrincipal != null)
+            botonMenuPrincipal.SetActive(true);
+
+        OcultarMensajeInstantaneo();
+    }
+
     public void IntentarComprar(ItemData item)
     {
         if (item == null)
@@ -174,15 +186,6 @@ public class TiendaSimple : MonoBehaviour
             MostrarMensaje("Error: PlayerStoreApi no existe en la escena.");
             return;
         }
-
-        Debug.Log(
-            "CLICK COMPRA -> " +
-            item.idRecompensa +
-            " | " +
-            item.nombre +
-            " | costo: " +
-            item.costo
-        );
 
         if (item.itemUI != null)
             item.itemUI.BloquearBoton();
@@ -214,17 +217,11 @@ public class TiendaSimple : MonoBehaviour
                 if (item.itemUI != null)
                 {
                     if (error.Contains("Ya tienes"))
-                    {
                         item.itemUI.SetComprado();
-                    }
                     else if (error.Contains("Recompensa no encontrada") || error.Contains("inactiva"))
-                    {
                         item.itemUI.SetNoDisponible();
-                    }
                     else
-                    {
                         item.itemUI.SetDisponible();
-                    }
                 }
             }
         ));
