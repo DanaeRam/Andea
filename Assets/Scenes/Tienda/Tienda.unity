@@ -339,7 +339,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1481696622}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TiendaUI, Assembly-CSharp
         m_MethodName: AbrirArticulos
         m_Mode: 1
@@ -1541,7 +1541,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1481696622}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TiendaUI, Assembly-CSharp
         m_MethodName: CerrarArticulos
         m_Mode: 1
@@ -3211,6 +3211,79 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 658726103}
   m_CullTransparentMesh: 1
+--- !u!1001 &753081060
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 176007515769691839, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 690.9286
+      objectReference: {fileID: 0}
+    - target: {fileID: 176007515769691839, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 681.395
+      objectReference: {fileID: 0}
+    - target: {fileID: 176007515769691839, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 176007515769691839, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 176007515769691839, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 176007515769691839, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 176007515769691839, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 176007515769691839, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 176007515769691839, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 176007515769691839, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143811715493320030, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: botonViejo
+      value: 
+      objectReference: {fileID: 1360281724}
+    - target: {fileID: 2143811715493320030, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: panelDialogo
+      value: 
+      objectReference: {fileID: 1302189166}
+    - target: {fileID: 2143811715493320030, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: fondoPrincipal
+      value: 
+      objectReference: {fileID: 1769142904}
+    - target: {fileID: 2143811715493320030, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: panelArticulos
+      value: 
+      objectReference: {fileID: 820254646}
+    - target: {fileID: 2536124734681827738, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: m_Name
+      value: TiendaUIManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
 --- !u!1 &761597657
 GameObject:
   m_ObjectHideFlags: 0
@@ -4516,7 +4589,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1481696622}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TiendaUI, Assembly-CSharp
         m_MethodName: AbrirDialogo
         m_Mode: 1
@@ -4977,7 +5050,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1466344356}
   m_CullTransparentMesh: 1
+<<<<<<< Updated upstream
 --- !u!1 &1481696621
+=======
+--- !u!1 &1471892584
+>>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4985,21 +5062,53 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 1481696623}
   - component: {fileID: 1481696622}
   m_Layer: 0
   m_Name: TiendaUIManager
+=======
+  - component: {fileID: 1471892585}
+  - component: {fileID: 1471892587}
+  - component: {fileID: 1471892586}
+  m_Layer: 5
+  m_Name: Runa
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< Updated upstream
 --- !u!114 &1481696622
+=======
+--- !u!224 &1471892585
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471892584}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 121262385}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 634, y: 418}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1471892586
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 1481696621}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -5013,10 +5122,39 @@ MonoBehaviour:
   botonesTienda: []
 --- !u!4 &1481696623
 Transform:
+=======
+  m_GameObject: {fileID: 1471892584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -8386645779307496254, guid: c6431a20839394fcd88511f1b7c2049f, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1471892587
+CanvasRenderer:
+>>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 1481696621}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -5026,6 +5164,10 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+  m_GameObject: {fileID: 1471892584}
+  m_CullTransparentMesh: 1
+>>>>>>> Stashed changes
 --- !u!1 &1485508434
 GameObject:
   m_ObjectHideFlags: 0
@@ -5261,7 +5403,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1481696622}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TiendaUI, Assembly-CSharp
         m_MethodName: CerrarDialogo
         m_Mode: 1
@@ -7754,6 +7896,12 @@ SceneRoots:
   - {fileID: 1460657897}
   - {fileID: 121262385}
   - {fileID: 1179563939}
-  - {fileID: 1481696623}
   - {fileID: 256131817}
   - {fileID: 1921246609}
+<<<<<<< Updated upstream
+=======
+  - {fileID: 1324183759}
+  - {fileID: 1420159878}
+  - {fileID: 32826129}
+  - {fileID: 753081060}
+>>>>>>> Stashed changes
