@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -7,7 +8,7 @@ public class LectoCarouselManager : MonoBehaviour
 {
     [Header("Carrusel")]
     public Image carouselImage;
-    public Sprite[] levelSprites; // 0 = Básico, 1 = Intermedio, 2 = Avanzado
+    public Sprite[] levelSprites;
 
     [Header("Ribbon superior")]
     public TextMeshProUGUI ribbonText;
@@ -29,8 +30,27 @@ public class LectoCarouselManager : MonoBehaviour
     public TextMeshProUGUI learnButtonText;
     public TextMeshProUGUI playButtonText;
 
-    private int currentIndex = 0;   // 0 = Básico, 1 = Intermedio, 2 = Avanzado
-    private int currentLesson = 0;  // Lección seleccionada dentro del nivel actual
+    [Header("Bloqueo por progreso")]
+    public Button[] botonesBasicoLecciones;
+    public Button[] botonesIntermedioLecciones;
+    public Button[] botonesAvanzadoLecciones;
+
+    [Header("Candados opcionales")]
+    public GameObject[] candadosBasico;
+    public GameObject[] candadosIntermedio;
+    public GameObject[] candadosAvanzado;
+
+    [Header("Mensaje de bloqueo")]
+    public TextMeshProUGUI textoMensajeBloqueo;
+
+    [Header("Escena de aprendizaje")]
+    public string lessonSceneName = "Lesson Scene";
+
+    private int currentIndex = 0;
+    private int currentLesson = 0;
+
+    private Dictionary<string, PlayerLessonsApi.LeccionEstado> estadoLecciones =
+        new Dictionary<string, PlayerLessonsApi.LeccionEstado>();
 
     private void Start()
     {
@@ -41,6 +61,8 @@ public class LectoCarouselManager : MonoBehaviour
 
         if (lessonPanel != null)
             lessonPanel.SetActive(false);
+
+        CargarEstadoLecciones();
     }
 
     public void NextImage()
@@ -53,11 +75,12 @@ public class LectoCarouselManager : MonoBehaviour
         UpdateCarousel();
         UpdateRibbonText();
         UpdateVisibleLessonButtons();
+        AplicarBloqueosVisuales();
 
         if (lessonPanel != null && lessonPanel.activeSelf)
-        {
             lessonPanel.SetActive(false);
-        }
+
+        LimpiarMensajeBloqueo();
     }
 
     public void PreviousImage()
@@ -73,11 +96,12 @@ public class LectoCarouselManager : MonoBehaviour
         UpdateCarousel();
         UpdateRibbonText();
         UpdateVisibleLessonButtons();
+        AplicarBloqueosVisuales();
 
         if (lessonPanel != null && lessonPanel.activeSelf)
-        {
             lessonPanel.SetActive(false);
-        }
+
+        LimpiarMensajeBloqueo();
     }
 
     private void UpdateCarousel()
@@ -91,16 +115,19 @@ public class LectoCarouselManager : MonoBehaviour
 
     private void UpdateRibbonText()
     {
-        if (ribbonText == null) return;
+        if (ribbonText == null)
+            return;
 
         switch (currentIndex)
         {
             case 0:
                 ribbonText.text = "Nivel Básico";
                 break;
+
             case 1:
                 ribbonText.text = "Nivel Intermedio";
                 break;
+
             case 2:
                 ribbonText.text = "Nivel Avanzado";
                 break;
@@ -128,9 +155,88 @@ public class LectoCarouselManager : MonoBehaviour
             playButtonText.text = "Jugar";
     }
 
+    private void CargarEstadoLecciones()
+    {
+        if (PlayerLessonsApi.Instance == null)
+        {
+            Debug.LogWarning("No existe PlayerLessonsApi. No se aplicarán bloqueos desde servidor.");
+            return;
+        }
+
+        StartCoroutine(PlayerLessonsApi.Instance.ObtenerEstadoLecciones(
+            onSuccess: (data) =>
+            {
+                estadoLecciones.Clear();
+
+                foreach (var leccion in data.lecciones)
+                {
+                    estadoLecciones[leccion.leccion_id] = leccion;
+                }
+
+                AplicarBloqueosVisuales();
+            },
+            onError: (error) =>
+            {
+                Debug.LogError("Error al obtener estado de lecciones: " + error);
+                MostrarMensajeBloqueo("No se pudo cargar el progreso de lecciones.");
+            }
+        ));
+    }
+
+    private void AplicarBloqueosVisuales()
+    {
+        ConfigurarBotonesNivel(botonesBasicoLecciones, candadosBasico, "BASICO");
+        ConfigurarBotonesNivel(botonesIntermedioLecciones, candadosIntermedio, "INTERMEDIO");
+        ConfigurarBotonesNivel(botonesAvanzadoLecciones, candadosAvanzado, "AVANZADO");
+    }
+
+    private void ConfigurarBotonesNivel(Button[] botones, GameObject[] candados, string prefijo)
+    {
+        if (botones == null)
+            return;
+
+        for (int i = 0; i < botones.Length; i++)
+        {
+            string leccionId = prefijo + "_" + (i + 1).ToString("00");
+            bool desbloqueada = EstaLeccionDesbloqueada(leccionId);
+
+            if (botones[i] != null)
+                botones[i].interactable = desbloqueada;
+
+            if (candados != null && i < candados.Length && candados[i] != null)
+                candados[i].SetActive(!desbloqueada);
+        }
+    }
+
+    private bool EstaLeccionDesbloqueada(string leccionId)
+    {
+        if (estadoLecciones.TryGetValue(leccionId, out PlayerLessonsApi.LeccionEstado estado))
+            return estado.desbloqueada;
+
+        return leccionId.StartsWith("BASICO");
+    }
+
+    private bool EstaLeccionCompletada(string leccionId)
+    {
+        if (estadoLecciones.TryGetValue(leccionId, out PlayerLessonsApi.LeccionEstado estado))
+            return estado.completada;
+
+        return false;
+    }
+
     public void OpenLessonPanel(int lessonNumber)
     {
         currentLesson = lessonNumber;
+
+        string leccionId = GetCurrentLessonId();
+
+        if (!EstaLeccionDesbloqueada(leccionId))
+        {
+            MostrarMensajeDeBloqueoPorNivel();
+            return;
+        }
+
+        LimpiarMensajeBloqueo();
 
         if (lessonPanel != null)
             lessonPanel.SetActive(true);
@@ -142,14 +248,19 @@ public class LectoCarouselManager : MonoBehaviour
     {
         if (panelTitleText != null)
         {
-            panelTitleText.text = "Lección " + currentLesson;
+            string leccionId = GetCurrentLessonId();
+
+            if (EstaLeccionCompletada(leccionId))
+                panelTitleText.text = "Lección " + currentLesson + " - Completada";
+            else
+                panelTitleText.text = "Lección " + currentLesson;
         }
 
         if (descriptionLessonText != null)
         {
             switch (currentIndex)
             {
-                case 0: // Básico
+                case 0:
                     switch (currentLesson)
                     {
                         case 1:
@@ -167,7 +278,7 @@ public class LectoCarouselManager : MonoBehaviour
                     }
                     break;
 
-                case 1: // Intermedio
+                case 1:
                     switch (currentLesson)
                     {
                         case 1:
@@ -182,7 +293,7 @@ public class LectoCarouselManager : MonoBehaviour
                     }
                     break;
 
-                case 2: // Avanzado
+                case 2:
                     switch (currentLesson)
                     {
                         case 1:
@@ -202,7 +313,7 @@ public class LectoCarouselManager : MonoBehaviour
                             break;
                     }
                     break;
-                            }
+            }
         }
     }
 
@@ -214,187 +325,160 @@ public class LectoCarouselManager : MonoBehaviour
 
     public void OnLearnButton()
     {
+        string leccionId = GetCurrentLessonId();
+
+        if (!EstaLeccionDesbloqueada(leccionId))
+        {
+            MostrarMensajeDeBloqueoPorNivel();
+            return;
+        }
+
+        string levelName = GetCurrentLevelName();
+        string lessonName = GetCurrentLessonName();
+
+        if (string.IsNullOrEmpty(leccionId) ||
+            string.IsNullOrEmpty(levelName) ||
+            string.IsNullOrEmpty(lessonName))
+        {
+            Debug.LogError("No se pudo abrir la lección de aprendizaje. Datos inválidos.");
+            return;
+        }
+
+        PlayerPrefs.SetString("CurrentLessonId", leccionId);
+        PlayerPrefs.SetString("CurrentLevelName", levelName);
+        PlayerPrefs.SetString("CurrentLessonName", lessonName);
+        PlayerPrefs.Save();
+
+        SceneManager.LoadScene(lessonSceneName);
+    }
+
+    public void OnPlayButton()
+    {
+        string leccionId = GetCurrentLessonId();
+
+        if (!EstaLeccionDesbloqueada(leccionId))
+        {
+            MostrarMensajeDeBloqueoPorNivel();
+            return;
+        }
+
+        string levelName = GetCurrentLevelName();
+        string lessonName = GetCurrentLessonName();
+
+        if (string.IsNullOrEmpty(levelName) || string.IsNullOrEmpty(lessonName))
+        {
+            Debug.LogError("No se pudo iniciar la lección. Datos inválidos.");
+            return;
+        }
+
+        if (LectoGameSessionManager.Instance != null)
+        {
+            LectoGameSessionManager.Instance.StartLessonSession(levelName, lessonName);
+        }
+        else
+        {
+            Debug.LogError("No existe LectoGameSessionManager.");
+        }
+    }
+
+    private string GetCurrentLessonId()
+    {
+        switch (currentIndex)
+        {
+            case 0:
+                return "BASICO_" + currentLesson.ToString("00");
+
+            case 1:
+                return "INTERMEDIO_" + currentLesson.ToString("00");
+
+            case 2:
+                return "AVANZADO_" + currentLesson.ToString("00");
+
+            default:
+                return "";
+        }
+    }
+
+    private string GetCurrentLevelName()
+    {
+        switch (currentIndex)
+        {
+            case 0:
+                return "Basico";
+
+            case 1:
+                return "Intermedio";
+
+            case 2:
+                return "Avanzado";
+
+            default:
+                return "";
+        }
+    }
+
+    private string GetCurrentLessonName()
+    {
         switch (currentIndex)
         {
             case 0:
                 switch (currentLesson)
                 {
-                    case 1:
-                        Debug.Log("Aprender - Básico Lección 1");
-                        break;
-                    case 2:
-                        Debug.Log("Aprender - Básico Lección 2");
-                        break;
-                    case 3:
-                        Debug.Log("Aprender - Básico Lección 3");
-                        break;
+                    case 1: return "Prueba1";
+                    case 2: return "Prueba2";
+                    case 3: return "Prueba3";
                 }
                 break;
 
             case 1:
                 switch (currentLesson)
                 {
-                    case 1:
-                        Debug.Log("Aprender - Intermedio Lección 1");
-                        break;
-                    case 2:
-                        Debug.Log("Aprender - Intermedio Lección 2");
-                        break;
+                    case 1: return "Identificar sustantivos, verbos y adjetivos";
+                    case 2: return "Sinónimos y Antónimos";
                 }
                 break;
 
             case 2:
                 switch (currentLesson)
                 {
-                    case 1:
-                        Debug.Log("Aprender - Avanzado Lección 1");
-                        break;
-                    case 2:
-                        Debug.Log("Aprender - Avanzado Lección 2");
-                        break;
-                    case 3:
-                        Debug.Log("Aprender - Avanzado Lección 3");
-                        break;
-                    case 4:
-                        Debug.Log("Aprender - Avanzado Lección 4");
-                        break;
+                    case 1: return "Uso correcto de signos de puntuación";
+                    case 2: return "Comprensión Lectora";
+                    case 3: return "Identificar la idea principal";
+                    case 4: return "Inferencias de un texto";
                 }
                 break;
         }
+
+        return "";
     }
 
- public void OnPlayButton()
-{
-    switch (currentIndex)
+    private void MostrarMensajeDeBloqueoPorNivel()
     {
-        case 0:
-            // Básico
-            switch (currentLesson)
-            {
-                case 1:
-                    // Lección 1: Identificar sustantivos, verbos y adjetivos
-                    if (LectoGameSessionManager.Instance != null)
-                    {
-                        LectoGameSessionManager.Instance.StartLessonSession(
-                            "Basico",
-                            "Prueba1"
-                        );
-                    }
-                    break;
-
-                case 2:
-                    // Lección 2: Sinónimos y Antónimos
-                    if (LectoGameSessionManager.Instance != null)
-                    {
-                        LectoGameSessionManager.Instance.StartLessonSession(
-                            "Basico",
-                            "Prueba2"
-                        );
-                    }
-                    break;
-
-                case 3:
-                    // Lección 3: Identificar la idea principal
-                    if (LectoGameSessionManager.Instance != null)
-                    {
-                        LectoGameSessionManager.Instance.StartLessonSession(
-                            "Basico",
-                            "Prueba3"
-                        );
-                    }
-                    break;
-
-                default:
-                    Debug.LogError("Lección no configurada para el nivel basico.");
-                    break;
-            }
-            break;
-
-        case 1:
-            // Intermedio
-            switch (currentLesson)
-            {
-                case 1:
-                    // Lección 1: Identificar sustantivos, verbos y adjetivos
-                    if (LectoGameSessionManager.Instance != null)
-                    {
-                        LectoGameSessionManager.Instance.StartLessonSession(
-                            "Intermedio",
-                            "Identificar sustantivos, verbos y adjetivos"
-                        );
-                    }
-                    break;
-
-                case 2:
-                    // Lección 2: Sinónimos y Antónimos
-                    if (LectoGameSessionManager.Instance != null)
-                    {
-                        LectoGameSessionManager.Instance.StartLessonSession(
-                            "Intermedio",
-                            "Sinónimos y Antónimos"
-                        );
-                    }
-                    break;
-
-                default:
-                    Debug.LogError("Lección no configurada para el nivel intermedio.");
-                    break;
-            }
-            break;
-
-        case 2:
-            // Avanzado
-            switch (currentLesson)
-            {
-                case 1:
-                    // Lección 1: Uso correcto de signos de puntuación
-                    if (LectoGameSessionManager.Instance != null)
-                    {
-                        LectoGameSessionManager.Instance.StartLessonSession(
-                            "Avanzado",
-                            "Uso correcto de signos de puntuación"
-                        );
-                    }
-                    break;
-
-                case 2:
-                    // Lección 2: Comprensión Lectora
-                    if (LectoGameSessionManager.Instance != null)
-                    {
-                        LectoGameSessionManager.Instance.StartLessonSession(
-                            "Avanzado",
-                            "Comprensión Lectora"
-                        );
-                    }
-                    break;
-
-                case 3:
-                    // Lección 3: Identificar la idea principal
-                    if (LectoGameSessionManager.Instance != null)
-                    {
-                        LectoGameSessionManager.Instance.StartLessonSession(
-                            "Avanzado",
-                            "Identificar la idea principal"
-                        );
-                    }
-                    break;
-
-                case 4:
-                    // Lección 4: Inferencias de un texto
-                    if (LectoGameSessionManager.Instance != null)
-                    {
-                        LectoGameSessionManager.Instance.StartLessonSession(
-                            "Avanzado",
-                            "Inferencias de un texto"
-                        );
-                    }
-                    break;
-
-                default:
-                    Debug.LogError("Lección no configurada para el nivel avanzado.");
-                    break;
-            }
-            break;
+        if (currentIndex == 1)
+        {
+            MostrarMensajeBloqueo("Completa todas las lecciones de Básico para desbloquear Intermedio.");
+        }
+        else if (currentIndex == 2)
+        {
+            MostrarMensajeBloqueo("Completa todas las lecciones de Intermedio para desbloquear Avanzado.");
+        }
+        else
+        {
+            MostrarMensajeBloqueo("Esta lección está bloqueada.");
+        }
     }
-}
+
+    private void MostrarMensajeBloqueo(string mensaje)
+    {
+        if (textoMensajeBloqueo != null)
+            textoMensajeBloqueo.text = mensaje;
+
+        Debug.Log("Bloqueo lección: " + mensaje);
+    }
+
+    private void LimpiarMensajeBloqueo()
+    {
+        if (textoMensajeBloqueo != null)
+            textoMensajeBloqueo.text = "";
+    }
 }
