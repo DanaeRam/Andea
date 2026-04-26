@@ -277,7 +277,7 @@ public class LectoCarouselManager : MonoBehaviour
                     {
                         LectoGameSessionManager.Instance.StartLessonSession(
                             "Basico",
-                            "Identificar sustantivos, verbos y adjetivos1"
+                            "Prueba1"
                         );
                     }
                     break;
@@ -288,7 +288,7 @@ public class LectoCarouselManager : MonoBehaviour
                     {
                         LectoGameSessionManager.Instance.StartLessonSession(
                             "Basico",
-                            "Identificar sustantivos, verbos y adjetivos2"
+                            "Prueba2"
                         );
                     }
                     break;
@@ -299,7 +299,7 @@ public class LectoCarouselManager : MonoBehaviour
                     {
                         LectoGameSessionManager.Instance.StartLessonSession(
                             "Basico",
-                            "Identificar sustantivos, verbos y adjetivos3"
+                            "Prueba3"
                         );
                     }
                     break;

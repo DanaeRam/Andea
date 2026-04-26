@@ -156,13 +156,13 @@ public class LectoGameSessionManager : MonoBehaviour
 
     private string GetQuestionBankJsonPath(string levelName, string lessonName)
     {
-        if (levelName == "Basico" && lessonName == "Lección de prueba")
+        if (levelName == "Basico" && lessonName == "Prueba1")
             return "QuestionsBank/BasicoL1";
 
-        if (levelName == "Basico" && lessonName == "Lección de prueba")
+        if (levelName == "Basico" && lessonName == "Prueba2")
             return "QuestionsBank/BasicoL2";
 
-        if (levelName == "Basico" && lessonName == "Lección de prueba")
+        if (levelName == "Basico" && lessonName == "Prueba3")
             return "QuestionsBank/BasicoL3";
 
         if (levelName == "Intermedio" && lessonName == "Identificar sustantivos, verbos y adjetivos")
