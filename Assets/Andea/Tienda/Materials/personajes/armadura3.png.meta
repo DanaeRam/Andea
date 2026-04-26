@@ -1,0 +1,1443 @@
+fileFormatVersion: 2
+guid: ffb228edddfc2438b9c6ebeb3968b793
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2893450393973482429
+    second: armadura3_0
+  - first:
+      213: -4865353941534969134
+    second: armadura3_1
+  - first:
+      213: 6539732628993366835
+    second: armadura3_2
+  - first:
+      213: -1674788049294838989
+    second: armadura3_3
+  - first:
+      213: -3966898277938016745
+    second: armadura3_4
+  - first:
+      213: 2360667644447894601
+    second: armadura3_5
+  - first:
+      213: 2815969035574978885
+    second: armadura3_6
+  - first:
+      213: -3009143437456751804
+    second: armadura3_7
+  - first:
+      213: 3125180677502163910
+    second: armadura3_8
+  - first:
+      213: 7809417851445591058
+    second: armadura3_9
+  - first:
+      213: 6062619200607613973
+    second: armadura3_10
+  - first:
+      213: -4172032095929535676
+    second: armadura3_11
+  - first:
+      213: 7810999817095680571
+    second: armadura3_12
+  - first:
+      213: 6476416429918593557
+    second: armadura3_13
+  - first:
+      213: -5377902852579430275
+    second: armadura3_14
+  - first:
+      213: 6671606149863593206
+    second: armadura3_15
+  - first:
+      213: 9070317524604482525
+    second: armadura3_16
+  - first:
+      213: 4519659459090344353
+    second: armadura3_17
+  - first:
+      213: 8548518915096715291
+    second: armadura3_18
+  - first:
+      213: -5713761754971890236
+    second: armadura3_19
+  - first:
+      213: 6447070570252163001
+    second: armadura3_20
+  - first:
+      213: -6666158466276234931
+    second: armadura3_21
+  - first:
+      213: -4628943902162602230
+    second: armadura3_22
+  - first:
+      213: -5868087012672298653
+    second: armadura3_23
+  - first:
+      213: 2771606660109957571
+    second: armadura3_24
+  - first:
+      213: 1142624166333130024
+    second: armadura3_25
+  - first:
+      213: -3695949371788034777
+    second: armadura3_26
+  - first:
+      213: -6949663091038081175
+    second: armadura3_27
+  - first:
+      213: 9130999831100977937
+    second: armadura3_28
+  - first:
+      213: -4497707606554158594
+    second: armadura3_29
+  - first:
+      213: -2440051548687752749
+    second: armadura3_30
+  - first:
+      213: -7447303496854788570
+    second: armadura3_31
+  - first:
+      213: -7902360172901209157
+    second: armadura3_32
+  - first:
+      213: 812230689195722482
+    second: armadura3_33
+  - first:
+      213: 7044983306503017517
+    second: armadura3_34
+  - first:
+      213: 5511034916636408963
+    second: armadura3_35
+  - first:
+      213: -3753766280873014287
+    second: armadura3_36
+  - first:
+      213: -6017098098602998772
+    second: armadura3_37
+  - first:
+      213: -3790686810122839306
+    second: armadura3_38
+  - first:
+      213: -8688936811344391620
+    second: armadura3_39
+  - first:
+      213: -1001332228105521259
+    second: armadura3_40
+  - first:
+      213: -8096389331064722547
+    second: armadura3_41
+  - first:
+      213: -5756127293780631861
+    second: armadura3_42
+  - first:
+      213: -445858466597564440
+    second: armadura3_43
+  - first:
+      213: -8216364506412681061
+    second: armadura3_44
+  - first:
+      213: -2740444342185129295
+    second: armadura3_45
+  - first:
+      213: 4853494414225271266
+    second: armadura3_46
+  - first:
+      213: 3856010015819655552
+    second: armadura3_47
+  - first:
+      213: -4755994828476149812
+    second: armadura3_48
+  - first:
+      213: -6231199975402233654
+    second: armadura3_49
+  - first:
+      213: 2437747339001255063
+    second: armadura3_50
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: armadura3_0
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 1455
+        width: 67
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db3e00c9dc9972820800000000000000
+      internalID: 2893450393973482429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_1
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 1455
+        width: 66
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d2f2403e5aca7cb0800000000000000
+      internalID: -4865353941534969134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_2
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 1455
+        width: 63
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33b5e255d2cc1ca50800000000000000
+      internalID: 6539732628993366835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_3
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 1456
+        width: 66
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33336bf7425f1c8e0800000000000000
+      internalID: -1674788049294838989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_4
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 1455
+        width: 66
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71e4563a80fb2f8c0800000000000000
+      internalID: -3966898277938016745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_5
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 1455
+        width: 59
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94c231c17b6c2c020800000000000000
+      internalID: 2360667644447894601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_6
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 1289
+        width: 64
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54922ff0be4541720800000000000000
+      internalID: 2815969035574978885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_7
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 1291
+        width: 66
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 443413c9cff5d36d0800000000000000
+      internalID: -3009143437456751804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_8
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1291
+        width: 64
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cb5e6da44fde5b20800000000000000
+      internalID: 3125180677502163910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_9
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 1291
+        width: 64
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21c320ae820a06c60800000000000000
+      internalID: 7809417851445591058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_10
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 1291
+        width: 66
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 514fda4ba00c22450800000000000000
+      internalID: 6062619200607613973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_11
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 1291
+        width: 66
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4437792c9e6f916c0800000000000000
+      internalID: -4172032095929535676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_12
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 1132
+        width: 64
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3211aef2fe366c60800000000000000
+      internalID: 7810999817095680571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_13
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 1132
+        width: 65
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5122dc2fd6ad0e950800000000000000
+      internalID: 6476416429918593557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_14
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 1132
+        width: 63
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d70717359d9dd55b0800000000000000
+      internalID: -5377902852579430275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_15
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 1133
+        width: 64
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f45ee3127e469c50800000000000000
+      internalID: 6671606149863593206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_16
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 1132
+        width: 62
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd3fc066bbd30ed70800000000000000
+      internalID: 9070317524604482525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_17
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 1132
+        width: 58
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a960d4f45e09be30800000000000000
+      internalID: 4519659459090344353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_18
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 982
+        width: 60
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b102c0a49a072a670800000000000000
+      internalID: 8548518915096715291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_19
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 981
+        width: 59
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cd10b7e4f3a4b0b0800000000000000
+      internalID: -5713761754971890236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_20
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 981
+        width: 57
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b751cd8688987950800000000000000
+      internalID: 6447070570252163001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_21
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 981
+        width: 58
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d496429913c0d73a0800000000000000
+      internalID: -6666158466276234931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_22
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 981
+        width: 58
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a073362db00b2cfb0800000000000000
+      internalID: -4628943902162602230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_23
+      rect:
+        serializedVersion: 2
+        x: 890
+        y: 981
+        width: 55
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 361a592d3fd509ea0800000000000000
+      internalID: -5868087012672298653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_24
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 814
+        width: 62
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c9f5f0a299b67620800000000000000
+      internalID: 2771606660109957571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_25
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 815
+        width: 62
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 825201a10aa6bdf00800000000000000
+      internalID: 1142624166333130024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_26
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 814
+        width: 63
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72dfebad0a955bcc0800000000000000
+      internalID: -3695949371788034777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_27
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 814
+        width: 61
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96f28065d36dd8f90800000000000000
+      internalID: -6949663091038081175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_28
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 816
+        width: 61
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 113fce0e7f3d7be70800000000000000
+      internalID: 9130999831100977937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_29
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 815
+        width: 61
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef954cff2cee491c0800000000000000
+      internalID: -4497707606554158594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_30
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 647
+        width: 59
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d123de5b02332ed0800000000000000
+      internalID: -2440051548687752749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_31
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 647
+        width: 61
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62622775decd5a890800000000000000
+      internalID: -7447303496854788570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_32
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 646
+        width: 61
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbb670f8a4d255290800000000000000
+      internalID: -7902360172901209157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_33
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 645
+        width: 63
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f68e29228f954b00800000000000000
+      internalID: 812230689195722482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_34
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 645
+        width: 62
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d245ba8cdfec4c160800000000000000
+      internalID: 7044983306503017517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_35
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 645
+        width: 60
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38c33e6de012b7c40800000000000000
+      internalID: 5511034916636408963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_36
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 484
+        width: 84
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fb89b2b471f7ebc0800000000000000
+      internalID: -3753766280873014287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_37
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 460
+        width: 96
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c040716c829fe7ca0800000000000000
+      internalID: -6017098098602998772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_38
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 475
+        width: 86
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fa9edb1e66c46bc0800000000000000
+      internalID: -3790686810122839306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_39
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 486
+        width: 64
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c32900c8102ba6780800000000000000
+      internalID: -8688936811344391620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_40
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 317
+        width: 78
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 597be91d4ad8a12f0800000000000000
+      internalID: -1001332228105521259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_41
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 299
+        width: 144
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8bef96ccc8d3af80800000000000000
+      internalID: -8096389331064722547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_42
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 315
+        width: 97
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bce564c39b02e10b0800000000000000
+      internalID: -5756127293780631861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_43
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 310
+        width: 63
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ef0a5e361effc9f0800000000000000
+      internalID: -445858466597564440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_44
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 157
+        width: 74
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b98f42a730c99fd80800000000000000
+      internalID: -8216364506412681061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_45
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 153
+        width: 94
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ba8359e36cf7f9d0800000000000000
+      internalID: -2740444342185129295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_46
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 153
+        width: 80
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e96d3f64731b5340800000000000000
+      internalID: 4853494414225271266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_47
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 153
+        width: 58
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 089674bedac438530800000000000000
+      internalID: 3856010015819655552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_48
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 39
+        width: 59
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccf851fd6ef4ffdb0800000000000000
+      internalID: -4755994828476149812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_49
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 39
+        width: 87
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac02abdf2a45689a0800000000000000
+      internalID: -6231199975402233654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armadura3_50
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 39
+        width: 108
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 794d2510a4e94d120800000000000000
+      internalID: 2437747339001255063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      armadura3_0: 2893450393973482429
+      armadura3_1: -4865353941534969134
+      armadura3_10: 6062619200607613973
+      armadura3_11: -4172032095929535676
+      armadura3_12: 7810999817095680571
+      armadura3_13: 6476416429918593557
+      armadura3_14: -5377902852579430275
+      armadura3_15: 6671606149863593206
+      armadura3_16: 9070317524604482525
+      armadura3_17: 4519659459090344353
+      armadura3_18: 8548518915096715291
+      armadura3_19: -5713761754971890236
+      armadura3_2: 6539732628993366835
+      armadura3_20: 6447070570252163001
+      armadura3_21: -6666158466276234931
+      armadura3_22: -4628943902162602230
+      armadura3_23: -5868087012672298653
+      armadura3_24: 2771606660109957571
+      armadura3_25: 1142624166333130024
+      armadura3_26: -3695949371788034777
+      armadura3_27: -6949663091038081175
+      armadura3_28: 9130999831100977937
+      armadura3_29: -4497707606554158594
+      armadura3_3: -1674788049294838989
+      armadura3_30: -2440051548687752749
+      armadura3_31: -7447303496854788570
+      armadura3_32: -7902360172901209157
+      armadura3_33: 812230689195722482
+      armadura3_34: 7044983306503017517
+      armadura3_35: 5511034916636408963
+      armadura3_36: -3753766280873014287
+      armadura3_37: -6017098098602998772
+      armadura3_38: -3790686810122839306
+      armadura3_39: -8688936811344391620
+      armadura3_4: -3966898277938016745
+      armadura3_40: -1001332228105521259
+      armadura3_41: -8096389331064722547
+      armadura3_42: -5756127293780631861
+      armadura3_43: -445858466597564440
+      armadura3_44: -8216364506412681061
+      armadura3_45: -2740444342185129295
+      armadura3_46: 4853494414225271266
+      armadura3_47: 3856010015819655552
+      armadura3_48: -4755994828476149812
+      armadura3_49: -6231199975402233654
+      armadura3_5: 2360667644447894601
+      armadura3_50: 2437747339001255063
+      armadura3_6: 2815969035574978885
+      armadura3_7: -3009143437456751804
+      armadura3_8: 3125180677502163910
+      armadura3_9: 7809417851445591058
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
