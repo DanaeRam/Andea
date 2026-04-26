@@ -39,13 +39,13 @@ EditorBuildSettings:
     path: Assets/Andea/Mundos/MundoLE/ScenesLE/Carousel/CarouselLE.unity
     guid: 055a655e865246b4392821a920092e73
   - enabled: 1
-    path: Assets/Andea/Mundos/MundoLE/ScenesLE/Basico/Leccion1/BasicoL1N1.unity
+    path: Assets/Andea/Mundos/MundoLE/ScenesLE/Basico/B1.unity
     guid: c1607955fd0ed1a47a134173fa197096
   - enabled: 1
-    path: Assets/Andea/Mundos/MundoLE/ScenesLE/Basico/Leccion1/BasicoL1N2.unity
+    path: Assets/Andea/Mundos/MundoLE/ScenesLE/Basico/B2.unity
     guid: b7387fa4457b3b746b267db79d3a9274
   - enabled: 1
-    path: Assets/Andea/Mundos/MundoLE/ScenesLE/Basico/Leccion1/BasicoL1N3.unity
+    path: Assets/Andea/Mundos/MundoLE/ScenesLE/Basico/B3.unity
     guid: d4afc7747b443c144b591abd0cc24ede
   - enabled: 1
     path: Assets/Andea/Mundos/MundoLE/ScenesLE/Intermedio/I1.unity
