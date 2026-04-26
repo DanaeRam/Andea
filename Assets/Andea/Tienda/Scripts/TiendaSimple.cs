@@ -7,77 +7,89 @@ public class TiendaSimple : MonoBehaviour
     [System.Serializable]
     public class ItemData
     {
+        public string idRecompensa;
         public string nombre;
         public int costo;
-        public Sprite icono;
+        public TiendaItemUI itemUI;
     }
-
-    [Header("Prefab y contenedor")]
-    public GameObject itemPrefab;
-    public Transform content;
 
     [Header("Artículos de tienda")]
     public List<ItemData> items = new List<ItemData>();
 
-    [Header("Mensajes")]
+    [Header("Mensaje general de tienda")]
     public TextMeshProUGUI textoEstadoTienda;
 
     private void Start()
     {
-        GenerarItems();
+        ConfigurarItems();
+
+        if (textoEstadoTienda != null)
+            textoEstadoTienda.text = "";
     }
 
-    private void GenerarItems()
+    private void ConfigurarItems()
     {
-        if (itemPrefab == null || content == null)
+        foreach (ItemData item in items)
         {
-            Debug.LogError("TiendaSimple: falta itemPrefab o content.");
-            return;
-        }
-
-        foreach (Transform child in content)
-        {
-            Destroy(child.gameObject);
-        }
-
-        for (int i = 0; i < items.Count; i++)
-        {
-            GameObject nuevoItem = Instantiate(itemPrefab, content);
-            TiendaItemUI itemUI = nuevoItem.GetComponent<TiendaItemUI>();
-
-            if (itemUI == null)
-            {
-                Debug.LogError("El prefab de tienda no tiene TiendaItemUI.");
-                continue;
-            }
-
-            itemUI.Configurar(items[i], this);
+            if (item.itemUI != null)
+                item.itemUI.Configurar(item, this);
+            else
+                Debug.LogWarning("Falta ItemUI en: " + item.idRecompensa);
         }
     }
 
     public void IntentarComprar(ItemData item)
     {
-        if (GameManager.instancia == null)
+        if (item == null)
         {
-            MostrarMensaje("No existe GameManager.");
+            MostrarMensaje("Item inválido.");
             return;
         }
 
-        bool comprado = GameManager.instancia.GastarMonedasTienda(item.costo);
+        if (PlayerStoreApi.Instance == null)
+        {
+            MostrarMensaje("Error de conexión.");
+            return;
+        }
 
-        if (comprado)
-        {
-            MostrarMensaje("Compraste: " + item.nombre);
-        }
-        else
-        {
-            MostrarMensaje("No tienes suficientes runas.");
-        }
+        if (item.itemUI != null)
+            item.itemUI.BloquearBoton();
+
+        StartCoroutine(PlayerStoreApi.Instance.ComprarItem(
+            item.idRecompensa,
+            item.costo,
+            onSuccess: (data) =>
+            {
+                if (GameManager.instancia != null)
+                {
+                    GameManager.instancia.ActualizarProgresoServidor(
+                        data.jugador_id,
+                        data.puntos_totales,
+                        data.runas,
+                        data.puntos_residuales
+                    );
+                }
+
+                MostrarMensaje("Compraste: " + item.nombre);
+
+                if (item.itemUI != null)
+                    item.itemUI.SetComprado();
+            },
+            onError: (error) =>
+            {
+                MostrarMensaje("⚠ " + error);
+
+                if (item.itemUI != null)
+                    item.itemUI.SetDisponible();
+            }
+        ));
     }
 
     public void MostrarMensaje(string mensaje)
     {
         if (textoEstadoTienda != null)
             textoEstadoTienda.text = mensaje;
+
+        Debug.Log("Mensaje tienda: " + mensaje);
     }
 }

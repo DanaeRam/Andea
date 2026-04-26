@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 8964382}
   - component: {fileID: 8964381}
   m_Layer: 5
-  m_Name: TextoPrecio
+  m_Name: TextoPrecio3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 120
+  m_text: 20
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -400,8 +400,9 @@ GameObject:
   - component: {fileID: 21087889}
   - component: {fileID: 21087891}
   - component: {fileID: 21087890}
+  - component: {fileID: 21087892}
   m_Layer: 5
-  m_Name: ItemEspada6
+  m_Name: ItemEspada9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -465,6 +466,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 21087888}
   m_CullTransparentMesh: 1
+--- !u!114 &21087892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21087888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32ae3e33f194e4a5099cf93df8f14c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TiendaItemUI
+  iconoItem: {fileID: 21087890}
+  textoNombre: {fileID: 406341572}
+  textoCosto: {fileID: 168222958}
+  botonComprar: {fileID: 1259808306}
+  textoEstado: {fileID: 0}
 --- !u!1 &31199031
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,7 +918,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 86787538}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 19b93fe3ffccb4b2ab53726c060b4c45, type: 3}
   m_Name: 
@@ -932,7 +950,7 @@ GameObject:
   - component: {fileID: 87669104}
   - component: {fileID: 87669103}
   m_Layer: 5
-  m_Name: TextoPrecio
+  m_Name: TextoPrecio8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -977,7 +995,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 120
+  m_text: 50
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1179,7 +1197,7 @@ GameObject:
   - component: {fileID: 142174069}
   - component: {fileID: 142174068}
   m_Layer: 5
-  m_Name: BotonComprarUI (2)
+  m_Name: BotonComprarUI8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1460,7 +1478,7 @@ GameObject:
   - component: {fileID: 168222959}
   - component: {fileID: 168222958}
   m_Layer: 5
-  m_Name: TextoPrecio
+  m_Name: TextoPrecio9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1505,7 +1523,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 120
+  m_text: 50
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2020,6 +2038,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 260004802}
   m_CullTransparentMesh: 1
+--- !u!1 &275437117
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 275437119}
+  - component: {fileID: 275437118}
+  m_Layer: 0
+  m_Name: PlayerStoreApi
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &275437118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275437117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58a83283f17574ab69395ea06721fbfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerStoreApi
+  comprarItemUrl: https://andea.vercel.app/api/tienda/comprar
+--- !u!4 &275437119
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275437117}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 936.4287, y: 404.69882, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &292346348
 GameObject:
   m_ObjectHideFlags: 0
@@ -2457,7 +2520,7 @@ GameObject:
   - component: {fileID: 326494102}
   - component: {fileID: 326494101}
   m_Layer: 5
-  m_Name: TestoNombre
+  m_Name: TestoNombre1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2596,7 +2659,7 @@ GameObject:
   - component: {fileID: 341578682}
   - component: {fileID: 341578681}
   m_Layer: 5
-  m_Name: BotonComprarUI (2)
+  m_Name: BotonComprarUI7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2742,7 +2805,7 @@ GameObject:
   - component: {fileID: 390947959}
   - component: {fileID: 390947958}
   m_Layer: 5
-  m_Name: BotonComprarUI (2)
+  m_Name: BotonComprarUI4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2886,7 +2949,7 @@ GameObject:
   - component: {fileID: 406341573}
   - component: {fileID: 406341572}
   m_Layer: 5
-  m_Name: TestoNombre
+  m_Name: TestoNombre9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2931,7 +2994,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Espada Oscura
+  m_text: Filo Esmeralda
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193c5e70e6bf81445a744a9d17b342f8, type: 2}
   m_sharedMaterial: {fileID: -6323489661546692138, guid: 193c5e70e6bf81445a744a9d17b342f8, type: 2}
@@ -3023,7 +3086,7 @@ GameObject:
   - component: {fileID: 414061717}
   - component: {fileID: 414061716}
   m_Layer: 5
-  m_Name: TextoPrecio
+  m_Name: TextoPrecio2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3068,7 +3131,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 120
+  m_text: 20
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3159,8 +3222,9 @@ GameObject:
   - component: {fileID: 443087305}
   - component: {fileID: 443087307}
   - component: {fileID: 443087306}
+  - component: {fileID: 443087308}
   m_Layer: 5
-  m_Name: ItemEspada1
+  m_Name: ItemEspada2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3224,6 +3288,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 443087304}
   m_CullTransparentMesh: 1
+--- !u!114 &443087308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443087304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32ae3e33f194e4a5099cf93df8f14c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TiendaItemUI
+  iconoItem: {fileID: 1736017886}
+  textoNombre: {fileID: 2054334260}
+  textoCosto: {fileID: 414061716}
+  botonComprar: {fileID: 953537310}
+  textoEstado: {fileID: 0}
 --- !u!1 &470795819
 GameObject:
   m_ObjectHideFlags: 0
@@ -3314,7 +3395,7 @@ GameObject:
   - component: {fileID: 489559754}
   - component: {fileID: 489559753}
   m_Layer: 5
-  m_Name: TextoPrecio
+  m_Name: TextoPrecio4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3359,7 +3440,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 120
+  m_text: 30
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3725,7 +3806,7 @@ GameObject:
   - component: {fileID: 567988843}
   - component: {fileID: 567988842}
   m_Layer: 5
-  m_Name: TextoPrecio
+  m_Name: TextoPrecio6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3770,7 +3851,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 120
+  m_text: 40
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3862,7 +3943,7 @@ GameObject:
   - component: {fileID: 577814473}
   - component: {fileID: 577814472}
   m_Layer: 5
-  m_Name: TestoNombre
+  m_Name: TestoNombre3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4348,7 +4429,7 @@ GameObject:
   - component: {fileID: 761597660}
   - component: {fileID: 761597659}
   m_Layer: 5
-  m_Name: TestoNombre
+  m_Name: TestoNombre8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4393,7 +4474,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Filo Esmeralda
+  m_text: Escalibur
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 193c5e70e6bf81445a744a9d17b342f8, type: 2}
   m_sharedMaterial: {fileID: -6323489661546692138, guid: 193c5e70e6bf81445a744a9d17b342f8, type: 2}
@@ -4702,7 +4783,7 @@ GameObject:
   - component: {fileID: 918697436}
   - component: {fileID: 918697435}
   m_Layer: 5
-  m_Name: TestoNombre
+  m_Name: TestoNombre4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4978,7 +5059,7 @@ GameObject:
   - component: {fileID: 953537310}
   - component: {fileID: 953537309}
   m_Layer: 5
-  m_Name: BotonComprarUI (2)
+  m_Name: BotonComprarUI2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5449,8 +5530,9 @@ GameObject:
   - component: {fileID: 1193938761}
   - component: {fileID: 1193938763}
   - component: {fileID: 1193938762}
+  - component: {fileID: 1193938764}
   m_Layer: 5
-  m_Name: ItemEspada7
+  m_Name: ItemEspada8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5514,6 +5596,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1193938760}
   m_CullTransparentMesh: 1
+--- !u!114 &1193938764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193938760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32ae3e33f194e4a5099cf93df8f14c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TiendaItemUI
+  iconoItem: {fileID: 1193938762}
+  textoNombre: {fileID: 761597659}
+  textoCosto: {fileID: 87669103}
+  botonComprar: {fileID: 142174069}
+  textoEstado: {fileID: 0}
 --- !u!1 &1251668377
 GameObject:
   m_ObjectHideFlags: 0
@@ -5525,8 +5624,9 @@ GameObject:
   - component: {fileID: 1251668378}
   - component: {fileID: 1251668380}
   - component: {fileID: 1251668379}
+  - component: {fileID: 1251668381}
   m_Layer: 5
-  m_Name: ItemEspada5
+  m_Name: ItemEspada1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5590,6 +5690,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1251668377}
   m_CullTransparentMesh: 1
+--- !u!114 &1251668381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251668377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32ae3e33f194e4a5099cf93df8f14c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TiendaItemUI
+  iconoItem: {fileID: 1251668379}
+  textoNombre: {fileID: 326494101}
+  textoCosto: {fileID: 1713439200}
+  botonComprar: {fileID: 1393690390}
+  textoEstado: {fileID: 1632620685}
 --- !u!1 &1253499752
 GameObject:
   m_ObjectHideFlags: 0
@@ -5601,6 +5718,7 @@ GameObject:
   - component: {fileID: 1253499753}
   - component: {fileID: 1253499755}
   - component: {fileID: 1253499754}
+  - component: {fileID: 1253499756}
   m_Layer: 5
   m_Name: ItemEspada4
   m_TagString: Untagged
@@ -5666,6 +5784,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1253499752}
   m_CullTransparentMesh: 1
+--- !u!114 &1253499756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253499752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32ae3e33f194e4a5099cf93df8f14c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TiendaItemUI
+  iconoItem: {fileID: 1253499754}
+  textoNombre: {fileID: 918697435}
+  textoCosto: {fileID: 489559753}
+  botonComprar: {fileID: 390947959}
+  textoEstado: {fileID: 0}
 --- !u!1 &1259808303
 GameObject:
   m_ObjectHideFlags: 0
@@ -5680,7 +5815,7 @@ GameObject:
   - component: {fileID: 1259808306}
   - component: {fileID: 1259808305}
   m_Layer: 5
-  m_Name: BotonComprarUI (2)
+  m_Name: BotonComprarUI9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5824,7 +5959,7 @@ GameObject:
   - component: {fileID: 1264082509}
   - component: {fileID: 1264082508}
   m_Layer: 5
-  m_Name: TextoPrecio
+  m_Name: TextoPrecio7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5869,7 +6004,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 120
+  m_text: 40
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6177,7 +6312,7 @@ GameObject:
   - component: {fileID: 1310638750}
   - component: {fileID: 1310638749}
   m_Layer: 5
-  m_Name: BotonComprarUI (2)
+  m_Name: BotonComprarUI6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6321,7 +6456,7 @@ GameObject:
   - component: {fileID: 1352826657}
   - component: {fileID: 1352826656}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Text1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6593,7 +6728,7 @@ GameObject:
   - component: {fileID: 1393690390}
   - component: {fileID: 1393690389}
   m_Layer: 5
-  m_Name: BotonComprarUI (2)
+  m_Name: BotonComprarUI1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7011,7 +7146,7 @@ GameObject:
   - component: {fileID: 1461024100}
   - component: {fileID: 1461024099}
   m_Layer: 5
-  m_Name: TextoPrecio
+  m_Name: TextoPrecio5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7056,7 +7191,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 120
+  m_text: 30
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7273,55 +7408,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1480957256}
   m_CullTransparentMesh: 1
---- !u!1 &1481696621
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1481696623}
-  - component: {fileID: 1481696622}
-  m_Layer: 0
-  m_Name: TiendaUIManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1481696622
+--- !u!114 &1481696622 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 2143811715493320030, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+  m_PrefabInstance: {fileID: 8265682078899689353}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1481696621}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c53efeefa4044cd9b99856d79e1dfc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TiendaUI
-  fondoPrincipal: {fileID: 1769142904}
-  panelArticulos: {fileID: 820254646}
-  panelDialogo: {fileID: 1302189166}
-  botonViejo: {fileID: 1360281724}
-  botonesTienda: []
---- !u!4 &1481696623
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1481696621}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.92387, y: 74.11962, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1485269978
 GameObject:
   m_ObjectHideFlags: 0
@@ -7548,7 +7645,7 @@ GameObject:
   - component: {fileID: 1503950526}
   - component: {fileID: 1503950525}
   m_Layer: 5
-  m_Name: BotonComprarUI (2)
+  m_Name: BotonComprarUI3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7691,8 +7788,9 @@ GameObject:
   - component: {fileID: 1581587497}
   - component: {fileID: 1581587499}
   - component: {fileID: 1581587498}
+  - component: {fileID: 1581587500}
   m_Layer: 5
-  m_Name: ItemEspada4
+  m_Name: ItemEspada7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7756,6 +7854,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1581587496}
   m_CullTransparentMesh: 1
+--- !u!114 &1581587500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581587496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32ae3e33f194e4a5099cf93df8f14c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TiendaItemUI
+  iconoItem: {fileID: 1581587498}
+  textoNombre: {fileID: 1669511443}
+  textoCosto: {fileID: 1264082508}
+  botonComprar: {fileID: 341578682}
+  textoEstado: {fileID: 0}
 --- !u!1 &1585992635
 GameObject:
   m_ObjectHideFlags: 0
@@ -8297,6 +8412,7 @@ GameObject:
   - component: {fileID: 1656287125}
   - component: {fileID: 1656287127}
   - component: {fileID: 1656287126}
+  - component: {fileID: 1656287128}
   m_Layer: 5
   m_Name: ItemEspada3
   m_TagString: Untagged
@@ -8362,6 +8478,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1656287124}
   m_CullTransparentMesh: 1
+--- !u!114 &1656287128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656287124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32ae3e33f194e4a5099cf93df8f14c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TiendaItemUI
+  iconoItem: {fileID: 1656287126}
+  textoNombre: {fileID: 577814472}
+  textoCosto: {fileID: 8964381}
+  botonComprar: {fileID: 1503950526}
+  textoEstado: {fileID: 0}
 --- !u!1 &1669511441
 GameObject:
   m_ObjectHideFlags: 0
@@ -8374,7 +8507,7 @@ GameObject:
   - component: {fileID: 1669511444}
   - component: {fileID: 1669511443}
   m_Layer: 5
-  m_Name: TestoNombre
+  m_Name: TestoNombre7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8511,7 +8644,7 @@ GameObject:
   - component: {fileID: 1713439201}
   - component: {fileID: 1713439200}
   m_Layer: 5
-  m_Name: TextoPrecio
+  m_Name: TextoPrecio1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8556,7 +8689,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 120
+  m_text: 10
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8648,7 +8781,7 @@ GameObject:
   - component: {fileID: 1736017887}
   - component: {fileID: 1736017886}
   m_Layer: 5
-  m_Name: ImagenEspada
+  m_Name: ImagenEspada2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8725,8 +8858,9 @@ GameObject:
   - component: {fileID: 1747815320}
   - component: {fileID: 1747815322}
   - component: {fileID: 1747815321}
+  - component: {fileID: 1747815323}
   m_Layer: 5
-  m_Name: ItemEspada2
+  m_Name: ItemEspada6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8790,6 +8924,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1747815319}
   m_CullTransparentMesh: 1
+--- !u!114 &1747815323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747815319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32ae3e33f194e4a5099cf93df8f14c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TiendaItemUI
+  iconoItem: {fileID: 1747815321}
+  textoNombre: {fileID: 2087097616}
+  textoCosto: {fileID: 567988842}
+  botonComprar: {fileID: 1310638750}
+  textoEstado: {fileID: 0}
 --- !u!1 &1754296973
 GameObject:
   m_ObjectHideFlags: 0
@@ -8804,7 +8955,7 @@ GameObject:
   - component: {fileID: 1754296976}
   - component: {fileID: 1754296975}
   m_Layer: 5
-  m_Name: BotonComprarUI (2)
+  m_Name: BotonComprarUI5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8824,11 +8975,11 @@ RectTransform:
   m_Children:
   - {fileID: 295489564}
   - {fileID: 1480957257}
-  m_Father: {fileID: 2132257257}
+  m_Father: {fileID: 2053784529}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 566, y: 324}
+  m_AnchoredPosition: {x: 299.90002, y: 315.40002}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1754296975
@@ -9726,15 +9877,15 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1251668378}
+  - {fileID: 443087305}
   - {fileID: 1656287125}
   - {fileID: 1253499753}
-  - {fileID: 443087305}
-  - {fileID: 1251668378}
-  - {fileID: 21087889}
-  - {fileID: 1193938761}
   - {fileID: 2132257257}
   - {fileID: 1747815320}
   - {fileID: 1581587497}
+  - {fileID: 1193938761}
+  - {fileID: 21087889}
   m_Father: {fileID: 820254647}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
@@ -10099,6 +10250,7 @@ GameObject:
   - component: {fileID: 2035740422}
   - component: {fileID: 2035740424}
   - component: {fileID: 2035740423}
+  - component: {fileID: 2035740425}
   m_Layer: 5
   m_Name: SalirImagen1
   m_TagString: Untagged
@@ -10163,6 +10315,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2035740421}
   m_CullTransparentMesh: 1
+--- !u!114 &2035740425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2035740421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b703ee1fff4c4808b4377970b298099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIHoverPulseEffect
+  hoverScale: 1.08
+  pressedScale: 0.94
+  animationSpeed: 10
+  usePulse: 1
+  pulseAmount: 0.04
+  pulseSpeed: 2
+  changeColor: 1
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
+  audioSource: {fileID: 0}
+  clickSound: {fileID: 0}
+  clickVolume: 1
 --- !u!1 &2053784528
 GameObject:
   m_ObjectHideFlags: 0
@@ -10195,6 +10371,7 @@ RectTransform:
   m_Children:
   - {fileID: 2115964600}
   - {fileID: 1461024098}
+  - {fileID: 1754296974}
   m_Father: {fileID: 2132257257}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -10252,7 +10429,7 @@ GameObject:
   - component: {fileID: 2054334261}
   - component: {fileID: 2054334260}
   m_Layer: 5
-  m_Name: TextoNombre
+  m_Name: TextoNombre2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10526,7 +10703,7 @@ GameObject:
   - component: {fileID: 2087097617}
   - component: {fileID: 2087097616}
   m_Layer: 5
-  m_Name: TestoNombre
+  m_Name: TestoNombre6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10663,7 +10840,7 @@ GameObject:
   - component: {fileID: 2115964602}
   - component: {fileID: 2115964601}
   m_Layer: 5
-  m_Name: TestoNombre
+  m_Name: TestoNombre5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10799,8 +10976,9 @@ GameObject:
   - component: {fileID: 2132257257}
   - component: {fileID: 2132257259}
   - component: {fileID: 2132257258}
+  - component: {fileID: 2132257260}
   m_Layer: 5
-  m_Name: ItemEspada9
+  m_Name: ItemEspada5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10819,7 +10997,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2053784529}
-  - {fileID: 1754296974}
   m_Father: {fileID: 1876104371}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -10865,6 +11042,136 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2132257256}
   m_CullTransparentMesh: 1
+--- !u!114 &2132257260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132257256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32ae3e33f194e4a5099cf93df8f14c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TiendaItemUI
+  iconoItem: {fileID: 2132257258}
+  textoNombre: {fileID: 2115964601}
+  textoCosto: {fileID: 1461024099}
+  botonComprar: {fileID: 1754296976}
+  textoEstado: {fileID: 0}
+--- !u!1001 &8265682078899689353
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 176007515769691839, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -23.92387
+      objectReference: {fileID: 0}
+    - target: {fileID: 176007515769691839, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 74.11962
+      objectReference: {fileID: 0}
+    - target: {fileID: 176007515769691839, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 176007515769691839, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 176007515769691839, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 176007515769691839, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 176007515769691839, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 176007515769691839, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 176007515769691839, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 176007515769691839, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143811715493320030, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: botonViejo
+      value: 
+      objectReference: {fileID: 1360281724}
+    - target: {fileID: 2143811715493320030, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: panelDialogo
+      value: 
+      objectReference: {fileID: 1302189166}
+    - target: {fileID: 2143811715493320030, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: fondoPrincipal
+      value: 
+      objectReference: {fileID: 1769142904}
+    - target: {fileID: 2143811715493320030, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: panelArticulos
+      value: 
+      objectReference: {fileID: 820254646}
+    - target: {fileID: 2259307440992595159, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: textoEstadoTienda
+      value: 
+      objectReference: {fileID: 1632620685}
+    - target: {fileID: 2259307440992595159, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: items.Array.data[0].itemUI
+      value: 
+      objectReference: {fileID: 1251668381}
+    - target: {fileID: 2259307440992595159, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: items.Array.data[1].itemUI
+      value: 
+      objectReference: {fileID: 443087308}
+    - target: {fileID: 2259307440992595159, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: items.Array.data[2].itemUI
+      value: 
+      objectReference: {fileID: 1656287128}
+    - target: {fileID: 2259307440992595159, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: items.Array.data[3].itemUI
+      value: 
+      objectReference: {fileID: 1253499756}
+    - target: {fileID: 2259307440992595159, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: items.Array.data[4].itemUI
+      value: 
+      objectReference: {fileID: 2132257260}
+    - target: {fileID: 2259307440992595159, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: items.Array.data[5].itemUI
+      value: 
+      objectReference: {fileID: 1747815323}
+    - target: {fileID: 2259307440992595159, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: items.Array.data[6].itemUI
+      value: 
+      objectReference: {fileID: 1581587500}
+    - target: {fileID: 2259307440992595159, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: items.Array.data[7].itemUI
+      value: 
+      objectReference: {fileID: 1193938764}
+    - target: {fileID: 2259307440992595159, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: items.Array.data[8].itemUI
+      value: 
+      objectReference: {fileID: 21087892}
+    - target: {fileID: 2536124734681827738, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
+      propertyPath: m_Name
+      value: TiendaUIManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 792063f1fb1674860bccb5677bc013b1, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -10872,9 +11179,10 @@ SceneRoots:
   - {fileID: 1460657897}
   - {fileID: 121262385}
   - {fileID: 1179563939}
-  - {fileID: 1481696623}
+  - {fileID: 8265682078899689353}
   - {fileID: 256131817}
   - {fileID: 1921246609}
   - {fileID: 1796013941}
   - {fileID: 302403921}
   - {fileID: 86787540}
+  - {fileID: 275437119}

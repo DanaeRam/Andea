@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2536124734681827738
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 176007515769691839}
+  - component: {fileID: 2143811715493320030}
+  - component: {fileID: 2259307440992595159}
+  m_Layer: 0
+  m_Name: TiendaUIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &176007515769691839
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2536124734681827738}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -23.92387, y: 74.11962, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2143811715493320030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2536124734681827738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c53efeefa4044cd9b99856d79e1dfc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TiendaUI
+  fondoPrincipal: {fileID: 0}
+  panelArticulos: {fileID: 0}
+  panelDialogo: {fileID: 0}
+  botonViejo: {fileID: 0}
+  botonesTienda: []
+--- !u!114 &2259307440992595159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2536124734681827738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0f32b7fe91ea9f45956e0220c8daf15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TiendaSimple
+  items:
+  - idRecompensa: 'ESPADA_01 '
+    nombre: Espada Oscura
+    costo: 10
+    itemUI: {fileID: 0}
+  - idRecompensa: ESPADA_02
+    nombre: "Filo Carmes\xED "
+    costo: 20
+    itemUI: {fileID: 0}
+  - idRecompensa: ESPADA_03
+    nombre: Niebla de Guerra
+    costo: 20
+    itemUI: {fileID: 0}
+  - idRecompensa: ESPADA_04
+    nombre: Gladius de Escarcha
+    costo: 30
+    itemUI: {fileID: 0}
+  - idRecompensa: ESPADA_05
+    nombre: Alba Ardiente
+    costo: 30
+    itemUI: {fileID: 0}
+  - idRecompensa: ESPADA_06
+    nombre: 'Hoja del Cuervo '
+    costo: 40
+    itemUI: {fileID: 0}
+  - idRecompensa: ESPADA_07
+    nombre: Sol Dorado
+    costo: 40
+    itemUI: {fileID: 0}
+  - idRecompensa: ESPADA_08
+    nombre: Escalibur
+    costo: 50
+    itemUI: {fileID: 0}
+  - idRecompensa: ESPADA_09
+    nombre: Filo Esmeralda
+    costo: 50
+    itemUI: {fileID: 0}
+  textoEstadoTienda: {fileID: 0}

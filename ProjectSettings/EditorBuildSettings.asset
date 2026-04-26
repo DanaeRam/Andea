@@ -134,5 +134,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Andea/Mundos/MundoLE/ScenesLE/Intermedio/I9.unity
     guid: 298cec11f62fcf141bcbf4fb4aea2752
+  - enabled: 1
+    path: Assets/Andea/Tienda/TiendaEspadas.unity
+    guid: 092159eb404544c4989168eeaf68ae13
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
