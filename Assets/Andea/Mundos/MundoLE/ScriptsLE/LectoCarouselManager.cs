@@ -269,10 +269,77 @@ public class LectoCarouselManager : MonoBehaviour
     {
         case 0:
             // Básico
+            switch (currentLesson)
+            {
+                case 1:
+                    // Lección 1: Identificar sustantivos, verbos y adjetivos
+                    if (LectoGameSessionManager.Instance != null)
+                    {
+                        LectoGameSessionManager.Instance.StartLessonSession(
+                            "Basico",
+                            "Identificar sustantivos, verbos y adjetivos1"
+                        );
+                    }
+                    break;
+
+                case 2:
+                    // Lección 2: Sinónimos y Antónimos
+                    if (LectoGameSessionManager.Instance != null)
+                    {
+                        LectoGameSessionManager.Instance.StartLessonSession(
+                            "Basico",
+                            "Identificar sustantivos, verbos y adjetivos2"
+                        );
+                    }
+                    break;
+
+                case 3:
+                    // Lección 3: Identificar la idea principal
+                    if (LectoGameSessionManager.Instance != null)
+                    {
+                        LectoGameSessionManager.Instance.StartLessonSession(
+                            "Basico",
+                            "Identificar sustantivos, verbos y adjetivos3"
+                        );
+                    }
+                    break;
+
+                default:
+                    Debug.LogError("Lección no configurada para el nivel basico.");
+                    break;
+            }
             break;
 
         case 1:
             // Intermedio
+            switch (currentLesson)
+            {
+                case 1:
+                    // Lección 1: Identificar sustantivos, verbos y adjetivos
+                    if (LectoGameSessionManager.Instance != null)
+                    {
+                        LectoGameSessionManager.Instance.StartLessonSession(
+                            "Intermedio",
+                            "Identificar sustantivos, verbos y adjetivos"
+                        );
+                    }
+                    break;
+
+                case 2:
+                    // Lección 2: Sinónimos y Antónimos
+                    if (LectoGameSessionManager.Instance != null)
+                    {
+                        LectoGameSessionManager.Instance.StartLessonSession(
+                            "Intermedio",
+                            "Sinónimos y Antónimos"
+                        );
+                    }
+                    break;
+
+                default:
+                    Debug.LogError("Lección no configurada para el nivel intermedio.");
+                    break;
+            }
             break;
 
         case 2:

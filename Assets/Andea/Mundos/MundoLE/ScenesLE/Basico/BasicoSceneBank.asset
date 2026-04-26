@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 760dd9bf27e9e97478d5d1047eaf1a28, type: 3}
-  m_Name: IntermedioSceneBank
+  m_Name: BasicoSceneBank
   m_EditorClassIdentifier: Assembly-CSharp::LevelSceneBank
-  levelName: '"Intermedio"'
+  levelName: '"Basico"'
   platformSceneNames:
-  - I1
-  - I2
-  - I3
-  - I4
-  - I5
-  - I6
-  - I7
-  - I8
-  - I9
-  - I10
+  - B1
+  - B2
+  - B3
+  - B4
+  - B5
+  - B6
+  - B7
+  - B8
+  - B9
+  - B10

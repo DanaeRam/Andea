@@ -148,11 +148,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fb0cb3f9035e9e4bb2bb94b77b8cbc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LectoGameSessionManager
-  basicoSceneBank: {fileID: 0}
-  intermedioSceneBank: {fileID: 0}
+  basicoSceneBank: {fileID: 11400000, guid: 3ae3287bbc5315143a7a4aac8937574c, type: 2}
+  intermedioSceneBank: {fileID: 11400000, guid: 3283657b5b927e34cae67bb0cd5c1146, type: 2}
   avanzadoSceneBank: {fileID: 11400000, guid: cb90efbedc7039d46884212fdb6be64c, type: 2}
   roundsPerSession: 6
   quizSceneName: SceneQuizLE
+  resultsSceneName: ResultadosNivel
   currentLevelName: 
   currentLessonName: 
   currentRoundIndex: 0
@@ -583,6 +584,9 @@ MonoBehaviour:
   changeColor: 1
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
+  audioSource: {fileID: 0}
+  clickSound: {fileID: 0}
+  clickVolume: 1
 --- !u!1 &91614785
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,6 +741,9 @@ MonoBehaviour:
   changeColor: 1
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
+  audioSource: {fileID: 0}
+  clickSound: {fileID: 0}
+  clickVolume: 1
 --- !u!1 &175342987
 GameObject:
   m_ObjectHideFlags: 0
@@ -891,6 +898,9 @@ MonoBehaviour:
   changeColor: 1
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
+  audioSource: {fileID: 0}
+  clickSound: {fileID: 0}
+  clickVolume: 1
 --- !u!1 &183632288
 GameObject:
   m_ObjectHideFlags: 0
@@ -1551,6 +1561,9 @@ MonoBehaviour:
   changeColor: 1
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
+  audioSource: {fileID: 0}
+  clickSound: {fileID: 0}
+  clickVolume: 1
 --- !u!1 &469704241
 GameObject:
   m_ObjectHideFlags: 0
@@ -2548,6 +2561,9 @@ MonoBehaviour:
   changeColor: 1
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
+  audioSource: {fileID: 0}
+  clickSound: {fileID: 0}
+  clickVolume: 1
 --- !u!1 &1112093793
 GameObject:
   m_ObjectHideFlags: 0
@@ -2821,6 +2837,9 @@ MonoBehaviour:
   changeColor: 1
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
+  audioSource: {fileID: 0}
+  clickSound: {fileID: 0}
+  clickVolume: 1
 --- !u!114 &1197353683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3069,6 +3088,9 @@ MonoBehaviour:
   changeColor: 1
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
+  audioSource: {fileID: 0}
+  clickSound: {fileID: 0}
+  clickVolume: 1
 --- !u!1 &1318811714
 GameObject:
   m_ObjectHideFlags: 0
@@ -3392,6 +3414,9 @@ MonoBehaviour:
   changeColor: 1
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
+  audioSource: {fileID: 0}
+  clickSound: {fileID: 0}
+  clickVolume: 1
 --- !u!1 &1677436249
 GameObject:
   m_ObjectHideFlags: 0
@@ -3546,6 +3571,9 @@ MonoBehaviour:
   changeColor: 1
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
+  audioSource: {fileID: 0}
+  clickSound: {fileID: 0}
+  clickVolume: 1
 --- !u!1 &1813463761
 GameObject:
   m_ObjectHideFlags: 0
@@ -4170,6 +4198,9 @@ MonoBehaviour:
   changeColor: 1
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
+  audioSource: {fileID: 0}
+  clickSound: {fileID: 0}
+  clickVolume: 1
 --- !u!1 &2072258064
 GameObject:
   m_ObjectHideFlags: 0
