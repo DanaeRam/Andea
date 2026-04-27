@@ -23,6 +23,8 @@ public class PlayerSwordManager : MonoBehaviour
 
     [Header("Espadas disponibles")]
     public List<SwordData> swords = new List<SwordData>();
+    [Header("Espada por defecto")]
+    public string defaultSwordId = "ESPADA_DEFAULT";
 
     private void Start()
     {

@@ -37,49 +37,82 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
-        panelMenuInicial.SetActive(true);
-        nameCodePanel.SetActive(false);
+        if (panelMenuInicial != null)
+            panelMenuInicial.SetActive(true);
 
-        inputFieldCode.gameObject.SetActive(false);
-        acceptCodeButton.gameObject.SetActive(false);
+        if (nameCodePanel != null)
+            nameCodePanel.SetActive(false);
+
+        if (inputFieldCode != null)
+            inputFieldCode.gameObject.SetActive(false);
+
+        if (acceptCodeButton != null)
+            acceptCodeButton.gameObject.SetActive(false);
 
         if (stateText != null)
             stateText.text = "";
 
         if (buttonNewPlayer != null)
+        {
+            buttonNewPlayer.onClick.RemoveAllListeners();
             buttonNewPlayer.onClick.AddListener(OpenNameCodePanel);
+        }
 
         if (buttonLogin != null)
+        {
+            buttonLogin.onClick.RemoveAllListeners();
             buttonLogin.onClick.AddListener(OpenCodeOnlyPanel);
+        }
 
         if (acceptNameButton != null)
+        {
+            acceptNameButton.onClick.RemoveAllListeners();
             acceptNameButton.onClick.AddListener(ConfirmName);
+        }
 
         if (acceptCodeButton != null)
+        {
+            acceptCodeButton.onClick.RemoveAllListeners();
             acceptCodeButton.onClick.AddListener(ConfirmCode);
+        }
 
         if (backButton != null)
+        {
+            backButton.onClick.RemoveAllListeners();
             backButton.onClick.AddListener(GoBackToMenu);
+        }
     }
 
     public void OpenNameCodePanel()
     {
         loginDirecto = false;
 
-        panelMenuInicial.SetActive(false);
-        nameCodePanel.SetActive(true);
+        if (panelMenuInicial != null)
+            panelMenuInicial.SetActive(false);
+
+        if (nameCodePanel != null)
+            nameCodePanel.SetActive(true);
 
         if (titleText != null)
             titleText.text = "Ingresa el nombre del niño";
 
-        inputFieldName.gameObject.SetActive(true);
-        acceptNameButton.gameObject.SetActive(true);
+        if (inputFieldName != null)
+        {
+            inputFieldName.gameObject.SetActive(true);
+            inputFieldName.text = "";
+        }
 
-        inputFieldCode.gameObject.SetActive(false);
-        acceptCodeButton.gameObject.SetActive(false);
+        if (acceptNameButton != null)
+            acceptNameButton.gameObject.SetActive(true);
 
-        inputFieldName.text = "";
-        inputFieldCode.text = "";
+        if (inputFieldCode != null)
+        {
+            inputFieldCode.gameObject.SetActive(false);
+            inputFieldCode.text = "";
+        }
+
+        if (acceptCodeButton != null)
+            acceptCodeButton.gameObject.SetActive(false);
 
         if (stateText != null)
             stateText.text = "";
@@ -89,19 +122,29 @@ public class MainMenu : MonoBehaviour
     {
         loginDirecto = true;
 
-        panelMenuInicial.SetActive(false);
-        nameCodePanel.SetActive(true);
+        if (panelMenuInicial != null)
+            panelMenuInicial.SetActive(false);
+
+        if (nameCodePanel != null)
+            nameCodePanel.SetActive(true);
 
         if (titleText != null)
             titleText.text = "Ingresa tu código de jugador";
 
-        inputFieldName.gameObject.SetActive(false);
-        acceptNameButton.gameObject.SetActive(false);
+        if (inputFieldName != null)
+            inputFieldName.gameObject.SetActive(false);
 
-        inputFieldCode.gameObject.SetActive(true);
-        acceptCodeButton.gameObject.SetActive(true);
+        if (acceptNameButton != null)
+            acceptNameButton.gameObject.SetActive(false);
 
-        inputFieldCode.text = "";
+        if (inputFieldCode != null)
+        {
+            inputFieldCode.gameObject.SetActive(true);
+            inputFieldCode.text = "";
+        }
+
+        if (acceptCodeButton != null)
+            acceptCodeButton.gameObject.SetActive(true);
 
         if (stateText != null)
             stateText.text = "";
@@ -109,12 +152,16 @@ public class MainMenu : MonoBehaviour
 
     public void ConfirmName()
     {
+        if (inputFieldName == null)
+            return;
+
         string playerName = inputFieldName.text.Trim();
 
         if (string.IsNullOrEmpty(playerName))
         {
             if (titleText != null)
                 titleText.text = "Por favor, ingresa el nombre del niño";
+
             return;
         }
 
@@ -123,11 +170,17 @@ public class MainMenu : MonoBehaviour
         if (titleText != null)
             titleText.text = "Ingresa el código del jugador";
 
-        inputFieldName.gameObject.SetActive(false);
-        acceptNameButton.gameObject.SetActive(false);
+        if (inputFieldName != null)
+            inputFieldName.gameObject.SetActive(false);
 
-        inputFieldCode.gameObject.SetActive(true);
-        acceptCodeButton.gameObject.SetActive(true);
+        if (acceptNameButton != null)
+            acceptNameButton.gameObject.SetActive(false);
+
+        if (inputFieldCode != null)
+            inputFieldCode.gameObject.SetActive(true);
+
+        if (acceptCodeButton != null)
+            acceptCodeButton.gameObject.SetActive(true);
 
         if (stateText != null)
             stateText.text = "";
@@ -135,12 +188,16 @@ public class MainMenu : MonoBehaviour
 
     public void ConfirmCode()
     {
+        if (inputFieldCode == null)
+            return;
+
         string playerCode = inputFieldCode.text.Trim();
 
         if (string.IsNullOrEmpty(playerCode))
         {
             if (titleText != null)
                 titleText.text = "Por favor, ingresa el código del jugador";
+
             return;
         }
 
@@ -180,11 +237,15 @@ public class MainMenu : MonoBehaviour
         {
             string nombreCompleto = ExtraerValorJson(response, "nombre_completo");
 
+            // Limpiar datos de espada del usuario anterior antes de guardar el nuevo jugador.
+            LimpiarEspadaEquipadaLocal();
+
             PlayerPrefs.SetString("PlayerCode", playerCode);
 
             if (!string.IsNullOrEmpty(nombreCompleto))
             {
                 PlayerPrefs.SetString("PlayerFullName", nombreCompleto);
+                PlayerPrefs.SetString("PlayerName", nombreCompleto);
             }
 
             PlayerPrefs.Save();
@@ -215,6 +276,13 @@ public class MainMenu : MonoBehaviour
         }
     }
 
+    private void LimpiarEspadaEquipadaLocal()
+    {
+        PlayerPrefs.DeleteKey("EquippedSwordId");
+        PlayerPrefs.DeleteKey("EquippedSwordName");
+        PlayerPrefs.DeleteKey("EquippedSwordPlayerCode");
+    }
+
     private string ExtraerValorJson(string json, string clave)
     {
         string patron = "\"" + clave + "\":\"";
@@ -236,8 +304,11 @@ public class MainMenu : MonoBehaviour
     {
         loginDirecto = false;
 
-        nameCodePanel.SetActive(false);
-        panelMenuInicial.SetActive(true);
+        if (nameCodePanel != null)
+            nameCodePanel.SetActive(false);
+
+        if (panelMenuInicial != null)
+            panelMenuInicial.SetActive(true);
 
         if (stateText != null)
             stateText.text = "";
