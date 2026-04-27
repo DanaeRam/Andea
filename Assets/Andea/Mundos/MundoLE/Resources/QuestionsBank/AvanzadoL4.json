@@ -1,0 +1,146 @@
+{
+  "levelName": "Avanzado",
+  "lessonName": "Inferencias de un texto",
+  "questions": [
+    {
+      "questionText": "¿Qué es una inferencia en lectura?",
+      "option1": "Leer entre líneas y hacer una suposición basada en pistas",
+      "option2": "Recordar todo lo que se ha leído",
+      "option3": "Repetir lo que se dijo en el texto",
+      "option4": "Entender solo lo que se menciona explícitamente",
+      "correctOption": 1,
+      "correctFeedback": "¡Correcto! Una inferencia es lo que se puede deducir a partir de pistas en el texto.",
+      "wrongFeedback": "Recuerda que las inferencias se basan en lo que no se dice directamente."
+    },
+    {
+      "questionText": "¿Qué se necesita para hacer una inferencia?",
+      "option1": "Solo entender la idea principal",
+      "option2": "Leer entre líneas y usar conocimiento previo",
+      "option3": "Leer solo las conclusiones del texto",
+      "option4": "Memorizar palabras clave",
+      "correctOption": 2,
+      "correctFeedback": "¡Exacto! Para hacer una inferencia, necesitamos leer entre líneas y usar lo que ya sabemos.",
+      "wrongFeedback": "Piensa en cómo las pistas del texto ayudan a llegar a conclusiones."
+    },
+    {
+      "questionText": "¿Cómo se hace una inferencia correctamente?",
+      "option1": "Buscando pistas que no están explícitamente en el texto",
+      "option2": "Memorizando cada palabra del texto",
+      "option3": "Copiando las ideas principales del texto",
+      "option4": "Suplicando por más información",
+      "correctOption": 1,
+      "correctFeedback": "¡Correcto! Las inferencias se hacen al buscar pistas no expresadas claramente en el texto.",
+      "wrongFeedback": "Recuerda que una inferencia se hace a partir de lo que no se dice abiertamente."
+    },
+    {
+      "questionText": "En un texto, ¿qué tipo de pistas son útiles para hacer inferencias?",
+      "option1": "Datos explícitos que se mencionan varias veces",
+      "option2": "El contexto y las emociones de los personajes",
+      "option3": "Los títulos y subtítulos",
+      "option4": "Las palabras difíciles",
+      "correctOption": 2,
+      "correctFeedback": "¡Exacto! Las emociones y el contexto nos dan pistas para hacer inferencias.",
+      "wrongFeedback": "Piensa en lo que los personajes sienten o en las situaciones que no se explican completamente."
+    },
+    {
+      "questionText": "¿Por qué las inferencias son importantes al leer?",
+      "option1": "Porque nos permiten adivinar la respuesta sin leer el texto",
+      "option2": "Porque nos ayudan a hacer suposiciones sin pruebas",
+      "option3": "Porque nos permiten comprender más allá de lo que se dice explícitamente",
+      "option4": "Porque hacen que los textos sean más largos",
+      "correctOption": 3,
+      "correctFeedback": "¡Correcto! Las inferencias nos permiten comprender más profundamente un texto.",
+      "wrongFeedback": "Piensa en cómo una inferencia ayuda a expandir lo que sabemos del texto."
+    },
+    {
+      "questionText": "En el texto 'El portal se cerró con un sonido suave, y el niño caminó en silencio', ¿qué puedes inferir?",
+      "option1": "El niño estaba feliz de estar en el portal.",
+      "option2": "El niño estaba triste o pensativo.",
+      "option3": "El niño no quería entrar al portal.",
+      "option4": "El niño estaba gritando mientras caminaba.",
+      "correctOption": 2,
+      "correctFeedback": "¡Correcto! El silencio sugiere que el niño estaba triste o pensativo.",
+      "wrongFeedback": "Piensa en cómo el silencio puede indicar una emoción más profunda."
+    },
+    {
+      "questionText": "En el texto 'La biblioteca estaba vacía, excepto por un pequeño grupo de niños que hojeaban libros', ¿qué puedes inferir?",
+      "option1": "El grupo de niños estaba aburrido.",
+      "option2": "La biblioteca estaba muy llena de personas.",
+      "option3": "Los niños estaban buscando libros interesantes.",
+      "option4": "No había niños en la biblioteca.",
+      "correctOption": 3,
+      "correctFeedback": "¡Correcto! El hecho de que los niños hojeaban libros sugiere que estaban buscando algo interesante.",
+      "wrongFeedback": "Piensa en qué harían los niños en una biblioteca vacía."
+    },
+    {
+      "questionText": "En el texto 'Las estrellas brillaban intensamente mientras el héroe se preparaba para su última aventura', ¿qué puedes inferir?",
+      "option1": "El héroe estaba muy tranquilo.",
+      "option2": "El héroe estaba nervioso y listo para algo importante.",
+      "option3": "Las estrellas no eran brillantes.",
+      "option4": "El héroe decidió no ir a la aventura.",
+      "correctOption": 2,
+      "correctFeedback": "¡Correcto! El contexto sugiere que el héroe estaba nervioso y listo para algo grande.",
+      "wrongFeedback": "Piensa en lo que puede indicar el brillo de las estrellas sobre la situación del héroe."
+    },
+    {
+      "questionText": "En el texto 'El viento soplaba fuerte y las hojas caían rápidamente', ¿qué puedes inferir?",
+      "option1": "Era un día tranquilo y sin viento.",
+      "option2": "El viento estaba calmado.",
+      "option3": "Había un clima muy ventoso y agitado.",
+      "option4": "Las hojas estaban pegadas a los árboles.",
+      "correctOption": 3,
+      "correctFeedback": "¡Correcto! El viento fuerte y las hojas caídas indican un clima agitado.",
+      "wrongFeedback": "Piensa en cómo el viento fuerte afecta el entorno."
+    },
+    {
+      "questionText": "En el texto 'Aunque el sol estaba alto, los niños caminaban despacio, como si tuvieran miedo', ¿qué puedes inferir?",
+      "option1": "Los niños estaban disfrutando del sol.",
+      "option2": "Los niños estaban cansados o asustados por algo.",
+      "option3": "Los niños estaban corriendo rápido.",
+      "option4": "Los niños estaban buscando un lugar para jugar.",
+      "correctOption": 2,
+      "correctFeedback": "¡Exacto! El hecho de que caminaban despacio sugiere que estaban cansados o asustados.",
+      "wrongFeedback": "Piensa en por qué los niños no corrían si el sol estaba alto."
+    },
+    {
+      "questionText": "En el texto 'La puerta se cerró con un fuerte estruendo, y todos los niños saltaron de sorpresa', ¿qué puedes inferir?",
+      "option1": "Los niños estaban relajados.",
+      "option2": "La puerta cerró muy suavemente.",
+      "option3": "Los niños estaban sorprendidos por el ruido.",
+      "option4": "La puerta estaba abierta todo el tiempo.",
+      "correctOption": 3,
+      "correctFeedback": "¡Correcto! El fuerte estruendo causó sorpresa en los niños.",
+      "wrongFeedback": "Piensa en cómo una acción puede provocar una reacción inesperada."
+    },
+    {
+      "questionText": "En el texto 'Mientras el héroe recorría el oscuro bosque, escuchaba ruidos extraños', ¿qué puedes inferir?",
+      "option1": "El héroe estaba en un lugar seguro.",
+      "option2": "El héroe tenía miedo o sospechas de algo.",
+      "option3": "El bosque estaba completamente vacío.",
+      "option4": "El héroe no escuchaba nada.",
+      "correctOption": 2,
+      "correctFeedback": "¡Correcto! Los ruidos extraños en el bosque sugieren que el héroe tenía miedo o sospechas.",
+      "wrongFeedback": "Piensa en cómo los ruidos pueden afectar las emociones del héroe."
+    },
+    {
+      "questionText": "En el texto 'Aunque llovía, el niño decidió salir a jugar con su pelota', ¿qué puedes inferir?",
+      "option1": "El niño no quería jugar con la pelota.",
+      "option2": "El niño estaba decidido a jugar a pesar de la lluvia.",
+      "option3": "El niño no estaba bajo la lluvia.",
+      "option4": "El niño tenía miedo de la lluvia.",
+      "correctOption": 2,
+      "correctFeedback": "¡Exacto! El niño estaba decidido a jugar a pesar de la lluvia.",
+      "wrongFeedback": "Piensa en por qué el niño decide salir a jugar bajo la lluvia."
+    },
+    {
+      "questionText": "En el texto 'El héroe miró al horizonte y suspiró, como si estuviera tomando una decisión importante', ¿qué puedes inferir?",
+      "option1": "El héroe ya había tomado una decisión.",
+      "option2": "El héroe estaba indeciso o pensativo.",
+      "option3": "El héroe estaba enojado.",
+      "option4": "El héroe estaba aburrido.",
+      "correctOption": 2,
+      "correctFeedback": "¡Correcto! El suspiro sugiere que el héroe estaba indeciso o pensativo.",
+      "wrongFeedback": "Piensa en lo que un suspiro podría significar sobre el estado emocional del héroe."
+    }
+  ]
+}

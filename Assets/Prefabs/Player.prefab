@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.147, y: -0.158, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6587934134715778752}
@@ -151,7 +151,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!1 &9048969731526142138
 GameObject:
@@ -169,6 +169,7 @@ GameObject:
   - component: {fileID: 6082389846112967957}
   - component: {fileID: -2821209776846919490}
   - component: {fileID: 178867595761939179}
+  - component: {fileID: 4824129149718702960}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -186,7 +187,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.75, y: 0.21, z: 0}
-  m_LocalScale: {x: 1.3037639, y: 1.3037639, z: 1.3037639}
+  m_LocalScale: {x: 1.75, y: 1.75, z: 1.75}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3817629054199933914}
@@ -393,7 +394,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   vidaMaxima: 10
   animator: {fileID: 0}
-  tiempoAntesDeRespawn: 4
+  tiempoAntesDeRespawn: 2
+  audioSource: {fileID: 0}
+  sonidoMuerte: {fileID: 8300000, guid: 226092cf0d9bb432abb88018a3aff879, type: 3}
 --- !u!82 &178867595761939179
 AudioSource:
   m_ObjectHideFlags: 0
@@ -491,3 +494,61 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4824129149718702960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9048969731526142138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9e9aaca48f944645a56c89892d117aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerSwordManager
+  playerController: {fileID: 4945312529677817831}
+  swordDamage: {fileID: 4757257713588088310}
+  swordVisual: {fileID: 6882714001048620824}
+  baseDamage: 1
+  swords:
+  - idRecompensa: ESPADA_DEFAULT
+    nombre: Espada Base
+    sprite: {fileID: -267587109, guid: 05c7d55ea567a4343ba95aab7c626a5a, type: 3}
+    bonusDamage: 1
+  - idRecompensa: ESPADA_01
+    nombre: Espada Oscura
+    sprite: {fileID: 1169189359, guid: 05c7d55ea567a4343ba95aab7c626a5a, type: 3}
+    bonusDamage: 2
+  - idRecompensa: ESPADA_02
+    nombre: "Filo Carmes\xED"
+    sprite: {fileID: 1145680292, guid: 05c7d55ea567a4343ba95aab7c626a5a, type: 3}
+    bonusDamage: 2
+  - idRecompensa: ESPADA_03
+    nombre: Niebla de Guerra
+    sprite: {fileID: 1936746835, guid: 05c7d55ea567a4343ba95aab7c626a5a, type: 3}
+    bonusDamage: 3
+  - idRecompensa: ESPADA_04
+    nombre: Gladius de Escarcha
+    sprite: {fileID: -1259760662, guid: 05c7d55ea567a4343ba95aab7c626a5a, type: 3}
+    bonusDamage: 4
+  - idRecompensa: ESPADA_05
+    nombre: Alba Ardiente
+    sprite: {fileID: 1907593904, guid: 05c7d55ea567a4343ba95aab7c626a5a, type: 3}
+    bonusDamage: 5
+  - idRecompensa: ESPADA_06
+    nombre: Hoja del Cuervo
+    sprite: {fileID: 607831742, guid: 05c7d55ea567a4343ba95aab7c626a5a, type: 3}
+    bonusDamage: 6
+  - idRecompensa: ESPADA_07
+    nombre: Sol Dorado
+    sprite: {fileID: 1008709038, guid: 05c7d55ea567a4343ba95aab7c626a5a, type: 3}
+    bonusDamage: 7
+  - idRecompensa: ESPADA_08
+    nombre: Filo Esmeralda
+    sprite: {fileID: -460413151, guid: 05c7d55ea567a4343ba95aab7c626a5a, type: 3}
+    bonusDamage: 8
+  - idRecompensa: ESPADA_09
+    nombre: Escalibur
+    sprite: {fileID: 2084996774, guid: 05c7d55ea567a4343ba95aab7c626a5a, type: 3}
+    bonusDamage: 10
+  defaultSwordId: ESPADA_DEFAULT

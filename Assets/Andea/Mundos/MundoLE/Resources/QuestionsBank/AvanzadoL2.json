@@ -1,0 +1,176 @@
+{
+  "levelName": "Avanzado",
+  "lessonName": "Comprensión lectora",
+  "questions": [
+    {
+      "questionText": "¿Qué se entiende por 'comprensión lectora'?",
+      "option1": "Leer un texto rápidamente",
+      "option2": "Entender el contenido del texto",
+      "option3": "Memorizar palabras clave",
+      "option4": "Repetir lo que se lee",
+      "correctOption": 2,
+      "correctFeedback": "¡Correcto! La comprensión lectora es entender lo que se lee.",
+      "wrongFeedback": "Piensa en cómo interpretar correctamente la información de un texto."
+    },
+    {
+      "questionText": "¿Qué recurso se utiliza para identificar la idea principal de un texto?",
+      "option1": "Detalles secundarios",
+      "option2": "La introducción",
+      "option3": "Las conclusiones",
+      "option4": "La idea principal o tema central",
+      "correctOption": 4,
+      "correctFeedback": "¡Exacto! La idea principal es el tema central del texto.",
+      "wrongFeedback": "Recuerda que la idea principal resume lo más importante del texto."
+    },
+    {
+      "questionText": "¿Para qué sirve un resumen?",
+      "option1": "Para hacer una lista de palabras difíciles",
+      "option2": "Para capturar la información más importante de un texto",
+      "option3": "Para repetir las mismas ideas del texto",
+      "option4": "Para cambiar el significado del texto",
+      "correctOption": 2,
+      "correctFeedback": "¡Correcto! Un resumen debe capturar lo más importante de un texto.",
+      "wrongFeedback": "Piensa en lo que debe quedar después de reducir la información."
+    },
+    {
+      "questionText": "¿Qué es una inferencia en comprensión lectora?",
+      "option1": "Leer una palabra nueva",
+      "option2": "Predecir lo que sucederá en el texto a partir de pistas",
+      "option3": "Repetir una idea varias veces",
+      "option4": "Contar la historia con tus propias palabras",
+      "correctOption": 2,
+      "correctFeedback": "¡Muy bien! Una inferencia es lo que puedes deducir a partir de pistas en el texto.",
+      "wrongFeedback": "Recuerda que una inferencia se hace a partir de lo que no se dice explícitamente."
+    },
+    {
+      "questionText": "¿Qué indica el tono de un texto?",
+      "option1": "La cantidad de palabras difíciles",
+      "option2": "La actitud del autor hacia el tema",
+      "option3": "La longitud de las oraciones",
+      "option4": "El tipo de vocabulario usado",
+      "correctOption": 2,
+      "correctFeedback": "¡Correcto! El tono refleja la actitud del autor hacia lo que escribe.",
+      "wrongFeedback": "Piensa en cómo el autor se siente o se presenta sobre el tema."
+    },
+    {
+      "questionText": "En la oración 'El portal brillaba con colores vibrantes', ¿qué recurso ayuda a imaginar cómo es el portal?",
+      "option1": "Comparación",
+      "option2": "Descripción detallada",
+      "option3": "Pregunta retórica",
+      "option4": "Metáfora",
+      "correctOption": 2,
+      "correctFeedback": "¡Exacto! La oración describe cómo es el portal con detalles visuales.",
+      "wrongFeedback": "Recuerda que una descripción detallada pinta una imagen en la mente del lector."
+    },
+    {
+      "questionText": "En la oración 'Los niños avanzaban por la librería encantada, buscando el siguiente libro mágico', ¿qué muestra la palabra 'buscando'?",
+      "option1": "Una acción",
+      "option2": "Una emoción",
+      "option3": "Una descripción",
+      "option4": "Un estado",
+      "correctOption": 1,
+      "correctFeedback": "¡Correcto! 'Buscando' es una acción que realiza el sujeto.",
+      "wrongFeedback": "Piensa en qué hace el sujeto en la oración."
+    },
+    {
+      "questionText": "En la oración 'El sol se ponía y el cielo se llenaba de colores naranjas y violetas', ¿qué tipo de oración es?",
+      "option1": "Enunciativa",
+      "option2": "Exclamativa",
+      "option3": "Interrogativa",
+      "option4": "Imperativa",
+      "correctOption": 1,
+      "correctFeedback": "¡Correcto! Es una oración enunciativa, que simplemente nos da información.",
+      "wrongFeedback": "Recuerda que una oración enunciativa es informativa."
+    },
+    {
+      "questionText": "En la oración 'El niño saltó sobre la roca y cruzó el río', ¿qué tipo de acción describe el verbo 'saltó'?",
+      "option1": "Acción de moverse",
+      "option2": "Acción de pensar",
+      "option3": "Acción de escuchar",
+      "option4": "Acción de esperar",
+      "correctOption": 1,
+      "correctFeedback": "¡Correcto! 'Saltó' es una acción física de moverse.",
+      "wrongFeedback": "Piensa en el verbo que describe lo que hace el niño físicamente."
+    },
+    {
+      "questionText": "En la oración 'El viento soplaba fuerte mientras los niños jugaban en el parque', ¿qué recurso se usa para dar más vida a la acción?",
+      "option1": "Personificación",
+      "option2": "Metáfora",
+      "option3": "Onomatopeya",
+      "option4": "Enumeración",
+      "correctOption": 1,
+      "correctFeedback": "¡Correcto! El viento se describe como si tuviera una acción humana, eso es personificación.",
+      "wrongFeedback": "Recuerda cómo a veces damos cualidades humanas a cosas no humanas."
+    },
+    {
+      "questionText": "En la oración 'La puerta del portal se abrió lentamente, revelando un mundo nuevo', ¿qué tipo de oración es?",
+      "option1": "Oración simple",
+      "option2": "Oración compleja",
+      "option3": "Oración interrogativa",
+      "option4": "Oración exclamativa",
+      "correctOption": 1,
+      "correctFeedback": "¡Correcto! Es una oración simple que cuenta un solo hecho.",
+      "wrongFeedback": "Piensa si la oración tiene una o más ideas unidas."
+    },
+    {
+      "questionText": "En la oración 'María entró al portal, y vio a sus amigos en el otro lado', ¿qué tipo de oración es?",
+      "option1": "Oración subordinada",
+      "option2": "Oración coordinada",
+      "option3": "Oración simple",
+      "option4": "Oración compleja",
+      "correctOption": 2,
+      "correctFeedback": "¡Muy bien! Es una oración coordinada porque une dos ideas completas.",
+      "wrongFeedback": "Recuerda que las oraciones coordinadas unen dos ideas que pueden estar separadas por una coma o conjunción."
+    },
+    {
+      "questionText": "En la oración 'Los niños sonrieron al descubrir la respuesta', ¿qué emoción expresa el verbo 'sonrieron'?",
+      "option1": "Felicidad",
+      "option2": "Tristeza",
+      "option3": "Miedo",
+      "option4": "Sorpresa",
+      "correctOption": 1,
+      "correctFeedback": "¡Correcto! 'Sonrieron' expresa felicidad.",
+      "wrongFeedback": "Piensa en qué emoción podría sentir alguien al descubrir algo con éxito."
+    },
+    {
+      "questionText": "En la oración 'El héroe caminaba por la ciudad en busca de aventuras', ¿qué tipo de acción está haciendo el héroe?",
+      "option1": "Físicamente moviéndose",
+      "option2": "Pensando profundamente",
+      "option3": "Observando",
+      "option4": "Esperando",
+      "correctOption": 1,
+      "correctFeedback": "¡Correcto! El héroe está caminando, lo que indica una acción física.",
+      "wrongFeedback": "Piensa en la acción física que realiza el héroe en la ciudad."
+    },
+    {
+      "questionText": "En la oración 'El viento soplaba mientras las hojas caían suavemente al suelo', ¿qué recurso se usa para describir las hojas?",
+      "option1": "Onomatopeya",
+      "option2": "Metáfora",
+      "option3": "Personificación",
+      "option4": "Adjetivo",
+      "correctOption": 4,
+      "correctFeedback": "¡Correcto! 'Suavemente' es un adjetivo que describe cómo caían las hojas.",
+      "wrongFeedback": "Piensa en cómo se describe el movimiento de las hojas."
+    },
+    {
+      "questionText": "En la oración 'El sol se ponía lentamente mientras los niños corrían hacia el portal', ¿qué tipo de oración es?",
+      "option1": "Enunciativa",
+      "option2": "Exclamativa",
+      "option3": "Interrogativa",
+      "option4": "Imperativa",
+      "correctOption": 1,
+      "correctFeedback": "¡Correcto! Es una oración enunciativa que simplemente nos da información.",
+      "wrongFeedback": "Piensa si la oración solo está dando información sobre un hecho."
+    },
+    {
+      "questionText": "En la oración 'La magia del lugar era tan poderosa que nadie podía dejar de sonreír', ¿qué recurso se usa para intensificar la idea?",
+      "option1": "Adjetivo",
+      "option2": "Exageración",
+      "option3": "Comparación",
+      "option4": "Enumeración",
+      "correctOption": 2,
+      "correctFeedback": "¡Correcto! La exageración se usa para intensificar la magia del lugar.",
+      "wrongFeedback": "Piensa en cómo se hace más fuerte la idea de la magia en el texto."
+    }
+  ]
+}
