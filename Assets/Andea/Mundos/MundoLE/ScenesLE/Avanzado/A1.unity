@@ -746,6 +746,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 9048969731526142138, guid: d05e07900c483423b9a5d40f28568cf3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3597,6 +3601,10 @@ PrefabInstance:
     - target: {fileID: 819458144066263566, guid: ab2d5ed8ec6d0184180c39d2ace1b0e3, type: 3}
       propertyPath: m_Name
       value: PanelPausa
+      objectReference: {fileID: 0}
+    - target: {fileID: 819458144066263566, guid: ab2d5ed8ec6d0184180c39d2ace1b0e3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2313359444881123160, guid: ab2d5ed8ec6d0184180c39d2ace1b0e3, type: 3}
       propertyPath: m_LocalPosition.x
