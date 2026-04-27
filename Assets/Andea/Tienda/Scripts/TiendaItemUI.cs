@@ -21,14 +21,20 @@ public class TiendaItemUI : MonoBehaviour
         itemData = data;
         tienda = tiendaRef;
 
+        if (itemData != null)
+        {
+            itemData.idRecompensa = itemData.idRecompensa.Trim();
+            itemData.nombre = itemData.nombre.Trim();
+        }
+
         AutoAsignarReferencias();
         DesactivarScriptsViejos();
 
         if (textoNombre != null)
-            textoNombre.text = data.nombre;
+            textoNombre.text = itemData.nombre;
 
         if (textoCosto != null)
-            textoCosto.text = data.costo.ToString();
+            textoCosto.text = itemData.costo.ToString();
 
         if (botonComprar != null)
         {
@@ -42,10 +48,10 @@ public class TiendaItemUI : MonoBehaviour
         Debug.Log(
             "TiendaItemUI configurado: " +
             gameObject.name +
-            " -> " +
-            data.idRecompensa +
-            " | " +
-            data.nombre
+            " -> [" +
+            itemData.idRecompensa +
+            "] | " +
+            itemData.nombre
         );
     }
 
@@ -136,12 +142,14 @@ public class TiendaItemUI : MonoBehaviour
             return;
         }
 
+        itemData.idRecompensa = itemData.idRecompensa.Trim();
+
         Debug.Log(
             "BOTÓN PRESIONADO: " +
             gameObject.name +
-            " -> " +
+            " -> [" +
             itemData.idRecompensa +
-            " | " +
+            "] | " +
             itemData.nombre
         );
 

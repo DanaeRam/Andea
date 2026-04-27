@@ -34,16 +34,19 @@ public class TiendaSimple : MonoBehaviour
 
     private void Awake()
     {
+        LimpiarIdsDeItems();
         OcultarMensajeInstantaneo();
     }
 
     private void OnEnable()
     {
+        LimpiarIdsDeItems();
         OcultarMensajeInstantaneo();
     }
 
     private IEnumerator Start()
     {
+        LimpiarIdsDeItems();
         ConfigurarItems();
 
         if (panelEspadas != null)
@@ -62,8 +65,25 @@ public class TiendaSimple : MonoBehaviour
         OcultarMensajeInstantaneo();
     }
 
+    private void LimpiarIdsDeItems()
+    {
+        foreach (ItemData item in items)
+        {
+            if (item == null)
+                continue;
+
+            if (!string.IsNullOrEmpty(item.idRecompensa))
+                item.idRecompensa = item.idRecompensa.Trim();
+
+            if (!string.IsNullOrEmpty(item.nombre))
+                item.nombre = item.nombre.Trim();
+        }
+    }
+
     private void ConfigurarItems()
     {
+        LimpiarIdsDeItems();
+
         foreach (ItemData item in items)
         {
             AutoAsignarItemUI(item);
@@ -79,6 +99,8 @@ public class TiendaSimple : MonoBehaviour
     {
         if (item == null || string.IsNullOrEmpty(item.idRecompensa))
             return;
+
+        item.idRecompensa = item.idRecompensa.Trim();
 
         int numeroEspada = ObtenerNumeroEspada(item.idRecompensa);
 
@@ -98,7 +120,10 @@ public class TiendaSimple : MonoBehaviour
 
     private int ObtenerNumeroEspada(string id)
     {
-        string limpio = id.Replace("ESPADA_", "");
+        if (string.IsNullOrEmpty(id))
+            return -1;
+
+        string limpio = id.Trim().Replace("ESPADA_", "");
 
         if (int.TryParse(limpio, out int numero))
             return numero;
@@ -181,6 +206,8 @@ public class TiendaSimple : MonoBehaviour
             return;
         }
 
+        item.idRecompensa = item.idRecompensa.Trim();
+
         if (PlayerStoreApi.Instance == null)
         {
             MostrarMensaje("Error: PlayerStoreApi no existe en la escena.");
@@ -189,6 +216,8 @@ public class TiendaSimple : MonoBehaviour
 
         if (item.itemUI != null)
             item.itemUI.BloquearBoton();
+
+        Debug.Log("INTENTANDO COMPRAR ID LIMPIO: [" + item.idRecompensa + "]");
 
         StartCoroutine(PlayerStoreApi.Instance.ComprarItem(
             item.idRecompensa,
