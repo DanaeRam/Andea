@@ -1,0 +1,1495 @@
+fileFormatVersion: 2
+guid: d2badaa0064034c14bf44794475c4451
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1026391890429777119
+    second: vagabundo_0
+  - first:
+      213: 5482020297482325450
+    second: vagabundo_1
+  - first:
+      213: -5235177138757212924
+    second: vagabundo_2
+  - first:
+      213: -6965300673139767080
+    second: vagabundo_3
+  - first:
+      213: -925973582663630395
+    second: vagabundo_4
+  - first:
+      213: 4649196462253723632
+    second: vagabundo_5
+  - first:
+      213: 3146245995477728835
+    second: vagabundo_6
+  - first:
+      213: -7260343147927109521
+    second: vagabundo_7
+  - first:
+      213: -855407830173292648
+    second: vagabundo_8
+  - first:
+      213: 5210907397325699577
+    second: vagabundo_9
+  - first:
+      213: -8184323031201215951
+    second: vagabundo_10
+  - first:
+      213: -3271723454183567953
+    second: vagabundo_11
+  - first:
+      213: 4475768951228174183
+    second: vagabundo_12
+  - first:
+      213: 3167614538114958817
+    second: vagabundo_13
+  - first:
+      213: -2108165495075949637
+    second: vagabundo_14
+  - first:
+      213: -1706894074787553689
+    second: vagabundo_15
+  - first:
+      213: 3835806647669236619
+    second: vagabundo_16
+  - first:
+      213: -1051064414994564892
+    second: vagabundo_17
+  - first:
+      213: -698982901406730143
+    second: vagabundo_18
+  - first:
+      213: -9054542569238681966
+    second: vagabundo_19
+  - first:
+      213: -3663069637316938709
+    second: vagabundo_20
+  - first:
+      213: 4174209986876967730
+    second: vagabundo_21
+  - first:
+      213: -3827855614285420696
+    second: vagabundo_22
+  - first:
+      213: -8477896958700441817
+    second: vagabundo_23
+  - first:
+      213: 5038130500504521966
+    second: vagabundo_24
+  - first:
+      213: 496828660831621559
+    second: vagabundo_25
+  - first:
+      213: -2592683436594658434
+    second: vagabundo_26
+  - first:
+      213: 425406261168393918
+    second: vagabundo_27
+  - first:
+      213: -5328347147731777798
+    second: vagabundo_28
+  - first:
+      213: 7007054833697150491
+    second: vagabundo_29
+  - first:
+      213: 7133710082049790388
+    second: vagabundo_30
+  - first:
+      213: 1745912676256841598
+    second: vagabundo_31
+  - first:
+      213: -3369639837483714203
+    second: vagabundo_32
+  - first:
+      213: 2965095828208137830
+    second: vagabundo_33
+  - first:
+      213: -2336975279377786963
+    second: vagabundo_34
+  - first:
+      213: -2832578267204104821
+    second: vagabundo_35
+  - first:
+      213: 749845881496607251
+    second: vagabundo_36
+  - first:
+      213: -8154409681563435530
+    second: vagabundo_37
+  - first:
+      213: 1100176530374954674
+    second: vagabundo_38
+  - first:
+      213: -4995494261332617530
+    second: vagabundo_39
+  - first:
+      213: 5876197229028688438
+    second: vagabundo_40
+  - first:
+      213: -5477102166182639540
+    second: vagabundo_41
+  - first:
+      213: 3586636747778152944
+    second: vagabundo_42
+  - first:
+      213: -522928569305805060
+    second: vagabundo_43
+  - first:
+      213: -1068989408647542923
+    second: vagabundo_44
+  - first:
+      213: 8617115046215752380
+    second: vagabundo_45
+  - first:
+      213: -82234434621010627
+    second: vagabundo_46
+  - first:
+      213: 3117604273106805222
+    second: vagabundo_47
+  - first:
+      213: -5183111807431311230
+    second: vagabundo_48
+  - first:
+      213: 1606951046958660121
+    second: vagabundo_49
+  - first:
+      213: -5022538383301636768
+    second: vagabundo_50
+  - first:
+      213: -3381619412092956713
+    second: vagabundo_51
+  - first:
+      213: 3084082279099776119
+    second: vagabundo_52
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: vagabundo_0
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 1466
+        width: 55
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12b6792830681c1f0800000000000000
+      internalID: -1026391890429777119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_1
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 1466
+        width: 54
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acd4ae26a6c041c40800000000000000
+      internalID: 5482020297482325450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_2
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1466
+        width: 55
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4056124212ae857b0800000000000000
+      internalID: -5235177138757212924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_3
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 1466
+        width: 54
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d807b701f7465f90800000000000000
+      internalID: -6965300673139767080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_4
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 1464
+        width: 54
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c140fdbee74623f0800000000000000
+      internalID: -925973582663630395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_5
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 1464
+        width: 54
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ffc2a7cc83458040800000000000000
+      internalID: 4649196462253723632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_6
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 1302
+        width: 50
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34ef1783016b9ab20800000000000000
+      internalID: 3146245995477728835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_7
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 1301
+        width: 48
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f600d58bf541e3b90800000000000000
+      internalID: -7260343147927109521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_8
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 1304
+        width: 53
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 897ee605c1bf024f0800000000000000
+      internalID: -855407830173292648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_9
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 1302
+        width: 48
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f9bd075bacd05840800000000000000
+      internalID: 5210907397325699577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_10
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 1301
+        width: 56
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13a0436c0917b6e80800000000000000
+      internalID: -8184323031201215951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_11
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 1301
+        width: 57
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fad031e4ad08892d0800000000000000
+      internalID: -3271723454183567953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_12
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 1142
+        width: 48
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76f8da2c5202d1e30800000000000000
+      internalID: 4475768951228174183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_13
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 1141
+        width: 47
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e584b1c3a0a5fb20800000000000000
+      internalID: 3167614538114958817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_14
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 1143
+        width: 48
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb3334ad6aa4eb2e0800000000000000
+      internalID: -2108165495075949637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_15
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 1141
+        width: 48
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76e911be1e4ef48e0800000000000000
+      internalID: -1706894074787553689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_16
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 1140
+        width: 47
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b832865b2d58b3530800000000000000
+      internalID: 3835806647669236619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_17
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 1141
+        width: 48
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e8f13cbb7ed961f0800000000000000
+      internalID: -1051064414994564892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_18
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 982
+        width: 54
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 168749921c6bc46f0800000000000000
+      internalID: -698982901406730143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_19
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 982
+        width: 53
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29620ec918dc75280800000000000000
+      internalID: -9054542569238681966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_20
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 981
+        width: 53
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b24743892992a2dc0800000000000000
+      internalID: -3663069637316938709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_21
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 982
+        width: 54
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23b80bdfdd5cde930800000000000000
+      internalID: 4174209986876967730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_22
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 981
+        width: 53
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86768038999b0eac0800000000000000
+      internalID: -3827855614285420696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_23
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 981
+        width: 53
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72fab4642a5785a80800000000000000
+      internalID: -8477896958700441817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_24
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 822
+        width: 50
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eec02ae3ff80be540800000000000000
+      internalID: 5038130500504521966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_25
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 822
+        width: 53
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b11a13e80715e600800000000000000
+      internalID: 496828660831621559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_26
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 820
+        width: 47
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e738cbaa620f40cd0800000000000000
+      internalID: -2592683436594658434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_27
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 822
+        width: 49
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebe4b2a9db857e500800000000000000
+      internalID: 425406261168393918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_28
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 820
+        width: 56
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af64b7bff78ed06b0800000000000000
+      internalID: -5328347147731777798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_29
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 818
+        width: 52
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b16d33c0f3f0e3160800000000000000
+      internalID: 7007054833697150491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_30
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 666
+        width: 49
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b1533b0687000360800000000000000
+      internalID: 7133710082049790388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_31
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 663
+        width: 47
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7ff32d245aba3810800000000000000
+      internalID: 1745912676256841598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_32
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 662
+        width: 47
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56937c1cb62ac31d0800000000000000
+      internalID: -3369639837483714203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_33
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 666
+        width: 47
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 666b65d22f2262920800000000000000
+      internalID: 2965095828208137830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_34
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 662
+        width: 47
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da751df7d55619fd0800000000000000
+      internalID: -2336975279377786963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_35
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 660
+        width: 48
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8dcec8d219a0b8d0800000000000000
+      internalID: -2832578267204104821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_36
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 508
+        width: 75
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31a15ea3bdcf76a00800000000000000
+      internalID: 749845881496607251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_37
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 494
+        width: 74
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fdb7693997b5de80800000000000000
+      internalID: -8154409681563435530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_38
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 506
+        width: 74
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2be8833b9bc944f00800000000000000
+      internalID: 1100176530374954674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_39
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 506
+        width: 52
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c654c3cf607caab0800000000000000
+      internalID: -4995494261332617530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_40
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 344
+        width: 57
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 632c3621f327c8150800000000000000
+      internalID: 5876197229028688438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_41
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 340
+        width: 121
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c48492a499c6df3b0800000000000000
+      internalID: -5477102166182639540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_42
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 343
+        width: 72
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f9dda98e1b46c130800000000000000
+      internalID: 3586636747778152944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_43
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 343
+        width: 51
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfecf9f9c3f2eb8f0800000000000000
+      internalID: -522928569305805060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_44
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 180
+        width: 67
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57788ecebcf2a21f0800000000000000
+      internalID: -1068989408647542923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_45
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 180
+        width: 80
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cba1d56aa74269770800000000000000
+      internalID: 8617115046215752380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_46
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 180
+        width: 73
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3d0c18a738dbdef0800000000000000
+      internalID: -82234434621010627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_47
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 180
+        width: 53
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e165c09194f34b20800000000000000
+      internalID: 3117604273106805222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_48
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 180
+        width: 92
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2808ceeb543e118b0800000000000000
+      internalID: -5183111807431311230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_49
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 180
+        width: 99
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91ab96596790d4610800000000000000
+      internalID: 1606951046958660121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_50
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 18
+        width: 84
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06d8a8073fb5c4ab0800000000000000
+      internalID: -5022538383301636768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_51
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 18
+        width: 67
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7df42a0bf031211d0800000000000000
+      internalID: -3381619412092956713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: vagabundo_52
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 21
+        width: 88
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77cb1df1e7cdcca20800000000000000
+      internalID: 3084082279099776119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      vagabundo_0: -1026391890429777119
+      vagabundo_1: 5482020297482325450
+      vagabundo_10: -8184323031201215951
+      vagabundo_11: -3271723454183567953
+      vagabundo_12: 4475768951228174183
+      vagabundo_13: 3167614538114958817
+      vagabundo_14: -2108165495075949637
+      vagabundo_15: -1706894074787553689
+      vagabundo_16: 3835806647669236619
+      vagabundo_17: -1051064414994564892
+      vagabundo_18: -698982901406730143
+      vagabundo_19: -9054542569238681966
+      vagabundo_2: -5235177138757212924
+      vagabundo_20: -3663069637316938709
+      vagabundo_21: 4174209986876967730
+      vagabundo_22: -3827855614285420696
+      vagabundo_23: -8477896958700441817
+      vagabundo_24: 5038130500504521966
+      vagabundo_25: 496828660831621559
+      vagabundo_26: -2592683436594658434
+      vagabundo_27: 425406261168393918
+      vagabundo_28: -5328347147731777798
+      vagabundo_29: 7007054833697150491
+      vagabundo_3: -6965300673139767080
+      vagabundo_30: 7133710082049790388
+      vagabundo_31: 1745912676256841598
+      vagabundo_32: -3369639837483714203
+      vagabundo_33: 2965095828208137830
+      vagabundo_34: -2336975279377786963
+      vagabundo_35: -2832578267204104821
+      vagabundo_36: 749845881496607251
+      vagabundo_37: -8154409681563435530
+      vagabundo_38: 1100176530374954674
+      vagabundo_39: -4995494261332617530
+      vagabundo_4: -925973582663630395
+      vagabundo_40: 5876197229028688438
+      vagabundo_41: -5477102166182639540
+      vagabundo_42: 3586636747778152944
+      vagabundo_43: -522928569305805060
+      vagabundo_44: -1068989408647542923
+      vagabundo_45: 8617115046215752380
+      vagabundo_46: -82234434621010627
+      vagabundo_47: 3117604273106805222
+      vagabundo_48: -5183111807431311230
+      vagabundo_49: 1606951046958660121
+      vagabundo_5: 4649196462253723632
+      vagabundo_50: -5022538383301636768
+      vagabundo_51: -3381619412092956713
+      vagabundo_52: 3084082279099776119
+      vagabundo_6: 3146245995477728835
+      vagabundo_7: -7260343147927109521
+      vagabundo_8: -855407830173292648
+      vagabundo_9: 5210907397325699577
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

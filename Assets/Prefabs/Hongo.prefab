@@ -178,7 +178,7 @@ MonoBehaviour:
   animator: {fileID: 2791177790704157878}
   tiempoAntesDeDestruir: 1
   rangoAtaque: 1.2
-  danio: 1
+  danio: 2
   tiempoEntreAtaques: 1.5
   playerLayer:
     serializedVersion: 2

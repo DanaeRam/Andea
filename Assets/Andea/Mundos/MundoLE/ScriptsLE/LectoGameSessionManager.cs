@@ -140,7 +140,62 @@ public class LectoGameSessionManager : MonoBehaviour
             );
         }
 
+        string leccionId = GetCurrentLessonId();
+
+        if (!string.IsNullOrEmpty(leccionId) && PlayerLessonsApi.Instance != null)
+        {
+            yield return StartCoroutine(
+                PlayerLessonsApi.Instance.CompletarLeccion(
+                    leccionId,
+                    onSuccess: (data) =>
+                    {
+                        Debug.Log("Lección completada guardada: " + data.leccion_id);
+                    },
+                    onError: (error) =>
+                    {
+                        Debug.LogError("Error al guardar lección completada: " + error);
+                    }
+                )
+            );
+        }
+        else
+        {
+            Debug.LogWarning("No se pudo guardar la lección completada. LecciónId: " + leccionId);
+        }
+
         SceneManager.LoadScene(resultsSceneName);
+    }
+
+    public string GetCurrentLessonId()
+    {
+        if (currentLevelName == "Basico" && currentLessonName == "Prueba1")
+            return "BASICO_01";
+
+        if (currentLevelName == "Basico" && currentLessonName == "Prueba2")
+            return "BASICO_02";
+
+        if (currentLevelName == "Basico" && currentLessonName == "Prueba3")
+            return "BASICO_03";
+
+        if (currentLevelName == "Intermedio" && currentLessonName == "Identificar sustantivos, verbos y adjetivos")
+            return "INTERMEDIO_01";
+
+        if (currentLevelName == "Intermedio" && currentLessonName == "Sinónimos y Antónimos")
+            return "INTERMEDIO_02";
+
+        if (currentLevelName == "Avanzado" && currentLessonName == "Uso correcto de signos de puntuación")
+            return "AVANZADO_01";
+
+        if (currentLevelName == "Avanzado" && currentLessonName == "Comprensión Lectora")
+            return "AVANZADO_02";
+
+        if (currentLevelName == "Avanzado" && currentLessonName == "Identificar la idea principal")
+            return "AVANZADO_03";
+
+        if (currentLevelName == "Avanzado" && currentLessonName == "Inferencias de un texto")
+            return "AVANZADO_04";
+
+        return "";
     }
 
     private LevelSceneBank GetSceneBank(string levelName)

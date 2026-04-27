@@ -2443,6 +2443,71 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   clickSound: {fileID: 0}
   clickVolume: 1
+--- !u!1 &1539552397
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1539552399}
+  - component: {fileID: 1539552398}
+  m_Layer: 0
+  m_Name: LectoCarouselManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1539552398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539552397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a41c7839efa2ee4e8aa1df25eae73cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LectoCarouselManager
+  carouselImage: {fileID: 0}
+  levelSprites: []
+  ribbonText: {fileID: 0}
+  botonesBasico: {fileID: 0}
+  botonesIntermedio: {fileID: 0}
+  botonesAvanzado: {fileID: 0}
+  lessonPanel: {fileID: 0}
+  panelTitleText: {fileID: 0}
+  descriptionLessonText: {fileID: 0}
+  closePanelButton: {fileID: 0}
+  learnButton: {fileID: 0}
+  playButton: {fileID: 0}
+  learnButtonText: {fileID: 0}
+  playButtonText: {fileID: 0}
+  botonesBasicoLecciones: []
+  botonesIntermedioLecciones: []
+  botonesAvanzadoLecciones: []
+  candadosBasico: []
+  candadosIntermedio: []
+  candadosAvanzado: []
+  textoMensajeBloqueo: {fileID: 0}
+--- !u!4 &1539552399
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539552397}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 885, y: 390, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1559099422
 GameObject:
   m_ObjectHideFlags: 0
@@ -2803,6 +2868,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1802818937}
   m_CullTransparentMesh: 1
+--- !u!1 &1823501699
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1823501701}
+  - component: {fileID: 1823501700}
+  m_Layer: 0
+  m_Name: LectoGameSessionManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1823501700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823501699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fb0cb3f9035e9e4bb2bb94b77b8cbc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LectoGameSessionManager
+  basicoSceneBank: {fileID: 11400000, guid: 3ae3287bbc5315143a7a4aac8937574c, type: 2}
+  intermedioSceneBank: {fileID: 11400000, guid: 3283657b5b927e34cae67bb0cd5c1146, type: 2}
+  avanzadoSceneBank: {fileID: 11400000, guid: cb90efbedc7039d46884212fdb6be64c, type: 2}
+  roundsPerSession: 6
+  quizSceneName: SceneQuizLE
+  resultsSceneName: ResultadosNivel
+  currentLevelName: 
+  currentLessonName: 
+  currentRoundIndex: 0
+--- !u!4 &1823501701
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823501699}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 885, y: 390, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1881404701
 GameObject:
   m_ObjectHideFlags: 0
@@ -3680,6 +3798,52 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   clickSound: {fileID: 0}
   clickVolume: 1
+--- !u!1 &2026080089
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2026080091}
+  - component: {fileID: 2026080090}
+  m_Layer: 0
+  m_Name: PlayerLessonsApi
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2026080090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026080089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc53293b88f104361aca63476e9e242a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerLessonsApi
+  obtenerEstadoLeccionesUrl: https://andea.vercel.app/api/lecciones/estado
+  completarLeccionUrl: https://andea.vercel.app/api/lecciones/completar
+--- !u!4 &2026080091
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026080089}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.19864, y: -1.03543, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2050920292
 GameObject:
   m_ObjectHideFlags: 0
@@ -4172,3 +4336,6 @@ SceneRoots:
   - {fileID: 2818206571101632720}
   - {fileID: 1890950454}
   - {fileID: 24839272}
+  - {fileID: 2026080091}
+  - {fileID: 1539552399}
+  - {fileID: 1823501701}

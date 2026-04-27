@@ -119,59 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &793640
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 793642}
-  - component: {fileID: 793641}
-  m_Layer: 0
-  m_Name: LectoGameSessionManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &793641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 793640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fb0cb3f9035e9e4bb2bb94b77b8cbc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LectoGameSessionManager
-  basicoSceneBank: {fileID: 11400000, guid: 3ae3287bbc5315143a7a4aac8937574c, type: 2}
-  intermedioSceneBank: {fileID: 11400000, guid: 3283657b5b927e34cae67bb0cd5c1146, type: 2}
-  avanzadoSceneBank: {fileID: 11400000, guid: cb90efbedc7039d46884212fdb6be64c, type: 2}
-  roundsPerSession: 6
-  quizSceneName: SceneQuizLE
-  resultsSceneName: ResultadosNivel
-  currentLevelName: 
-  currentLessonName: 
-  currentRoundIndex: 0
---- !u!4 &793642
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 793640}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 68240.46, y: -57498.203, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &41255259
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,7 +460,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1922376128}
+      - m_Target: {fileID: 2037972973}
         m_TargetAssemblyTypeName: LectoCarouselManager, Assembly-CSharp
         m_MethodName: OpenLessonPanel
         m_Mode: 3
@@ -670,7 +617,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1922376128}
+      - m_Target: {fileID: 2037972973}
         m_TargetAssemblyTypeName: LectoCarouselManager, Assembly-CSharp
         m_MethodName: OpenLessonPanel
         m_Mode: 3
@@ -827,7 +774,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1922376128}
+      - m_Target: {fileID: 2037972973}
         m_TargetAssemblyTypeName: LectoCarouselManager, Assembly-CSharp
         m_MethodName: OpenLessonPanel
         m_Mode: 3
@@ -997,6 +944,7 @@ RectTransform:
   m_Children:
   - {fileID: 1953553991}
   - {fileID: 1197353681}
+  - {fileID: 334385975}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1125,7 +1073,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1922376128}
+      - m_Target: {fileID: 2037972973}
         m_TargetAssemblyTypeName: LectoCarouselManager, Assembly-CSharp
         m_MethodName: OnPlayButton
         m_Mode: 1
@@ -1395,10 +1343,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2104951097}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 5
+      - m_Target: {fileID: 2037972973}
+        m_TargetAssemblyTypeName: LectoCarouselManager, Assembly-CSharp
+        m_MethodName: OnLearnButton
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1490,7 +1438,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1922376128}
+      - m_Target: {fileID: 2037972973}
         m_TargetAssemblyTypeName: LectoCarouselManager, Assembly-CSharp
         m_MethodName: OpenLessonPanel
         m_Mode: 3
@@ -1564,6 +1512,143 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   clickSound: {fileID: 0}
   clickVolume: 1
+--- !u!1 &334385974
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 334385975}
+  - component: {fileID: 334385977}
+  - component: {fileID: 334385976}
+  m_Layer: 5
+  m_Name: TextoMensajeBloqueo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &334385975
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334385974}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 183632292}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &334385976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334385974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 790f8d7c12ff30348bce862d9f5b01fa, type: 2}
+  m_sharedMaterial: {fileID: 5487993463395257906, guid: 790f8d7c12ff30348bce862d9f5b01fa, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &334385977
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334385974}
+  m_CullTransparentMesh: 1
 --- !u!1 &469704241
 GameObject:
   m_ObjectHideFlags: 0
@@ -1946,7 +2031,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1922376128}
+      - m_Target: {fileID: 2037972973}
         m_TargetAssemblyTypeName: LectoCarouselManager, Assembly-CSharp
         m_MethodName: CloseLessonPanel
         m_Mode: 1
@@ -2490,7 +2575,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1922376128}
+      - m_Target: {fileID: 2037972973}
         m_TargetAssemblyTypeName: LectoCarouselManager, Assembly-CSharp
         m_MethodName: OpenLessonPanel
         m_Mode: 3
@@ -3017,7 +3102,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1922376128}
+      - m_Target: {fileID: 2037972973}
         m_TargetAssemblyTypeName: LectoCarouselManager, Assembly-CSharp
         m_MethodName: OpenLessonPanel
         m_Mode: 3
@@ -3173,7 +3258,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1922376128}
+      - m_Target: {fileID: 2037972973}
         m_TargetAssemblyTypeName: LectoCarouselManager, Assembly-CSharp
         m_MethodName: PreviousImage
         m_Mode: 1
@@ -3343,7 +3428,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1922376128}
+      - m_Target: {fileID: 2037972973}
         m_TargetAssemblyTypeName: LectoCarouselManager, Assembly-CSharp
         m_MethodName: OpenLessonPanel
         m_Mode: 3
@@ -3500,7 +3585,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1922376128}
+      - m_Target: {fileID: 2037972973}
         m_TargetAssemblyTypeName: LectoCarouselManager, Assembly-CSharp
         m_MethodName: OpenLessonPanel
         m_Mode: 3
@@ -3790,67 +3875,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1901399617}
   m_CullTransparentMesh: 1
---- !u!1 &1922376127
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1922376129}
-  - component: {fileID: 1922376128}
-  m_Layer: 0
-  m_Name: LectoCarouselManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1922376128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1922376127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a41c7839efa2ee4e8aa1df25eae73cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LectoCarouselManager
-  carouselImage: {fileID: 1112093795}
-  levelSprites:
-  - {fileID: -2887012303333439335, guid: cddbbd80ca137d24e8fb7c8a04351745, type: 3}
-  - {fileID: -2120489847740103559, guid: 28e41dde63271e849a2816125b7216ed, type: 3}
-  - {fileID: -2216585986979606650, guid: 8224cec3887d07c42b29ec1b9b9bad72, type: 3}
-  ribbonText: {fileID: 41255261}
-  botonesBasico: {fileID: 498919380}
-  botonesIntermedio: {fileID: 1439526422}
-  botonesAvanzado: {fileID: 2049203767}
-  lessonPanel: {fileID: 469704241}
-  panelTitleText: {fileID: 1107391700}
-  descriptionLessonText: {fileID: 728761451}
-  closePanelButton: {fileID: 650225513}
-  learnButton: {fileID: 273201368}
-  playButton: {fileID: 221881493}
-  learnButtonText: {fileID: 241695141}
-  playButtonText: {fileID: 1156955579}
---- !u!4 &1922376129
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1922376127}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8609.273, y: 10038.895, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1939488730
 GameObject:
   m_ObjectHideFlags: 0
@@ -4005,6 +4029,84 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1953553990}
   m_CullTransparentMesh: 1
+--- !u!1 &2037972972
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2037972974}
+  - component: {fileID: 2037972973}
+  m_Layer: 0
+  m_Name: LectoCarouselManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2037972973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037972972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a41c7839efa2ee4e8aa1df25eae73cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LectoCarouselManager
+  carouselImage: {fileID: 1112093795}
+  levelSprites:
+  - {fileID: -2216585986979606650, guid: 8224cec3887d07c42b29ec1b9b9bad72, type: 3}
+  - {fileID: -5594197084512012912, guid: c161e592872612e48a67c1115d154915, type: 3}
+  - {fileID: 8408935477370321882, guid: 5e003a2589dbc2e4682a8798e83a347c, type: 3}
+  ribbonText: {fileID: 41255261}
+  botonesBasico: {fileID: 498919380}
+  botonesIntermedio: {fileID: 1439526422}
+  botonesAvanzado: {fileID: 2049203767}
+  lessonPanel: {fileID: 469704241}
+  panelTitleText: {fileID: 1107391700}
+  descriptionLessonText: {fileID: 728761451}
+  closePanelButton: {fileID: 650225513}
+  learnButton: {fileID: 273201368}
+  playButton: {fileID: 221881493}
+  learnButtonText: {fileID: 241695141}
+  playButtonText: {fileID: 1156955579}
+  botonesBasicoLecciones:
+  - {fileID: 311617109}
+  - {fileID: 91614787}
+  - {fileID: 1677436251}
+  botonesIntermedioLecciones:
+  - {fileID: 175342989}
+  - {fileID: 1224206208}
+  botonesAvanzadoLecciones:
+  - {fileID: 1110013434}
+  - {fileID: 2069954953}
+  - {fileID: 88569068}
+  - {fileID: 1632781657}
+  candadosBasico: []
+  candadosIntermedio: []
+  candadosAvanzado: []
+  textoMensajeBloqueo: {fileID: 334385976}
+  lessonSceneName: LessonScene
+--- !u!4 &2037972974
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037972972}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 885, y: 390, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2049203767
 GameObject:
   m_ObjectHideFlags: 0
@@ -4127,7 +4229,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1922376128}
+      - m_Target: {fileID: 2037972973}
         m_TargetAssemblyTypeName: LectoCarouselManager, Assembly-CSharp
         m_MethodName: OpenLessonPanel
         m_Mode: 3
@@ -4283,7 +4385,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1922376128}
+      - m_Target: {fileID: 2037972973}
         m_TargetAssemblyTypeName: LectoCarouselManager, Assembly-CSharp
         m_MethodName: NextImage
         m_Mode: 1
@@ -4384,7 +4486,6 @@ SceneRoots:
   - {fileID: 1813463764}
   - {fileID: 183632292}
   - {fileID: 620685373}
-  - {fileID: 1922376129}
   - {fileID: 2104951098}
   - {fileID: 505642459}
-  - {fileID: 793642}
+  - {fileID: 2037972974}
