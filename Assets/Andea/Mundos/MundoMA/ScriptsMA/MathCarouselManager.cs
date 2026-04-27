@@ -153,13 +153,13 @@ public class MathCarouselManager : MonoBehaviour
                     switch (currentLesson)
                     {
                         case 1:
-                            descriptionLessonText.text = "Explora la lección 1 del nivel básico y comienza tu aventura de lecto-escritura.";
+                            descriptionLessonText.text = "Explora la lección 1 del nivel básico: Conteo básico.";
                             break;
                         case 2:
-                            descriptionLessonText.text = "Explora la lección 2 del nivel básico y sigue practicando habilidades iniciales.";
+                            descriptionLessonText.text = "Explora la lección 2 del nivel básico: Sumas.";
                             break;
                         case 3:
-                            descriptionLessonText.text = "Explora la lección 3 del nivel básico y refuerza lo aprendido.";
+                            descriptionLessonText.text = "Explora la lección 3 del nivel básico: Restas.";
                             break;
                         default:
                             descriptionLessonText.text = "Lección del nivel básico.";
@@ -171,10 +171,10 @@ public class MathCarouselManager : MonoBehaviour
                     switch (currentLesson)
                     {
                         case 1:
-                            descriptionLessonText.text = "Explora la lección 1 del nivel intermedio: Identificar sustantivos, verbos y adjetivos.";
+                            descriptionLessonText.text = "Explora la lección 1 del nivel intermedio: Multiplicaciones.";
                             break;
                         case 2:
-                            descriptionLessonText.text = "Explora la lección 2 del nivel intermedio: Sinónimos y Antónimos.";
+                            descriptionLessonText.text = "Explora la lección 2 del nivel intermedio: Divisiones.";
                             break;
                         default:
                             descriptionLessonText.text = "Lección del nivel intermedio.";
@@ -186,13 +186,13 @@ public class MathCarouselManager : MonoBehaviour
                     switch (currentLesson)
                     {
                         case 1:
-                            descriptionLessonText.text = "Explora la lección 1 del nivel avanzado: Uso correcto de signos de puntuación.";
+                            descriptionLessonText.text = "Explora la lección 1 del nivel avanzado: Operaciones combinadas.";
                             break;
                         case 2:
-                            descriptionLessonText.text = "Explora la lección 2 del nivel avanzado: Comprensión Lectora.";
+                            descriptionLessonText.text = "Explora la lección 2 del nivel avanzado: Fracciones.";
                             break;
                         case 3:
-                            descriptionLessonText.text = "Explora la lección 3 del nivel avanzado: Identificar la idea principal.";
+                            descriptionLessonText.text = "Explora la lección 3 del nivel avanzado: Porcentajes.";
                             break;
                         default:
                             descriptionLessonText.text = "Lección del nivel avanzado.";
