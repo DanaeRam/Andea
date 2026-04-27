@@ -151,7 +151,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
 --- !u!1 &9048969731526142138
 GameObject:
@@ -511,25 +511,29 @@ MonoBehaviour:
   swordVisual: {fileID: 6882714001048620824}
   baseDamage: 1
   swords:
+  - idRecompensa: ESPADA_DEFAULT
+    nombre: Espada Base
+    sprite: {fileID: -267587109, guid: 05c7d55ea567a4343ba95aab7c626a5a, type: 3}
+    bonusDamage: 1
   - idRecompensa: ESPADA_01
     nombre: Espada Oscura
-    sprite: {fileID: 1169189359, guid: 6eb16e372762d6b4cb708c44ebfab931, type: 3}
+    sprite: {fileID: 1169189359, guid: 05c7d55ea567a4343ba95aab7c626a5a, type: 3}
     bonusDamage: 2
   - idRecompensa: ESPADA_02
     nombre: "Filo Carmes\xED"
-    sprite: {fileID: 1145680292, guid: 6eb16e372762d6b4cb708c44ebfab931, type: 3}
+    sprite: {fileID: 1145680292, guid: 05c7d55ea567a4343ba95aab7c626a5a, type: 3}
     bonusDamage: 2
   - idRecompensa: ESPADA_03
     nombre: Niebla de Guerra
-    sprite: {fileID: 1936746835, guid: 6eb16e372762d6b4cb708c44ebfab931, type: 3}
+    sprite: {fileID: 1936746835, guid: 05c7d55ea567a4343ba95aab7c626a5a, type: 3}
     bonusDamage: 3
   - idRecompensa: ESPADA_04
     nombre: Gladius de Escarcha
-    sprite: {fileID: -1259760662, guid: 6eb16e372762d6b4cb708c44ebfab931, type: 3}
+    sprite: {fileID: -1259760662, guid: 05c7d55ea567a4343ba95aab7c626a5a, type: 3}
     bonusDamage: 4
   - idRecompensa: ESPADA_05
     nombre: Alba Ardiente
-    sprite: {fileID: 1907593904, guid: 6eb16e372762d6b4cb708c44ebfab931, type: 3}
+    sprite: {fileID: 1907593904, guid: 05c7d55ea567a4343ba95aab7c626a5a, type: 3}
     bonusDamage: 5
   - idRecompensa: ESPADA_06
     nombre: Hoja del Cuervo
@@ -547,3 +551,4 @@ MonoBehaviour:
     nombre: Escalibur
     sprite: {fileID: 2084996774, guid: 05c7d55ea567a4343ba95aab7c626a5a, type: 3}
     bonusDamage: 10
+  defaultSwordId: ESPADA_DEFAULT
