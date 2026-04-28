@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class FormulaGame : MonoBehaviour
+public class OperacionesCombinadas : MonoBehaviour
 {
     [Header("Fórmulas y componentes")]
     public GameObject formula1;
@@ -87,15 +87,118 @@ public class FormulaGame : MonoBehaviour
             imageFormula3.sprite = GetRandomPotion();
         }
 
-        int num1 = Random.Range(1, 10);
-        int num2 = Random.Range(1, 10);
-        int result = num1 + num2;
+int a = 0;
+int b = 0;
+int c = 0;
+int result = 0;
 
-        if (currentFormulaIndex == 0) textFormula1.text = $"{num1} + {num2}";
-        if (currentFormulaIndex == 1) textFormula2.text = $"{num1} + {num2}";
-        if (currentFormulaIndex == 2) textFormula3.text = $"{num1} + {num2}";
+bool isValid = false;
 
-        correctAnswer = result;
+while (!isValid)
+{
+    int operationType = Random.Range(0, 4);
+
+    // 0 = suma/resta
+    // 1 = suma/multiplicación
+    // 2 = suma/división
+    // 3 = resta/multiplicación o resta/división
+
+    if (operationType == 0)
+    {
+        // a + b - c
+        a = Random.Range(0, 10);
+        b = Random.Range(0, 10);
+        c = Random.Range(0, 10);
+
+        int partial = a + b;
+
+        if (partial >= c)
+        {
+            result = partial - c;
+            SetFormulaText($"{a} + {b} - {c}");
+            isValid = true;
+        }
+    }
+
+    if (operationType == 1)
+    {
+        // a + b × c
+        a = Random.Range(0, 10);
+        b = Random.Range(0, 10);
+        c = Random.Range(0, 10);
+
+        result = a + (b * c);
+        SetFormulaText($"{a} + {b} × {c}");
+        isValid = true;
+    }
+
+    if (operationType == 2)
+    {
+        // a + b ÷ c
+        int divisor = Random.Range(1, 10);
+        int quotient = Random.Range(1, 10);
+        int dividend = divisor * quotient;
+
+        a = Random.Range(0, 10);
+        b = dividend;
+        c = divisor;
+
+        result = a + quotient;
+        SetFormulaText($"{a} + {b} ÷ {c}");
+        isValid = true;
+    }
+
+    if (operationType == 3)
+    {
+        bool useMultiplication = Random.value > 0.5f;
+
+        if (useMultiplication)
+        {
+            // a × b - c
+            a = Random.Range(0, 10);
+            b = Random.Range(0, 10);
+            c = Random.Range(0, 10);
+
+            int partial = a * b;
+
+            if (partial >= c)
+            {
+                result = partial - c;
+                SetFormulaText($"{a} × {b} - {c}");
+                isValid = true;
+            }
+        }
+        else
+        {
+            // a ÷ b - c
+            int divisor = Random.Range(1, 10);
+            int quotient = Random.Range(1, 10);
+            int dividend = divisor * quotient;
+
+            a = dividend;
+            b = divisor;
+            c = Random.Range(0, 10);
+
+            int partial = quotient;
+
+            if (partial >= c)
+            {
+                result = partial - c;
+                SetFormulaText($"{a} ÷ {b} - {c}");
+                isValid = true;
+            }
+        }
+    }
+}
+
+correctAnswer = result;
+
+void SetFormulaText(string formula)
+{
+    if (currentFormulaIndex == 0) textFormula1.text = formula;
+    if (currentFormulaIndex == 1) textFormula2.text = formula;
+    if (currentFormulaIndex == 2) textFormula3.text = formula;
+}
 
         int[] answers = new int[3];
         answers[0] = correctAnswer;

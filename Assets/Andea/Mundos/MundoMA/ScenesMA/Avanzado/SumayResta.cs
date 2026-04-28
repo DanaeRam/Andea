@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class FormulaGame : MonoBehaviour
+public class SumayResta : MonoBehaviour
 {
     [Header("Fórmulas y componentes")]
     public GameObject formula1;
@@ -87,13 +87,53 @@ public class FormulaGame : MonoBehaviour
             imageFormula3.sprite = GetRandomPotion();
         }
 
-        int num1 = Random.Range(1, 10);
-        int num2 = Random.Range(1, 10);
-        int result = num1 + num2;
+        int a = 0;
+        int b = 0;
+        int c = 0;
+        int result = 0;
 
-        if (currentFormulaIndex == 0) textFormula1.text = $"{num1} + {num2}";
-        if (currentFormulaIndex == 1) textFormula2.text = $"{num1} + {num2}";
-        if (currentFormulaIndex == 2) textFormula3.text = $"{num1} + {num2}";
+        bool isValid = false;
+
+        while (!isValid)
+        {
+            a = Random.Range(0, 10);
+            b = Random.Range(0, 10);
+            c = Random.Range(0, 10);
+
+            bool sumFirst = Random.value > 0.5f;
+
+            if (sumFirst)
+            {
+                // a + b - c
+                int partial = a + b;
+
+                if (partial >= c)
+                {
+                    result = partial - c;
+
+                    if (currentFormulaIndex == 0) textFormula1.text = $"{a} + {b} - {c}";
+                    if (currentFormulaIndex == 1) textFormula2.text = $"{a} + {b} - {c}";
+                    if (currentFormulaIndex == 2) textFormula3.text = $"{a} + {b} - {c}";
+
+                    isValid = true;
+                }
+            }
+            else
+            {
+
+                if (a >= b) 
+                {
+                    int partial = a - b;
+                    result = partial + c;
+
+                    if (currentFormulaIndex == 0) textFormula1.text = $"{a} - {b} + {c}";
+                    if (currentFormulaIndex == 1) textFormula2.text = $"{a} - {b} + {c}";
+                    if (currentFormulaIndex == 2) textFormula3.text = $"{a} - {b} + {c}";
+
+                    isValid = true;
+                }
+            }
+        }
 
         correctAnswer = result;
 

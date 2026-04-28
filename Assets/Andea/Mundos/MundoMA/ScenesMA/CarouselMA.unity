@@ -3860,6 +3860,7 @@ MonoBehaviour:
   - {fileID: 6710747197684576618, guid: f6966cd0fcb9e564580ada1f69a59fbe, type: 3}
   - {fileID: -5235086655481580348, guid: c13103e1bdaced24b8d39a342bda8be7, type: 3}
   - {fileID: 2434584804725904963, guid: aa9e09ca53bcb2748afb9ee1ca8be141, type: 3}
+  introWalkSceneName: BasicoTienda
   ribbonText: {fileID: 589744355}
   botonesBasico: {fileID: 247434931}
   botonesIntermedio: {fileID: 206740950}

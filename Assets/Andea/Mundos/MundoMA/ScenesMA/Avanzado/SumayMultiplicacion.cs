@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class FormulaGame : MonoBehaviour
+public class SumayMultiplicacion : MonoBehaviour
 {
     [Header("Fórmulas y componentes")]
     public GameObject formula1;
@@ -87,15 +87,37 @@ public class FormulaGame : MonoBehaviour
             imageFormula3.sprite = GetRandomPotion();
         }
 
-        int num1 = Random.Range(1, 10);
-        int num2 = Random.Range(1, 10);
-        int result = num1 + num2;
+int a = Random.Range(0, 10);
+int b = Random.Range(0, 10);
+int c = Random.Range(0, 10);
 
-        if (currentFormulaIndex == 0) textFormula1.text = $"{num1} + {num2}";
-        if (currentFormulaIndex == 1) textFormula2.text = $"{num1} + {num2}";
-        if (currentFormulaIndex == 2) textFormula3.text = $"{num1} + {num2}";
+int result;
 
-        correctAnswer = result;
+bool multiplyFirst = Random.value > 0.5f;
+
+if (multiplyFirst)
+{
+    // a + b × c
+    int partial = b * c;
+    result = a + partial;
+
+    if (currentFormulaIndex == 0) textFormula1.text = $"{a} + {b} × {c}";
+    if (currentFormulaIndex == 1) textFormula2.text = $"{a} + {b} × {c}";
+    if (currentFormulaIndex == 2) textFormula3.text = $"{a} + {b} × {c}";
+}
+else
+{
+    // a × b + c
+    int partial = a * b;
+    result = partial + c;
+
+    if (currentFormulaIndex == 0) textFormula1.text = $"{a} × {b} + {c}";
+    if (currentFormulaIndex == 1) textFormula2.text = $"{a} × {b} + {c}";
+    if (currentFormulaIndex == 2) textFormula3.text = $"{a} × {b} + {c}";
+}
+
+correctAnswer = result;
+
 
         int[] answers = new int[3];
         answers[0] = correctAnswer;

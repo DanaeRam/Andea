@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
-
-public class FormulaGame : MonoBehaviour
+public class Division : MonoBehaviour
 {
     [Header("Fórmulas y componentes")]
     public GameObject formula1;
@@ -87,13 +86,22 @@ public class FormulaGame : MonoBehaviour
             imageFormula3.sprite = GetRandomPotion();
         }
 
-        int num1 = Random.Range(1, 10);
-        int num2 = Random.Range(1, 10);
-        int result = num1 + num2;
+        int result = Random.Range(1, 10);      // Resultado (1 a 9)
+        int divisor = Random.Range(1, 10);     // Divisor (1 a 9)
 
-        if (currentFormulaIndex == 0) textFormula1.text = $"{num1} + {num2}";
-        if (currentFormulaIndex == 1) textFormula2.text = $"{num1} + {num2}";
-        if (currentFormulaIndex == 2) textFormula3.text = $"{num1} + {num2}";
+        int dividendo = result * divisor;      // Siempre exacto
+
+        // Para asegurar máximo 2 dígitos (<= 99)
+        while (dividendo > 99)
+        {
+            result = Random.Range(1, 10);
+            divisor = Random.Range(1, 10);
+            dividendo = result * divisor;
+        }
+
+        if (currentFormulaIndex == 0) textFormula1.text = $"{dividendo} ÷ {divisor}";
+        if (currentFormulaIndex == 1) textFormula2.text = $"{dividendo} ÷ {divisor}";
+        if (currentFormulaIndex == 2) textFormula3.text = $"{dividendo} ÷ {divisor}";
 
         correctAnswer = result;
 
