@@ -22,6 +22,9 @@ public class GameManager : MonoBehaviour
     public int ultimoPuntajeGanado = 0;
     public int ultimasMonedasGanadas = 0;
     public int puntosSobrantes = 0;
+    public int respuestasIncorrectasNivel = 0;
+    public int muertesNivel = 0;
+    public int penalizacionUltimoNivel = 0;
 
     [Header("Escena de resultados")]
     public string nombreEscenaResultados = "ResultadosNivel";
@@ -63,10 +66,7 @@ public class GameManager : MonoBehaviour
         SolicitarProgresoInicialSiExisteCodigo();
     }
 
-    // =========================
     // INICIO / SESIÓN
-    // =========================
-
     public void SolicitarProgresoInicialSiExisteCodigo()
     {
         if (progresoInicialSolicitado)
@@ -150,6 +150,9 @@ public class GameManager : MonoBehaviour
         ultimoPuntajeGanado = 0;
         ultimasMonedasGanadas = 0;
         puntosSobrantes = 0;
+        respuestasIncorrectasNivel = 0;
+        muertesNivel = 0;
+        penalizacionUltimoNivel = 0;
 
         monedasTienda = runasServidor;
 
@@ -157,10 +160,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("Nueva sesión iniciada.");
     }
 
-    // =========================
     // PROGRESO LOCAL DE SESIÓN
-    // =========================
-
     public void SumarMoneda(int cantidad = 1)
     {
         monedas += cantidad;
@@ -201,16 +201,23 @@ public class GameManager : MonoBehaviour
         SincronizarRecompensasLocales();
     }
 
-    // =========================
-    // CIERRE DE SESIÓN / NIVEL
-    // =========================
+    public void RegistrarRespuestaIncorrectaNivel()
+    {
+        respuestasIncorrectasNivel++;
+    }
 
+    public void RegistrarMuerteNivel()
+    {
+        muertesNivel++;
+    }
+
+    // CIERRE DE SESIÓN / NIVEL
     public IEnumerator CompletarNivelCoroutine(System.Action onFinished = null)
     {
         if (rewardSystem == null)
             rewardSystem = new LevelRewardSystem();
 
-        bool completado = rewardSystem.CompleteLevel(true);
+        bool completado = rewardSystem.CompleteLevel(true, respuestasIncorrectasNivel, muertesNivel);
 
         if (!completado)
         {
@@ -220,6 +227,7 @@ public class GameManager : MonoBehaviour
 
         ultimoPuntajeGanado = rewardSystem.LastPointsEarned;
         puntosSobrantes = rewardSystem.LastRemainingPoints;
+        penalizacionUltimoNivel = rewardSystem.LastPenaltyApplied;
         ultimasMonedasGanadas = 0;
 
         SincronizarRecompensasLocales();
@@ -357,10 +365,8 @@ public class GameManager : MonoBehaviour
 
         ActualizarTodoElTexto();
     }
-    // =========================
-    // RESETEO GENERAL
-    // =========================
 
+    // RESETEO GENERAL
     public void ResetearRecompensasGlobales()
     {
         if (rewardSystem == null)
@@ -374,6 +380,9 @@ public class GameManager : MonoBehaviour
         ultimoPuntajeGanado = 0;
         ultimasMonedasGanadas = 0;
         puntosSobrantes = 0;
+        respuestasIncorrectasNivel = 0;
+        muertesNivel = 0;
+        penalizacionUltimoNivel = 0;
         monedas = 0;
         vidas = vidasIniciales;
 
@@ -382,10 +391,7 @@ public class GameManager : MonoBehaviour
         ActualizarTodoElTexto();
     }
 
-    // =========================
     // UI
-    // =========================
-
     private void ActualizarTodoElTexto()
     {
         ActualizarTextoMonedas();
@@ -435,10 +441,7 @@ public class GameManager : MonoBehaviour
         ActualizarTodoElTexto();
     }
 
-    // =========================
     // RUNAS / TIENDA
-    // =========================
-
     public bool TieneMonedasTiendaSuficientes(int costo)
     {
         return runasServidor >= costo;
