@@ -179,5 +179,32 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Andea/Mundos/MundoLE/ScenesLE/Basico/B10.unity
     guid: b01f335633f94874ab79a8eeb1d8a0a0
+  - enabled: 1
+    path: Assets/Andea/Mundos/MundoMA/ScenesMA/Basico/BasicoTienda.unity
+    guid: 4fe09985b9ebfd04286bb7c38de654c1
+  - enabled: 1
+    path: Assets/Andea/Mundos/MundoMA/ScenesMA/Avanzado/OperacionesCombinadas.unity
+    guid: 3c699b51f92b20f4aa58d9c892a6b752
+  - enabled: 1
+    path: Assets/Andea/Mundos/MundoMA/ScenesMA/Avanzado/SumayDivision.unity
+    guid: 2b0c85244a276eb4e9abde023f052942
+  - enabled: 1
+    path: Assets/Andea/Mundos/MundoMA/ScenesMA/Avanzado/SumayMultiplicacion.unity
+    guid: 7b8869e5d2895e74da79aaf660347d10
+  - enabled: 1
+    path: Assets/Andea/Mundos/MundoMA/ScenesMA/Avanzado/SumayResta.unity
+    guid: 55ce7c043cffb774baa1a3cbac7b1a6f
+  - enabled: 1
+    path: Assets/Andea/Mundos/MundoMA/ScenesMA/Basico/BasicoRestas.unity
+    guid: 8cafed95199f1484e8b86a37e84dbcb9
+  - enabled: 1
+    path: Assets/Andea/Mundos/MundoMA/ScenesMA/Intermedio/Division.unity
+    guid: a431dfbaf6d7fe54b8e3b2b81729c56b
+  - enabled: 1
+    path: Assets/Andea/Mundos/MundoMA/ScenesMA/Intermedio/Multiplicacion.unity
+    guid: d50632eb8d86fb44db45ea8a50d7ed1c
+  - enabled: 1
+    path: Assets/Andea/Mundos/MundoMA/FormulasBasico.unity
+    guid: 7e7fcf2c99a9db94882149e2b6f8c122
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

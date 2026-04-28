@@ -13,6 +13,12 @@ public class LevelRewardSystem
     public int PointsPerEnemyDefeated { get; private set; } = 3;
     public int PointsPerCollectedCoin { get; private set; } = 2;
     public int PointsPerShopCoin { get; private set; } = 10;
+    public int PenaltyPerWrongAnswer { get; private set; } = 2;
+    public int PenaltyPerDeath { get; private set; } = 3;
+
+    public int LastWrongAnswers { get; private set; }
+    public int LastDeaths { get; private set; }
+    public int LastPenaltyApplied { get; private set; }
 
     private bool levelRewardAssigned = false;
     private bool activityRewardAssigned = false;
@@ -21,12 +27,16 @@ public class LevelRewardSystem
         int pointsPerCompletedLevel = 10,
         int pointsPerEnemyDefeated = 3,
         int pointsPerCollectedCoin = 2,
-        int pointsPerShopCoin = 10)
+        int pointsPerShopCoin = 10,
+        int penaltyPerWrongAnswer = 2,
+        int penaltyPerDeath = 3)
     {
         PointsPerCompletedLevel = pointsPerCompletedLevel;
         PointsPerEnemyDefeated = pointsPerEnemyDefeated;
         PointsPerCollectedCoin = pointsPerCollectedCoin;
         PointsPerShopCoin = pointsPerShopCoin;
+        PenaltyPerWrongAnswer = penaltyPerWrongAnswer;
+        PenaltyPerDeath = penaltyPerDeath;
 
         TotalPoints = 0;
         ShopCoins = 0;
@@ -45,7 +55,7 @@ public class LevelRewardSystem
         return true;
     }
 
-    public bool CompleteLevel(bool levelCompleted)
+    public bool CompleteLevel(bool levelCompleted, int wrongAnswers = 0, int deaths = 0)
     {
         if (!levelCompleted)
             return false;
@@ -56,9 +66,12 @@ public class LevelRewardSystem
         CurrentLevelPoints += PointsPerCompletedLevel;
         levelRewardAssigned = true;
 
-        LastPointsEarned = CurrentLevelPoints;
+        LastWrongAnswers = ClampToZero(wrongAnswers);
+        LastDeaths = ClampToZero(deaths);
+        LastPenaltyApplied = (LastWrongAnswers * PenaltyPerWrongAnswer) + (LastDeaths * PenaltyPerDeath);
+        LastPointsEarned = ClampToZero(CurrentLevelPoints - LastPenaltyApplied);
 
-        TotalPoints += CurrentLevelPoints;
+        TotalPoints += LastPointsEarned;
 
         int coinsBefore = ShopCoins;
         ConvertPointsToShopCoins();
@@ -82,6 +95,9 @@ public class LevelRewardSystem
         CurrentLevelPoints += PointsPerCompletedLevel;
         activityRewardAssigned = true;
 
+        LastWrongAnswers = 0;
+        LastDeaths = 0;
+        LastPenaltyApplied = 0;
         LastPointsEarned = CurrentLevelPoints;
 
         TotalPoints += CurrentLevelPoints;
@@ -110,10 +126,17 @@ public class LevelRewardSystem
             ShopCoins++;
         }
     }
+    private int ClampToZero(int value)
+    {
+        return value < 0 ? 0 : value;
+    }
 
     public void ResetLevelProgress()
     {
         CurrentLevelPoints = 0;
+        LastWrongAnswers = 0;
+        LastDeaths = 0;
+        LastPenaltyApplied = 0;
         levelRewardAssigned = false;
         activityRewardAssigned = false;
     }
@@ -127,6 +150,9 @@ public class LevelRewardSystem
         LastPointsEarned = 0;
         LastShopCoinsEarned = 0;
         LastRemainingPoints = 0;
+        LastWrongAnswers = 0;
+        LastDeaths = 0;
+        LastPenaltyApplied = 0;
 
         levelRewardAssigned = false;
         activityRewardAssigned = false;

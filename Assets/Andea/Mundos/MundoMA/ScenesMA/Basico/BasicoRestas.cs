@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class BasicoRestas : MonoBehaviour
 {
@@ -55,7 +56,7 @@ public class BasicoRestas : MonoBehaviour
     {
         if (currentFormulaIndex >= 3)
         {
-            textRetro.text = "¡Felicidades, completaste todos los ejercicios!";
+            StartCoroutine(FinishLesson());
             return;
         }
 
@@ -148,6 +149,19 @@ public class BasicoRestas : MonoBehaviour
             button3_3.onClick.AddListener(() => CheckAnswer(2));
         }
     }
+
+IEnumerator FinishLesson()
+{
+    textRetro.text = "¡Felicidades, completaste todos los ejercicios!";
+
+    yield return new WaitForSeconds(2f);
+
+    MathSceneTransitionData.currentRound++;
+
+    MathSceneTransitionData.exitMode = true;
+
+    SceneManager.LoadScene("BasicoTienda");
+}
 
     Sprite GetRandomPotion()
     {

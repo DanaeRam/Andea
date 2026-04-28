@@ -4,8 +4,11 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-public class LectoCarouselManager : MonoBehaviour
+public class MundoCarouselManager : MonoBehaviour
 {
+    [Header("Mundo")]
+    public string worldCode = "LE";
+
     [Header("Carrusel")]
     public Image carouselImage;
     public Sprite[] levelSprites;
@@ -54,6 +57,8 @@ public class LectoCarouselManager : MonoBehaviour
 
     private void Start()
     {
+        NormalizarWorldCode();
+
         UpdateCarousel();
         UpdateRibbonText();
         UpdateVisibleLessonButtons();
@@ -63,6 +68,14 @@ public class LectoCarouselManager : MonoBehaviour
             lessonPanel.SetActive(false);
 
         CargarEstadoLecciones();
+    }
+
+    private void NormalizarWorldCode()
+    {
+        if (string.IsNullOrEmpty(worldCode))
+            worldCode = "LE";
+
+        worldCode = worldCode.Trim().ToUpper();
     }
 
     public void NextImage()
@@ -118,18 +131,25 @@ public class LectoCarouselManager : MonoBehaviour
         if (ribbonText == null)
             return;
 
+        string mundoTexto = "";
+
+        if (worldCode == "MA")
+            mundoTexto = "Matemáticas - ";
+        else if (worldCode == "LE")
+            mundoTexto = "Lecto-escritura - ";
+
         switch (currentIndex)
         {
             case 0:
-                ribbonText.text = "Nivel Básico";
+                ribbonText.text = mundoTexto + "Nivel Básico";
                 break;
 
             case 1:
-                ribbonText.text = "Nivel Intermedio";
+                ribbonText.text = mundoTexto + "Nivel Intermedio";
                 break;
 
             case 2:
-                ribbonText.text = "Nivel Avanzado";
+                ribbonText.text = mundoTexto + "Nivel Avanzado";
                 break;
         }
     }
@@ -166,6 +186,13 @@ public class LectoCarouselManager : MonoBehaviour
         StartCoroutine(PlayerLessonsApi.Instance.ObtenerEstadoLecciones(
             onSuccess: (data) =>
             {
+                if (data == null || data.lecciones == null)
+                {
+                    Debug.LogWarning("El estado de lecciones llegó vacío.");
+                    MostrarMensajeBloqueo("No se pudo cargar el progreso de lecciones.");
+                    return;
+                }
+
                 estadoLecciones.Clear();
 
                 foreach (var leccion in data.lecciones)
@@ -197,7 +224,7 @@ public class LectoCarouselManager : MonoBehaviour
 
         for (int i = 0; i < botones.Length; i++)
         {
-            string leccionId = prefijo + "_" + (i + 1).ToString("00");
+            string leccionId = ConstruirLessonId(prefijo, i + 1);
             bool desbloqueada = EstaLeccionDesbloqueada(leccionId);
 
             if (botones[i] != null)
@@ -208,12 +235,22 @@ public class LectoCarouselManager : MonoBehaviour
         }
     }
 
+    private string ConstruirLessonId(string prefijo, int numero)
+    {
+        string baseId = prefijo + "_" + numero.ToString("00");
+
+        if (worldCode == "LE")
+            return baseId;
+
+        return worldCode + "_" + baseId;
+    }
+
     private bool EstaLeccionDesbloqueada(string leccionId)
     {
         if (estadoLecciones.TryGetValue(leccionId, out PlayerLessonsApi.LeccionEstado estado))
             return estado.desbloqueada;
 
-        return leccionId.StartsWith("BASICO");
+        return leccionId.Contains("BASICO");
     }
 
     private bool EstaLeccionCompletada(string leccionId)
@@ -258,63 +295,70 @@ public class LectoCarouselManager : MonoBehaviour
 
         if (descriptionLessonText != null)
         {
+            descriptionLessonText.text = GetCurrentLessonDescription();
+        }
+    }
+
+    private string GetCurrentLessonDescription()
+    {
+        if (worldCode == "MA")
+        {
             switch (currentIndex)
             {
                 case 0:
-                    switch (currentLesson)
-                    {
-                        case 1:
-                            descriptionLessonText.text = "Explora la lección 1 del nivel básico y comienza tu aventura de lecto-escritura.";
-                            break;
-                        case 2:
-                            descriptionLessonText.text = "Explora la lección 2 del nivel básico y sigue practicando habilidades iniciales.";
-                            break;
-                        case 3:
-                            descriptionLessonText.text = "Explora la lección 3 del nivel básico y refuerza lo aprendido.";
-                            break;
-                        default:
-                            descriptionLessonText.text = "Lección del nivel básico.";
-                            break;
-                    }
-                    break;
+                    return "Explora la lección " + currentLesson + " del nivel básico de matemáticas.";
 
                 case 1:
-                    switch (currentLesson)
-                    {
-                        case 1:
-                            descriptionLessonText.text = "Explora la lección 1 del nivel intermedio: Identificar sustantivos, verbos y adjetivos.";
-                            break;
-                        case 2:
-                            descriptionLessonText.text = "Explora la lección 2 del nivel intermedio: Sinónimos y Antónimos.";
-                            break;
-                        default:
-                            descriptionLessonText.text = "Lección del nivel intermedio.";
-                            break;
-                    }
-                    break;
+                    return "Explora la lección " + currentLesson + " del nivel intermedio de matemáticas.";
 
                 case 2:
-                    switch (currentLesson)
-                    {
-                        case 1:
-                            descriptionLessonText.text = "Explora la lección 1 del nivel avanzado: Uso correcto de signos de puntuación.";
-                            break;
-                        case 2:
-                            descriptionLessonText.text = "Explora la lección 2 del nivel avanzado: Comprensión Lectora.";
-                            break;
-                        case 3:
-                            descriptionLessonText.text = "Explora la lección 3 del nivel avanzado: Identificar la idea principal.";
-                            break;
-                        case 4:
-                            descriptionLessonText.text = "Explora la lección 4 del nivel avanzado: Inferencias de un texto.";
-                            break;
-                        default:
-                            descriptionLessonText.text = "Lección del nivel avanzado.";
-                            break;
-                    }
-                    break;
+                    return "Explora la lección " + currentLesson + " del nivel avanzado de matemáticas.";
             }
         }
+
+        switch (currentIndex)
+        {
+            case 0:
+                switch (currentLesson)
+                {
+                    case 1:
+                        return "Explora la lección 1 del nivel básico y comienza tu aventura de lecto-escritura.";
+                    case 2:
+                        return "Explora la lección 2 del nivel básico y sigue practicando habilidades iniciales.";
+                    case 3:
+                        return "Explora la lección 3 del nivel básico y refuerza lo aprendido.";
+                    default:
+                        return "Lección del nivel básico.";
+                }
+
+            case 1:
+                switch (currentLesson)
+                {
+                    case 1:
+                        return "Explora la lección 1 del nivel intermedio: Identificar sustantivos, verbos y adjetivos.";
+                    case 2:
+                        return "Explora la lección 2 del nivel intermedio: Sinónimos y Antónimos.";
+                    default:
+                        return "Lección del nivel intermedio.";
+                }
+
+            case 2:
+                switch (currentLesson)
+                {
+                    case 1:
+                        return "Explora la lección 1 del nivel avanzado: Uso correcto de signos de puntuación.";
+                    case 2:
+                        return "Explora la lección 2 del nivel avanzado: Comprensión Lectora.";
+                    case 3:
+                        return "Explora la lección 3 del nivel avanzado: Identificar la idea principal.";
+                    case 4:
+                        return "Explora la lección 4 del nivel avanzado: Inferencias de un texto.";
+                    default:
+                        return "Lección del nivel avanzado.";
+                }
+        }
+
+        return "Lección.";
     }
 
     public void CloseLessonPanel()
@@ -344,6 +388,7 @@ public class LectoCarouselManager : MonoBehaviour
             return;
         }
 
+        PlayerPrefs.SetString("CurrentWorldCode", worldCode);
         PlayerPrefs.SetString("CurrentLessonId", leccionId);
         PlayerPrefs.SetString("CurrentLevelName", levelName);
         PlayerPrefs.SetString("CurrentLessonName", lessonName);
@@ -371,6 +416,12 @@ public class LectoCarouselManager : MonoBehaviour
             return;
         }
 
+        PlayerPrefs.SetString("CurrentWorldCode", worldCode);
+        PlayerPrefs.SetString("CurrentLessonId", leccionId);
+        PlayerPrefs.SetString("CurrentLevelName", levelName);
+        PlayerPrefs.SetString("CurrentLessonName", lessonName);
+        PlayerPrefs.Save();
+
         if (LectoGameSessionManager.Instance != null)
         {
             LectoGameSessionManager.Instance.StartLessonSession(levelName, lessonName);
@@ -386,13 +437,13 @@ public class LectoCarouselManager : MonoBehaviour
         switch (currentIndex)
         {
             case 0:
-                return "BASICO_" + currentLesson.ToString("00");
+                return ConstruirLessonId("BASICO", currentLesson);
 
             case 1:
-                return "INTERMEDIO_" + currentLesson.ToString("00");
+                return ConstruirLessonId("INTERMEDIO", currentLesson);
 
             case 2:
-                return "AVANZADO_" + currentLesson.ToString("00");
+                return ConstruirLessonId("AVANZADO", currentLesson);
 
             default:
                 return "";
@@ -419,6 +470,21 @@ public class LectoCarouselManager : MonoBehaviour
 
     private string GetCurrentLessonName()
     {
+        if (worldCode == "MA")
+        {
+            switch (currentIndex)
+            {
+                case 0:
+                    return "Matematicas Basico " + currentLesson;
+
+                case 1:
+                    return "Matematicas Intermedio " + currentLesson;
+
+                case 2:
+                    return "Matematicas Avanzado " + currentLesson;
+            }
+        }
+
         switch (currentIndex)
         {
             case 0:

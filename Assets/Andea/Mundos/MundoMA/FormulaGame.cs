@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class FormulaGame : MonoBehaviour
 {
@@ -55,7 +56,7 @@ public class FormulaGame : MonoBehaviour
     {
         if (currentFormulaIndex >= 3)
         {
-            textRetro.text = "¡Felicidades, completaste todos los ejercicios!";
+            StartCoroutine(FinishLesson());
             return;
         }
 
@@ -149,6 +150,18 @@ public class FormulaGame : MonoBehaviour
         }
     }
 
+IEnumerator FinishLesson()
+{
+    textRetro.text = "¡Felicidades, completaste todos los ejercicios!";
+
+    yield return new WaitForSeconds(2f);
+
+    MathSceneTransitionData.currentRound++;
+
+    MathSceneTransitionData.exitMode = true;
+
+    SceneManager.LoadScene("BasicoTienda");
+}
     Sprite GetRandomPotion()
     {
         if (availablePotions == null || availablePotions.Count == 0)

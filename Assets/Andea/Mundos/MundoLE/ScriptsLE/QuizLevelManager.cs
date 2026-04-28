@@ -136,6 +136,9 @@ public class QuizLevelManager : MonoBehaviour
     {
         attemptSystem.RegisterWrongAnswer();
 
+        if (GameManager.instancia != null)
+            GameManager.instancia.RegistrarRespuestaIncorrectaNivel();
+
         if (attemptSystem.CanAnswer())
         {
             if (FeedbackText != null)

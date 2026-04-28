@@ -59,6 +59,9 @@ public class PlayerHealth : MonoBehaviour
 
         muerto = true;
 
+        if (GameManager.instancia != null)
+            GameManager.instancia.RegistrarMuerteNivel();
+
         if (animator != null)
             animator.SetTrigger("dead");
 
