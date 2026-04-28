@@ -6,9 +6,9 @@ using TMPro;
 public class GalleryProgressManager : MonoBehaviour
 {
     [Header("Datos del puzzle actual")]
-    public string currentPuzzleKey;   
-    public string nextSceneName;     
-    public bool isLastPuzzle = false;
+    public string currentPuzzleKey;
+    public string nextSceneName;
+    public string storySceneName = "StoryPainting1";
 
     [Header("Panel principal")]
     public GameObject progressPanel;
@@ -130,8 +130,8 @@ public class GalleryProgressManager : MonoBehaviour
         if (img == null) return;
 
         img.color = completed
-            ? Color.white
-            : new Color(0.4f, 0.4f, 0.4f, 1f);
+            ? new Color(1f, 1f, 1f, 1f)
+            : new Color(0.25f, 0.25f, 0.25f, 0.45f);
     }
 
     public void OnBottomButton()
@@ -144,7 +144,7 @@ public class GalleryProgressManager : MonoBehaviour
 
         if (allCompleted)
         {
-            Debug.Log("Aquí después irá Ver historia");
+            SceneManager.LoadScene(storySceneName);
             return;
         }
 
