@@ -5,13 +5,13 @@ using System.Collections;
 public class Clients : MonoBehaviour
 {
     [Header("Entrada")]
-    public Vector3 enterStartPosition = new Vector3(-7f, -1.6f, 0f);
+    public Vector3 enterStartPosition = new Vector3(-8f, -3f, 0f);
 
     [Header("Centro")]
-    public Vector3 centerPosition = new Vector3(0f, -1.6f, 0f);
+    public Vector3 centerPosition = new Vector3(0f, -3, 0f);
 
     [Header("Salida")]
-    public Vector3 exitTargetPosition = new Vector3(7f, -1.6f, 0f);
+    public Vector3 exitTargetPosition = new Vector3(8f, -3f, 0f);
 
     [Header("Movimiento")]
     public float speed = 2f;
@@ -125,16 +125,18 @@ public class Clients : MonoBehaviour
     {
         if (destination.x > transform.position.x)
         {
+            // Mira a la derecha
             transform.localScale = new Vector3(
-                Mathf.Abs(transform.localScale.x),
+                -Mathf.Abs(transform.localScale.x),
                 transform.localScale.y,
                 transform.localScale.z
             );
         }
         else
         {
+            // Mira a la izquierda
             transform.localScale = new Vector3(
-                -Mathf.Abs(transform.localScale.x),
+                Mathf.Abs(transform.localScale.x),
                 transform.localScale.y,
                 transform.localScale.z
             );
