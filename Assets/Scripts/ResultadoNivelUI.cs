@@ -5,10 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class ResultadoNivelUI : MonoBehaviour
 {
-    [Header("Textos")]
+    [Header("Textos principales")]
     public TextMeshProUGUI textoPuntaje;
     public TextMeshProUGUI textoMonedas;
     public TextMeshProUGUI textoSobrantes;
+
+    [Header("Textos de penalización")]
+    public TextMeshProUGUI textoMuertes;
+    public TextMeshProUGUI textoRespuestasIncorrectas;
+    public TextMeshProUGUI textoPenalizacion;
 
     [Header("Botón")]
     public Button botonContinuar;
@@ -53,14 +58,25 @@ public class ResultadoNivelUI : MonoBehaviour
             return;
         }
 
+        GameManager gm = GameManager.instancia;
+
         if (textoPuntaje != null)
-            textoPuntaje.text = "Puntos obtenidos: " + GameManager.instancia.ultimoPuntajeGanado;
+            textoPuntaje.text = "Puntos obtenidos: " + gm.ultimoPuntajeGanado;
 
         if (textoMonedas != null)
-            textoMonedas.text = "Runas ganadas: " + GameManager.instancia.ultimasMonedasGanadas;
+            textoMonedas.text = "Runas ganadas: " + gm.ultimasMonedasGanadas;
 
         if (textoSobrantes != null)
-            textoSobrantes.text = "Puntos sobrantes: " + GameManager.instancia.puntosSobrantes;
+            textoSobrantes.text = "Puntos sobrantes: " + gm.puntosSobrantes;
+
+        if (textoMuertes != null)
+            textoMuertes.text = "Muertes: " + gm.muertesNivel + "  (-" + (gm.muertesNivel * 3) + " puntos)";
+
+        if (textoRespuestasIncorrectas != null)
+            textoRespuestasIncorrectas.text = "Respuestas incorrectas: " + gm.respuestasIncorrectasNivel + "  (-" + (gm.respuestasIncorrectasNivel * 2) + " puntos)";
+
+        if (textoPenalizacion != null)
+            textoPenalizacion.text = "Penalización total: -" + gm.penalizacionUltimoNivel + " puntos";
     }
 
     public void Continuar()

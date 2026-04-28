@@ -134,22 +134,22 @@ public class MundoCarouselManager : MonoBehaviour
         string mundoTexto = "";
 
         if (worldCode == "MA")
-            mundoTexto = "Matemáticas - ";
+            mundoTexto = "Matemáticas";
         else if (worldCode == "LE")
-            mundoTexto = "Lecto-escritura - ";
+            mundoTexto = "Lecto-escritura";
 
         switch (currentIndex)
         {
             case 0:
-                ribbonText.text = mundoTexto + "Nivel Básico";
+                ribbonText.text = mundoTexto + "\nNivel Básico";
                 break;
 
             case 1:
-                ribbonText.text = mundoTexto + "Nivel Intermedio";
+                ribbonText.text = mundoTexto + "\nNivel Intermedio";
                 break;
 
             case 2:
-                ribbonText.text = mundoTexto + "Nivel Avanzado";
+                ribbonText.text = mundoTexto + "\nNivel Avanzado";
                 break;
         }
     }

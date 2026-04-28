@@ -1283,7 +1283,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 310, y: 215}
+  m_AnchoredPosition: {x: 293, y: 455}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &916329735
@@ -1306,9 +1306,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "JUEGO DESARROLLADO POR:\n\nDalia Danae Ram\xEDrez Rodr\xEDguez  \nNestor
-    Daniel Huidobro Aguilar \nAlexis Maximiliano Alva Mart\xEDnez \nAngel Jesus Solorio
-    Garcia \nEduardo Emiliano Gonz\xE1lez L\xF3pez \n"
+  m_text: "T\xEDtulo del juego:  ANDEA\n\nDesarrollado por alumnos del Tecnol\xF3gico
+    de Monterrey de la carrera de Ingenier\xEDa en Tecnolog\xEDas Computaciones.\n\nDalia
+    Danae Ram\xEDrez Rodr\xEDguez A01802567@tec.mx\nNestor Daniel Huidobro Aguilar
+    A01754717@tec.mx\nAlexis Maximiliano Alva Mart\xEDnez A01754754@tec.mx\nAngel
+    Jesus Solorio Garcia A01801489@tec.mx\nEduardo Emiliano Gonz\xE1lez L\xF3pez
+    A01754094@tec.mx\n\nHecho con el objetivo de apoyar el aprendizaje de forma divertida
+    e interactiva para los ni\xF1os de la fundaci\xF3n NIDE."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 790f8d7c12ff30348bce862d9f5b01fa, type: 2}
   m_sharedMaterial: {fileID: 5487993463395257906, guid: 790f8d7c12ff30348bce862d9f5b01fa, type: 2}
@@ -1335,8 +1339,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2472,6 +2476,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a41c7839efa2ee4e8aa1df25eae73cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LectoCarouselManager
+  worldCode: LE
   carouselImage: {fileID: 0}
   levelSprites: []
   ribbonText: {fileID: 0}
