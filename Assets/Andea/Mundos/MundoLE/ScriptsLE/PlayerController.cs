@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [Header("Salto")]
     public float fuerzaSalto = 12f;
     public int saltosMaximos = 1;
+    public ParticleSystem particulaSalto;
 
     [Header("Wall Jump")]
     public float fuerzaWallJumpX = 7f;
@@ -102,6 +103,10 @@ public class PlayerController : MonoBehaviour
         );
     }
 
+    private void crearParticulaSalto()
+    {
+        particulaSalto.Play();
+    }
     private void ProcesarSalto()
     {
         bool enSuelo = EstaEnSuelo();
@@ -124,6 +129,7 @@ public class PlayerController : MonoBehaviour
                 rigidBody.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
 
                 animator.SetTrigger("jump");
+                crearParticulaSalto();
 
                 if (audioSource != null && sonidoSalto != null)
                     audioSource.PlayOneShot(sonidoSalto);
@@ -142,6 +148,7 @@ public class PlayerController : MonoBehaviour
                 );
 
                 animator.SetTrigger("jump");
+                crearParticulaSalto();
 
                 if (audioSource != null && sonidoSalto != null)
                     audioSource.PlayOneShot(sonidoSalto);

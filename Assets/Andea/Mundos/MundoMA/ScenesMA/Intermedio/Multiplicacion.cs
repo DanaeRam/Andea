@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Multiplicacion : MonoBehaviour
 {
@@ -55,7 +56,7 @@ public class Multiplicacion : MonoBehaviour
     {
         if (currentFormulaIndex >= 3)
         {
-            textRetro.text = "¡Felicidades, completaste todos los ejercicios!";
+            StartCoroutine(FinishLesson());
             return;
         }
 
@@ -91,9 +92,9 @@ public class Multiplicacion : MonoBehaviour
 
         int result = num1 * num2;
 
-        if (currentFormulaIndex == 0) textFormula1.text = $"{num1} x {num2}";
-        if (currentFormulaIndex == 1) textFormula2.text = $"{num1} x {num2}";
-        if (currentFormulaIndex == 2) textFormula3.text = $"{num1} x {num2}";
+        if (currentFormulaIndex == 0) textFormula1.text = $"{num1} × {num2}";
+        if (currentFormulaIndex == 1) textFormula2.text = $"{num1} × {num2}";
+        if (currentFormulaIndex == 2) textFormula3.text = $"{num1} × {num2}";
         correctAnswer = result;
 
         int[] answers = new int[3];
@@ -149,6 +150,18 @@ public class Multiplicacion : MonoBehaviour
         }
     }
 
+IEnumerator FinishLesson()
+{
+    textRetro.text = "¡Felicidades, completaste todos los ejercicios!";
+
+    yield return new WaitForSeconds(2f);
+
+    MathSceneTransitionData.currentRound++;
+
+    MathSceneTransitionData.exitMode = true;
+
+    SceneManager.LoadScene("BasicoTienda");
+}
     Sprite GetRandomPotion()
     {
         if (availablePotions == null || availablePotions.Count == 0)
@@ -186,6 +199,7 @@ public class Multiplicacion : MonoBehaviour
             isCorrectAnswer = false;
 
             ShowCurrentIcon(wrongIcon);
+            DisableSelectedButton(buttonIndex);
 
             if (hideIconCoroutine != null)
             {
@@ -239,6 +253,29 @@ IEnumerator HideCurrentIconAfterSeconds(float seconds)
     }
 }
 
+    void DisableSelectedButton(int index)
+    {
+        if (currentFormulaIndex == 0)
+        {
+            if (index == 0) button1_1.interactable = false;
+            if (index == 1) button1_2.interactable = false;
+            if (index == 2) button1_3.interactable = false;
+        }
+
+        if (currentFormulaIndex == 1)
+        {
+            if (index == 0) button2_1.interactable = false;
+            if (index == 1) button2_2.interactable = false;
+            if (index == 2) button2_3.interactable = false;
+        }
+
+        if (currentFormulaIndex == 2)
+        {
+            if (index == 0) button3_1.interactable = false;
+            if (index == 1) button3_2.interactable = false;
+            if (index == 2) button3_3.interactable = false;
+        }
+    }
     void DisableCurrentButtons()
     {
         if (currentFormulaIndex == 0)

@@ -183,3 +183,4 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 1
+  sonidoAtaque: {fileID: 8300000, guid: d9902ff5273105b40bdcc8a11a59753b, type: 3}

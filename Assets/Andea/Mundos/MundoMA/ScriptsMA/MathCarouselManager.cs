@@ -7,7 +7,10 @@ public class MathCarouselManager : MonoBehaviour
 {
     [Header("Carrusel")]
     public Image carouselImage;
-    public Sprite[] levelSprites; // 0 = Básico, 1 = Intermedio, 2 = Avanzado
+    public Sprite[] levelSprites;
+
+    [Header("Escena intermedia")]
+    [SerializeField] private string introWalkSceneName = "BasicoTienda";
 
     [Header("Ribbon superior")]
     public TextMeshProUGUI ribbonText;
@@ -28,9 +31,9 @@ public class MathCarouselManager : MonoBehaviour
     public Button playButton;
     public TextMeshProUGUI learnButtonText;
     public TextMeshProUGUI playButtonText;
-    private int currentIndex = 0;   // 0 = Básico, 1 = Intermedio, 2 = Avanzado
 
-    private int currentLesson = 0;  // Lección seleccionada dentro del nivel actual
+    private int currentIndex = 0;
+    private int currentLesson = 0;
 
     private void Start()
     {
@@ -41,30 +44,35 @@ public class MathCarouselManager : MonoBehaviour
 
         if (lessonPanel != null)
             lessonPanel.SetActive(false);
-    }
 
+        if (playButton != null)
+        {
+            playButton.onClick.RemoveAllListeners();
+            playButton.onClick.AddListener(PlaySelectedLesson);
+        }
+
+        if (closePanelButton != null)
+        {
+            closePanelButton.onClick.RemoveAllListeners();
+            closePanelButton.onClick.AddListener(CloseLessonPanel);
+        }
+    }
 
     public void NextImage()
     {
-        if (levelSprites == null || levelSprites.Length == 0)
-            return;
+        if (levelSprites == null || levelSprites.Length == 0) return;
 
         currentIndex = (currentIndex + 1) % levelSprites.Length;
 
         UpdateCarousel();
         UpdateRibbonText();
         UpdateVisibleLessonButtons();
-
-        if (lessonPanel != null && lessonPanel.activeSelf)
-        {
-            lessonPanel.SetActive(false);
-        }
+        CloseLessonPanel();
     }
 
     public void PreviousImage()
     {
-        if (levelSprites == null || levelSprites.Length == 0)
-            return;
+        if (levelSprites == null || levelSprites.Length == 0) return;
 
         currentIndex--;
 
@@ -73,11 +81,8 @@ public class MathCarouselManager : MonoBehaviour
 
         UpdateCarousel();
         UpdateRibbonText();
-
-        if (lessonPanel != null && lessonPanel.activeSelf)
-        {
-            lessonPanel.SetActive(false);
-        }
+        UpdateVisibleLessonButtons();
+        CloseLessonPanel();
     }
 
     private void UpdateCarousel()
@@ -141,65 +146,62 @@ public class MathCarouselManager : MonoBehaviour
     private void UpdateLessonPanelContent()
     {
         if (panelTitleText != null)
-        {
             panelTitleText.text = "Lección " + currentLesson;
-        }
 
-        if (descriptionLessonText != null)
+        if (descriptionLessonText == null) return;
+
+        switch (currentIndex)
         {
-            switch (currentIndex)
-            {
-                case 0: // Básico
-                    switch (currentLesson)
-                    {
-                        case 1:
-                            descriptionLessonText.text = "Explora la lección 1 del nivel básico: Conteo básico.";
-                            break;
-                        case 2:
-                            descriptionLessonText.text = "Explora la lección 2 del nivel básico: Sumas.";
-                            break;
-                        case 3:
-                            descriptionLessonText.text = "Explora la lección 3 del nivel básico: Restas.";
-                            break;
-                        default:
-                            descriptionLessonText.text = "Lección del nivel básico.";
-                            break;
-                    }
-                    break;
+            case 0:
+                switch (currentLesson)
+                {
+                    case 1:
+                        descriptionLessonText.text = "Explora la lección 1 del nivel básico: Sumas.";
+                        break;
+                    case 2:
+                        descriptionLessonText.text = "Explora la lección 2 del nivel básico: Restas.";
+                        break;
+                    case 3:
+                        descriptionLessonText.text = "Explora la lección 3 del nivel básico: Sumas y restas.";
+                        break;
+                    default:
+                        descriptionLessonText.text = "Lección del nivel básico.";
+                        break;
+                }
+                break;
 
-                case 1: // Intermedio
-                    switch (currentLesson)
-                    {
-                        case 1:
-                            descriptionLessonText.text = "Explora la lección 1 del nivel intermedio: Multiplicaciones.";
-                            break;
-                        case 2:
-                            descriptionLessonText.text = "Explora la lección 2 del nivel intermedio: Divisiones.";
-                            break;
-                        default:
-                            descriptionLessonText.text = "Lección del nivel intermedio.";
-                            break;
-                    }
-                    break;
+            case 1:
+                switch (currentLesson)
+                {
+                    case 1:
+                        descriptionLessonText.text = "Explora la lección 1 del nivel intermedio: Multiplicaciones.";
+                        break;
+                    case 2:
+                        descriptionLessonText.text = "Explora la lección 2 del nivel intermedio: Divisiones.";
+                        break;
+                    default:
+                        descriptionLessonText.text = "Lección del nivel intermedio.";
+                        break;
+                }
+                break;
 
-                case 2: // Avanzado
-                    switch (currentLesson)
-                    {
-                        case 1:
-                            descriptionLessonText.text = "Explora la lección 1 del nivel avanzado: Operaciones combinadas.";
-                            break;
-                        case 2:
-                            descriptionLessonText.text = "Explora la lección 2 del nivel avanzado: Fracciones.";
-                            break;
-                        case 3:
-                            descriptionLessonText.text = "Explora la lección 3 del nivel avanzado: Porcentajes.";
-                            break;
-                        default:
-                            descriptionLessonText.text = "Lección del nivel avanzado.";
-                            break;
-                    }
-                    break;
-                            }
+            case 2:
+                switch (currentLesson)
+                {
+                    case 1:
+                        descriptionLessonText.text = "Explora la lección 1 del nivel avanzado: Sumas y multiplicaciones.";
+                        break;
+                    case 2:
+                        descriptionLessonText.text = "Explora la lección 2 del nivel avanzado: Sumas y divisiones.";
+                        break;
+                    case 3:
+                        descriptionLessonText.text = "Explora la lección 3 del nivel avanzado: Operaciones combinadas.";
+                        break;
+                    default:
+                        descriptionLessonText.text = "Lección del nivel avanzado.";
+                        break;
+                }
+                break;
         }
     }
 
@@ -209,5 +211,62 @@ public class MathCarouselManager : MonoBehaviour
             lessonPanel.SetActive(false);
     }
 
+    public void PlaySelectedLesson()
+    {
+        if (currentLesson <= 0)
+        {
+            Debug.LogError("No hay lección seleccionada.");
+            return;
+        }
 
+        string targetSceneName = GetLessonSceneName();
+
+        if (string.IsNullOrEmpty(targetSceneName))
+        {
+            Debug.LogError("No se encontró escena para esta lección.");
+            return;
+        }
+
+        MathSceneTransitionData.currentRound = 0;
+        MathSceneTransitionData.maxRounds = 6;
+        MathSceneTransitionData.exitMode = false;
+
+        MathSceneTransitionData.targetSceneName = targetSceneName;
+
+        SceneManager.LoadScene(introWalkSceneName);
+    }
+
+    private string GetLessonSceneName()
+    {
+        switch (currentIndex)
+        {
+            case 0: // Básico
+                switch (currentLesson)
+                {
+                    case 1: return "FormulasBasico";
+                    case 2: return "BasicoRestas";
+                    case 3: return "SumayResta";
+                }
+                break;
+
+            case 1: // Intermedio
+                switch (currentLesson)
+                {
+                    case 1: return "Multiplicacion";
+                    case 2: return "Division";
+                }
+                break;
+
+            case 2: // Avanzado
+                switch (currentLesson)
+                {
+                    case 1: return "SumayMultiplicacion";
+                    case 2: return "SumayDivision";
+                    case 3: return "OperacionesCombinadas";
+                }
+                break;
+        }
+
+        return "";
+    }
 }
