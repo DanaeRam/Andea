@@ -214,14 +214,18 @@ IEnumerator FinishLesson()
     void CheckAnswer(int buttonIndex)
     {
         int selectedAnswer = int.Parse(GetButtonText(buttonIndex));
-
         if (selectedAnswer == correctAnswer)
         {
+            if (hideIconCoroutine != null)
+            {
+                StopCoroutine(hideIconCoroutine);
+                hideIconCoroutine = null;
+            }
+
             textRetro.text = "¡Correcto!";
             isCorrectAnswer = true;
 
             ShowCurrentIcon(rightIcon);
-
             DisableCurrentButtons();
 
             StartCoroutine(WaitForNextFormula(2));
@@ -232,6 +236,7 @@ IEnumerator FinishLesson()
             isCorrectAnswer = false;
 
             ShowCurrentIcon(wrongIcon);
+            DisableSelectedButton(buttonIndex);
 
             if (hideIconCoroutine != null)
             {
@@ -282,6 +287,30 @@ IEnumerator HideCurrentIconAfterSeconds(float seconds)
     if (formulaIndexAtClick == 2)
     {
         iconResult3.gameObject.SetActive(false);
+    }
+}
+
+void DisableSelectedButton(int index)
+{
+    if (currentFormulaIndex == 0)
+    {
+        if (index == 0) button1_1.interactable = false;
+        if (index == 1) button1_2.interactable = false;
+        if (index == 2) button1_3.interactable = false;
+    }
+
+    if (currentFormulaIndex == 1)
+    {
+        if (index == 0) button2_1.interactable = false;
+        if (index == 1) button2_2.interactable = false;
+        if (index == 2) button2_3.interactable = false;
+    }
+
+    if (currentFormulaIndex == 2)
+    {
+        if (index == 0) button3_1.interactable = false;
+        if (index == 1) button3_2.interactable = false;
+        if (index == 2) button3_3.interactable = false;
     }
 }
 
