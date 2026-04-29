@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b36f1a66e364c4b4fa9d4f4e2fd701c4
+guid: 44c774548fd31644eb28ce6bc83e4e0e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2399891295029786720
-    second: BasicoMA_0
+      213: 365783901729838813
+    second: ConfIcon_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BasicoMA_0
+      name: ConfIcon_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1360
-        height: 768
+        x: 47
+        y: 63
+        width: 406
+        height: 398
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0a78234159fd1bed0800000000000000
-      internalID: -2399891295029786720
+      spriteID: dd6d9274586831500800000000000000
+      internalID: 365783901729838813
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BasicoMA_0: -2399891295029786720
+      ConfIcon_0: 365783901729838813
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
