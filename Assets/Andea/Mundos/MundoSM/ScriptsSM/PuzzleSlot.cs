@@ -10,21 +10,20 @@ public class PuzzleSlot : MonoBehaviour, IDropHandler
     {
         PuzzlePiece piece = eventData.pointerDrag.GetComponent<PuzzlePiece>();
 
-        if (piece != null)
-        {
-            if (piece.correctIndex == slotIndex)
-            {
-                piece.SnapToSlot(transform);
+        if (piece == null) return;
 
-                if (puzzleManager != null)
-                {
-                    puzzleManager.CheckPuzzleCompletion();
-                }
-            }
-            else
+        if (piece.correctIndex == slotIndex)
+        {
+            piece.SnapToSlot(transform);
+
+            if (puzzleManager != null)
             {
-                piece.ReturnToPanel();
+                puzzleManager.CheckPuzzleCompletion();
             }
+        }
+        else
+        {
+            piece.ReturnToPanel();
         }
     }
 }
