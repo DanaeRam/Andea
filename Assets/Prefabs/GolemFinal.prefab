@@ -137,6 +137,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 1
+  sonidoAtaque: {fileID: 8300000, guid: dda6736ad20a2be4e88de5471fb5acd1, type: 3}
 --- !u!61 &-8148803107391853075
 BoxCollider2D:
   m_ObjectHideFlags: 0

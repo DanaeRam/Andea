@@ -12,6 +12,11 @@ public class MainSceneSessionUI : MonoBehaviour
     [Header("Escena de login")]
     public string loginSceneName = "MainMenu";
 
+    [Header("Panel Config")]
+    public GameObject panelConfig;
+    public Button buttonConfig;
+    public Button buttonCerrarConfig;
+
     private void Start()
     {
         MostrarNombreJugador();
@@ -21,7 +26,45 @@ public class MainSceneSessionUI : MonoBehaviour
             logoutButton.onClick.RemoveAllListeners();
             logoutButton.onClick.AddListener(CerrarSesion);
         }
+
+                // Abrir panel config
+        if (buttonConfig != null)
+        {
+            buttonConfig.onClick.RemoveAllListeners();
+            buttonConfig.onClick.AddListener(AbrirConfig);
+        }
+
+        // Cerrar panel config
+        if (buttonCerrarConfig != null)
+        {
+            buttonCerrarConfig.onClick.RemoveAllListeners();
+            buttonCerrarConfig.onClick.AddListener(CerrarConfig);
+        }
+
+        // Asegurar que inicia cerrado
+        if (panelConfig != null)
+        {
+            panelConfig.SetActive(false);
+        }
     }
+
+        public void AbrirConfig()
+        {
+            if (panelConfig != null)
+            {
+                panelConfig.SetActive(true);
+            }
+        }
+
+        public void CerrarConfig()
+        {
+            if (panelConfig != null)
+            {
+                panelConfig.SetActive(false);
+            }
+        }
+
+
 
     private void MostrarNombreJugador()
     {
@@ -68,3 +111,4 @@ public class MainSceneSessionUI : MonoBehaviour
         SceneManager.LoadScene(loginSceneName);
     }
 }
+

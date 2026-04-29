@@ -30,10 +30,12 @@ public class PuzzlePiece : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         if (placedCorrectly) return;
 
         originalParent = transform.parent;
+
         canvasGroup.blocksRaycasts = false;
 
-        transform.SetParent(canvas.transform);
+        transform.SetParent(canvas.transform, true);
         rectTransform.sizeDelta = bigSize;
+        rectTransform.localScale = Vector3.one;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -51,8 +53,7 @@ public class PuzzlePiece : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
         if (transform.parent == canvas.transform)
         {
-            transform.SetParent(originalParent);
-            rectTransform.sizeDelta = smallSize;
+            ReturnToPanel();
         }
     }
 
@@ -62,24 +63,31 @@ public class PuzzlePiece : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
         transform.SetParent(slotTransform, false);
 
-        RectTransform rt = GetComponent<RectTransform>();
-        rt.anchorMin = new Vector2(0.5f, 0.5f);
-        rt.anchorMax = new Vector2(0.5f, 0.5f);
-        rt.pivot = new Vector2(0.5f, 0.5f);
+        rectTransform.anchorMin = new Vector2(0.5f, 0.5f);
+        rectTransform.anchorMax = new Vector2(0.5f, 0.5f);
+        rectTransform.pivot = new Vector2(0.5f, 0.5f);
 
-        rt.anchoredPosition = Vector2.zero;
-        rt.localRotation = Quaternion.identity;
-        rt.localScale = Vector3.one;
-        rt.sizeDelta = bigSize;
+        rectTransform.anchoredPosition = Vector2.zero;
+        rectTransform.localRotation = Quaternion.identity;
+        rectTransform.localScale = Vector3.one;
+        rectTransform.sizeDelta = bigSize;
 
         canvasGroup.blocksRaycasts = true;
     }
 
     public void ReturnToPanel()
     {
-        transform.SetParent(originalParent);
-        rectTransform.sizeDelta = smallSize;
+        transform.SetParent(originalParent, false);
+
+        rectTransform.anchorMin = new Vector2(0.5f, 0.5f);
+        rectTransform.anchorMax = new Vector2(0.5f, 0.5f);
+        rectTransform.pivot = new Vector2(0.5f, 0.5f);
+
+        rectTransform.anchoredPosition = Vector2.zero;
+        rectTransform.localRotation = Quaternion.identity;
         rectTransform.localScale = Vector3.one;
+        rectTransform.sizeDelta = smallSize;
+
         canvasGroup.blocksRaycasts = true;
     }
 }
