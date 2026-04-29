@@ -25,6 +25,16 @@ public class PuzzlePiece : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             canvasGroup = gameObject.AddComponent<CanvasGroup>();
     }
 
+    public bool IsPlacedCorrectly()
+    {
+        return placedCorrectly;
+    }
+
+    public void SetPlacedCorrectly(bool value)
+    {
+        placedCorrectly = value;
+    }
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         if (placedCorrectly) return;
@@ -57,26 +67,30 @@ public class PuzzlePiece : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         }
     }
 
-    public void SnapToSlot(Transform slotTransform)
-    {
-        placedCorrectly = true;
+public void SnapToSlot(Transform slotTransform)
+{
+    placedCorrectly = true;
 
-        transform.SetParent(slotTransform, false);
+    transform.SetParent(slotTransform, false);
 
-        rectTransform.anchorMin = new Vector2(0.5f, 0.5f);
-        rectTransform.anchorMax = new Vector2(0.5f, 0.5f);
-        rectTransform.pivot = new Vector2(0.5f, 0.5f);
+    rectTransform.anchorMin = new Vector2(0.5f, 0.5f);
+    rectTransform.anchorMax = new Vector2(0.5f, 0.5f);
+    rectTransform.pivot = new Vector2(0.5f, 0.5f);
 
-        rectTransform.anchoredPosition = Vector2.zero;
-        rectTransform.localRotation = Quaternion.identity;
-        rectTransform.localScale = Vector3.one;
-        rectTransform.sizeDelta = bigSize;
+    rectTransform.anchoredPosition = Vector2.zero;
+    rectTransform.localRotation = Quaternion.identity;
+    rectTransform.localScale = Vector3.one;
 
-        canvasGroup.blocksRaycasts = true;
-    }
+    RectTransform slotRect = slotTransform.GetComponent<RectTransform>();
+    rectTransform.sizeDelta = slotRect.sizeDelta;
+
+    canvasGroup.blocksRaycasts = true;
+}
 
     public void ReturnToPanel()
     {
+        if (originalParent == null) return;
+
         transform.SetParent(originalParent, false);
 
         rectTransform.anchorMin = new Vector2(0.5f, 0.5f);
