@@ -17,6 +17,11 @@ public class MainSceneSessionUI : MonoBehaviour
     public Button buttonConfig;
     public Button buttonCerrarConfig;
 
+    [Header("Panel Help")]
+    public GameObject panelHelpMainScene;
+    public Button buttonHelp;
+    public Button buttonCerrarHelp;
+
     private void Start()
     {
         MostrarNombreJugador();
@@ -39,8 +44,23 @@ public class MainSceneSessionUI : MonoBehaviour
             buttonCerrarConfig.onClick.AddListener(CerrarConfig);
         }
 
+        if (buttonHelp != null)
+        {
+            buttonHelp.onClick.RemoveAllListeners();
+            buttonHelp.onClick.AddListener(AbrirHelp);
+        }
+
+        if (buttonCerrarHelp != null)
+        {
+            buttonCerrarHelp.onClick.RemoveAllListeners();
+            buttonCerrarHelp.onClick.AddListener(CerrarHelp);
+        }
+
         if (panelConfig != null)
             panelConfig.SetActive(false);
+
+        if (panelHelpMainScene != null)
+            panelHelpMainScene.SetActive(false);
     }
 
     public void AbrirConfig()
@@ -55,55 +75,53 @@ public class MainSceneSessionUI : MonoBehaviour
             panelConfig.SetActive(false);
     }
 
+    public void AbrirHelp()
+    {
+        if (panelHelpMainScene != null)
+            panelHelpMainScene.SetActive(true);
+    }
+
+    public void CerrarHelp()
+    {
+        if (panelHelpMainScene != null)
+            panelHelpMainScene.SetActive(false);
+    }
+
     private void MostrarNombreJugador()
     {
         string playerNickname = PlayerPrefs.GetString("PlayerNickname", "");
-
         string playerFullName = PlayerPrefs.GetString("PlayerFullName", "");
-
         string playerName = PlayerPrefs.GetString("PlayerName", "");
 
         if (playerNameText == null)
             return;
 
         if (!string.IsNullOrEmpty(playerNickname))
-        {
             playerNameText.text = "Hola, " + playerNickname;
-        }
         else if (!string.IsNullOrEmpty(playerFullName))
-        {
             playerNameText.text = "Hola, " + playerFullName;
-        }
         else if (!string.IsNullOrEmpty(playerName))
-        {
             playerNameText.text = "Hola, " + playerName;
-        }
         else
-        {
             playerNameText.text = "Hola, Explorador";
-        }
     }
 
     public void CerrarSesion()
     {
-        // Datos de sesión
         PlayerPrefs.DeleteKey("PlayerName");
         PlayerPrefs.DeleteKey("PlayerNickname");
         PlayerPrefs.DeleteKey("PlayerFullName");
         PlayerPrefs.DeleteKey("PlayerCode");
 
-        // Datos de espada local
         PlayerPrefs.DeleteKey("EquippedSwordId");
         PlayerPrefs.DeleteKey("EquippedSwordName");
         PlayerPrefs.DeleteKey("EquippedSwordPlayerCode");
 
-        // Progreso local de Salud Mental
         PlayerPrefs.DeleteKey("SMPainting1");
         PlayerPrefs.DeleteKey("SMPainting2");
         PlayerPrefs.DeleteKey("SMPainting3");
         PlayerPrefs.DeleteKey("SMPainting4");
 
-        // Datos de lección actual
         PlayerPrefs.DeleteKey("CurrentWorldCode");
         PlayerPrefs.DeleteKey("CurrentLessonId");
         PlayerPrefs.DeleteKey("CurrentLevelName");
