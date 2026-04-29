@@ -3892,17 +3892,19 @@ MonoBehaviour:
   candadosAvanzado: []
   textoMensajeBloqueo: {fileID: 1853864299}
   lessonSceneName: LessonScene
+  mathIntroSceneName: BasicoTienda
+  mathMaxRounds: 6
   escenasBasico:
-  - 
-  - 
-  - 
+  - FormulasBasico
+  - BasicoRestas
+  - SumayResta
   escenasIntermedio:
-  - 
-  - 
+  - Multiplicacion
+  - Division
   escenasAvanzado:
-  - 
-  - 
-  - 
+  - SumayMultiplicacion
+  - SumayDivision
+  - OperacionesCombinadas
 --- !u!1 &1851800038
 GameObject:
   m_ObjectHideFlags: 0
