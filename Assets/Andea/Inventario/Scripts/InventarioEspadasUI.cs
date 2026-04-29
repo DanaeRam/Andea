@@ -61,11 +61,11 @@ public class InventarioEspadasUI : MonoBehaviour
         }
 
         StartCoroutine(PlayerInventoryApi.Instance.ObtenerInventario(
-            onSuccess: (data) =>
+            (data) =>
             {
                 MostrarEspadasCompradas(data.items);
             },
-            onError: (error) =>
+            (error) =>
             {
                 Debug.LogError("Error inventario: " + error);
             }
@@ -111,7 +111,7 @@ public class InventarioEspadasUI : MonoBehaviour
 
         StartCoroutine(PlayerInventoryApi.Instance.EquiparEspada(
             idRecompensa,
-            onSuccess: (data) =>
+            (data) =>
             {
                 MostrarMensaje(data.nombre + " equipada.");
 
@@ -130,7 +130,7 @@ public class InventarioEspadasUI : MonoBehaviour
                         espada.textoEstado.text = "Equipada";
                 }
             },
-            onError: (error) =>
+            (error) =>
             {
                 MostrarMensaje(error);
             }

@@ -3857,6 +3857,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MundoCarouselManager
   worldCode: MA
+  playMode: 1
+  usarBloqueoPorProgreso: 1
   carouselImage: {fileID: 1171764198}
   levelSprites:
   - {fileID: 6710747197684576618, guid: f6966cd0fcb9e564580ada1f69a59fbe, type: 3}
@@ -3890,6 +3892,17 @@ MonoBehaviour:
   candadosAvanzado: []
   textoMensajeBloqueo: {fileID: 1853864299}
   lessonSceneName: LessonScene
+  escenasBasico:
+  - 
+  - 
+  - 
+  escenasIntermedio:
+  - 
+  - 
+  escenasAvanzado:
+  - 
+  - 
+  - 
 --- !u!1 &1851800038
 GameObject:
   m_ObjectHideFlags: 0

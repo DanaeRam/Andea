@@ -2523,6 +2523,68 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 862536584}
   m_CullTransparentMesh: 1
+--- !u!1 &887049164
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 887049166}
+  - component: {fileID: 887049165}
+  m_Layer: 0
+  m_Name: GalleryProgressManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &887049165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 887049164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dee6e0267b0c0b94f8e24ba42b0f0a0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GalleryProgressManager
+  currentPuzzleKey: SMPainting1
+  nextSceneName: SMPainting2
+  storySceneName: StoryPainting1
+  progressPanel: {fileID: 16766049}
+  backgroundProgressPanel: {fileID: 1816885880}
+  progressButton: {fileID: 1243254547}
+  closeButton: {fileID: 1233569089}
+  bottomButton: {fileID: 330112083}
+  panelTitleText: {fileID: 1872140543}
+  bottomButtonText: {fileID: 1168288441}
+  painting1: {fileID: 664590194}
+  painting2: {fileID: 1546127154}
+  painting3: {fileID: 202371862}
+  painting4: {fileID: 21569897}
+  puzzle1Key: SMPainting1
+  puzzle2Key: SMPainting2
+  puzzle3Key: SMPainting3
+  puzzle4Key: SMPainting4
+--- !u!4 &887049166
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 887049164}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 744.0261, y: 796.53796, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &902938767
 GameObject:
   m_ObjectHideFlags: 0
@@ -3077,7 +3139,7 @@ GameObject:
   - component: {fileID: 1168288442}
   - component: {fileID: 1168288441}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: bottomButtonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4776,7 +4838,7 @@ GameObject:
   - component: {fileID: 1872140544}
   - component: {fileID: 1872140543}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: PanelTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5384,3 +5446,4 @@ SceneRoots:
   - {fileID: 1665204862}
   - {fileID: 135106691}
   - {fileID: 2146876913}
+  - {fileID: 887049166}

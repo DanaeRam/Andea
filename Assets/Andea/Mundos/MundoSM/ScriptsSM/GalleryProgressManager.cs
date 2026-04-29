@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -9,6 +10,11 @@ public class GalleryProgressManager : MonoBehaviour
     public string currentPuzzleKey;
     public string nextSceneName;
     public string storySceneName = "StoryPainting1";
+
+    [Header("Sincronización con base de datos")]
+    public bool syncWithDatabase = true;
+    public string worldCode = "SM";
+    public string currentLessonId = "SM_LECCION_01";
 
     [Header("Panel principal")]
     public GameObject progressPanel;
@@ -31,14 +37,21 @@ public class GalleryProgressManager : MonoBehaviour
     public Image painting3;
     public Image painting4;
 
-    [Header("Claves de progreso")]
+    [Header("Claves de progreso local")]
     public string puzzle1Key = "SMPainting1";
     public string puzzle2Key = "SMPainting2";
     public string puzzle3Key = "SMPainting3";
     public string puzzle4Key = "SMPainting4";
 
+    private bool syncInProgress = false;
+
     private void Start()
     {
+        if (string.IsNullOrEmpty(worldCode))
+            worldCode = "SM";
+
+        worldCode = worldCode.Trim().ToUpper();
+
         if (progressPanel != null)
             progressPanel.SetActive(false);
 
@@ -98,10 +111,103 @@ public class GalleryProgressManager : MonoBehaviour
 
     public void MarkCurrentPuzzleCompleted()
     {
+        Debug.Log("ENTRÓ A MarkCurrentPuzzleCompleted en: " + currentPuzzleKey);
+
+        if (string.IsNullOrEmpty(currentPuzzleKey))
+        {
+            Debug.LogError("Current Puzzle Key está vacío en GalleryProgressManager.");
+            return;
+        }
+
+        if (string.IsNullOrEmpty(worldCode))
+            worldCode = "SM";
+
+        worldCode = worldCode.Trim().ToUpper();
+
+        if (string.IsNullOrEmpty(currentLessonId))
+        {
+            Debug.LogError("Current Lesson Id está vacío en GalleryProgressManager.");
+            return;
+        }
+
         PlayerPrefs.SetInt(currentPuzzleKey, 1);
+
+        PlayerPrefs.SetString("CurrentWorldCode", worldCode);
+        PlayerPrefs.SetString("CurrentLessonId", currentLessonId);
+        PlayerPrefs.SetString("CurrentLevelName", "SaludMental");
+        PlayerPrefs.SetString("CurrentLessonName", currentPuzzleKey);
         PlayerPrefs.Save();
 
+        Debug.Log("Puzzle completado localmente: " + currentPuzzleKey);
+        Debug.Log("SM lección seleccionada: " + currentLessonId);
+
+        if (syncWithDatabase)
+        {
+            StartCoroutine(SyncLessonCompletedToDatabase());
+        }
+        else
+        {
+            Debug.LogWarning("Sync With Database está desactivado. No se guardará en Supabase.");
+        }
+
         OpenPanel();
+    }
+
+    private IEnumerator SyncLessonCompletedToDatabase()
+    {
+        Debug.Log("Entró a SyncLessonCompletedToDatabase.");
+
+        if (syncInProgress)
+        {
+            Debug.LogWarning("No se sincroniza porque syncInProgress ya está en true.");
+            yield break;
+        }
+
+        if (PlayerLessonsApi.Instance == null)
+        {
+            Debug.LogWarning("No existe PlayerLessonsApi. No se pudo sincronizar progreso SM.");
+            yield break;
+        }
+
+        if (string.IsNullOrEmpty(worldCode))
+            worldCode = "SM";
+
+        worldCode = worldCode.Trim().ToUpper();
+
+        if (string.IsNullOrEmpty(currentLessonId))
+        {
+            Debug.LogWarning("Current Lesson Id está vacío en GalleryProgressManager.");
+            yield break;
+        }
+
+        string playerCode = PlayerPrefs.GetString("PlayerCode", "");
+        if (string.IsNullOrEmpty(playerCode))
+        {
+            Debug.LogWarning("No hay PlayerCode guardado. No se pudo sincronizar progreso SM.");
+            yield break;
+        }
+
+        syncInProgress = true;
+
+        Debug.Log("PlayerCode actual: " + playerCode);
+        Debug.Log("Intentando guardar progreso SM -> mundo: " + worldCode + " | leccionId: " + currentLessonId);
+
+        yield return StartCoroutine(
+            PlayerLessonsApi.Instance.CompletarLeccion(
+                worldCode,
+                currentLessonId,
+                onSuccess: (data) =>
+                {
+                    Debug.Log("Progreso SM guardado en base de datos: " + data.leccion_id);
+                },
+                onError: (error) =>
+                {
+                    Debug.LogError("Error al guardar progreso SM: " + error);
+                }
+            )
+        );
+
+        syncInProgress = false;
     }
 
     public void RefreshPanel()
@@ -127,7 +233,8 @@ public class GalleryProgressManager : MonoBehaviour
 
     private void UpdatePaintingColor(Image img, bool completed)
     {
-        if (img == null) return;
+        if (img == null)
+            return;
 
         img.color = completed
             ? new Color(1f, 1f, 1f, 1f)
@@ -142,8 +249,21 @@ public class GalleryProgressManager : MonoBehaviour
             PlayerPrefs.GetInt(puzzle3Key, 0) == 1 &&
             PlayerPrefs.GetInt(puzzle4Key, 0) == 1;
 
+        Debug.Log(
+            "BottomButton presionado. allCompleted: " + allCompleted +
+            " | currentPuzzleKey: " + currentPuzzleKey +
+            " | nextSceneName: " + nextSceneName +
+            " | storySceneName: " + storySceneName
+        );
+
         if (allCompleted)
         {
+            if (string.IsNullOrEmpty(storySceneName))
+            {
+                Debug.LogError("Story Scene Name está vacío.");
+                return;
+            }
+
             SceneManager.LoadScene(storySceneName);
             return;
         }
@@ -151,6 +271,10 @@ public class GalleryProgressManager : MonoBehaviour
         if (!string.IsNullOrEmpty(nextSceneName))
         {
             SceneManager.LoadScene(nextSceneName);
+        }
+        else
+        {
+            Debug.LogError("Next Scene Name está vacío en " + currentPuzzleKey);
         }
     }
 

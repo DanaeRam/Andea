@@ -38,11 +38,11 @@ public class LessonLockManager : MonoBehaviour
         }
 
         StartCoroutine(PlayerLessonsApi.Instance.ObtenerEstadoLecciones(
-            onSuccess: (data) =>
+            (data) =>
             {
                 AplicarEstadoLecciones(data.lecciones);
             },
-            onError: (error) =>
+            (error) =>
             {
                 MostrarMensaje(error);
             }

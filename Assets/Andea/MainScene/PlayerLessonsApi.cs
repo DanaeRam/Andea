@@ -9,11 +9,11 @@ public class PlayerLessonsApi : MonoBehaviour
     public static PlayerLessonsApi Instance;
 
     [Header("Endpoints API")]
-    [SerializeField] private string obtenerEstadoLeccionesUrl =
-        "https://andea.vercel.app/api/lecciones/estado";
+    [SerializeField] private string obtenerEstadoLeccionesUrl = "https://andea.vercel.app/api/lecciones/estado";
+    [SerializeField] private string completarLeccionUrl = "https://andea.vercel.app/api/lecciones/completar";
 
-    [SerializeField] private string completarLeccionUrl =
-        "https://andea.vercel.app/api/lecciones/completar";
+    [Header("Configuración")]
+    [SerializeField] private int timeoutSegundos = 15;
 
     private void Awake()
     {
@@ -32,12 +32,14 @@ public class PlayerLessonsApi : MonoBehaviour
     public class EstadoLeccionesRequest
     {
         public string codigo;
+        public string mundo;
     }
 
     [Serializable]
     public class LeccionEstado
     {
         public string leccion_id;
+        public string mundo;
         public string nivel;
         public int numero;
         public string nombre;
@@ -58,6 +60,7 @@ public class PlayerLessonsApi : MonoBehaviour
     {
         public string codigo;
         public string leccionId;
+        public string mundo;
     }
 
     [Serializable]
@@ -73,6 +76,19 @@ public class PlayerLessonsApi : MonoBehaviour
         Action<EstadoLeccionesResponse> onSuccess,
         Action<string> onError)
     {
+        string mundoActual = PlayerPrefs.GetString("CurrentWorldCode", "LE");
+
+        if (string.IsNullOrEmpty(mundoActual))
+            mundoActual = "LE";
+
+        yield return ObtenerEstadoLecciones(mundoActual, onSuccess, onError);
+    }
+
+    public IEnumerator ObtenerEstadoLecciones(
+        string mundo,
+        Action<EstadoLeccionesResponse> onSuccess,
+        Action<string> onError)
+    {
         string codigo = PlayerPrefs.GetString("PlayerCode", "");
 
         if (string.IsNullOrEmpty(codigo))
@@ -81,9 +97,15 @@ public class PlayerLessonsApi : MonoBehaviour
             yield break;
         }
 
+        if (string.IsNullOrEmpty(mundo))
+            mundo = "LE";
+
+        mundo = mundo.Trim().ToUpper();
+
         EstadoLeccionesRequest payload = new EstadoLeccionesRequest
         {
-            codigo = codigo
+            codigo = codigo,
+            mundo = mundo
         };
 
         string json = JsonUtility.ToJson(payload);
@@ -93,11 +115,14 @@ public class PlayerLessonsApi : MonoBehaviour
 
         request.uploadHandler = new UploadHandlerRaw(bodyRaw);
         request.downloadHandler = new DownloadHandlerBuffer();
+        request.timeout = timeoutSegundos;
         request.SetRequestHeader("Content-Type", "application/json");
 
         yield return request.SendWebRequest();
 
-        string respuesta = request.downloadHandler.text;
+        string respuesta = request.downloadHandler != null
+            ? request.downloadHandler.text
+            : "";
 
         Debug.Log("LECCIONES JSON enviado: " + json);
         Debug.Log("LECCIONES respuesta: " + respuesta);
@@ -108,8 +133,17 @@ public class PlayerLessonsApi : MonoBehaviour
             yield break;
         }
 
-        EstadoLeccionesResponse response =
-            JsonUtility.FromJson<EstadoLeccionesResponse>(respuesta);
+        EstadoLeccionesResponse response = null;
+
+        try
+        {
+            response = JsonUtility.FromJson<EstadoLeccionesResponse>(respuesta);
+        }
+        catch (Exception e)
+        {
+            onError?.Invoke("Error al parsear estado de lecciones: " + e.Message);
+            yield break;
+        }
 
         if (response == null || !response.ok)
         {
@@ -120,7 +154,26 @@ public class PlayerLessonsApi : MonoBehaviour
         onSuccess?.Invoke(response);
     }
 
+    // Versión de compatibilidad.
+    // Antes mandaba siempre LE. Ahora usa CurrentWorldCode para evitar errores con MA o SM.
     public IEnumerator CompletarLeccion(
+        string leccionId,
+        Action<CompletarLeccionResponse> onSuccess,
+        Action<string> onError)
+    {
+        string mundoActual = PlayerPrefs.GetString("CurrentWorldCode", "LE");
+
+        if (string.IsNullOrEmpty(mundoActual))
+            mundoActual = "LE";
+
+        mundoActual = mundoActual.Trim().ToUpper();
+
+        yield return CompletarLeccion(mundoActual, leccionId, onSuccess, onError);
+    }
+
+    // Versión correcta para LE, MA y SM.
+    public IEnumerator CompletarLeccion(
+        string mundo,
         string leccionId,
         Action<CompletarLeccionResponse> onSuccess,
         Action<string> onError)
@@ -133,10 +186,25 @@ public class PlayerLessonsApi : MonoBehaviour
             yield break;
         }
 
+        if (string.IsNullOrEmpty(mundo))
+            mundo = PlayerPrefs.GetString("CurrentWorldCode", "LE");
+
+        if (string.IsNullOrEmpty(mundo))
+            mundo = "LE";
+
+        mundo = mundo.Trim().ToUpper();
+
+        if (string.IsNullOrEmpty(leccionId))
+        {
+            onError?.Invoke("No hay ID de lección.");
+            yield break;
+        }
+
         CompletarLeccionRequest payload = new CompletarLeccionRequest
         {
             codigo = codigo,
-            leccionId = leccionId
+            leccionId = leccionId,
+            mundo = mundo
         };
 
         string json = JsonUtility.ToJson(payload);
@@ -146,11 +214,14 @@ public class PlayerLessonsApi : MonoBehaviour
 
         request.uploadHandler = new UploadHandlerRaw(bodyRaw);
         request.downloadHandler = new DownloadHandlerBuffer();
+        request.timeout = timeoutSegundos;
         request.SetRequestHeader("Content-Type", "application/json");
 
         yield return request.SendWebRequest();
 
-        string respuesta = request.downloadHandler.text;
+        string respuesta = request.downloadHandler != null
+            ? request.downloadHandler.text
+            : "";
 
         Debug.Log("COMPLETAR LECCIÓN JSON enviado: " + json);
         Debug.Log("COMPLETAR LECCIÓN respuesta: " + respuesta);
@@ -161,8 +232,17 @@ public class PlayerLessonsApi : MonoBehaviour
             yield break;
         }
 
-        CompletarLeccionResponse response =
-            JsonUtility.FromJson<CompletarLeccionResponse>(respuesta);
+        CompletarLeccionResponse response = null;
+
+        try
+        {
+            response = JsonUtility.FromJson<CompletarLeccionResponse>(respuesta);
+        }
+        catch (Exception e)
+        {
+            onError?.Invoke("Error al parsear completar lección: " + e.Message);
+            yield break;
+        }
 
         if (response == null || !response.ok)
         {

@@ -948,7 +948,7 @@ GameObject:
   - component: {fileID: 282220028}
   - component: {fileID: 282220029}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: panelTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1845,6 +1845,9 @@ MonoBehaviour:
   currentPuzzleKey: SMPainting4
   nextSceneName: 
   storySceneName: StoryPainting1
+  syncWithDatabase: 1
+  worldCode: SM
+  currentLessonId: SM_LECCION_04
   progressPanel: {fileID: 597215254}
   backgroundProgressPanel: {fileID: 2125278626}
   progressButton: {fileID: 1360727347}
@@ -4255,7 +4258,7 @@ GameObject:
   - component: {fileID: 1673823865}
   - component: {fileID: 1673823866}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: bottomButtonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5150,6 +5153,71 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PuzzleSlot
   slotIndex: 12
   puzzleManager: {fileID: 1145331220}
+--- !u!1 &2113146857
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2113146859}
+  - component: {fileID: 2113146858}
+  m_Layer: 0
+  m_Name: GalleryProgressManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2113146858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113146857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dee6e0267b0c0b94f8e24ba42b0f0a0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GalleryProgressManager
+  currentPuzzleKey: SMPainting1
+  nextSceneName: SMPainting4
+  storySceneName: StoryPainting1
+  syncWithDatabase: 1
+  worldCode: SM
+  currentLessonId: SM_LECCION_04
+  progressPanel: {fileID: 597215254}
+  backgroundProgressPanel: {fileID: 2125278626}
+  progressButton: {fileID: 1360727347}
+  closeButton: {fileID: 355859641}
+  bottomButton: {fileID: 463818541}
+  panelTitleText: {fileID: 282220029}
+  bottomButtonText: {fileID: 1673823866}
+  painting1: {fileID: 566205158}
+  painting2: {fileID: 1712279406}
+  painting3: {fileID: 1558564889}
+  painting4: {fileID: 1725136094}
+  puzzle1Key: SMPainting1
+  puzzle2Key: SMPainting2
+  puzzle3Key: SMPainting3
+  puzzle4Key: SMPainting4
+--- !u!4 &2113146859
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113146857}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 744.0261, y: 796.53796, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2125063154
 GameObject:
   m_ObjectHideFlags: 0
@@ -5339,3 +5407,4 @@ SceneRoots:
   - {fileID: 1769870149}
   - {fileID: 560411676}
   - {fileID: 1145331221}
+  - {fileID: 2113146859}

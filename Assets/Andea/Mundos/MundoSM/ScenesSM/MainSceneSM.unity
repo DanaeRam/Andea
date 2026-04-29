@@ -621,7 +621,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d62c7c31089d5174b8d4a4577f749f85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SMGalleryLauncher
-  firstPuzzleSceneName: SMPainting1
+  painting1SceneName: SMPainting1
+  painting2SceneName: SMPainting2
+  painting3SceneName: SMPainting3
+  painting4SceneName: SMPainting4
+  mainSceneName: MainScene
+  resetLocalPuzzleProgress: 0
   puzzle1Key: SMPainting1
   puzzle2Key: SMPainting2
   puzzle3Key: SMPainting3
