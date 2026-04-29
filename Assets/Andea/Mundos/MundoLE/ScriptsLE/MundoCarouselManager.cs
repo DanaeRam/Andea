@@ -173,6 +173,9 @@ public class MundoCarouselManager : MonoBehaviour
 
         if (playButtonText != null)
             playButtonText.text = "Jugar";
+
+        if (playButton != null)
+            playButton.gameObject.SetActive(worldCode != "MA");
     }
 
     private void CargarEstadoLecciones()

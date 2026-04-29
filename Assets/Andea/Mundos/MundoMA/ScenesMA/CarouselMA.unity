@@ -3859,9 +3859,9 @@ MonoBehaviour:
   worldCode: MA
   carouselImage: {fileID: 1171764198}
   levelSprites:
-  - {fileID: -2399891295029786720, guid: b36f1a66e364c4b4fa9d4f4e2fd701c4, type: 3}
-  - {fileID: 5136967532071412015, guid: f0b532d787ac0c947b8922794fc31cbc, type: 3}
-  - {fileID: 6456598576602856241, guid: fd8465bbee7dabb46a830013e6635f9d, type: 3}
+  - {fileID: 6710747197684576618, guid: f6966cd0fcb9e564580ada1f69a59fbe, type: 3}
+  - {fileID: -5235086655481580348, guid: c13103e1bdaced24b8d39a342bda8be7, type: 3}
+  - {fileID: 2434584804725904963, guid: aa9e09ca53bcb2748afb9ee1ca8be141, type: 3}
   ribbonText: {fileID: 589744355}
   botonesBasico: {fileID: 247434931}
   botonesIntermedio: {fileID: 206740950}
