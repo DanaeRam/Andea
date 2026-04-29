@@ -16,6 +16,11 @@ public class GalleryProgressManager : MonoBehaviour
     public string worldCode = "SM";
     public string currentLessonId = "SM_LECCION_01";
 
+    [Header("Recompensa")]
+    public bool giveReward = true;
+    public TextMeshProUGUI rewardText;
+    public float rewardTextDuration = 3.5f;
+
     [Header("Panel principal")]
     public GameObject progressPanel;
 
@@ -44,13 +49,12 @@ public class GalleryProgressManager : MonoBehaviour
     public string puzzle4Key = "SMPainting4";
 
     private bool syncInProgress = false;
+    private bool rewardInProgress = false;
+    private Coroutine hideRewardCoroutine;
 
     private void Start()
     {
-        if (string.IsNullOrEmpty(worldCode))
-            worldCode = "SM";
-
-        worldCode = worldCode.Trim().ToUpper();
+        NormalizarDatos();
 
         if (progressPanel != null)
             progressPanel.SetActive(false);
@@ -58,8 +62,36 @@ public class GalleryProgressManager : MonoBehaviour
         if (backgroundProgressPanel != null)
             backgroundProgressPanel.SetActive(false);
 
+        if (rewardText != null)
+        {
+            rewardText.gameObject.SetActive(true);
+            rewardText.text = "";
+        }
+
         RefreshPanel();
         RegisterButtons();
+    }
+
+    private void NormalizarDatos()
+    {
+        if (string.IsNullOrEmpty(worldCode))
+            worldCode = "SM";
+
+        worldCode = worldCode.Trim().ToUpper();
+
+        AutoConfigurarLessonIdDesdePuzzleKey();
+    }
+
+    private void AutoConfigurarLessonIdDesdePuzzleKey()
+    {
+        if (currentPuzzleKey == "SMPainting1")
+            currentLessonId = "SM_LECCION_01";
+        else if (currentPuzzleKey == "SMPainting2")
+            currentLessonId = "SM_LECCION_02";
+        else if (currentPuzzleKey == "SMPainting3")
+            currentLessonId = "SM_LECCION_03";
+        else if (currentPuzzleKey == "SMPainting4")
+            currentLessonId = "SM_LECCION_04";
     }
 
     private void RegisterButtons()
@@ -98,6 +130,9 @@ public class GalleryProgressManager : MonoBehaviour
             progressPanel.SetActive(true);
             progressPanel.transform.SetAsLastSibling();
         }
+
+        if (rewardText != null)
+            rewardText.transform.SetAsLastSibling();
     }
 
     public void ClosePanel()
@@ -107,10 +142,14 @@ public class GalleryProgressManager : MonoBehaviour
 
         if (backgroundProgressPanel != null)
             backgroundProgressPanel.SetActive(false);
+
+        LimpiarRewardText();
     }
 
     public void MarkCurrentPuzzleCompleted()
     {
+        NormalizarDatos();
+
         Debug.Log("ENTRÓ A MarkCurrentPuzzleCompleted en: " + currentPuzzleKey);
 
         if (string.IsNullOrEmpty(currentPuzzleKey))
@@ -119,19 +158,15 @@ public class GalleryProgressManager : MonoBehaviour
             return;
         }
 
-        if (string.IsNullOrEmpty(worldCode))
-            worldCode = "SM";
-
-        worldCode = worldCode.Trim().ToUpper();
-
         if (string.IsNullOrEmpty(currentLessonId))
         {
             Debug.LogError("Current Lesson Id está vacío en GalleryProgressManager.");
             return;
         }
 
-        PlayerPrefs.SetInt(currentPuzzleKey, 1);
+        bool yaEstabaCompletada = PlayerPrefs.GetInt(currentPuzzleKey, 0) == 1;
 
+        PlayerPrefs.SetInt(currentPuzzleKey, 1);
         PlayerPrefs.SetString("CurrentWorldCode", worldCode);
         PlayerPrefs.SetString("CurrentLessonId", currentLessonId);
         PlayerPrefs.SetString("CurrentLevelName", "SaludMental");
@@ -148,6 +183,21 @@ public class GalleryProgressManager : MonoBehaviour
         else
         {
             Debug.LogWarning("Sync With Database está desactivado. No se guardará en Supabase.");
+        }
+
+        if (giveReward && !yaEstabaCompletada)
+        {
+            MostrarRewardTextTemporal("Calculando recompensa...");
+            StartCoroutine(ProcesarRecompensaSM());
+        }
+        else if (yaEstabaCompletada)
+        {
+            Debug.Log("La pintura ya estaba completada. No se vuelven a dar puntos.");
+            MostrarRewardTextTemporal("Esta pintura ya estaba completada.\nNo se vuelven a dar puntos.");
+        }
+        else
+        {
+            MostrarRewardTextTemporal("Pintura completada.");
         }
 
         OpenPanel();
@@ -181,6 +231,7 @@ public class GalleryProgressManager : MonoBehaviour
         }
 
         string playerCode = PlayerPrefs.GetString("PlayerCode", "");
+
         if (string.IsNullOrEmpty(playerCode))
         {
             Debug.LogWarning("No hay PlayerCode guardado. No se pudo sincronizar progreso SM.");
@@ -208,6 +259,81 @@ public class GalleryProgressManager : MonoBehaviour
         );
 
         syncInProgress = false;
+    }
+
+    private IEnumerator ProcesarRecompensaSM()
+    {
+        if (rewardInProgress)
+        {
+            Debug.LogWarning("Ya se está procesando una recompensa SM.");
+            yield break;
+        }
+
+        if (GameManager.instancia == null)
+        {
+            Debug.LogWarning("No existe GameManager. No se pudieron dar puntos SM.");
+
+            MostrarRewardTextTemporal("¡Pintura completada!");
+
+            yield break;
+        }
+
+        rewardInProgress = true;
+
+        Debug.Log("Procesando recompensa SM para: " + currentLessonId);
+
+        yield return StartCoroutine(
+            GameManager.instancia.CompletarActividadCoroutine(
+                onFinished: () =>
+                {
+                    Debug.Log(
+                        "Recompensa SM entregada. Puntos: " +
+                        GameManager.instancia.ultimoPuntajeGanado +
+                        " | Runas generadas: " +
+                        GameManager.instancia.ultimasMonedasGanadas
+                    );
+
+                    MostrarRewardTextTemporal(
+                        "¡Pintura completada!\n+" +
+                        GameManager.instancia.ultimoPuntajeGanado +
+                        " puntos\nRunas ganadas: " +
+                        GameManager.instancia.ultimasMonedasGanadas
+                    );
+                }
+            )
+        );
+
+        rewardInProgress = false;
+    }
+
+    private void MostrarRewardTextTemporal(string mensaje)
+    {
+        if (rewardText == null)
+            return;
+
+        rewardText.gameObject.SetActive(true);
+        rewardText.transform.SetAsLastSibling();
+        rewardText.text = mensaje;
+
+        if (hideRewardCoroutine != null)
+            StopCoroutine(hideRewardCoroutine);
+
+        hideRewardCoroutine = StartCoroutine(OcultarRewardTextDespues());
+    }
+
+    private IEnumerator OcultarRewardTextDespues()
+    {
+        yield return new WaitForSeconds(rewardTextDuration);
+
+        LimpiarRewardText();
+
+        hideRewardCoroutine = null;
+    }
+
+    private void LimpiarRewardText()
+    {
+        if (rewardText != null)
+            rewardText.text = "";
     }
 
     public void RefreshPanel()
@@ -287,6 +413,8 @@ public class GalleryProgressManager : MonoBehaviour
         PlayerPrefs.Save();
 
         RefreshPanel();
+        LimpiarRewardText();
+
         Debug.Log("Progreso de galería reiniciado.");
     }
 }
