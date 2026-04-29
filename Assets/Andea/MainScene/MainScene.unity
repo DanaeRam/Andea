@@ -4266,6 +4266,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -2539004721197638436, guid: cff83c7b064eb4a6e97f512687e22fb3, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2539004721197638436, guid: cff83c7b064eb4a6e97f512687e22fb3, type: 3}
       propertyPath: m_Volume
       value: 0.2
       objectReference: {fileID: 0}

@@ -17,6 +17,10 @@ public class Enemy : MonoBehaviour
     public float tiempoEntreAtaques = 1.5f;
     public LayerMask playerLayer;
 
+    [Header("Sonido")]
+    public AudioClip sonidoAtaque;
+    private AudioSource audioSource;
+
     private int vidaActual;
     private bool muerto = false;
     private bool puedeAtacar = true;
@@ -28,6 +32,11 @@ public class Enemy : MonoBehaviour
 
         if (animator == null)
             animator = GetComponent<Animator>();
+
+        // Configurar AudioSource
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+            audioSource = gameObject.AddComponent<AudioSource>();
 
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         if (playerObj != null)
@@ -92,6 +101,12 @@ public class Enemy : MonoBehaviour
 
         if (animator != null)
             animator.SetTrigger("attack");
+
+        // Reproducir sonido de ataque
+        if (sonidoAtaque != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(sonidoAtaque);
+        }
 
         Collider2D jugadorDetectado = Physics2D.OverlapCircle(
             transform.position,
