@@ -1,0 +1,3146 @@
+fileFormatVersion: 2
+guid: f5392a46277cd9e4e943041e97aeafb4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7762911042226026515
+    second: HelpMainScene_0
+  - first:
+      213: 8582348209211488848
+    second: HelpMainScene_1
+  - first:
+      213: 8278948449424438713
+    second: HelpMainScene_2
+  - first:
+      213: -5874678932066014637
+    second: HelpMainScene_3
+  - first:
+      213: -1872762965121181026
+    second: HelpMainScene_4
+  - first:
+      213: -6062840833437808271
+    second: HelpMainScene_5
+  - first:
+      213: 5400033522250326766
+    second: HelpMainScene_6
+  - first:
+      213: -6011471705114729272
+    second: HelpMainScene_7
+  - first:
+      213: -7958689328415283713
+    second: HelpMainScene_8
+  - first:
+      213: -352857231766594052
+    second: HelpMainScene_9
+  - first:
+      213: -3083914011731155456
+    second: HelpMainScene_10
+  - first:
+      213: 514911412876662035
+    second: HelpMainScene_11
+  - first:
+      213: -4823786877697062555
+    second: HelpMainScene_12
+  - first:
+      213: -2627816381621071639
+    second: HelpMainScene_13
+  - first:
+      213: 3198103904694046656
+    second: HelpMainScene_14
+  - first:
+      213: 7641311797014056899
+    second: HelpMainScene_15
+  - first:
+      213: 412517871883719066
+    second: HelpMainScene_16
+  - first:
+      213: -2900868483501683826
+    second: HelpMainScene_17
+  - first:
+      213: -7170725735935912417
+    second: HelpMainScene_18
+  - first:
+      213: -4070204241521501468
+    second: HelpMainScene_19
+  - first:
+      213: 5813433243670368609
+    second: HelpMainScene_20
+  - first:
+      213: -4196941453345727657
+    second: HelpMainScene_21
+  - first:
+      213: -3874954379246875348
+    second: HelpMainScene_22
+  - first:
+      213: 2208323191454469293
+    second: HelpMainScene_23
+  - first:
+      213: -5268523313163039622
+    second: HelpMainScene_24
+  - first:
+      213: 5523781389346948008
+    second: HelpMainScene_25
+  - first:
+      213: -7935636977537417203
+    second: HelpMainScene_26
+  - first:
+      213: 652266683052956545
+    second: HelpMainScene_27
+  - first:
+      213: 7415664182765541812
+    second: HelpMainScene_28
+  - first:
+      213: 3900827695914432474
+    second: HelpMainScene_29
+  - first:
+      213: 5622860848525503679
+    second: HelpMainScene_30
+  - first:
+      213: -8203399166913894725
+    second: HelpMainScene_31
+  - first:
+      213: 4651593256777793913
+    second: HelpMainScene_32
+  - first:
+      213: 5359439879760577317
+    second: HelpMainScene_33
+  - first:
+      213: -5285238604436306625
+    second: HelpMainScene_34
+  - first:
+      213: -3909827688158822475
+    second: HelpMainScene_35
+  - first:
+      213: 4518282615445752066
+    second: HelpMainScene_36
+  - first:
+      213: 8735716768221037749
+    second: HelpMainScene_37
+  - first:
+      213: 3703058675629231283
+    second: HelpMainScene_38
+  - first:
+      213: -9102487151361046203
+    second: HelpMainScene_39
+  - first:
+      213: -7451786258894019940
+    second: HelpMainScene_40
+  - first:
+      213: 8328757042770072939
+    second: HelpMainScene_41
+  - first:
+      213: 9107239343474290285
+    second: HelpMainScene_42
+  - first:
+      213: 8338527056247880416
+    second: HelpMainScene_43
+  - first:
+      213: -1375997412699930967
+    second: HelpMainScene_44
+  - first:
+      213: 7398530689882646426
+    second: HelpMainScene_45
+  - first:
+      213: -8582373983044269335
+    second: HelpMainScene_46
+  - first:
+      213: 9092046871949868441
+    second: HelpMainScene_47
+  - first:
+      213: 3269939951841599653
+    second: HelpMainScene_48
+  - first:
+      213: 1629175476027188712
+    second: HelpMainScene_49
+  - first:
+      213: -2743851877806238696
+    second: HelpMainScene_50
+  - first:
+      213: -2832315750783262233
+    second: HelpMainScene_51
+  - first:
+      213: -174856720846458101
+    second: HelpMainScene_52
+  - first:
+      213: 6689399837840819239
+    second: HelpMainScene_53
+  - first:
+      213: -5738467077431961229
+    second: HelpMainScene_54
+  - first:
+      213: -7606531999015721487
+    second: HelpMainScene_55
+  - first:
+      213: -4782152886768607274
+    second: HelpMainScene_56
+  - first:
+      213: 8418801706404190387
+    second: HelpMainScene_57
+  - first:
+      213: -5934069333060701648
+    second: HelpMainScene_58
+  - first:
+      213: -4368840811096068662
+    second: HelpMainScene_59
+  - first:
+      213: 5053272147792810520
+    second: HelpMainScene_60
+  - first:
+      213: 8462909664285377118
+    second: HelpMainScene_61
+  - first:
+      213: 7449393377197047671
+    second: HelpMainScene_62
+  - first:
+      213: 6453226973399453918
+    second: HelpMainScene_63
+  - first:
+      213: 1060500326154590930
+    second: HelpMainScene_64
+  - first:
+      213: -5966867388615234631
+    second: HelpMainScene_65
+  - first:
+      213: 7173936613172578289
+    second: HelpMainScene_66
+  - first:
+      213: -4691510203527694510
+    second: HelpMainScene_67
+  - first:
+      213: 1670049111275860811
+    second: HelpMainScene_68
+  - first:
+      213: 7316486125056822365
+    second: HelpMainScene_69
+  - first:
+      213: -3262685549613472306
+    second: HelpMainScene_70
+  - first:
+      213: -7811270194323491504
+    second: HelpMainScene_71
+  - first:
+      213: 1319235607020850537
+    second: HelpMainScene_72
+  - first:
+      213: 1114766800792146908
+    second: HelpMainScene_73
+  - first:
+      213: 1450504312002379742
+    second: HelpMainScene_74
+  - first:
+      213: 5269110608456491835
+    second: HelpMainScene_75
+  - first:
+      213: -2605175983043492239
+    second: HelpMainScene_76
+  - first:
+      213: 8678336555597292936
+    second: HelpMainScene_77
+  - first:
+      213: 8250394936115560550
+    second: HelpMainScene_78
+  - first:
+      213: -2645397999901272844
+    second: HelpMainScene_79
+  - first:
+      213: -693078233517260930
+    second: HelpMainScene_80
+  - first:
+      213: -3767502421361726995
+    second: HelpMainScene_81
+  - first:
+      213: 5095262302040529137
+    second: HelpMainScene_82
+  - first:
+      213: 7723364785861011074
+    second: HelpMainScene_83
+  - first:
+      213: -5894144256304801705
+    second: HelpMainScene_84
+  - first:
+      213: 954830146733768033
+    second: HelpMainScene_85
+  - first:
+      213: 697745529939511339
+    second: HelpMainScene_86
+  - first:
+      213: -6695438102078827177
+    second: HelpMainScene_87
+  - first:
+      213: 3402513829067490632
+    second: HelpMainScene_88
+  - first:
+      213: -2269985008990223435
+    second: HelpMainScene_89
+  - first:
+      213: 3080811121896051746
+    second: HelpMainScene_90
+  - first:
+      213: 2023608837086476049
+    second: HelpMainScene_91
+  - first:
+      213: 3777454822435843700
+    second: HelpMainScene_92
+  - first:
+      213: 2902741929906373701
+    second: HelpMainScene_93
+  - first:
+      213: 1524069586143181258
+    second: HelpMainScene_94
+  - first:
+      213: 7661128102873345815
+    second: HelpMainScene_95
+  - first:
+      213: 46804004889983766
+    second: HelpMainScene_96
+  - first:
+      213: -3132365754539675015
+    second: HelpMainScene_97
+  - first:
+      213: 4006594207607984854
+    second: HelpMainScene_98
+  - first:
+      213: 2817975450466391427
+    second: HelpMainScene_99
+  - first:
+      213: 4334705947738378816
+    second: HelpMainScene_100
+  - first:
+      213: 6452414257232232743
+    second: HelpMainScene_101
+  - first:
+      213: 1374572642308993597
+    second: HelpMainScene_102
+  - first:
+      213: -4032101847361874704
+    second: HelpMainScene_103
+  - first:
+      213: -1455960708342094730
+    second: HelpMainScene_104
+  - first:
+      213: 8278672166916136469
+    second: HelpMainScene_105
+  - first:
+      213: 2113950500797882027
+    second: HelpMainScene_106
+  - first:
+      213: 5221850387405825828
+    second: HelpMainScene_107
+  - first:
+      213: -2515426593633876029
+    second: HelpMainScene_108
+  - first:
+      213: -6822120859410471301
+    second: HelpMainScene_109
+  - first:
+      213: -7360274237278405083
+    second: HelpMainScene_110
+  - first:
+      213: -8844848866473536892
+    second: HelpMainScene_111
+  - first:
+      213: 7722514749890490304
+    second: HelpMainScene_112
+  - first:
+      213: 8663758050042868173
+    second: HelpMainScene_113
+  - first:
+      213: 5157532894604141468
+    second: HelpMainScene_114
+  - first:
+      213: 9124656668644304672
+    second: HelpMainScene_115
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: HelpMainScene_0
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 683
+        width: 31
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de709296989944490800000000000000
+      internalID: -7762911042226026515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_1
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 684
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05ab2cc9930aa1770800000000000000
+      internalID: 8582348209211488848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_2
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 683
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b5f6b140cbb4e270800000000000000
+      internalID: 8278948449424438713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_3
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 683
+        width: 33
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35aebbcf2a2f87ea0800000000000000
+      internalID: -5874678932066014637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_4
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 683
+        width: 47
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9ad17b610c9206e0800000000000000
+      internalID: -1872762965121181026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_5
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 702
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 179c43162667cdba0800000000000000
+      internalID: -6062840833437808271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_6
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 683
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee2aeecb0e5c0fa40800000000000000
+      internalID: 5400033522250326766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_7
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 683
+        width: 30
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c423579556f29ca0800000000000000
+      internalID: -6011471705114729272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_8
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 684
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff56d16093e0d8190800000000000000
+      internalID: -7958689328415283713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_9
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 683
+        width: 27
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfddf1c97366a1bf0800000000000000
+      internalID: -352857231766594052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_10
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 664
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0062aecab8cb335d0800000000000000
+      internalID: -3083914011731155456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_11
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 690
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 315de4fa335552700800000000000000
+      internalID: 514911412876662035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_12
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 664
+        width: 39
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5690daa64677e0db0800000000000000
+      internalID: -4823786877697062555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_13
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 665
+        width: 13
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e016867cee188bd0800000000000000
+      internalID: -2627816381621071639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_14
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 664
+        width: 22
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cf041a9e82f16c20800000000000000
+      internalID: 3198103904694046656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_15
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 675
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cf460f08946b0a60800000000000000
+      internalID: 7641311797014056899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_16
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 680
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a911121a1de89b500800000000000000
+      internalID: 412517871883719066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_17
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 664
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8b81c4db7b0eb7d0800000000000000
+      internalID: -2900868483501683826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_18
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 664
+        width: 51
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f16d9cf6fe67c7c90800000000000000
+      internalID: -7170725735935912417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_19
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 664
+        width: 22
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ea92d4aecab387c0800000000000000
+      internalID: -4070204241521501468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_20
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 664
+        width: 37
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1615b66fbb67da050800000000000000
+      internalID: 5813433243670368609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_21
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 664
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75b573a0cf771c5c0800000000000000
+      internalID: -4196941453345727657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_22
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 665
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2d4520c585693ac0800000000000000
+      internalID: -3874954379246875348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_23
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 664
+        width: 22
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dac86ef0e3a85ae10800000000000000
+      internalID: 2208323191454469293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_24
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 664
+        width: 37
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7c8d04e5f172e6b0800000000000000
+      internalID: -5268523313163039622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_25
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 665
+        width: 31
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a340f848e968ac40800000000000000
+      internalID: 5523781389346948008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_26
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 664
+        width: 42
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d008d67b634fed190800000000000000
+      internalID: -7935636977537417203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_27
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 664
+        width: 37
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18b9136a7115d0900800000000000000
+      internalID: 652266683052956545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_28
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 624
+        width: 96
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b9d35bc84bb9e660800000000000000
+      internalID: 7415664182765541812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_29
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 658
+        width: 47
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad73cf83f16822630800000000000000
+      internalID: 3900827695914432474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_30
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 676
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbc60d9862a680e40800000000000000
+      internalID: 5622860848525503679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_31
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 654
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb6ac51dbeba72e80800000000000000
+      internalID: -8203399166913894725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_32
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 664
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 971c7ddfb67cd8040800000000000000
+      internalID: 4651593256777793913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_33
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 658
+        width: 27
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5230134dc2e806a40800000000000000
+      internalID: 5359439879760577317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_34
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 461
+        width: 321
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f35846ddd7f07a6b0800000000000000
+      internalID: -5285238604436306625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_35
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 461
+        width: 322
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bf7e4ace608db9c0800000000000000
+      internalID: -3909827688158822475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_36
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 461
+        width: 321
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2098770991a24be30800000000000000
+      internalID: 4518282615445752066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_37
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 413
+        width: 128
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b40d3ced108b3970800000000000000
+      internalID: 8735716768221037749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_38
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 432
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bc0f4fee38e36330800000000000000
+      internalID: 3703058675629231283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_39
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 413
+        width: 48
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5494192b9287da180800000000000000
+      internalID: -9102487151361046203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_40
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 413
+        width: 40
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c922c78f0efe59890800000000000000
+      internalID: -7451786258894019940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_41
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 413
+        width: 57
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b65d7da1760b59370800000000000000
+      internalID: 8328757042770072939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_42
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 431
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6e2f304ee9636e70800000000000000
+      internalID: 9107239343474290285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_43
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 413
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ea73a1ad2668b370800000000000000
+      internalID: 8338527056247880416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_44
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 432
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9aef92cb4a977ece0800000000000000
+      internalID: -1375997412699930967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_45
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 413
+        width: 40
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a97e74e967cdca660800000000000000
+      internalID: 7398530689882646426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_46
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 413
+        width: 38
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ea8713755845e880800000000000000
+      internalID: -8582373983044269335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_47
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 413
+        width: 31
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99df5c355707d2e70800000000000000
+      internalID: 9092046871949868441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_48
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 414
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a06062bf09216d20800000000000000
+      internalID: 3269939951841599653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_49
+      rect:
+        serializedVersion: 2
+        x: 1061
+        y: 413
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e5e065b67efb9610800000000000000
+      internalID: 1629175476027188712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_50
+      rect:
+        serializedVersion: 2
+        x: 1073
+        y: 413
+        width: 45
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81412133141ebe9d0800000000000000
+      internalID: -2743851877806238696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_51
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 332
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e1e1d6b4d791b8d0800000000000000
+      internalID: -2832315750783262233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_52
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 358
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b037b532db8c29df0800000000000000
+      internalID: -174856720846458101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_53
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 331
+        width: 42
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 724ce07e5b585dc50800000000000000
+      internalID: 6689399837840819239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_54
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 332
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 379d466c89edc50b0800000000000000
+      internalID: -5738467077431961229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_55
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 331
+        width: 60
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f5a602b27b207690800000000000000
+      internalID: -7606531999015721487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_56
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 358
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6df5c82594162adb0800000000000000
+      internalID: -4782152886768607274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_57
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 332
+        width: 12
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b89ca81c8795d470800000000000000
+      internalID: 8418801706404190387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_58
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 331
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 032b062b163f5ada0800000000000000
+      internalID: -5934069333060701648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_59
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 332
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acda36eed62ce53c0800000000000000
+      internalID: -4368840811096068662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_60
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 330
+        width: 20
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 812d09abe34d02640800000000000000
+      internalID: 5053272147792810520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_61
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 331
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5243f1508b427570800000000000000
+      internalID: 8462909664285377118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_62
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 332
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77f3af7decf816760800000000000000
+      internalID: 7449393377197047671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_63
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 331
+        width: 22
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed0917cddb77e8950800000000000000
+      internalID: 6453226973399453918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_64
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 138
+        width: 321
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2da51a88d67a7be00800000000000000
+      internalID: 1060500326154590930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_65
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 85
+        width: 36
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bbe9bf49bd613da0800000000000000
+      internalID: -5966867388615234631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_66
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 80
+        width: 56
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f7025d2751fe8360800000000000000
+      internalID: 7173936613172578289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_67
+      rect:
+        serializedVersion: 2
+        x: 763
+        y: 138
+        width: 321
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2577c9a935864eeb0800000000000000
+      internalID: -4691510203527694510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_68
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 90
+        width: 20
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b43fd0381d43d2710800000000000000
+      internalID: 1670049111275860811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_69
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 83
+        width: 39
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5c0618cd51698560800000000000000
+      internalID: 7316486125056822365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_70
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 107
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec52d7177cc98b2d0800000000000000
+      internalID: -3262685549613472306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_71
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 83
+        width: 30
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05570c6e42bc89390800000000000000
+      internalID: -7811270194323491504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_72
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 89
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96d46838bcdde4210800000000000000
+      internalID: 1319235607020850537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_73
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 89
+        width: 26
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd35d90cf72787f00800000000000000
+      internalID: 1114766800792146908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_74
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 89
+        width: 26
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edff2169cf9312410800000000000000
+      internalID: 1450504312002379742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_75
+      rect:
+        serializedVersion: 2
+        x: 933
+        y: 90
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b33aa437e24af1940800000000000000
+      internalID: 5269110608456491835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_76
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 89
+        width: 35
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17640590f3e88dbd0800000000000000
+      internalID: -2605175983043492239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_77
+      rect:
+        serializedVersion: 2
+        x: 987
+        y: 83
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 885e9a51e15af6870800000000000000
+      internalID: 8678336555597292936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_78
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 83
+        width: 69
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66089df5b7a4f7270800000000000000
+      internalID: 8250394936115560550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_79
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 80
+        width: 20
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f41b56f888a94bd0800000000000000
+      internalID: -2645397999901272844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_80
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 73
+        width: 39
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7ff5a9c401b166f0800000000000000
+      internalID: -693078233517260930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_81
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 97
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de96f44428427bbc0800000000000000
+      internalID: -3767502421361726995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_82
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 73
+        width: 30
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f8909e511206b640800000000000000
+      internalID: 5095262302040529137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_83
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 79
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 286a1044a57ee2b60800000000000000
+      internalID: 7723364785861011074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_84
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 79
+        width: 26
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7581b04070bc33ea0800000000000000
+      internalID: -5894144256304801705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_85
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 79
+        width: 28
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16d76e4a5fc304d00800000000000000
+      internalID: 954830146733768033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_86
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 80
+        width: 23
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2849a7dcd3eea900800000000000000
+      internalID: 697745529939511339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_87
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 73
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 755d9f525860513a0800000000000000
+      internalID: -6695438102078827177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_88
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 79
+        width: 38
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8450cecdc48283f20800000000000000
+      internalID: 3402513829067490632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_89
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 79
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b30da549a46f70e0800000000000000
+      internalID: -2269985008990223435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_90
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 73
+        width: 69
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 224dfac746d31ca20800000000000000
+      internalID: 3080811121896051746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_91
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 79
+        width: 28
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11771ea048d451c10800000000000000
+      internalID: 2023608837086476049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_92
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 80
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47eef5ea5273c6430800000000000000
+      internalID: 3777454822435843700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_93
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 55
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54483b6e76c984820800000000000000
+      internalID: 2902741929906373701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_94
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 54
+        width: 27
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac97a07b635962510800000000000000
+      internalID: 1524069586143181258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_95
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 48
+        width: 45
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71f278e4b6bc15a60800000000000000
+      internalID: 7661128102873345815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_96
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 54
+        width: 34
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61b78859ef746a000800000000000000
+      internalID: 46804004889983766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_97
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 48
+        width: 73
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 972701631f99784d0800000000000000
+      internalID: -3132365754539675015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_98
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 54
+        width: 27
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d29c9734384a9730800000000000000
+      internalID: 4006594207607984854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_99
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 54
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38512deedb57b1720800000000000000
+      internalID: 2817975450466391427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_100
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 54
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04218bcd718f72c30800000000000000
+      internalID: 4334705947738378816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_101
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 54
+        width: 35
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7214ef1a4949b8950800000000000000
+      internalID: 6452414257232232743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_102
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 55
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d323cce0986731310800000000000000
+      internalID: 1374572642308993597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_103
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 54
+        width: 47
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f49cc99bb81b08c0800000000000000
+      internalID: -4032101847361874704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_104
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 54
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 674e75423736bcbe0800000000000000
+      internalID: -1455960708342094730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_105
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 55
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51e13f83970c3e270800000000000000
+      internalID: 8278672166916136469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_106
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 54
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bae11d0c7c2465d10800000000000000
+      internalID: 2113950500797882027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_107
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 64
+        width: 29
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4276f83c24db77840800000000000000
+      internalID: 5221850387405825828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_108
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 58
+        width: 100
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c7c1e327d8671dd0800000000000000
+      internalID: -2515426593633876029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_109
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 64
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b766e083935f251a0800000000000000
+      internalID: -6822120859410471301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_110
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 65
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52ebf8dd39d0bd990800000000000000
+      internalID: -7360274237278405083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_111
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 64
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48214d561d8c04580800000000000000
+      internalID: -8844848866473536892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_112
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 64
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cfefe7df32eb2b60800000000000000
+      internalID: 7722514749890490304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_113
+      rect:
+        serializedVersion: 2
+        x: 997
+        y: 64
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc17cb04b0adb3870800000000000000
+      internalID: 8663758050042868173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_114
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 65
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c93a54487dc339740800000000000000
+      internalID: 5157532894604141468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HelpMainScene_115
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 64
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02761f745ea41ae70800000000000000
+      internalID: 9124656668644304672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      HelpMainScene_0: -7762911042226026515
+      HelpMainScene_1: 8582348209211488848
+      HelpMainScene_10: -3083914011731155456
+      HelpMainScene_100: 4334705947738378816
+      HelpMainScene_101: 6452414257232232743
+      HelpMainScene_102: 1374572642308993597
+      HelpMainScene_103: -4032101847361874704
+      HelpMainScene_104: -1455960708342094730
+      HelpMainScene_105: 8278672166916136469
+      HelpMainScene_106: 2113950500797882027
+      HelpMainScene_107: 5221850387405825828
+      HelpMainScene_108: -2515426593633876029
+      HelpMainScene_109: -6822120859410471301
+      HelpMainScene_11: 514911412876662035
+      HelpMainScene_110: -7360274237278405083
+      HelpMainScene_111: -8844848866473536892
+      HelpMainScene_112: 7722514749890490304
+      HelpMainScene_113: 8663758050042868173
+      HelpMainScene_114: 5157532894604141468
+      HelpMainScene_115: 9124656668644304672
+      HelpMainScene_12: -4823786877697062555
+      HelpMainScene_13: -2627816381621071639
+      HelpMainScene_14: 3198103904694046656
+      HelpMainScene_15: 7641311797014056899
+      HelpMainScene_16: 412517871883719066
+      HelpMainScene_17: -2900868483501683826
+      HelpMainScene_18: -7170725735935912417
+      HelpMainScene_19: -4070204241521501468
+      HelpMainScene_2: 8278948449424438713
+      HelpMainScene_20: 5813433243670368609
+      HelpMainScene_21: -4196941453345727657
+      HelpMainScene_22: -3874954379246875348
+      HelpMainScene_23: 2208323191454469293
+      HelpMainScene_24: -5268523313163039622
+      HelpMainScene_25: 5523781389346948008
+      HelpMainScene_26: -7935636977537417203
+      HelpMainScene_27: 652266683052956545
+      HelpMainScene_28: 7415664182765541812
+      HelpMainScene_29: 3900827695914432474
+      HelpMainScene_3: -5874678932066014637
+      HelpMainScene_30: 5622860848525503679
+      HelpMainScene_31: -8203399166913894725
+      HelpMainScene_32: 4651593256777793913
+      HelpMainScene_33: 5359439879760577317
+      HelpMainScene_34: -5285238604436306625
+      HelpMainScene_35: -3909827688158822475
+      HelpMainScene_36: 4518282615445752066
+      HelpMainScene_37: 8735716768221037749
+      HelpMainScene_38: 3703058675629231283
+      HelpMainScene_39: -9102487151361046203
+      HelpMainScene_4: -1872762965121181026
+      HelpMainScene_40: -7451786258894019940
+      HelpMainScene_41: 8328757042770072939
+      HelpMainScene_42: 9107239343474290285
+      HelpMainScene_43: 8338527056247880416
+      HelpMainScene_44: -1375997412699930967
+      HelpMainScene_45: 7398530689882646426
+      HelpMainScene_46: -8582373983044269335
+      HelpMainScene_47: 9092046871949868441
+      HelpMainScene_48: 3269939951841599653
+      HelpMainScene_49: 1629175476027188712
+      HelpMainScene_5: -6062840833437808271
+      HelpMainScene_50: -2743851877806238696
+      HelpMainScene_51: -2832315750783262233
+      HelpMainScene_52: -174856720846458101
+      HelpMainScene_53: 6689399837840819239
+      HelpMainScene_54: -5738467077431961229
+      HelpMainScene_55: -7606531999015721487
+      HelpMainScene_56: -4782152886768607274
+      HelpMainScene_57: 8418801706404190387
+      HelpMainScene_58: -5934069333060701648
+      HelpMainScene_59: -4368840811096068662
+      HelpMainScene_6: 5400033522250326766
+      HelpMainScene_60: 5053272147792810520
+      HelpMainScene_61: 8462909664285377118
+      HelpMainScene_62: 7449393377197047671
+      HelpMainScene_63: 6453226973399453918
+      HelpMainScene_64: 1060500326154590930
+      HelpMainScene_65: -5966867388615234631
+      HelpMainScene_66: 7173936613172578289
+      HelpMainScene_67: -4691510203527694510
+      HelpMainScene_68: 1670049111275860811
+      HelpMainScene_69: 7316486125056822365
+      HelpMainScene_7: -6011471705114729272
+      HelpMainScene_70: -3262685549613472306
+      HelpMainScene_71: -7811270194323491504
+      HelpMainScene_72: 1319235607020850537
+      HelpMainScene_73: 1114766800792146908
+      HelpMainScene_74: 1450504312002379742
+      HelpMainScene_75: 5269110608456491835
+      HelpMainScene_76: -2605175983043492239
+      HelpMainScene_77: 8678336555597292936
+      HelpMainScene_78: 8250394936115560550
+      HelpMainScene_79: -2645397999901272844
+      HelpMainScene_8: -7958689328415283713
+      HelpMainScene_80: -693078233517260930
+      HelpMainScene_81: -3767502421361726995
+      HelpMainScene_82: 5095262302040529137
+      HelpMainScene_83: 7723364785861011074
+      HelpMainScene_84: -5894144256304801705
+      HelpMainScene_85: 954830146733768033
+      HelpMainScene_86: 697745529939511339
+      HelpMainScene_87: -6695438102078827177
+      HelpMainScene_88: 3402513829067490632
+      HelpMainScene_89: -2269985008990223435
+      HelpMainScene_9: -352857231766594052
+      HelpMainScene_90: 3080811121896051746
+      HelpMainScene_91: 2023608837086476049
+      HelpMainScene_92: 3777454822435843700
+      HelpMainScene_93: 2902741929906373701
+      HelpMainScene_94: 1524069586143181258
+      HelpMainScene_95: 7661128102873345815
+      HelpMainScene_96: 46804004889983766
+      HelpMainScene_97: -3132365754539675015
+      HelpMainScene_98: 4006594207607984854
+      HelpMainScene_99: 2817975450466391427
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
