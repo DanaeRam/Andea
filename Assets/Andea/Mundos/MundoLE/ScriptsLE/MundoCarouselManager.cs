@@ -400,11 +400,11 @@ public class MundoCarouselManager : MonoBehaviour
                 switch (currentLesson)
                 {
                     case 1:
-                        return "Explora la lección 1 del nivel básico y comienza tu aventura de lecto-escritura.";
+                        return "Explora la lección 1 del nivel básico: Completar palabras .";
                     case 2:
-                        return "Explora la lección 2 del nivel básico y sigue practicando habilidades iniciales.";
+                        return "Explora la lección 2 del nivel básico: Completar oraciones.";
                     case 3:
-                        return "Explora la lección 3 del nivel básico y refuerza lo aprendido.";
+                        return "Explora la lección 3 del nivel básico: Identificación de vocales.";
                     default:
                         return "Lección del nivel básico.";
                 }

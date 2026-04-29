@@ -873,7 +873,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 349843483}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b1e43426d2631040b0491222894f989, type: 3}
   m_Name: 
@@ -3601,7 +3601,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1810270069}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dee6e0267b0c0b94f8e24ba42b0f0a0a, type: 3}
   m_Name: 
@@ -3609,6 +3609,12 @@ MonoBehaviour:
   currentPuzzleKey: SMPainting1
   nextSceneName: SMPainting2
   storySceneName: StoryPainting1
+  syncWithDatabase: 1
+  worldCode: SM
+  currentLessonId: SM_LECCION_01
+  giveReward: 1
+  rewardText: {fileID: 0}
+  rewardTextDuration: 3.5
   progressPanel: {fileID: 1143369635}
   backgroundProgressPanel: {fileID: 47664187}
   progressButton: {fileID: 1172132488}

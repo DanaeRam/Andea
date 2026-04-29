@@ -5681,8 +5681,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b1e43426d2631040b0491222894f989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PuzzleManager
-  boardPanel: {fileID: 0}
-  piecesPanel: {fileID: 0}
+  boardPanel: {fileID: 1362762721}
+  piecesPanel: {fileID: 643323245}
   galleryProgressManager: {fileID: 135106692}
 --- !u!4 &2146876913
 Transform:

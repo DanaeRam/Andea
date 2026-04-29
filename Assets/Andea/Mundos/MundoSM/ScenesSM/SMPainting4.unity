@@ -1973,7 +1973,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &597215255
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3173,8 +3173,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b1e43426d2631040b0491222894f989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PuzzleManager
-  boardPanel: {fileID: 0}
-  piecesPanel: {fileID: 0}
+  boardPanel: {fileID: 1581847860}
+  piecesPanel: {fileID: 190417857}
   galleryProgressManager: {fileID: 560411675}
 --- !u!4 &1145331221
 Transform:

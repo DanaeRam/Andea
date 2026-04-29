@@ -1,166 +1,206 @@
 {
-  "levelName": "Basico",
+  "levelName": "Básico",
   "lessonName": "Prueba1",
   "questions": [
     {
-      "questionText": "¿Qué es un sustantivo?",
-      "option1": "Una palabra que describe una acción",
-      "option2": "Una palabra que nombra personas, lugares, cosas o ideas",
-      "option3": "Una palabra que expresa una emoción",
-      "option4": "Una palabra que une oraciones",
+      "questionText": "¿Cuál es la letra que falta? M A _ I A",
+      "option1": "A",
+      "option2": "G",
+      "option3": "L",
+      "option4": "T",
       "correctOption": 2,
-      "correctFeedback": "¡Correcto! Los sustantivos nombran personas, lugares, cosas o ideas.",
-      "wrongFeedback": "Recuerda que un sustantivo puede ser algo concreto o abstracto."
+      "correctFeedback": "¡Correcto! La palabra es MAGIA.",
+      "wrongFeedback": "Revisa la palabra: M A _ I A. La letra que falta forma la palabra MAGIA."
     },
     {
-      "questionText": "¿Qué es un verbo?",
-      "option1": "Una palabra que describe una persona o lugar",
-      "option2": "Una palabra que describe una acción, estado o proceso",
-      "option3": "Una palabra que se usa para unir ideas",
-      "option4": "Una palabra que describe una cualidad",
-      "correctOption": 2,
-      "correctFeedback": "¡Exacto! Un verbo expresa una acción, estado o proceso.",
-      "wrongFeedback": "Piensa en qué palabra describe lo que alguien hace o cómo está."
-    },
-    {
-      "questionText": "¿Qué es un adjetivo?",
-      "option1": "Una palabra que indica el tiempo de la acción",
-      "option2": "Una palabra que nombra a las personas",
-      "option3": "Una palabra que describe o califica a un sustantivo",
-      "option4": "Una palabra que conecta oraciones",
-      "correctOption": 3,
-      "correctFeedback": "¡Correcto! Los adjetivos describen o califican a los sustantivos.",
-      "wrongFeedback": "Recuerda que los adjetivos añaden detalles sobre algo o alguien."
-    },
-    {
-      "questionText": "¿Cuál es el papel de un sustantivo en una oración?",
-      "option1": "Conectar oraciones",
-      "option2": "Nombrar una acción",
-      "option3": "Nombrar personas, lugares, cosas o ideas",
-      "option4": "Describir una cualidad",
-      "correctOption": 3,
-      "correctFeedback": "¡Correcto! Los sustantivos nombran cosas, personas, lugares o conceptos.",
-      "wrongFeedback": "Piensa en el papel que juega un sustantivo en la oración, como sujeto o complemento."
-    },
-    {
-      "questionText": "¿Por qué los verbos son importantes en una oración?",
-      "option1": "Porque indican la acción o el estado del sujeto",
-      "option2": "Porque describen al sujeto",
-      "option3": "Porque unen frases",
-      "option4": "Porque nombran cosas o personas",
+      "questionText": "¿Cuál es la letra que falta? P O R _ A L",
+      "option1": "T",
+      "option2": "S",
+      "option3": "M",
+      "option4": "R",
       "correctOption": 1,
-      "correctFeedback": "¡Correcto! Los verbos indican lo que hace o cómo está el sujeto.",
-      "wrongFeedback": "Piensa en cómo los verbos permiten que la oración tenga acción o estado."
+      "correctFeedback": "¡Correcto! La palabra es PORTAL.",
+      "wrongFeedback": "Observa bien: P O R _ A L. Falta la letra T para formar PORTAL."
     },
     {
-      "questionText": "En la oración 'El perro corre rápidamente en el parque', ¿qué palabra es el sustantivo?",
-      "option1": "Perro",
-      "option2": "Corre",
-      "option3": "Rápidamente",
-      "option4": "Parque",
+      "questionText": "¿Cuál es la letra que falta? L I _ R O",
+      "option1": "P",
+      "option2": "B",
+      "option3": "D",
+      "option4": "M",
+      "correctOption": 2,
+      "correctFeedback": "¡Correcto! La palabra es LIBRO.",
+      "wrongFeedback": "Piensa en un objeto que usamos para leer. La palabra correcta es LIBRO."
+    },
+    {
+      "questionText": "¿Cuál es la letra que falta? N I _ O",
+      "option1": "Ñ",
+      "option2": "L",
+      "option3": "S",
+      "option4": "M",
       "correctOption": 1,
-      "correctFeedback": "¡Correcto! 'Perro' es el sustantivo, ya que nombra una cosa.",
-      "wrongFeedback": "Piensa en cuál palabra nombra al ser o cosa principal de la oración."
+      "correctFeedback": "¡Correcto! La palabra es NIÑO.",
+      "wrongFeedback": "Revisa la palabra: N I _ O. Falta la letra Ñ para formar NIÑO."
     },
     {
-      "questionText": "En la oración 'El gato negro duerme en el sofá', ¿qué palabra es el adjetivo?",
-      "option1": "Gato",
-      "option2": "Negro",
-      "option3": "Duerme",
-      "option4": "Sofá",
-      "correctOption": 2,
-      "correctFeedback": "¡Exacto! 'Negro' es el adjetivo que describe al sustantivo 'gato'.",
-      "wrongFeedback": "Recuerda que el adjetivo describe o califica al sustantivo."
-    },
-    {
-      "questionText": "En la oración 'María canta una canción', ¿qué palabra es el verbo?",
-      "option1": "María",
-      "option2": "Canta",
-      "option3": "Una",
-      "option4": "Canción",
-      "correctOption": 2,
-      "correctFeedback": "¡Correcto! 'Canta' es el verbo, ya que describe la acción que realiza María.",
-      "wrongFeedback": "Piensa en qué palabra expresa la acción en la oración."
-    },
-    {
-      "questionText": "En la oración 'El sol brilla intensamente en el cielo azul', ¿qué palabra es el adjetivo?",
-      "option1": "Sol",
-      "option2": "Brilla",
-      "option3": "Intensamente",
-      "option4": "Azul",
-      "correctOption": 4,
-      "correctFeedback": "¡Correcto! 'Azul' es el adjetivo que describe al sustantivo 'cielo'.",
-      "wrongFeedback": "Piensa en qué palabra da más detalles sobre el sustantivo 'cielo'."
-    },
-    {
-      "questionText": "En la oración 'El pájaro vuela alto en el cielo', ¿qué palabra es el sustantivo?",
-      "option1": "Pájaro",
-      "option2": "Vuela",
-      "option3": "Alto",
-      "option4": "Cielo",
+      "questionText": "¿Cuál es la letra que falta? C A _ A",
+      "option1": "S",
+      "option2": "R",
+      "option3": "M",
+      "option4": "T",
       "correctOption": 1,
-      "correctFeedback": "¡Correcto! 'Pájaro' es el sustantivo porque nombra al ser principal de la oración.",
-      "wrongFeedback": "Piensa en qué palabra nombra al ser o cosa principal de la oración."
+      "correctFeedback": "¡Correcto! La palabra es CASA.",
+      "wrongFeedback": "Piensa en el lugar donde vive una familia. La palabra correcta es CASA."
     },
     {
-      "questionText": "En la oración 'La niña feliz jugaba en el parque', ¿qué palabra es el adjetivo?",
-      "option1": "Niña",
-      "option2": "Feliz",
-      "option3": "Jugaba",
-      "option4": "Parque",
-      "correctOption": 2,
-      "correctFeedback": "¡Correcto! 'Feliz' es el adjetivo que describe a la niña.",
-      "wrongFeedback": "Piensa en qué palabra da una cualidad al sustantivo 'niña'."
-    },
-    {
-      "questionText": "En la oración 'El árbol crece rápidamente cerca de la casa', ¿qué palabra es el verbo?",
-      "option1": "Árbol",
-      "option2": "Crece",
-      "option3": "Rápidamente",
-      "option4": "Casa",
-      "correctOption": 2,
-      "correctFeedback": "¡Correcto! 'Crece' es el verbo, ya que expresa una acción.",
-      "wrongFeedback": "Piensa en qué palabra describe lo que hace el sustantivo 'árbol'."
-    },
-    {
-      "questionText": "En la oración 'El niño travieso corre rápido por la calle', ¿qué palabra es el adjetivo?",
-      "option1": "Niño",
-      "option2": "Travieso",
-      "option3": "Corre",
-      "option4": "Calle",
-      "correctOption": 2,
-      "correctFeedback": "¡Correcto! 'Travieso' es el adjetivo que describe al niño.",
-      "wrongFeedback": "Recuerda que el adjetivo describe o califica a un sustantivo."
-    },
-    {
-      "questionText": "En la oración 'El perro grande duerme tranquilamente', ¿qué palabra es el sustantivo?",
-      "option1": "Perro",
-      "option2": "Grande",
-      "option3": "Duerme",
-      "option4": "Tranquilamente",
+      "questionText": "¿Cuál es la letra que falta? A _ I G O",
+      "option1": "M",
+      "option2": "R",
+      "option3": "L",
+      "option4": "S",
       "correctOption": 1,
-      "correctFeedback": "¡Correcto! 'Perro' es el sustantivo, ya que nombra a un animal.",
-      "wrongFeedback": "Piensa en qué palabra nombra a un ser o cosa."
+      "correctFeedback": "¡Correcto! La palabra es AMIGO.",
+      "wrongFeedback": "Piensa en alguien con quien juegas y compartes. La palabra es AMIGO."
     },
     {
-      "questionText": "En la oración 'El sol brilla muy fuerte', ¿qué palabra es el verbo?",
-      "option1": "Sol",
-      "option2": "Brilla",
-      "option3": "Muy",
-      "option4": "Fuerte",
-      "correctOption": 2,
-      "correctFeedback": "¡Correcto! 'Brilla' es el verbo que indica la acción que realiza el sol.",
-      "wrongFeedback": "Piensa en qué palabra describe lo que hace el sustantivo 'sol'."
+      "questionText": "¿Cuál es la letra que falta? E S _ R E L L A",
+      "option1": "T",
+      "option2": "P",
+      "option3": "M",
+      "option4": "C",
+      "correctOption": 1,
+      "correctFeedback": "¡Correcto! La palabra es ESTRELLA.",
+      "wrongFeedback": "Mira la palabra completa: E S _ R E L L A. Falta T para formar ESTRELLA."
     },
     {
-      "questionText": "En la oración 'Los niños felices corren en el jardín', ¿qué palabra es el adjetivo?",
-      "option1": "Niños",
-      "option2": "Felices",
-      "option3": "Corren",
-      "option4": "Jardín",
+      "questionText": "¿Cuál es la letra que falta? C U E _ T O",
+      "option1": "N",
+      "option2": "S",
+      "option3": "L",
+      "option4": "R",
+      "correctOption": 1,
+      "correctFeedback": "¡Correcto! La palabra es CUENTO.",
+      "wrongFeedback": "Piensa en una historia corta. La palabra correcta es CUENTO."
+    },
+    {
+      "questionText": "¿Cuál es la letra que falta? G A L E _ Í A",
+      "option1": "R",
+      "option2": "L",
+      "option3": "N",
+      "option4": "S",
+      "correctOption": 1,
+      "correctFeedback": "¡Correcto! La palabra es GALERÍA.",
+      "wrongFeedback": "En Andea hay una Galería de Emociones. La palabra correcta es GALERÍA."
+    },
+    {
+      "questionText": "¿Cuál es la letra que falta? E M O C I _ N",
+      "option1": "A",
+      "option2": "Ó",
+      "option3": "E",
+      "option4": "I",
       "correctOption": 2,
-      "correctFeedback": "¡Correcto! 'Felices' es el adjetivo que describe a los niños.",
-      "wrongFeedback": "Piensa en qué palabra describe a los 'niños'."
+      "correctFeedback": "¡Correcto! La palabra es EMOCIÓN.",
+      "wrongFeedback": "La palabra habla de lo que sentimos. Falta Ó para formar EMOCIÓN."
+    },
+    {
+      "questionText": "¿Cuál es la letra que falta? A V E N T U _ A",
+      "option1": "R",
+      "option2": "L",
+      "option3": "S",
+      "option4": "N",
+      "correctOption": 1,
+      "correctFeedback": "¡Correcto! La palabra es AVENTURA.",
+      "wrongFeedback": "Piensa en una misión emocionante. La palabra correcta es AVENTURA."
+    },
+    {
+      "questionText": "¿Cuál es la letra que falta? P U _ Z L E",
+      "option1": "Z",
+      "option2": "S",
+      "option3": "R",
+      "option4": "L",
+      "correctOption": 1,
+      "correctFeedback": "¡Correcto! La palabra es PUZZLE.",
+      "wrongFeedback": "Esta palabra tiene doble Z. La palabra correcta es PUZZLE."
+    },
+    {
+      "questionText": "¿Cuál es la letra que falta? M U _ D O",
+      "option1": "N",
+      "option2": "R",
+      "option3": "L",
+      "option4": "S",
+      "correctOption": 1,
+      "correctFeedback": "¡Correcto! La palabra es MUNDO.",
+      "wrongFeedback": "Piensa en los lugares mágicos de Andea. La palabra correcta es MUNDO."
+    },
+    {
+      "questionText": "¿Cuál es la letra que falta? H É _ O E",
+      "option1": "R",
+      "option2": "L",
+      "option3": "M",
+      "option4": "T",
+      "correctOption": 1,
+      "correctFeedback": "¡Correcto! La palabra es HÉROE.",
+      "wrongFeedback": "Piensa en un personaje valiente. La palabra correcta es HÉROE."
+    },
+    {
+      "questionText": "¿Cuál es la letra que falta? L E C T U _ A",
+      "option1": "R",
+      "option2": "S",
+      "option3": "M",
+      "option4": "N",
+      "correctOption": 1,
+      "correctFeedback": "¡Correcto! La palabra es LECTURA.",
+      "wrongFeedback": "Esta palabra se relaciona con leer. La palabra correcta es LECTURA."
+    },
+    {
+      "questionText": "¿Cuál es la letra que falta? R U _ A",
+      "option1": "N",
+      "option2": "M",
+      "option3": "L",
+      "option4": "S",
+      "correctOption": 1,
+      "correctFeedback": "¡Correcto! La palabra es RUNA.",
+      "wrongFeedback": "En un mundo mágico puede haber runas. La palabra correcta es RUNA."
+    },
+    {
+      "questionText": "¿Cuál es la letra que falta? P I N _ U R A",
+      "option1": "T",
+      "option2": "D",
+      "option3": "R",
+      "option4": "L",
+      "correctOption": 1,
+      "correctFeedback": "¡Correcto! La palabra es PINTURA.",
+      "wrongFeedback": "Piensa en los cuadros de una galería. La palabra correcta es PINTURA."
+    },
+    {
+      "questionText": "¿Cuál es la letra que falta? J U E _ O",
+      "option1": "G",
+      "option2": "R",
+      "option3": "L",
+      "option4": "M",
+      "correctOption": 1,
+      "correctFeedback": "¡Correcto! La palabra es JUEGO.",
+      "wrongFeedback": "Andea es un juego educativo. La palabra correcta es JUEGO."
+    },
+    {
+      "questionText": "¿Cuál es la letra que falta? S O _ R I S A",
+      "option1": "N",
+      "option2": "M",
+      "option3": "L",
+      "option4": "T",
+      "correctOption": 1,
+      "correctFeedback": "¡Correcto! La palabra es SONRISA.",
+      "wrongFeedback": "Piensa en una expresión de alegría. La palabra correcta es SONRISA."
+    },
+    {
+      "questionText": "¿Cuál es la letra que falta? C O R A _ Ó N",
+      "option1": "Z",
+      "option2": "S",
+      "option3": "C",
+      "option4": "R",
+      "correctOption": 1,
+      "correctFeedback": "¡Correcto! La palabra es CORAZÓN.",
+      "wrongFeedback": "Piensa en una palabra relacionada con emociones. La palabra correcta es CORAZÓN."
     }
   ]
 }

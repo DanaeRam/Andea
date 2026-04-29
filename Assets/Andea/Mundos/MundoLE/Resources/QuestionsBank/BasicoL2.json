@@ -1,166 +1,206 @@
 {
-  "levelName": "Basico",
+  "levelName": "Básico",
   "lessonName": "Prueba2",
   "questions": [
     {
-      "questionText": "¿Qué es un sustantivo?",
-      "option1": "Una palabra que describe una acción",
-      "option2": "Una palabra que nombra personas, lugares, cosas o ideas",
-      "option3": "Una palabra que expresa una emoción",
-      "option4": "Una palabra que une oraciones",
+      "questionText": "¿Cuál es la palabra que completa la oración? El portal es ___",
+      "option1": "magia",
+      "option2": "mágico",
+      "option3": "leer",
+      "option4": "corre",
       "correctOption": 2,
-      "correctFeedback": "¡Correcto! Los sustantivos nombran personas, lugares, cosas o ideas.",
-      "wrongFeedback": "Recuerda que un sustantivo puede ser algo concreto o abstracto."
+      "correctFeedback": "¡Correcto! El portal es mágico.",
+      "wrongFeedback": "Piensa en cómo describir un portal."
     },
     {
-      "questionText": "¿Qué es un verbo?",
-      "option1": "Una palabra que describe una persona o lugar",
-      "option2": "Una palabra que describe una acción, estado o proceso",
-      "option3": "Una palabra que se usa para unir ideas",
-      "option4": "Una palabra que describe una cualidad",
-      "correctOption": 2,
-      "correctFeedback": "¡Exacto! Un verbo expresa una acción, estado o proceso.",
-      "wrongFeedback": "Piensa en qué palabra describe lo que alguien hace o cómo está."
+      "questionText": "El niño ___ rápido",
+      "option1": "corre",
+      "option2": "libro",
+      "option3": "feliz",
+      "option4": "azul",
+      "correctOption": 1,
+      "correctFeedback": "¡Correcto! El niño corre rápido.",
+      "wrongFeedback": "Piensa en una acción."
     },
     {
-      "questionText": "¿Qué es un adjetivo?",
-      "option1": "Una palabra que indica el tiempo de la acción",
-      "option2": "Una palabra que nombra a las personas",
-      "option3": "Una palabra que describe o califica a un sustantivo",
-      "option4": "Una palabra que conecta oraciones",
+      "questionText": "La niña está ___",
+      "option1": "corre",
+      "option2": "feliz",
+      "option3": "libro",
+      "option4": "portal",
+      "correctOption": 2,
+      "correctFeedback": "¡Correcto! La niña está feliz.",
+      "wrongFeedback": "Piensa en una emoción."
+    },
+    {
+      "questionText": "Leo un ___",
+      "option1": "corre",
+      "option2": "mágico",
+      "option3": "libro",
+      "option4": "feliz",
       "correctOption": 3,
-      "correctFeedback": "¡Correcto! Los adjetivos describen o califican a los sustantivos.",
-      "wrongFeedback": "Recuerda que los adjetivos añaden detalles sobre algo o alguien."
+      "correctFeedback": "¡Correcto! Leo un libro.",
+      "wrongFeedback": "Piensa en algo que se lee."
     },
     {
-      "questionText": "¿Cuál es el papel de un sustantivo en una oración?",
-      "option1": "Conectar oraciones",
-      "option2": "Nombrar una acción",
-      "option3": "Nombrar personas, lugares, cosas o ideas",
-      "option4": "Describir una cualidad",
+      "questionText": "El cielo es ___",
+      "option1": "azul",
+      "option2": "corre",
+      "option3": "niño",
+      "option4": "jugar",
+      "correctOption": 1,
+      "correctFeedback": "¡Correcto! El cielo es azul.",
+      "wrongFeedback": "Piensa en un color."
+    },
+    {
+      "questionText": "Vamos a ___",
+      "option1": "casa",
+      "option2": "jugar",
+      "option3": "feliz",
+      "option4": "libro",
+      "correctOption": 2,
+      "correctFeedback": "¡Correcto! Vamos a jugar.",
+      "wrongFeedback": "Piensa en una acción."
+    },
+    {
+      "questionText": "El gato es ___",
+      "option1": "corre",
+      "option2": "negro",
+      "option3": "libro",
+      "option4": "jugar",
+      "correctOption": 2,
+      "correctFeedback": "¡Correcto! El gato es negro.",
+      "wrongFeedback": "Piensa en una característica."
+    },
+    {
+      "questionText": "Tengo un ___",
+      "option1": "corre",
+      "option2": "feliz",
+      "option3": "amigo",
+      "option4": "azul",
       "correctOption": 3,
-      "correctFeedback": "¡Correcto! Los sustantivos nombran cosas, personas, lugares o conceptos.",
-      "wrongFeedback": "Piensa en el papel que juega un sustantivo en la oración, como sujeto o complemento."
+      "correctFeedback": "¡Correcto! Tengo un amigo.",
+      "wrongFeedback": "Piensa en una persona."
     },
     {
-      "questionText": "¿Por qué los verbos son importantes en una oración?",
-      "option1": "Porque indican la acción o el estado del sujeto",
-      "option2": "Porque describen al sujeto",
-      "option3": "Porque unen frases",
-      "option4": "Porque nombran cosas o personas",
+      "questionText": "La flor es ___",
+      "option1": "corre",
+      "option2": "bonita",
+      "option3": "libro",
+      "option4": "jugar",
+      "correctOption": 2,
+      "correctFeedback": "¡Correcto! La flor es bonita.",
+      "wrongFeedback": "Piensa en cómo describir una flor."
+    },
+    {
+      "questionText": "El perro ___ fuerte",
+      "option1": "ladra",
+      "option2": "libro",
+      "option3": "feliz",
+      "option4": "azul",
       "correctOption": 1,
-      "correctFeedback": "¡Correcto! Los verbos indican lo que hace o cómo está el sujeto.",
-      "wrongFeedback": "Piensa en cómo los verbos permiten que la oración tenga acción o estado."
+      "correctFeedback": "¡Correcto! El perro ladra fuerte.",
+      "wrongFeedback": "Piensa en el sonido del perro."
     },
     {
-      "questionText": "En la oración 'El perro corre rápidamente en el parque', ¿qué palabra es el sustantivo?",
-      "option1": "Perro",
-      "option2": "Corre",
-      "option3": "Rápidamente",
-      "option4": "Parque",
+      "questionText": "Estoy muy ___",
+      "option1": "corre",
+      "option2": "feliz",
+      "option3": "libro",
+      "option4": "jugar",
+      "correctOption": 2,
+      "correctFeedback": "¡Correcto! Estoy muy feliz.",
+      "wrongFeedback": "Piensa en una emoción."
+    },
+    {
+      "questionText": "El sol es ___",
+      "option1": "caliente",
+      "option2": "corre",
+      "option3": "libro",
+      "option4": "feliz",
       "correctOption": 1,
-      "correctFeedback": "¡Correcto! 'Perro' es el sustantivo, ya que nombra una cosa.",
-      "wrongFeedback": "Piensa en cuál palabra nombra al ser o cosa principal de la oración."
+      "correctFeedback": "¡Correcto! El sol es caliente.",
+      "wrongFeedback": "Piensa en cómo es el sol."
     },
     {
-      "questionText": "En la oración 'El gato negro duerme en el sofá', ¿qué palabra es el adjetivo?",
-      "option1": "Gato",
-      "option2": "Negro",
-      "option3": "Duerme",
-      "option4": "Sofá",
+      "questionText": "Voy a la ___",
+      "option1": "corre",
+      "option2": "escuela",
+      "option3": "feliz",
+      "option4": "azul",
       "correctOption": 2,
-      "correctFeedback": "¡Exacto! 'Negro' es el adjetivo que describe al sustantivo 'gato'.",
-      "wrongFeedback": "Recuerda que el adjetivo describe o califica al sustantivo."
+      "correctFeedback": "¡Correcto! Voy a la escuela.",
+      "wrongFeedback": "Piensa en un lugar."
     },
     {
-      "questionText": "En la oración 'María canta una canción', ¿qué palabra es el verbo?",
-      "option1": "María",
-      "option2": "Canta",
-      "option3": "Una",
-      "option4": "Canción",
+      "questionText": "El agua es ___",
+      "option1": "corre",
+      "option2": "fría",
+      "option3": "libro",
+      "option4": "jugar",
       "correctOption": 2,
-      "correctFeedback": "¡Correcto! 'Canta' es el verbo, ya que describe la acción que realiza María.",
-      "wrongFeedback": "Piensa en qué palabra expresa la acción en la oración."
+      "correctFeedback": "¡Correcto! El agua es fría.",
+      "wrongFeedback": "Piensa en cómo se siente el agua."
     },
     {
-      "questionText": "En la oración 'El sol brilla intensamente en el cielo azul', ¿qué palabra es el adjetivo?",
-      "option1": "Sol",
-      "option2": "Brilla",
-      "option3": "Intensamente",
-      "option4": "Azul",
-      "correctOption": 4,
-      "correctFeedback": "¡Correcto! 'Azul' es el adjetivo que describe al sustantivo 'cielo'.",
-      "wrongFeedback": "Piensa en qué palabra da más detalles sobre el sustantivo 'cielo'."
-    },
-    {
-      "questionText": "En la oración 'El pájaro vuela alto en el cielo', ¿qué palabra es el sustantivo?",
-      "option1": "Pájaro",
-      "option2": "Vuela",
-      "option3": "Alto",
-      "option4": "Cielo",
+      "questionText": "Mi casa es ___",
+      "option1": "grande",
+      "option2": "corre",
+      "option3": "libro",
+      "option4": "feliz",
       "correctOption": 1,
-      "correctFeedback": "¡Correcto! 'Pájaro' es el sustantivo porque nombra al ser principal de la oración.",
-      "wrongFeedback": "Piensa en qué palabra nombra al ser o cosa principal de la oración."
+      "correctFeedback": "¡Correcto! Mi casa es grande.",
+      "wrongFeedback": "Piensa en una característica."
     },
     {
-      "questionText": "En la oración 'La niña feliz jugaba en el parque', ¿qué palabra es el adjetivo?",
-      "option1": "Niña",
-      "option2": "Feliz",
-      "option3": "Jugaba",
-      "option4": "Parque",
-      "correctOption": 2,
-      "correctFeedback": "¡Correcto! 'Feliz' es el adjetivo que describe a la niña.",
-      "wrongFeedback": "Piensa en qué palabra da una cualidad al sustantivo 'niña'."
-    },
-    {
-      "questionText": "En la oración 'El árbol crece rápidamente cerca de la casa', ¿qué palabra es el verbo?",
-      "option1": "Árbol",
-      "option2": "Crece",
-      "option3": "Rápidamente",
-      "option4": "Casa",
-      "correctOption": 2,
-      "correctFeedback": "¡Correcto! 'Crece' es el verbo, ya que expresa una acción.",
-      "wrongFeedback": "Piensa en qué palabra describe lo que hace el sustantivo 'árbol'."
-    },
-    {
-      "questionText": "En la oración 'El niño travieso corre rápido por la calle', ¿qué palabra es el adjetivo?",
-      "option1": "Niño",
-      "option2": "Travieso",
-      "option3": "Corre",
-      "option4": "Calle",
-      "correctOption": 2,
-      "correctFeedback": "¡Correcto! 'Travieso' es el adjetivo que describe al niño.",
-      "wrongFeedback": "Recuerda que el adjetivo describe o califica a un sustantivo."
-    },
-    {
-      "questionText": "En la oración 'El perro grande duerme tranquilamente', ¿qué palabra es el sustantivo?",
-      "option1": "Perro",
-      "option2": "Grande",
-      "option3": "Duerme",
-      "option4": "Tranquilamente",
+      "questionText": "El niño ___ alto",
+      "option1": "salta",
+      "option2": "libro",
+      "option3": "feliz",
+      "option4": "azul",
       "correctOption": 1,
-      "correctFeedback": "¡Correcto! 'Perro' es el sustantivo, ya que nombra a un animal.",
-      "wrongFeedback": "Piensa en qué palabra nombra a un ser o cosa."
+      "correctFeedback": "¡Correcto! El niño salta alto.",
+      "wrongFeedback": "Piensa en una acción."
     },
     {
-      "questionText": "En la oración 'El sol brilla muy fuerte', ¿qué palabra es el verbo?",
-      "option1": "Sol",
-      "option2": "Brilla",
-      "option3": "Muy",
-      "option4": "Fuerte",
-      "correctOption": 2,
-      "correctFeedback": "¡Correcto! 'Brilla' es el verbo que indica la acción que realiza el sol.",
-      "wrongFeedback": "Piensa en qué palabra describe lo que hace el sustantivo 'sol'."
+      "questionText": "La luna es ___",
+      "option1": "brillante",
+      "option2": "corre",
+      "option3": "libro",
+      "option4": "feliz",
+      "correctOption": 1,
+      "correctFeedback": "¡Correcto! La luna es brillante.",
+      "wrongFeedback": "Piensa en cómo se ve la luna."
     },
     {
-      "questionText": "En la oración 'Los niños felices corren en el jardín', ¿qué palabra es el adjetivo?",
-      "option1": "Niños",
-      "option2": "Felices",
-      "option3": "Corren",
-      "option4": "Jardín",
+      "questionText": "El juego es ___",
+      "option1": "divertido",
+      "option2": "corre",
+      "option3": "libro",
+      "option4": "azul",
+      "correctOption": 1,
+      "correctFeedback": "¡Correcto! El juego es divertido.",
+      "wrongFeedback": "Piensa en cómo es jugar."
+    },
+    {
+      "questionText": "Tengo una ___",
+      "option1": "corre",
+      "option2": "pelota",
+      "option3": "feliz",
+      "option4": "azul",
       "correctOption": 2,
-      "correctFeedback": "¡Correcto! 'Felices' es el adjetivo que describe a los niños.",
-      "wrongFeedback": "Piensa en qué palabra describe a los 'niños'."
+      "correctFeedback": "¡Correcto! Tengo una pelota.",
+      "wrongFeedback": "Piensa en un objeto."
+    },
+    {
+      "questionText": "El héroe es ___",
+      "option1": "valiente",
+      "option2": "corre",
+      "option3": "libro",
+      "option4": "feliz",
+      "correctOption": 1,
+      "correctFeedback": "¡Correcto! El héroe es valiente.",
+      "wrongFeedback": "Piensa en una cualidad de un héroe."
     }
   ]
 }
