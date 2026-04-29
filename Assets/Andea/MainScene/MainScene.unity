@@ -850,6 +850,7 @@ GameObject:
   - component: {fileID: 563601209}
   - component: {fileID: 563601208}
   - component: {fileID: 563601207}
+  - component: {fileID: 563601210}
   m_Layer: 5
   m_Name: ButtonHelp
   m_TagString: Untagged
@@ -958,6 +959,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 563601205}
   m_CullTransparentMesh: 1
+--- !u!114 &563601210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563601205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b703ee1fff4c4808b4377970b298099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIHoverPulseEffect
+  hoverScale: 1.08
+  pressedScale: 0.94
+  animationSpeed: 10
+  usePulse: 1
+  pulseAmount: 0.04
+  pulseSpeed: 2
+  changeColor: 1
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
+  audioSource: {fileID: 0}
+  clickSound: {fileID: 0}
+  clickVolume: 1
 --- !u!1 &577959424
 GameObject:
   m_ObjectHideFlags: 0
@@ -970,6 +995,7 @@ GameObject:
   - component: {fileID: 577959428}
   - component: {fileID: 577959427}
   - component: {fileID: 577959426}
+  - component: {fileID: 577959429}
   m_Layer: 5
   m_Name: ButtonConfig
   m_TagString: Untagged
@@ -1078,6 +1104,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 577959424}
   m_CullTransparentMesh: 1
+--- !u!114 &577959429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577959424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b703ee1fff4c4808b4377970b298099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIHoverPulseEffect
+  hoverScale: 1.08
+  pressedScale: 0.94
+  animationSpeed: 10
+  usePulse: 1
+  pulseAmount: 0.04
+  pulseSpeed: 2
+  changeColor: 1
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  hoverColor: {r: 1, g: 0.95, b: 0.65, a: 1}
+  audioSource: {fileID: 0}
+  clickSound: {fileID: 0}
+  clickVolume: 1
 --- !u!1 &650394567
 GameObject:
   m_ObjectHideFlags: 0
@@ -3091,6 +3141,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LectoCarouselManager
   worldCode: LE
+  playMode: 0
+  usarBloqueoPorProgreso: 1
   carouselImage: {fileID: 0}
   levelSprites: []
   ribbonText: {fileID: 0}
@@ -3113,6 +3165,9 @@ MonoBehaviour:
   candadosAvanzado: []
   textoMensajeBloqueo: {fileID: 0}
   lessonSceneName: Lesson Scene
+  escenasBasico: []
+  escenasIntermedio: []
+  escenasAvanzado: []
 --- !u!4 &1539552399
 Transform:
   m_ObjectHideFlags: 0
@@ -4752,6 +4807,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerLessonsApi
   obtenerEstadoLeccionesUrl: https://andea.vercel.app/api/lecciones/estado
   completarLeccionUrl: https://andea.vercel.app/api/lecciones/completar
+  timeoutSegundos: 15
 --- !u!4 &2026080091
 Transform:
   m_ObjectHideFlags: 0

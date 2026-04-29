@@ -141,17 +141,17 @@ public class LectoGameSessionManager : MonoBehaviour
         }
 
         string leccionId = GetCurrentLessonId();
-
+ 
         if (!string.IsNullOrEmpty(leccionId) && PlayerLessonsApi.Instance != null)
         {
             yield return StartCoroutine(
                 PlayerLessonsApi.Instance.CompletarLeccion(
                     leccionId,
-                    onSuccess: (data) =>
+                    (data) =>
                     {
                         Debug.Log("Lección completada guardada: " + data.leccion_id);
                     },
-                    onError: (error) =>
+                    (error) =>
                     {
                         Debug.LogError("Error al guardar lección completada: " + error);
                     }
