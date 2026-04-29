@@ -75,13 +75,13 @@ EditorBuildSettings:
     path: Assets/Andea/Mundos/MundoMA/ScenesMA/Basico/BasicoL2.unity
     guid: 8077fc96261726442b09b2a3a482d841
   - enabled: 1
-    path: Assets/Andea/Mundos/MundoMA/ScenesMA/Intermedio/Leccion1/IntermedioL1.unity
+    path: Assets/Andea/Mundos/MundoMA/ScenesMA/Intermedio/ScriptsIntermedio/IntermedioL1.unity
     guid: aa79e2ff9fd205c4583977858ed005c7
   - enabled: 1
-    path: Assets/Andea/Mundos/MundoMA/ScenesMA/Intermedio/Leccion1/IntermedioL1N3.unity
+    path: Assets/Andea/Mundos/MundoMA/ScenesMA/Intermedio/ScriptsIntermedio/IntermedioL1N3.unity
     guid: 29bed1ac23831654d89d8134c8fc92ac
   - enabled: 1
-    path: Assets/Andea/Mundos/MundoMA/ScenesMA/Intermedio/Leccion1/IntermedioL2.unity
+    path: Assets/Andea/Mundos/MundoMA/ScenesMA/Intermedio/ScriptsIntermedio/IntermedioL2.unity
     guid: 8085ad8dd5d89d74aaf28606320ab0e1
   - enabled: 1
     path: Assets/Andea/Mundos/MundoMA/ScenesMA/Avanzado/AvanzadoL1.unity
@@ -192,7 +192,7 @@ EditorBuildSettings:
     path: Assets/Andea/Mundos/MundoMA/ScenesMA/Avanzado/SumayMultiplicacion.unity
     guid: 7b8869e5d2895e74da79aaf660347d10
   - enabled: 1
-    path: Assets/Andea/Mundos/MundoMA/ScenesMA/Avanzado/SumayResta.unity
+    path: Assets/Andea/Mundos/MundoMA/ScenesMA/Basico/SumayResta.unity
     guid: 55ce7c043cffb774baa1a3cbac7b1a6f
   - enabled: 1
     path: Assets/Andea/Mundos/MundoMA/ScenesMA/Basico/BasicoRestas.unity

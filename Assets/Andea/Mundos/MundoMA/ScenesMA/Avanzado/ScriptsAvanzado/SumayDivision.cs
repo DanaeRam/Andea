@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class BasicoRestas : MonoBehaviour
+public class SumayDivision : MonoBehaviour
 {
     [Header("Fórmulas y componentes")]
     public GameObject formula1;
@@ -37,6 +37,7 @@ public class BasicoRestas : MonoBehaviour
     private int correctAnswer;
     private int currentFormulaIndex = 0;
     private bool isCorrectAnswer;
+    private bool answerRegistered;
     private List<Sprite> availablePotions;
 
     private Coroutine hideIconCoroutine;
@@ -59,6 +60,8 @@ public class BasicoRestas : MonoBehaviour
             StartCoroutine(FinishLesson());
             return;
         }
+
+        answerRegistered = false;
 
         if (currentFormulaIndex == 0)
         {
@@ -87,15 +90,47 @@ public class BasicoRestas : MonoBehaviour
             imageFormula3.sprite = GetRandomPotion();
         }
 
-        int num1 = Random.Range(2, 10);
-        int num2 = Random.Range(1, num1);
+int a, b, c;
+int result;
 
-        int result = num1 - num2;
+bool divisionFirst = Random.value > 0.5f;
 
-        if (currentFormulaIndex == 0) textFormula1.text = $"{num1} - {num2}";
-        if (currentFormulaIndex == 1) textFormula2.text = $"{num1} - {num2}";
-        if (currentFormulaIndex == 2) textFormula3.text = $"{num1} - {num2}";
-        correctAnswer = result;
+if (divisionFirst)
+{
+
+    int divisor = Random.Range(1, 10);
+    int quotient = Random.Range(1, 10);
+    int dividend = divisor * quotient; 
+
+    a = Random.Range(0, 10);
+    b = dividend;
+    c = divisor;
+
+    result = a + quotient;
+
+    if (currentFormulaIndex == 0) textFormula1.text = $"{a} + {b} ÷ {c}";
+    if (currentFormulaIndex == 1) textFormula2.text = $"{a} + {b} ÷ {c}";
+    if (currentFormulaIndex == 2) textFormula3.text = $"{a} + {b} ÷ {c}";
+}
+else
+{
+
+    int divisor = Random.Range(1, 10);
+    int quotient = Random.Range(1, 10);
+    int dividend = divisor * quotient;
+
+    a = dividend;
+    b = divisor;
+    c = Random.Range(0, 10);
+
+    result = quotient + c;
+
+    if (currentFormulaIndex == 0) textFormula1.text = $"{a} ÷ {b} + {c}";
+    if (currentFormulaIndex == 1) textFormula2.text = $"{a} ÷ {b} + {c}";
+    if (currentFormulaIndex == 2) textFormula3.text = $"{a} ÷ {b} + {c}";
+}
+
+correctAnswer = result;
 
         int[] answers = new int[3];
         answers[0] = correctAnswer;
@@ -182,25 +217,31 @@ IEnumerator FinishLesson()
     void CheckAnswer(int buttonIndex)
     {
         int selectedAnswer = int.Parse(GetButtonText(buttonIndex));
-
         if (selectedAnswer == correctAnswer)
         {
+            RegisterAnswer(true);
+
+            if (hideIconCoroutine != null)
+            {
+                StopCoroutine(hideIconCoroutine);
+                hideIconCoroutine = null;
+            }
+
             textRetro.text = "¡Correcto!";
             isCorrectAnswer = true;
 
             ShowCurrentIcon(rightIcon);
-
             DisableCurrentButtons();
 
             StartCoroutine(WaitForNextFormula(2));
         }
         else
         {
+            RegisterAnswer(false);
             textRetro.text = "Intenta otra vez.";
             isCorrectAnswer = false;
 
             ShowCurrentIcon(wrongIcon);
-
             DisableSelectedButton(buttonIndex);
 
             if (hideIconCoroutine != null)
@@ -209,6 +250,22 @@ IEnumerator FinishLesson()
             }
 
             hideIconCoroutine = StartCoroutine(HideCurrentIconAfterSeconds(2));
+        }
+    }
+
+    void RegisterAnswer(bool isCorrect)
+    {
+        if (answerRegistered) return;
+
+        answerRegistered = true;
+
+        if (isCorrect)
+        {
+            MathRewardSessionData.RegisterCorrect();
+        }
+        else
+        {
+            MathRewardSessionData.RegisterWrong();
         }
     }
 
@@ -255,29 +312,29 @@ IEnumerator HideCurrentIconAfterSeconds(float seconds)
     }
 }
 
-    void DisableSelectedButton(int index)
+void DisableSelectedButton(int index)
+{
+    if (currentFormulaIndex == 0)
     {
-        if (currentFormulaIndex == 0)
-        {
-            if (index == 0) button1_1.interactable = false;
-            if (index == 1) button1_2.interactable = false;
-            if (index == 2) button1_3.interactable = false;
-        }
-
-        if (currentFormulaIndex == 1)
-        {
-            if (index == 0) button2_1.interactable = false;
-            if (index == 1) button2_2.interactable = false;
-            if (index == 2) button2_3.interactable = false;
-        }
-
-        if (currentFormulaIndex == 2)
-        {
-            if (index == 0) button3_1.interactable = false;
-            if (index == 1) button3_2.interactable = false;
-            if (index == 2) button3_3.interactable = false;
-        }
+        if (index == 0) button1_1.interactable = false;
+        if (index == 1) button1_2.interactable = false;
+        if (index == 2) button1_3.interactable = false;
     }
+
+    if (currentFormulaIndex == 1)
+    {
+        if (index == 0) button2_1.interactable = false;
+        if (index == 1) button2_2.interactable = false;
+        if (index == 2) button2_3.interactable = false;
+    }
+
+    if (currentFormulaIndex == 2)
+    {
+        if (index == 0) button3_1.interactable = false;
+        if (index == 1) button3_2.interactable = false;
+        if (index == 2) button3_3.interactable = false;
+    }
+}
 
     void DisableCurrentButtons()
     {

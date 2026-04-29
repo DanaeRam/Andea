@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
-public class Division : MonoBehaviour
+
+public class SumayMultiplicacion : MonoBehaviour
 {
     [Header("Fórmulas y componentes")]
     public GameObject formula1;
@@ -36,6 +37,7 @@ public class Division : MonoBehaviour
     private int correctAnswer;
     private int currentFormulaIndex = 0;
     private bool isCorrectAnswer;
+    private bool answerRegistered;
     private List<Sprite> availablePotions;
 
     private Coroutine hideIconCoroutine;
@@ -58,6 +60,8 @@ public class Division : MonoBehaviour
             StartCoroutine(FinishLesson());
             return;
         }
+
+        answerRegistered = false;
 
         if (currentFormulaIndex == 0)
         {
@@ -86,24 +90,37 @@ public class Division : MonoBehaviour
             imageFormula3.sprite = GetRandomPotion();
         }
 
-        int result = Random.Range(1, 10);      // Resultado (1 a 9)
-        int divisor = Random.Range(1, 10);     // Divisor (1 a 9)
+int a = Random.Range(0, 10);
+int b = Random.Range(0, 10);
+int c = Random.Range(0, 10);
 
-        int dividendo = result * divisor;      // Siempre exacto
+int result;
 
-        // Para asegurar máximo 2 dígitos (<= 99)
-        while (dividendo > 99)
-        {
-            result = Random.Range(1, 10);
-            divisor = Random.Range(1, 10);
-            dividendo = result * divisor;
-        }
+bool multiplyFirst = Random.value > 0.5f;
 
-        if (currentFormulaIndex == 0) textFormula1.text = $"{dividendo} ÷ {divisor}";
-        if (currentFormulaIndex == 1) textFormula2.text = $"{dividendo} ÷ {divisor}";
-        if (currentFormulaIndex == 2) textFormula3.text = $"{dividendo} ÷ {divisor}";
+if (multiplyFirst)
+{
+    // a + b × c
+    int partial = b * c;
+    result = a + partial;
 
-        correctAnswer = result;
+    if (currentFormulaIndex == 0) textFormula1.text = $"{a} + {b} × {c}";
+    if (currentFormulaIndex == 1) textFormula2.text = $"{a} + {b} × {c}";
+    if (currentFormulaIndex == 2) textFormula3.text = $"{a} + {b} × {c}";
+}
+else
+{
+    // a × b + c
+    int partial = a * b;
+    result = partial + c;
+
+    if (currentFormulaIndex == 0) textFormula1.text = $"{a} × {b} + {c}";
+    if (currentFormulaIndex == 1) textFormula2.text = $"{a} × {b} + {c}";
+    if (currentFormulaIndex == 2) textFormula3.text = $"{a} × {b} + {c}";
+}
+
+correctAnswer = result;
+
 
         int[] answers = new int[3];
         answers[0] = correctAnswer;
@@ -192,23 +209,30 @@ IEnumerator FinishLesson()
 
         if (selectedAnswer == correctAnswer)
         {
+            RegisterAnswer(true);
+
+            if (hideIconCoroutine != null)
+            {
+                StopCoroutine(hideIconCoroutine);
+                hideIconCoroutine = null;
+            }
+
             textRetro.text = "¡Correcto!";
             isCorrectAnswer = true;
 
             ShowCurrentIcon(rightIcon);
-
             DisableCurrentButtons();
 
             StartCoroutine(WaitForNextFormula(2));
         }
         else
         {
+            RegisterAnswer(false);
             textRetro.text = "Intenta otra vez.";
             isCorrectAnswer = false;
 
             ShowCurrentIcon(wrongIcon);
             DisableSelectedButton(buttonIndex);
-
 
             if (hideIconCoroutine != null)
             {
@@ -216,6 +240,22 @@ IEnumerator FinishLesson()
             }
 
             hideIconCoroutine = StartCoroutine(HideCurrentIconAfterSeconds(2));
+        }
+    }
+
+    void RegisterAnswer(bool isCorrect)
+    {
+        if (answerRegistered) return;
+
+        answerRegistered = true;
+
+        if (isCorrect)
+        {
+            MathRewardSessionData.RegisterCorrect();
+        }
+        else
+        {
+            MathRewardSessionData.RegisterWrong();
         }
     }
 

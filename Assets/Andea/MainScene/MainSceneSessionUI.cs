@@ -27,88 +27,99 @@ public class MainSceneSessionUI : MonoBehaviour
             logoutButton.onClick.AddListener(CerrarSesion);
         }
 
-                // Abrir panel config
         if (buttonConfig != null)
         {
             buttonConfig.onClick.RemoveAllListeners();
             buttonConfig.onClick.AddListener(AbrirConfig);
         }
 
-        // Cerrar panel config
         if (buttonCerrarConfig != null)
         {
             buttonCerrarConfig.onClick.RemoveAllListeners();
             buttonCerrarConfig.onClick.AddListener(CerrarConfig);
         }
 
-        // Asegurar que inicia cerrado
         if (panelConfig != null)
-        {
             panelConfig.SetActive(false);
-        }
     }
 
-        public void AbrirConfig()
-        {
-            if (panelConfig != null)
-            {
-                panelConfig.SetActive(true);
-            }
-        }
+    public void AbrirConfig()
+    {
+        if (panelConfig != null)
+            panelConfig.SetActive(true);
+    }
 
-        public void CerrarConfig()
-        {
-            if (panelConfig != null)
-            {
-                panelConfig.SetActive(false);
-            }
-        }
-
-
+    public void CerrarConfig()
+    {
+        if (panelConfig != null)
+            panelConfig.SetActive(false);
+    }
 
     private void MostrarNombreJugador()
     {
-        // Primero intenta usar el nombre real que viene de la base de datos
+        string playerNickname = PlayerPrefs.GetString("PlayerNickname", "");
+
         string playerFullName = PlayerPrefs.GetString("PlayerFullName", "");
 
-        // Como respaldo, usa el nombre local escrito por el usuario
         string playerName = PlayerPrefs.GetString("PlayerName", "");
 
-        if (playerNameText != null)
+        if (playerNameText == null)
+            return;
+
+        if (!string.IsNullOrEmpty(playerNickname))
         {
-            if (!string.IsNullOrEmpty(playerFullName))
-            {
-                playerNameText.text = "Hola, " + playerFullName;
-            }
-            else if (!string.IsNullOrEmpty(playerName))
-            {
-                playerNameText.text = "Hola, " + playerName;
-            }
-            else
-            {
-                playerNameText.text = "Hola, Explorador";
-            }
+            playerNameText.text = "Hola, " + playerNickname;
+        }
+        else if (!string.IsNullOrEmpty(playerFullName))
+        {
+            playerNameText.text = "Hola, " + playerFullName;
+        }
+        else if (!string.IsNullOrEmpty(playerName))
+        {
+            playerNameText.text = "Hola, " + playerName;
+        }
+        else
+        {
+            playerNameText.text = "Hola, Explorador";
         }
     }
 
     public void CerrarSesion()
     {
+        // Datos de sesión
         PlayerPrefs.DeleteKey("PlayerName");
+        PlayerPrefs.DeleteKey("PlayerNickname");
         PlayerPrefs.DeleteKey("PlayerFullName");
         PlayerPrefs.DeleteKey("PlayerCode");
+
+        // Datos de espada local
+        PlayerPrefs.DeleteKey("EquippedSwordId");
+        PlayerPrefs.DeleteKey("EquippedSwordName");
+        PlayerPrefs.DeleteKey("EquippedSwordPlayerCode");
+
+        // Progreso local de Salud Mental
+        PlayerPrefs.DeleteKey("SMPainting1");
+        PlayerPrefs.DeleteKey("SMPainting2");
+        PlayerPrefs.DeleteKey("SMPainting3");
+        PlayerPrefs.DeleteKey("SMPainting4");
+
+        // Datos de lección actual
+        PlayerPrefs.DeleteKey("CurrentWorldCode");
+        PlayerPrefs.DeleteKey("CurrentLessonId");
+        PlayerPrefs.DeleteKey("CurrentLevelName");
+        PlayerPrefs.DeleteKey("CurrentLessonName");
+
         PlayerPrefs.Save();
 
         if (GameManager.instancia != null)
-        {
             Destroy(GameManager.instancia.gameObject);
-        }
 
         if (PlayerProgressApi.Instance != null)
-        {
             Destroy(PlayerProgressApi.Instance.gameObject);
-        }
+
+        if (PlayerLessonsApi.Instance != null)
+            Destroy(PlayerLessonsApi.Instance.gameObject);
 
         SceneManager.LoadScene(loginSceneName);
     }
 }
-

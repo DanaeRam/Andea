@@ -23,6 +23,7 @@ public class MathQuizManager : MonoBehaviour
     private PlayerControlLock currentPlayerControl;
     private float previousZoom = 5f;
     private bool quizActive = false;
+    private bool answerRegistered = false;
 
     private void Start()
     {
@@ -61,6 +62,7 @@ public class MathQuizManager : MonoBehaviour
         }
 
         quizActive = true;
+        answerRegistered = false;
 
         SaveCurrentZoom();
         currentPlayerControl.LockForQuiz();
@@ -120,6 +122,8 @@ public class MathQuizManager : MonoBehaviour
 
         if (playerAnswer == correctAnswer)
         {
+            RegisterAnswer(true);
+
             if (feedbackText != null)
             {
                 feedbackText.text = "Correcto";
@@ -130,6 +134,8 @@ public class MathQuizManager : MonoBehaviour
         }
         else
         {
+            RegisterAnswer(false);
+
             if (feedbackText != null)
             {
                 feedbackText.text = "Falso";
@@ -141,6 +147,22 @@ public class MathQuizManager : MonoBehaviour
 
             answerInput.text = "";
             answerInput.ActivateInputField();
+        }
+    }
+
+    private void RegisterAnswer(bool isCorrect)
+    {
+        if (answerRegistered) return;
+
+        answerRegistered = true;
+
+        if (isCorrect)
+        {
+            MathRewardSessionData.RegisterCorrect();
+        }
+        else
+        {
+            MathRewardSessionData.RegisterWrong();
         }
     }
 

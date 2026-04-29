@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
-
-public class SumayResta : MonoBehaviour
+public class Division : MonoBehaviour
 {
     [Header("Fórmulas y componentes")]
     public GameObject formula1;
@@ -37,6 +36,7 @@ public class SumayResta : MonoBehaviour
     private int correctAnswer;
     private int currentFormulaIndex = 0;
     private bool isCorrectAnswer;
+    private bool answerRegistered;
     private List<Sprite> availablePotions;
 
     private Coroutine hideIconCoroutine;
@@ -59,6 +59,8 @@ public class SumayResta : MonoBehaviour
             StartCoroutine(FinishLesson());
             return;
         }
+
+        answerRegistered = false;
 
         if (currentFormulaIndex == 0)
         {
@@ -87,53 +89,22 @@ public class SumayResta : MonoBehaviour
             imageFormula3.sprite = GetRandomPotion();
         }
 
-        int a = 0;
-        int b = 0;
-        int c = 0;
-        int result = 0;
+        int result = Random.Range(1, 10);      // Resultado (1 a 9)
+        int divisor = Random.Range(1, 10);     // Divisor (1 a 9)
 
-        bool isValid = false;
+        int dividendo = result * divisor;      // Siempre exacto
 
-        while (!isValid)
+        // Para asegurar máximo 2 dígitos (<= 99)
+        while (dividendo > 99)
         {
-            a = Random.Range(0, 10);
-            b = Random.Range(0, 10);
-            c = Random.Range(0, 10);
-
-            bool sumFirst = Random.value > 0.5f;
-
-            if (sumFirst)
-            {
-                // a + b - c
-                int partial = a + b;
-
-                if (partial >= c)
-                {
-                    result = partial - c;
-
-                    if (currentFormulaIndex == 0) textFormula1.text = $"{a} + {b} - {c}";
-                    if (currentFormulaIndex == 1) textFormula2.text = $"{a} + {b} - {c}";
-                    if (currentFormulaIndex == 2) textFormula3.text = $"{a} + {b} - {c}";
-
-                    isValid = true;
-                }
-            }
-            else
-            {
-
-                if (a >= b) 
-                {
-                    int partial = a - b;
-                    result = partial + c;
-
-                    if (currentFormulaIndex == 0) textFormula1.text = $"{a} - {b} + {c}";
-                    if (currentFormulaIndex == 1) textFormula2.text = $"{a} - {b} + {c}";
-                    if (currentFormulaIndex == 2) textFormula3.text = $"{a} - {b} + {c}";
-
-                    isValid = true;
-                }
-            }
+            result = Random.Range(1, 10);
+            divisor = Random.Range(1, 10);
+            dividendo = result * divisor;
         }
+
+        if (currentFormulaIndex == 0) textFormula1.text = $"{dividendo} ÷ {divisor}";
+        if (currentFormulaIndex == 1) textFormula2.text = $"{dividendo} ÷ {divisor}";
+        if (currentFormulaIndex == 2) textFormula3.text = $"{dividendo} ÷ {divisor}";
 
         correctAnswer = result;
 
@@ -224,6 +195,7 @@ IEnumerator FinishLesson()
 
         if (selectedAnswer == correctAnswer)
         {
+            RegisterAnswer(true);
             textRetro.text = "¡Correcto!";
             isCorrectAnswer = true;
 
@@ -235,6 +207,7 @@ IEnumerator FinishLesson()
         }
         else
         {
+            RegisterAnswer(false);
             textRetro.text = "Intenta otra vez.";
             isCorrectAnswer = false;
 
@@ -251,29 +224,22 @@ IEnumerator FinishLesson()
         }
     }
 
-    void DisableSelectedButton(int index)
+    void RegisterAnswer(bool isCorrect)
     {
-        if (currentFormulaIndex == 0)
-        {
-            if (index == 0) button1_1.interactable = false;
-            if (index == 1) button1_2.interactable = false;
-            if (index == 2) button1_3.interactable = false;
-        }
+        if (answerRegistered) return;
 
-        if (currentFormulaIndex == 1)
-        {
-            if (index == 0) button2_1.interactable = false;
-            if (index == 1) button2_2.interactable = false;
-            if (index == 2) button2_3.interactable = false;
-        }
+        answerRegistered = true;
 
-        if (currentFormulaIndex == 2)
+        if (isCorrect)
         {
-            if (index == 0) button3_1.interactable = false;
-            if (index == 1) button3_2.interactable = false;
-            if (index == 2) button3_3.interactable = false;
+            MathRewardSessionData.RegisterCorrect();
+        }
+        else
+        {
+            MathRewardSessionData.RegisterWrong();
         }
     }
+
     void ShowCurrentIcon(Sprite icon)
 {
     if (currentFormulaIndex == 0)
@@ -317,6 +283,29 @@ IEnumerator HideCurrentIconAfterSeconds(float seconds)
     }
 }
 
+    void DisableSelectedButton(int index)
+    {
+        if (currentFormulaIndex == 0)
+        {
+            if (index == 0) button1_1.interactable = false;
+            if (index == 1) button1_2.interactable = false;
+            if (index == 2) button1_3.interactable = false;
+        }
+
+        if (currentFormulaIndex == 1)
+        {
+            if (index == 0) button2_1.interactable = false;
+            if (index == 1) button2_2.interactable = false;
+            if (index == 2) button2_3.interactable = false;
+        }
+
+        if (currentFormulaIndex == 2)
+        {
+            if (index == 0) button3_1.interactable = false;
+            if (index == 1) button3_2.interactable = false;
+            if (index == 2) button3_3.interactable = false;
+        }
+    }
     void DisableCurrentButtons()
     {
         if (currentFormulaIndex == 0)

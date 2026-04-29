@@ -6,8 +6,21 @@ using TMPro;
 
 public class MundoCarouselManager : MonoBehaviour
 {
+    public enum PlayMode
+    {
+        LectoRandom,     // Para LE: usa LectoGameSessionManager
+        FixedScene,      // Para MA: carga flujo de escena fija
+        None             // Para mundos sin botón Jugar
+    }
+
     [Header("Mundo")]
     public string worldCode = "LE";
+
+    [Header("Tipo de juego")]
+    public PlayMode playMode = PlayMode.LectoRandom;
+
+    [Tooltip("Si está apagado, todos los botones aparecen desbloqueados.")]
+    public bool usarBloqueoPorProgreso = true;
 
     [Header("Carrusel")]
     public Image carouselImage;
@@ -47,7 +60,20 @@ public class MundoCarouselManager : MonoBehaviour
     public TextMeshProUGUI textoMensajeBloqueo;
 
     [Header("Escena de aprendizaje")]
-    public string lessonSceneName = "Lesson Scene";
+    public string lessonSceneName = "LessonScene";
+
+    [Header("Matemáticas - Escena intermedia")]
+    public string mathIntroSceneName = "BasicoTienda";
+    public int mathMaxRounds = 6;
+
+    [Header("Escenas fijas - Básico")]
+    public string[] escenasBasico;
+
+    [Header("Escenas fijas - Intermedio")]
+    public string[] escenasIntermedio;
+
+    [Header("Escenas fijas - Avanzado")]
+    public string[] escenasAvanzado;
 
     private int currentIndex = 0;
     private int currentLesson = 0;
@@ -63,10 +89,12 @@ public class MundoCarouselManager : MonoBehaviour
         UpdateRibbonText();
         UpdateVisibleLessonButtons();
         UpdatePanelButtonsText();
+        RegisterPanelButtons();
 
         if (lessonPanel != null)
             lessonPanel.SetActive(false);
 
+        LimpiarMensajeBloqueo();
         CargarEstadoLecciones();
     }
 
@@ -76,6 +104,27 @@ public class MundoCarouselManager : MonoBehaviour
             worldCode = "LE";
 
         worldCode = worldCode.Trim().ToUpper();
+    }
+
+    private void RegisterPanelButtons()
+    {
+        if (closePanelButton != null)
+        {
+            closePanelButton.onClick.RemoveAllListeners();
+            closePanelButton.onClick.AddListener(CloseLessonPanel);
+        }
+
+        if (learnButton != null)
+        {
+            learnButton.onClick.RemoveAllListeners();
+            learnButton.onClick.AddListener(OnLearnButton);
+        }
+
+        if (playButton != null)
+        {
+            playButton.onClick.RemoveAllListeners();
+            playButton.onClick.AddListener(OnPlayButton);
+        }
     }
 
     public void NextImage()
@@ -89,10 +138,7 @@ public class MundoCarouselManager : MonoBehaviour
         UpdateRibbonText();
         UpdateVisibleLessonButtons();
         AplicarBloqueosVisuales();
-
-        if (lessonPanel != null && lessonPanel.activeSelf)
-            lessonPanel.SetActive(false);
-
+        CloseLessonPanel();
         LimpiarMensajeBloqueo();
     }
 
@@ -110,10 +156,7 @@ public class MundoCarouselManager : MonoBehaviour
         UpdateRibbonText();
         UpdateVisibleLessonButtons();
         AplicarBloqueosVisuales();
-
-        if (lessonPanel != null && lessonPanel.activeSelf)
-            lessonPanel.SetActive(false);
-
+        CloseLessonPanel();
         LimpiarMensajeBloqueo();
     }
 
@@ -131,12 +174,16 @@ public class MundoCarouselManager : MonoBehaviour
         if (ribbonText == null)
             return;
 
-        string mundoTexto = "";
+        string mundoTexto;
 
         if (worldCode == "MA")
             mundoTexto = "Matemáticas";
         else if (worldCode == "LE")
             mundoTexto = "Lecto-escritura";
+        else if (worldCode == "SM")
+            mundoTexto = "Salud mental";
+        else
+            mundoTexto = worldCode;
 
         switch (currentIndex)
         {
@@ -175,27 +222,28 @@ public class MundoCarouselManager : MonoBehaviour
             playButtonText.text = "Jugar";
 
         if (playButton != null)
-            playButton.gameObject.SetActive(worldCode != "MA");
+            playButton.gameObject.SetActive(playMode != PlayMode.None);
     }
 
     private void CargarEstadoLecciones()
     {
+        if (!usarBloqueoPorProgreso)
+        {
+            DesbloquearTodosLosBotones();
+            return;
+        }
+
         if (PlayerLessonsApi.Instance == null)
         {
             Debug.LogWarning("No existe PlayerLessonsApi. No se aplicarán bloqueos desde servidor.");
+            AplicarBloqueosVisuales();
             return;
         }
 
         StartCoroutine(PlayerLessonsApi.Instance.ObtenerEstadoLecciones(
-            onSuccess: (data) =>
+            worldCode,
+            (data) =>
             {
-                if (data == null || data.lecciones == null)
-                {
-                    Debug.LogWarning("El estado de lecciones llegó vacío.");
-                    MostrarMensajeBloqueo("No se pudo cargar el progreso de lecciones.");
-                    return;
-                }
-
                 estadoLecciones.Clear();
 
                 foreach (var leccion in data.lecciones)
@@ -205,16 +253,23 @@ public class MundoCarouselManager : MonoBehaviour
 
                 AplicarBloqueosVisuales();
             },
-            onError: (error) =>
+            (error) =>
             {
-                Debug.LogError("Error al obtener estado de lecciones: " + error);
+                Debug.LogError("Error al obtener estado de lecciones de " + worldCode + ": " + error);
                 MostrarMensajeBloqueo("No se pudo cargar el progreso de lecciones.");
+                AplicarBloqueosVisuales();
             }
         ));
     }
 
     private void AplicarBloqueosVisuales()
     {
+        if (!usarBloqueoPorProgreso)
+        {
+            DesbloquearTodosLosBotones();
+            return;
+        }
+
         ConfigurarBotonesNivel(botonesBasicoLecciones, candadosBasico, "BASICO");
         ConfigurarBotonesNivel(botonesIntermedioLecciones, candadosIntermedio, "INTERMEDIO");
         ConfigurarBotonesNivel(botonesAvanzadoLecciones, candadosAvanzado, "AVANZADO");
@@ -238,6 +293,34 @@ public class MundoCarouselManager : MonoBehaviour
         }
     }
 
+    private void DesbloquearTodosLosBotones()
+    {
+        ActivarBotones(botonesBasicoLecciones, candadosBasico);
+        ActivarBotones(botonesIntermedioLecciones, candadosIntermedio);
+        ActivarBotones(botonesAvanzadoLecciones, candadosAvanzado);
+    }
+
+    private void ActivarBotones(Button[] botones, GameObject[] candados)
+    {
+        if (botones != null)
+        {
+            foreach (Button boton in botones)
+            {
+                if (boton != null)
+                    boton.interactable = true;
+            }
+        }
+
+        if (candados != null)
+        {
+            foreach (GameObject candado in candados)
+            {
+                if (candado != null)
+                    candado.SetActive(false);
+            }
+        }
+    }
+
     private string ConstruirLessonId(string prefijo, int numero)
     {
         string baseId = prefijo + "_" + numero.ToString("00");
@@ -250,6 +333,9 @@ public class MundoCarouselManager : MonoBehaviour
 
     private bool EstaLeccionDesbloqueada(string leccionId)
     {
+        if (!usarBloqueoPorProgreso)
+            return true;
+
         if (estadoLecciones.TryGetValue(leccionId, out PlayerLessonsApi.LeccionEstado estado))
             return estado.desbloqueada;
 
@@ -286,10 +372,10 @@ public class MundoCarouselManager : MonoBehaviour
 
     private void UpdateLessonPanelContent()
     {
+        string leccionId = GetCurrentLessonId();
+
         if (panelTitleText != null)
         {
-            string leccionId = GetCurrentLessonId();
-
             if (EstaLeccionCompletada(leccionId))
                 panelTitleText.text = "Lección " + currentLesson + " - Completada";
             else
@@ -297,27 +383,16 @@ public class MundoCarouselManager : MonoBehaviour
         }
 
         if (descriptionLessonText != null)
-        {
             descriptionLessonText.text = GetCurrentLessonDescription();
-        }
     }
 
     private string GetCurrentLessonDescription()
     {
         if (worldCode == "MA")
-        {
-            switch (currentIndex)
-            {
-                case 0:
-                    return "Explora la lección " + currentLesson + " del nivel básico de matemáticas.";
+            return GetMathLessonDescription();
 
-                case 1:
-                    return "Explora la lección " + currentLesson + " del nivel intermedio de matemáticas.";
-
-                case 2:
-                    return "Explora la lección " + currentLesson + " del nivel avanzado de matemáticas.";
-            }
-        }
+        if (worldCode == "SM")
+            return "Explora la lección " + currentLesson + " de salud mental.";
 
         switch (currentIndex)
         {
@@ -364,6 +439,51 @@ public class MundoCarouselManager : MonoBehaviour
         return "Lección.";
     }
 
+    private string GetMathLessonDescription()
+    {
+        switch (currentIndex)
+        {
+            case 0:
+                switch (currentLesson)
+                {
+                    case 1:
+                        return "Explora la lección 1 del nivel básico: Fórmulas básicas.";
+                    case 2:
+                        return "Explora la lección 2 del nivel básico: Restas.";
+                    case 3:
+                        return "Explora la lección 3 del nivel básico: Sumas y restas.";
+                    default:
+                        return "Lección del nivel básico de matemáticas.";
+                }
+
+            case 1:
+                switch (currentLesson)
+                {
+                    case 1:
+                        return "Explora la lección 1 del nivel intermedio: Multiplicaciones.";
+                    case 2:
+                        return "Explora la lección 2 del nivel intermedio: Divisiones.";
+                    default:
+                        return "Lección del nivel intermedio de matemáticas.";
+                }
+
+            case 2:
+                switch (currentLesson)
+                {
+                    case 1:
+                        return "Explora la lección 1 del nivel avanzado: Sumas y multiplicaciones.";
+                    case 2:
+                        return "Explora la lección 2 del nivel avanzado: Sumas y divisiones.";
+                    case 3:
+                        return "Explora la lección 3 del nivel avanzado: Operaciones combinadas.";
+                    default:
+                        return "Lección del nivel avanzado de matemáticas.";
+                }
+        }
+
+        return "Lección de matemáticas.";
+    }
+
     public void CloseLessonPanel()
     {
         if (lessonPanel != null)
@@ -391,11 +511,7 @@ public class MundoCarouselManager : MonoBehaviour
             return;
         }
 
-        PlayerPrefs.SetString("CurrentWorldCode", worldCode);
-        PlayerPrefs.SetString("CurrentLessonId", leccionId);
-        PlayerPrefs.SetString("CurrentLevelName", levelName);
-        PlayerPrefs.SetString("CurrentLessonName", lessonName);
-        PlayerPrefs.Save();
+        GuardarLeccionActual(leccionId, levelName, lessonName);
 
         SceneManager.LoadScene(lessonSceneName);
     }
@@ -413,18 +529,50 @@ public class MundoCarouselManager : MonoBehaviour
         string levelName = GetCurrentLevelName();
         string lessonName = GetCurrentLessonName();
 
-        if (string.IsNullOrEmpty(levelName) || string.IsNullOrEmpty(lessonName))
+        if (string.IsNullOrEmpty(leccionId) ||
+            string.IsNullOrEmpty(levelName) ||
+            string.IsNullOrEmpty(lessonName))
         {
             Debug.LogError("No se pudo iniciar la lección. Datos inválidos.");
             return;
         }
 
+        GuardarLeccionActual(leccionId, levelName, lessonName);
+
+        switch (playMode)
+        {
+            case PlayMode.LectoRandom:
+                IniciarLectoRandom(levelName, lessonName);
+                break;
+
+            case PlayMode.FixedScene:
+                CargarEscenaFija();
+                break;
+
+            case PlayMode.None:
+                Debug.Log("Este mundo no tiene modo Jugar configurado.");
+                break;
+        }
+    }
+
+    private void GuardarLeccionActual(string leccionId, string levelName, string lessonName)
+    {
         PlayerPrefs.SetString("CurrentWorldCode", worldCode);
         PlayerPrefs.SetString("CurrentLessonId", leccionId);
         PlayerPrefs.SetString("CurrentLevelName", levelName);
         PlayerPrefs.SetString("CurrentLessonName", lessonName);
         PlayerPrefs.Save();
 
+        Debug.Log(
+            "Lección actual guardada -> mundo: " + worldCode +
+            " | leccionId: " + leccionId +
+            " | nivel: " + levelName +
+            " | nombre: " + lessonName
+        );
+    }
+
+    private void IniciarLectoRandom(string levelName, string lessonName)
+    {
         if (LectoGameSessionManager.Instance != null)
         {
             LectoGameSessionManager.Instance.StartLessonSession(levelName, lessonName);
@@ -433,6 +581,76 @@ public class MundoCarouselManager : MonoBehaviour
         {
             Debug.LogError("No existe LectoGameSessionManager.");
         }
+    }
+
+    private void CargarEscenaFija()
+    {
+        string sceneName = GetFixedSceneName();
+
+        if (string.IsNullOrEmpty(sceneName))
+        {
+            Debug.LogError("No hay escena fija configurada para " + GetCurrentLessonId());
+            return;
+        }
+
+        if (worldCode == "MA")
+        {
+            if (string.IsNullOrEmpty(mathIntroSceneName))
+            {
+                Debug.LogError("Math Intro Scene Name está vacío.");
+                return;
+            }
+
+            MathRewardSessionData.Reset();
+
+            bool yaCompletada = EstaLeccionCompletada(GetCurrentLessonId());
+            PlayerPrefs.SetInt("CurrentLessonAlreadyCompleted", yaCompletada ? 1 : 0);
+            PlayerPrefs.Save();
+
+            MathSceneTransitionData.currentRound = 0;
+            MathSceneTransitionData.maxRounds = mathMaxRounds;
+            MathSceneTransitionData.exitMode = false;
+            MathSceneTransitionData.targetSceneName = sceneName;
+
+            Debug.Log(
+                "MA iniciando tienda. Lección: " + GetCurrentLessonId() +
+                " | Escena preguntas: " + sceneName +
+                " | Escena intermedia: " + mathIntroSceneName +
+                " | Ya completada: " + yaCompletada
+            );
+
+            SceneManager.LoadScene(mathIntroSceneName);
+            return;
+        }
+
+        SceneManager.LoadScene(sceneName);
+    }
+
+    private string GetFixedSceneName()
+    {
+        string[] escenas = null;
+
+        switch (currentIndex)
+        {
+            case 0:
+                escenas = escenasBasico;
+                break;
+
+            case 1:
+                escenas = escenasIntermedio;
+                break;
+
+            case 2:
+                escenas = escenasAvanzado;
+                break;
+        }
+
+        int index = currentLesson - 1;
+
+        if (escenas == null || index < 0 || index >= escenas.Length)
+            return "";
+
+        return escenas[index];
     }
 
     private string GetCurrentLessonId()
@@ -478,14 +696,36 @@ public class MundoCarouselManager : MonoBehaviour
             switch (currentIndex)
             {
                 case 0:
-                    return "Matematicas Basico " + currentLesson;
+                    switch (currentLesson)
+                    {
+                        case 1: return "Matematicas Formulas Basicas";
+                        case 2: return "Matematicas Restas";
+                        case 3: return "Matematicas Sumas y Restas";
+                    }
+                    break;
 
                 case 1:
-                    return "Matematicas Intermedio " + currentLesson;
+                    switch (currentLesson)
+                    {
+                        case 1: return "Matematicas Multiplicacion";
+                        case 2: return "Matematicas Division";
+                    }
+                    break;
 
                 case 2:
-                    return "Matematicas Avanzado " + currentLesson;
+                    switch (currentLesson)
+                    {
+                        case 1: return "Matematicas Sumas y Multiplicacion";
+                        case 2: return "Matematicas Sumas y Division";
+                        case 3: return "Matematicas Operaciones Combinadas";
+                    }
+                    break;
             }
+        }
+
+        if (worldCode == "SM")
+        {
+            return "Salud Mental Leccion " + currentLesson;
         }
 
         switch (currentIndex)
@@ -549,5 +789,10 @@ public class MundoCarouselManager : MonoBehaviour
     {
         if (textoMensajeBloqueo != null)
             textoMensajeBloqueo.text = "";
+    }
+
+    public void RefrescarEstadoDesdeServidor()
+    {
+        CargarEstadoLecciones();
     }
 }

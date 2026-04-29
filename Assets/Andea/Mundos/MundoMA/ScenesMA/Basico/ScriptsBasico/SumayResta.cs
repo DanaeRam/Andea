@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class SumayMultiplicacion : MonoBehaviour
+public class SumayResta : MonoBehaviour
 {
     [Header("Fórmulas y componentes")]
     public GameObject formula1;
@@ -37,6 +37,7 @@ public class SumayMultiplicacion : MonoBehaviour
     private int correctAnswer;
     private int currentFormulaIndex = 0;
     private bool isCorrectAnswer;
+    private bool answerRegistered;
     private List<Sprite> availablePotions;
 
     private Coroutine hideIconCoroutine;
@@ -59,6 +60,8 @@ public class SumayMultiplicacion : MonoBehaviour
             StartCoroutine(FinishLesson());
             return;
         }
+
+        answerRegistered = false;
 
         if (currentFormulaIndex == 0)
         {
@@ -87,37 +90,55 @@ public class SumayMultiplicacion : MonoBehaviour
             imageFormula3.sprite = GetRandomPotion();
         }
 
-int a = Random.Range(0, 10);
-int b = Random.Range(0, 10);
-int c = Random.Range(0, 10);
+        int a = 0;
+        int b = 0;
+        int c = 0;
+        int result = 0;
 
-int result;
+        bool isValid = false;
 
-bool multiplyFirst = Random.value > 0.5f;
+        while (!isValid)
+        {
+            a = Random.Range(0, 10);
+            b = Random.Range(0, 10);
+            c = Random.Range(0, 10);
 
-if (multiplyFirst)
-{
-    // a + b × c
-    int partial = b * c;
-    result = a + partial;
+            bool sumFirst = Random.value > 0.5f;
 
-    if (currentFormulaIndex == 0) textFormula1.text = $"{a} + {b} × {c}";
-    if (currentFormulaIndex == 1) textFormula2.text = $"{a} + {b} × {c}";
-    if (currentFormulaIndex == 2) textFormula3.text = $"{a} + {b} × {c}";
-}
-else
-{
-    // a × b + c
-    int partial = a * b;
-    result = partial + c;
+            if (sumFirst)
+            {
+                // a + b - c
+                int partial = a + b;
 
-    if (currentFormulaIndex == 0) textFormula1.text = $"{a} × {b} + {c}";
-    if (currentFormulaIndex == 1) textFormula2.text = $"{a} × {b} + {c}";
-    if (currentFormulaIndex == 2) textFormula3.text = $"{a} × {b} + {c}";
-}
+                if (partial >= c)
+                {
+                    result = partial - c;
 
-correctAnswer = result;
+                    if (currentFormulaIndex == 0) textFormula1.text = $"{a} + {b} - {c}";
+                    if (currentFormulaIndex == 1) textFormula2.text = $"{a} + {b} - {c}";
+                    if (currentFormulaIndex == 2) textFormula3.text = $"{a} + {b} - {c}";
 
+                    isValid = true;
+                }
+            }
+            else
+            {
+
+                if (a >= b) 
+                {
+                    int partial = a - b;
+                    result = partial + c;
+
+                    if (currentFormulaIndex == 0) textFormula1.text = $"{a} - {b} + {c}";
+                    if (currentFormulaIndex == 1) textFormula2.text = $"{a} - {b} + {c}";
+                    if (currentFormulaIndex == 2) textFormula3.text = $"{a} - {b} + {c}";
+
+                    isValid = true;
+                }
+            }
+        }
+
+        correctAnswer = result;
 
         int[] answers = new int[3];
         answers[0] = correctAnswer;
@@ -206,27 +227,25 @@ IEnumerator FinishLesson()
 
         if (selectedAnswer == correctAnswer)
         {
-            if (hideIconCoroutine != null)
-            {
-                StopCoroutine(hideIconCoroutine);
-                hideIconCoroutine = null;
-            }
-
+            RegisterAnswer(true);
             textRetro.text = "¡Correcto!";
             isCorrectAnswer = true;
 
             ShowCurrentIcon(rightIcon);
+
             DisableCurrentButtons();
 
             StartCoroutine(WaitForNextFormula(2));
         }
         else
         {
+            RegisterAnswer(false);
             textRetro.text = "Intenta otra vez.";
             isCorrectAnswer = false;
 
             ShowCurrentIcon(wrongIcon);
             DisableSelectedButton(buttonIndex);
+
 
             if (hideIconCoroutine != null)
             {
@@ -237,6 +256,45 @@ IEnumerator FinishLesson()
         }
     }
 
+    void RegisterAnswer(bool isCorrect)
+    {
+        if (answerRegistered) return;
+
+        answerRegistered = true;
+
+        if (isCorrect)
+        {
+            MathRewardSessionData.RegisterCorrect();
+        }
+        else
+        {
+            MathRewardSessionData.RegisterWrong();
+        }
+    }
+
+    void DisableSelectedButton(int index)
+    {
+        if (currentFormulaIndex == 0)
+        {
+            if (index == 0) button1_1.interactable = false;
+            if (index == 1) button1_2.interactable = false;
+            if (index == 2) button1_3.interactable = false;
+        }
+
+        if (currentFormulaIndex == 1)
+        {
+            if (index == 0) button2_1.interactable = false;
+            if (index == 1) button2_2.interactable = false;
+            if (index == 2) button2_3.interactable = false;
+        }
+
+        if (currentFormulaIndex == 2)
+        {
+            if (index == 0) button3_1.interactable = false;
+            if (index == 1) button3_2.interactable = false;
+            if (index == 2) button3_3.interactable = false;
+        }
+    }
     void ShowCurrentIcon(Sprite icon)
 {
     if (currentFormulaIndex == 0)
@@ -280,29 +338,6 @@ IEnumerator HideCurrentIconAfterSeconds(float seconds)
     }
 }
 
-    void DisableSelectedButton(int index)
-    {
-        if (currentFormulaIndex == 0)
-        {
-            if (index == 0) button1_1.interactable = false;
-            if (index == 1) button1_2.interactable = false;
-            if (index == 2) button1_3.interactable = false;
-        }
-
-        if (currentFormulaIndex == 1)
-        {
-            if (index == 0) button2_1.interactable = false;
-            if (index == 1) button2_2.interactable = false;
-            if (index == 2) button2_3.interactable = false;
-        }
-
-        if (currentFormulaIndex == 2)
-        {
-            if (index == 0) button3_1.interactable = false;
-            if (index == 1) button3_2.interactable = false;
-            if (index == 2) button3_3.interactable = false;
-        }
-    }
     void DisableCurrentButtons()
     {
         if (currentFormulaIndex == 0)

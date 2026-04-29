@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class OperacionesCombinadas : MonoBehaviour
+public class BasicoRestas : MonoBehaviour
 {
     [Header("Fórmulas y componentes")]
     public GameObject formula1;
@@ -37,6 +37,7 @@ public class OperacionesCombinadas : MonoBehaviour
     private int correctAnswer;
     private int currentFormulaIndex = 0;
     private bool isCorrectAnswer;
+    private bool answerRegistered;
     private List<Sprite> availablePotions;
 
     private Coroutine hideIconCoroutine;
@@ -59,6 +60,8 @@ public class OperacionesCombinadas : MonoBehaviour
             StartCoroutine(FinishLesson());
             return;
         }
+
+        answerRegistered = false;
 
         if (currentFormulaIndex == 0)
         {
@@ -87,118 +90,15 @@ public class OperacionesCombinadas : MonoBehaviour
             imageFormula3.sprite = GetRandomPotion();
         }
 
-int a = 0;
-int b = 0;
-int c = 0;
-int result = 0;
+        int num1 = Random.Range(2, 10);
+        int num2 = Random.Range(1, num1);
 
-bool isValid = false;
+        int result = num1 - num2;
 
-while (!isValid)
-{
-    int operationType = Random.Range(0, 4);
-
-    // 0 = suma/resta
-    // 1 = suma/multiplicación
-    // 2 = suma/división
-    // 3 = resta/multiplicación o resta/división
-
-    if (operationType == 0)
-    {
-        // a + b - c
-        a = Random.Range(0, 10);
-        b = Random.Range(0, 10);
-        c = Random.Range(0, 10);
-
-        int partial = a + b;
-
-        if (partial >= c)
-        {
-            result = partial - c;
-            SetFormulaText($"{a} + {b} - {c}");
-            isValid = true;
-        }
-    }
-
-    if (operationType == 1)
-    {
-        // a + b × c
-        a = Random.Range(0, 10);
-        b = Random.Range(0, 10);
-        c = Random.Range(0, 10);
-
-        result = a + (b * c);
-        SetFormulaText($"{a} + {b} × {c}");
-        isValid = true;
-    }
-
-    if (operationType == 2)
-    {
-        // a + b ÷ c
-        int divisor = Random.Range(1, 10);
-        int quotient = Random.Range(1, 10);
-        int dividend = divisor * quotient;
-
-        a = Random.Range(0, 10);
-        b = dividend;
-        c = divisor;
-
-        result = a + quotient;
-        SetFormulaText($"{a} + {b} ÷ {c}");
-        isValid = true;
-    }
-
-    if (operationType == 3)
-    {
-        bool useMultiplication = Random.value > 0.5f;
-
-        if (useMultiplication)
-        {
-            // a × b - c
-            a = Random.Range(0, 10);
-            b = Random.Range(0, 10);
-            c = Random.Range(0, 10);
-
-            int partial = a * b;
-
-            if (partial >= c)
-            {
-                result = partial - c;
-                SetFormulaText($"{a} × {b} - {c}");
-                isValid = true;
-            }
-        }
-        else
-        {
-            // a ÷ b - c
-            int divisor = Random.Range(1, 10);
-            int quotient = Random.Range(1, 10);
-            int dividend = divisor * quotient;
-
-            a = dividend;
-            b = divisor;
-            c = Random.Range(0, 10);
-
-            int partial = quotient;
-
-            if (partial >= c)
-            {
-                result = partial - c;
-                SetFormulaText($"{a} ÷ {b} - {c}");
-                isValid = true;
-            }
-        }
-    }
-}
-
-correctAnswer = result;
-
-void SetFormulaText(string formula)
-{
-    if (currentFormulaIndex == 0) textFormula1.text = formula;
-    if (currentFormulaIndex == 1) textFormula2.text = formula;
-    if (currentFormulaIndex == 2) textFormula3.text = formula;
-}
+        if (currentFormulaIndex == 0) textFormula1.text = $"{num1} - {num2}";
+        if (currentFormulaIndex == 1) textFormula2.text = $"{num1} - {num2}";
+        if (currentFormulaIndex == 2) textFormula3.text = $"{num1} - {num2}";
+        correctAnswer = result;
 
         int[] answers = new int[3];
         answers[0] = correctAnswer;
@@ -265,6 +165,7 @@ IEnumerator FinishLesson()
 
     SceneManager.LoadScene("BasicoTienda");
 }
+
     Sprite GetRandomPotion()
     {
         if (availablePotions == null || availablePotions.Count == 0)
@@ -287,26 +188,24 @@ IEnumerator FinishLesson()
 
         if (selectedAnswer == correctAnswer)
         {
-            if (hideIconCoroutine != null)
-            {
-                StopCoroutine(hideIconCoroutine);
-                hideIconCoroutine = null;
-            }
-
+            RegisterAnswer(true);
             textRetro.text = "¡Correcto!";
             isCorrectAnswer = true;
 
             ShowCurrentIcon(rightIcon);
+
             DisableCurrentButtons();
 
             StartCoroutine(WaitForNextFormula(2));
         }
         else
         {
+            RegisterAnswer(false);
             textRetro.text = "Intenta otra vez.";
             isCorrectAnswer = false;
 
             ShowCurrentIcon(wrongIcon);
+
             DisableSelectedButton(buttonIndex);
 
             if (hideIconCoroutine != null)
@@ -315,6 +214,22 @@ IEnumerator FinishLesson()
             }
 
             hideIconCoroutine = StartCoroutine(HideCurrentIconAfterSeconds(2));
+        }
+    }
+
+    void RegisterAnswer(bool isCorrect)
+    {
+        if (answerRegistered) return;
+
+        answerRegistered = true;
+
+        if (isCorrect)
+        {
+            MathRewardSessionData.RegisterCorrect();
+        }
+        else
+        {
+            MathRewardSessionData.RegisterWrong();
         }
     }
 
@@ -384,6 +299,7 @@ IEnumerator HideCurrentIconAfterSeconds(float seconds)
             if (index == 2) button3_3.interactable = false;
         }
     }
+
     void DisableCurrentButtons()
     {
         if (currentFormulaIndex == 0)

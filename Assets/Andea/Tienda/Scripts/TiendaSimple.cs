@@ -222,7 +222,7 @@ public class TiendaSimple : MonoBehaviour
         StartCoroutine(PlayerStoreApi.Instance.ComprarItem(
             item.idRecompensa,
             item.costo,
-            onSuccess: (data) =>
+            (data) =>
             {
                 if (GameManager.instancia != null)
                 {
@@ -239,7 +239,7 @@ public class TiendaSimple : MonoBehaviour
                 if (item.itemUI != null)
                     item.itemUI.SetComprado();
             },
-            onError: (error) =>
+            (error) =>
             {
                 MostrarMensaje(error);
 

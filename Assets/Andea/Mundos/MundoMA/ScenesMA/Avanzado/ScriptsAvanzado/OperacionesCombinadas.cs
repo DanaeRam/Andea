@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class SumayDivision : MonoBehaviour
+public class OperacionesCombinadas : MonoBehaviour
 {
     [Header("Fórmulas y componentes")]
     public GameObject formula1;
@@ -37,6 +37,7 @@ public class SumayDivision : MonoBehaviour
     private int correctAnswer;
     private int currentFormulaIndex = 0;
     private bool isCorrectAnswer;
+    private bool answerRegistered;
     private List<Sprite> availablePotions;
 
     private Coroutine hideIconCoroutine;
@@ -59,6 +60,8 @@ public class SumayDivision : MonoBehaviour
             StartCoroutine(FinishLesson());
             return;
         }
+
+        answerRegistered = false;
 
         if (currentFormulaIndex == 0)
         {
@@ -87,47 +90,118 @@ public class SumayDivision : MonoBehaviour
             imageFormula3.sprite = GetRandomPotion();
         }
 
-int a, b, c;
-int result;
+int a = 0;
+int b = 0;
+int c = 0;
+int result = 0;
 
-bool divisionFirst = Random.value > 0.5f;
+bool isValid = false;
 
-if (divisionFirst)
+while (!isValid)
 {
+    int operationType = Random.Range(0, 4);
 
-    int divisor = Random.Range(1, 10);
-    int quotient = Random.Range(1, 10);
-    int dividend = divisor * quotient; 
+    // 0 = suma/resta
+    // 1 = suma/multiplicación
+    // 2 = suma/división
+    // 3 = resta/multiplicación o resta/división
 
-    a = Random.Range(0, 10);
-    b = dividend;
-    c = divisor;
+    if (operationType == 0)
+    {
+        // a + b - c
+        a = Random.Range(0, 10);
+        b = Random.Range(0, 10);
+        c = Random.Range(0, 10);
 
-    result = a + quotient;
+        int partial = a + b;
 
-    if (currentFormulaIndex == 0) textFormula1.text = $"{a} + {b} ÷ {c}";
-    if (currentFormulaIndex == 1) textFormula2.text = $"{a} + {b} ÷ {c}";
-    if (currentFormulaIndex == 2) textFormula3.text = $"{a} + {b} ÷ {c}";
-}
-else
-{
+        if (partial >= c)
+        {
+            result = partial - c;
+            SetFormulaText($"{a} + {b} - {c}");
+            isValid = true;
+        }
+    }
 
-    int divisor = Random.Range(1, 10);
-    int quotient = Random.Range(1, 10);
-    int dividend = divisor * quotient;
+    if (operationType == 1)
+    {
+        // a + b × c
+        a = Random.Range(0, 10);
+        b = Random.Range(0, 10);
+        c = Random.Range(0, 10);
 
-    a = dividend;
-    b = divisor;
-    c = Random.Range(0, 10);
+        result = a + (b * c);
+        SetFormulaText($"{a} + {b} × {c}");
+        isValid = true;
+    }
 
-    result = quotient + c;
+    if (operationType == 2)
+    {
+        // a + b ÷ c
+        int divisor = Random.Range(1, 10);
+        int quotient = Random.Range(1, 10);
+        int dividend = divisor * quotient;
 
-    if (currentFormulaIndex == 0) textFormula1.text = $"{a} ÷ {b} + {c}";
-    if (currentFormulaIndex == 1) textFormula2.text = $"{a} ÷ {b} + {c}";
-    if (currentFormulaIndex == 2) textFormula3.text = $"{a} ÷ {b} + {c}";
+        a = Random.Range(0, 10);
+        b = dividend;
+        c = divisor;
+
+        result = a + quotient;
+        SetFormulaText($"{a} + {b} ÷ {c}");
+        isValid = true;
+    }
+
+    if (operationType == 3)
+    {
+        bool useMultiplication = Random.value > 0.5f;
+
+        if (useMultiplication)
+        {
+            // a × b - c
+            a = Random.Range(0, 10);
+            b = Random.Range(0, 10);
+            c = Random.Range(0, 10);
+
+            int partial = a * b;
+
+            if (partial >= c)
+            {
+                result = partial - c;
+                SetFormulaText($"{a} × {b} - {c}");
+                isValid = true;
+            }
+        }
+        else
+        {
+            // a ÷ b - c
+            int divisor = Random.Range(1, 10);
+            int quotient = Random.Range(1, 10);
+            int dividend = divisor * quotient;
+
+            a = dividend;
+            b = divisor;
+            c = Random.Range(0, 10);
+
+            int partial = quotient;
+
+            if (partial >= c)
+            {
+                result = partial - c;
+                SetFormulaText($"{a} ÷ {b} - {c}");
+                isValid = true;
+            }
+        }
+    }
 }
 
 correctAnswer = result;
+
+void SetFormulaText(string formula)
+{
+    if (currentFormulaIndex == 0) textFormula1.text = formula;
+    if (currentFormulaIndex == 1) textFormula2.text = formula;
+    if (currentFormulaIndex == 2) textFormula3.text = formula;
+}
 
         int[] answers = new int[3];
         answers[0] = correctAnswer;
@@ -194,7 +268,6 @@ IEnumerator FinishLesson()
 
     SceneManager.LoadScene("BasicoTienda");
 }
-
     Sprite GetRandomPotion()
     {
         if (availablePotions == null || availablePotions.Count == 0)
@@ -214,8 +287,11 @@ IEnumerator FinishLesson()
     void CheckAnswer(int buttonIndex)
     {
         int selectedAnswer = int.Parse(GetButtonText(buttonIndex));
+
         if (selectedAnswer == correctAnswer)
         {
+            RegisterAnswer(true);
+
             if (hideIconCoroutine != null)
             {
                 StopCoroutine(hideIconCoroutine);
@@ -232,6 +308,7 @@ IEnumerator FinishLesson()
         }
         else
         {
+            RegisterAnswer(false);
             textRetro.text = "Intenta otra vez.";
             isCorrectAnswer = false;
 
@@ -244,6 +321,22 @@ IEnumerator FinishLesson()
             }
 
             hideIconCoroutine = StartCoroutine(HideCurrentIconAfterSeconds(2));
+        }
+    }
+
+    void RegisterAnswer(bool isCorrect)
+    {
+        if (answerRegistered) return;
+
+        answerRegistered = true;
+
+        if (isCorrect)
+        {
+            MathRewardSessionData.RegisterCorrect();
+        }
+        else
+        {
+            MathRewardSessionData.RegisterWrong();
         }
     }
 
@@ -290,30 +383,29 @@ IEnumerator HideCurrentIconAfterSeconds(float seconds)
     }
 }
 
-void DisableSelectedButton(int index)
-{
-    if (currentFormulaIndex == 0)
+    void DisableSelectedButton(int index)
     {
-        if (index == 0) button1_1.interactable = false;
-        if (index == 1) button1_2.interactable = false;
-        if (index == 2) button1_3.interactable = false;
-    }
+        if (currentFormulaIndex == 0)
+        {
+            if (index == 0) button1_1.interactable = false;
+            if (index == 1) button1_2.interactable = false;
+            if (index == 2) button1_3.interactable = false;
+        }
 
-    if (currentFormulaIndex == 1)
-    {
-        if (index == 0) button2_1.interactable = false;
-        if (index == 1) button2_2.interactable = false;
-        if (index == 2) button2_3.interactable = false;
-    }
+        if (currentFormulaIndex == 1)
+        {
+            if (index == 0) button2_1.interactable = false;
+            if (index == 1) button2_2.interactable = false;
+            if (index == 2) button2_3.interactable = false;
+        }
 
-    if (currentFormulaIndex == 2)
-    {
-        if (index == 0) button3_1.interactable = false;
-        if (index == 1) button3_2.interactable = false;
-        if (index == 2) button3_3.interactable = false;
+        if (currentFormulaIndex == 2)
+        {
+            if (index == 0) button3_1.interactable = false;
+            if (index == 1) button3_2.interactable = false;
+            if (index == 2) button3_3.interactable = false;
+        }
     }
-}
-
     void DisableCurrentButtons()
     {
         if (currentFormulaIndex == 0)

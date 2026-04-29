@@ -132,7 +132,10 @@ public class MainMenu : MonoBehaviour
             titleText.text = "Ingresa tu código de jugador";
 
         if (inputFieldName != null)
+        {
             inputFieldName.gameObject.SetActive(false);
+            inputFieldName.text = "";
+        }
 
         if (acceptNameButton != null)
             acceptNameButton.gameObject.SetActive(false);
@@ -155,9 +158,9 @@ public class MainMenu : MonoBehaviour
         if (inputFieldName == null)
             return;
 
-        string playerName = inputFieldName.text.Trim();
+        string playerNickname = inputFieldName.text.Trim();
 
-        if (string.IsNullOrEmpty(playerName))
+        if (string.IsNullOrEmpty(playerNickname))
         {
             if (titleText != null)
                 titleText.text = "Por favor, ingresa el nombre del niño";
@@ -165,7 +168,14 @@ public class MainMenu : MonoBehaviour
             return;
         }
 
-        PlayerPrefs.SetString("PlayerName", playerName);
+        // Este nombre es SOLO local.
+        // Funciona como apodo y no se guarda en Supabase.
+        PlayerPrefs.SetString("PlayerNickname", playerNickname);
+
+        // Se conserva PlayerName por compatibilidad con scripts antiguos.
+        PlayerPrefs.SetString("PlayerName", playerNickname);
+
+        PlayerPrefs.Save();
 
         if (titleText != null)
             titleText.text = "Ingresa el código del jugador";
@@ -177,7 +187,10 @@ public class MainMenu : MonoBehaviour
             acceptNameButton.gameObject.SetActive(false);
 
         if (inputFieldCode != null)
+        {
             inputFieldCode.gameObject.SetActive(true);
+            inputFieldCode.text = "";
+        }
 
         if (acceptCodeButton != null)
             acceptCodeButton.gameObject.SetActive(true);
@@ -237,15 +250,29 @@ public class MainMenu : MonoBehaviour
         {
             string nombreCompleto = ExtraerValorJson(response, "nombre_completo");
 
-            // Limpiar datos de espada del usuario anterior antes de guardar el nuevo jugador.
+            // Limpiar datos locales del usuario anterior.
             LimpiarEspadaEquipadaLocal();
+            LimpiarProgresoSaludMentalLocal();
+            LimpiarLeccionActualLocal();
+
+            // Si entró por "Iniciar sesión", no escribió apodo.
+            // Entonces borramos cualquier apodo anterior para que no se mezcle.
+            if (loginDirecto)
+            {
+                PlayerPrefs.DeleteKey("PlayerNickname");
+                PlayerPrefs.DeleteKey("PlayerName");
+            }
 
             PlayerPrefs.SetString("PlayerCode", playerCode);
 
+            // Nombre real de Supabase. Se guarda como respaldo.
+            // No reemplaza el apodo local si el usuario escribió uno.
             if (!string.IsNullOrEmpty(nombreCompleto))
             {
                 PlayerPrefs.SetString("PlayerFullName", nombreCompleto);
-                PlayerPrefs.SetString("PlayerName", nombreCompleto);
+
+                if (loginDirecto)
+                    PlayerPrefs.SetString("PlayerName", nombreCompleto);
             }
 
             PlayerPrefs.Save();
@@ -283,6 +310,22 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.DeleteKey("EquippedSwordPlayerCode");
     }
 
+    private void LimpiarProgresoSaludMentalLocal()
+    {
+        PlayerPrefs.DeleteKey("SMPainting1");
+        PlayerPrefs.DeleteKey("SMPainting2");
+        PlayerPrefs.DeleteKey("SMPainting3");
+        PlayerPrefs.DeleteKey("SMPainting4");
+    }
+
+    private void LimpiarLeccionActualLocal()
+    {
+        PlayerPrefs.DeleteKey("CurrentWorldCode");
+        PlayerPrefs.DeleteKey("CurrentLessonId");
+        PlayerPrefs.DeleteKey("CurrentLevelName");
+        PlayerPrefs.DeleteKey("CurrentLessonName");
+    }
+
     private string ExtraerValorJson(string json, string clave)
     {
         string patron = "\"" + clave + "\":\"";
@@ -309,6 +352,12 @@ public class MainMenu : MonoBehaviour
 
         if (panelMenuInicial != null)
             panelMenuInicial.SetActive(true);
+
+        if (inputFieldName != null)
+            inputFieldName.text = "";
+
+        if (inputFieldCode != null)
+            inputFieldCode.text = "";
 
         if (stateText != null)
             stateText.text = "";
