@@ -24,6 +24,7 @@ public class PreguntaDivision : MonoBehaviour
     private PlayerControlLock currentPlayerControl;
     private float previousZoom = 5f;
     private bool quizActive = false;
+    private bool answerRegistered = false;
 
     private void Start()
     {
@@ -62,6 +63,7 @@ public class PreguntaDivision : MonoBehaviour
         }
 
         quizActive = true;
+        answerRegistered = false;
 
         SaveCurrentZoom();
         currentPlayerControl.LockForQuiz();
@@ -125,6 +127,8 @@ public class PreguntaDivision : MonoBehaviour
 
         if (playerAnswer == correctAnswer)
         {
+            RegisterAnswer(true);
+
             if (feedbackText != null)
             {
                 feedbackText.text = "Correcto";
@@ -135,6 +139,8 @@ public class PreguntaDivision : MonoBehaviour
         }
         else
         {
+            RegisterAnswer(false);
+
             if (feedbackText != null)
             {
                 feedbackText.text = "Falso";
@@ -146,6 +152,22 @@ public class PreguntaDivision : MonoBehaviour
 
             answerInput.text = "";
             answerInput.ActivateInputField();
+        }
+    }
+
+    private void RegisterAnswer(bool isCorrect)
+    {
+        if (answerRegistered) return;
+
+        answerRegistered = true;
+
+        if (isCorrect)
+        {
+            MathRewardSessionData.RegisterCorrect();
+        }
+        else
+        {
+            MathRewardSessionData.RegisterWrong();
         }
     }
 
@@ -203,4 +225,3 @@ public class PreguntaDivision : MonoBehaviour
             cameraZoom.SetZoom(quizZoom);
     }
 }
-

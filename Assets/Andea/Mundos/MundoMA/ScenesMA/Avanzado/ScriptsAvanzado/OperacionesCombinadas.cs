@@ -37,6 +37,7 @@ public class OperacionesCombinadas : MonoBehaviour
     private int correctAnswer;
     private int currentFormulaIndex = 0;
     private bool isCorrectAnswer;
+    private bool answerRegistered;
     private List<Sprite> availablePotions;
 
     private Coroutine hideIconCoroutine;
@@ -59,6 +60,8 @@ public class OperacionesCombinadas : MonoBehaviour
             StartCoroutine(FinishLesson());
             return;
         }
+
+        answerRegistered = false;
 
         if (currentFormulaIndex == 0)
         {
@@ -287,6 +290,8 @@ IEnumerator FinishLesson()
 
         if (selectedAnswer == correctAnswer)
         {
+            RegisterAnswer(true);
+
             if (hideIconCoroutine != null)
             {
                 StopCoroutine(hideIconCoroutine);
@@ -303,6 +308,7 @@ IEnumerator FinishLesson()
         }
         else
         {
+            RegisterAnswer(false);
             textRetro.text = "Intenta otra vez.";
             isCorrectAnswer = false;
 
@@ -315,6 +321,22 @@ IEnumerator FinishLesson()
             }
 
             hideIconCoroutine = StartCoroutine(HideCurrentIconAfterSeconds(2));
+        }
+    }
+
+    void RegisterAnswer(bool isCorrect)
+    {
+        if (answerRegistered) return;
+
+        answerRegistered = true;
+
+        if (isCorrect)
+        {
+            MathRewardSessionData.RegisterCorrect();
+        }
+        else
+        {
+            MathRewardSessionData.RegisterWrong();
         }
     }
 

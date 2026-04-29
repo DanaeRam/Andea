@@ -601,6 +601,12 @@ public class MundoCarouselManager : MonoBehaviour
                 return;
             }
 
+            MathRewardSessionData.Reset();
+
+            bool yaCompletada = EstaLeccionCompletada(GetCurrentLessonId());
+            PlayerPrefs.SetInt("CurrentLessonAlreadyCompleted", yaCompletada ? 1 : 0);
+            PlayerPrefs.Save();
+
             MathSceneTransitionData.currentRound = 0;
             MathSceneTransitionData.maxRounds = mathMaxRounds;
             MathSceneTransitionData.exitMode = false;
@@ -609,7 +615,8 @@ public class MundoCarouselManager : MonoBehaviour
             Debug.Log(
                 "MA iniciando tienda. Lección: " + GetCurrentLessonId() +
                 " | Escena preguntas: " + sceneName +
-                " | Escena intermedia: " + mathIntroSceneName
+                " | Escena intermedia: " + mathIntroSceneName +
+                " | Ya completada: " + yaCompletada
             );
 
             SceneManager.LoadScene(mathIntroSceneName);

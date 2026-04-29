@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using TMPro;
+using UnityEngine.UI;
 
 public class Clients : MonoBehaviour
 {
@@ -24,14 +26,38 @@ public class Clients : MonoBehaviour
     [Header("Guardar progreso")]
     public bool syncLessonProgress = true;
 
+    [Header("Recompensas")]
+    public bool giveReward = true;
+
+    [Header("Panel resultados MA")]
+    public GameObject resultsPanel;
+    public TextMeshProUGUI resultsTitleText;
+    public TextMeshProUGUI correctText;
+    public TextMeshProUGUI wrongText;
+    public TextMeshProUGUI questionPointsText;
+    public TextMeshProUGUI bonusText;
+    public TextMeshProUGUI totalPointsText;
+    public TextMeshProUGUI runesText;
+    public Button continueButton;
+
     private Animator animator;
     private bool moving;
     private bool finished;
     private bool savingProgress;
+    private bool showingResults;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
+
+        if (resultsPanel != null)
+            resultsPanel.SetActive(false);
+
+        if (continueButton != null)
+        {
+            continueButton.onClick.RemoveAllListeners();
+            continueButton.onClick.AddListener(ContinueToCarousel);
+        }
 
         if (MathSceneTransitionData.exitMode)
         {
@@ -56,7 +82,7 @@ public class Clients : MonoBehaviour
 
     private void Update()
     {
-        if (!moving || finished)
+        if (!moving || finished || showingResults)
             return;
 
         if (MathSceneTransitionData.exitMode)
@@ -146,6 +172,7 @@ public class Clients : MonoBehaviour
 
         string worldCode = PlayerPrefs.GetString("CurrentWorldCode", "MA");
         string lessonId = PlayerPrefs.GetString("CurrentLessonId", "");
+        bool yaEstabaCompletada = PlayerPrefs.GetInt("CurrentLessonAlreadyCompleted", 0) == 1;
 
         if (string.IsNullOrEmpty(worldCode))
             worldCode = "MA";
@@ -156,36 +183,33 @@ public class Clients : MonoBehaviour
             "MA lección completada. Intentando guardar progreso -> mundo: " +
             worldCode +
             " | leccionId: " +
-            lessonId
+            lessonId +
+            " | yaEstabaCompletada: " +
+            yaEstabaCompletada
         );
 
         if (syncLessonProgress)
         {
-            if (PlayerLessonsApi.Instance == null)
-            {
-                Debug.LogWarning("No existe PlayerLessonsApi. No se pudo guardar progreso MA.");
-            }
-            else if (string.IsNullOrEmpty(lessonId))
-            {
-                Debug.LogWarning("No hay CurrentLessonId guardado. No se pudo guardar progreso MA.");
-            }
-            else
-            {
-                yield return StartCoroutine(
-                    PlayerLessonsApi.Instance.CompletarLeccion(
-                        worldCode,
-                        lessonId,
-                        onSuccess: (data) =>
-                        {
-                            Debug.Log("Progreso MA guardado en base de datos: " + data.leccion_id);
-                        },
-                        onError: (error) =>
-                        {
-                            Debug.LogError("Error al guardar progreso MA: " + error);
-                        }
-                    )
-                );
-            }
+            yield return StartCoroutine(GuardarProgresoLeccion(worldCode, lessonId));
+        }
+
+        int totalPuntosGanados = 0;
+        int runasGeneradas = 0;
+
+        if (giveReward && !yaEstabaCompletada)
+        {
+            yield return StartCoroutine(GuardarRecompensaMA(
+                lessonId,
+                (puntos, runas) =>
+                {
+                    totalPuntosGanados = puntos;
+                    runasGeneradas = runas;
+                }
+            ));
+        }
+        else
+        {
+            Debug.Log("La lección MA ya estaba completada. No se vuelven a dar puntos.");
         }
 
         MathSceneTransitionData.currentRound = 0;
@@ -194,6 +218,124 @@ public class Clients : MonoBehaviour
 
         savingProgress = false;
 
+        MostrarPanelResultados(yaEstabaCompletada, totalPuntosGanados, runasGeneradas);
+    }
+
+    private IEnumerator GuardarProgresoLeccion(string worldCode, string lessonId)
+    {
+        if (PlayerLessonsApi.Instance == null)
+        {
+            Debug.LogWarning("No existe PlayerLessonsApi. No se pudo guardar progreso MA.");
+            yield break;
+        }
+
+        if (string.IsNullOrEmpty(lessonId))
+        {
+            Debug.LogWarning("No hay CurrentLessonId guardado. No se pudo guardar progreso MA.");
+            yield break;
+        }
+
+        yield return StartCoroutine(
+            PlayerLessonsApi.Instance.CompletarLeccion(
+                worldCode,
+                lessonId,
+                onSuccess: (data) =>
+                {
+                    Debug.Log("Progreso MA guardado en base de datos: " + data.leccion_id);
+                },
+                onError: (error) =>
+                {
+                    Debug.LogError("Error al guardar progreso MA: " + error);
+                }
+            )
+        );
+    }
+
+    private IEnumerator GuardarRecompensaMA(string lessonId, System.Action<int, int> onFinished)
+    {
+        int totalPuntos = MathRewardSessionData.TotalPoints;
+
+        if (totalPuntos <= 0)
+        {
+            onFinished?.Invoke(0, 0);
+            yield break;
+        }
+
+        if (PlayerProgressApi.Instance == null)
+        {
+            Debug.LogWarning("No existe PlayerProgressApi. No se pudieron guardar puntos MA.");
+            onFinished?.Invoke(totalPuntos, 0);
+            yield break;
+        }
+
+        string motivo = "Lección MA completada: " + lessonId;
+
+        yield return StartCoroutine(
+            PlayerProgressApi.Instance.AgregarPuntos(
+                totalPuntos,
+                motivo,
+                onSuccess: (data) =>
+                {
+                    Debug.Log(
+                        "Puntos MA guardados. Puntos ganados: " +
+                        totalPuntos +
+                        " | Runas generadas: " +
+                        data.runas_generadas
+                    );
+
+                    onFinished?.Invoke(totalPuntos, data.runas_generadas);
+                },
+                onError: (error) =>
+                {
+                    Debug.LogError("Error al guardar puntos MA: " + error);
+                    onFinished?.Invoke(totalPuntos, 0);
+                }
+            )
+        );
+    }
+
+    private void MostrarPanelResultados(bool yaEstabaCompletada, int totalPuntosGanados, int runasGeneradas)
+    {
+        showingResults = true;
+
+        if (resultsPanel != null)
+            resultsPanel.SetActive(true);
+
+        if (resultsTitleText != null)
+            resultsTitleText.text = yaEstabaCompletada
+                ? "Lección completada de nuevo"
+                : "¡Lección completada!";
+
+        if (correctText != null)
+            correctText.text = "Respuestas correctas: " + MathRewardSessionData.correctAnswers;
+
+        if (wrongText != null)
+            wrongText.text = "Respuestas incorrectas: " + MathRewardSessionData.wrongAnswers;
+
+        if (questionPointsText != null)
+            questionPointsText.text =
+                "Puntos por respuestas: " +
+                MathRewardSessionData.TotalQuestionPoints;
+
+        if (bonusText != null)
+            bonusText.text = yaEstabaCompletada
+                ? "Bonus por completar: 0"
+                : "Bonus por completar: " + MathRewardSessionData.completionBonus;
+
+        if (totalPointsText != null)
+        {
+            if (yaEstabaCompletada)
+                totalPointsText.text = "Total ganado: 0\nEsta lección ya estaba completada.";
+            else
+                totalPointsText.text = "Total ganado: " + totalPuntosGanados;
+        }
+
+        if (runesText != null)
+            runesText.text = "Runas ganadas: " + runasGeneradas;
+    }
+
+    public void ContinueToCarousel()
+    {
         SceneManager.LoadScene(carouselSceneName);
     }
 
