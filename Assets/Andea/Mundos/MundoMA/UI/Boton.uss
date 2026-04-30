@@ -2,6 +2,7 @@
 }
 
 .boton {
+    aspect-ratio: auto;
 }
 
 .boton:hover {
