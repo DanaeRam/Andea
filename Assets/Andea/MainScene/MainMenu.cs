@@ -168,11 +168,9 @@ public class MainMenu : MonoBehaviour
             return;
         }
 
-        // Este nombre es SOLO local.
-        // Funciona como apodo y no se guarda en Supabase.
+        // Este nombre es SOLO local es un apodo
         PlayerPrefs.SetString("PlayerNickname", playerNickname);
 
-        // Se conserva PlayerName por compatibilidad con scripts antiguos.
         PlayerPrefs.SetString("PlayerName", playerNickname);
 
         PlayerPrefs.Save();
@@ -254,9 +252,7 @@ public class MainMenu : MonoBehaviour
             LimpiarEspadaEquipadaLocal();
             LimpiarProgresoSaludMentalLocal();
             LimpiarLeccionActualLocal();
-
-            // Si entró por "Iniciar sesión", no escribió apodo.
-            // Entonces borramos cualquier apodo anterior para que no se mezcle.
+            
             if (loginDirecto)
             {
                 PlayerPrefs.DeleteKey("PlayerNickname");
@@ -265,8 +261,7 @@ public class MainMenu : MonoBehaviour
 
             PlayerPrefs.SetString("PlayerCode", playerCode);
 
-            // Nombre real de Supabase. Se guarda como respaldo.
-            // No reemplaza el apodo local si el usuario escribió uno.
+            // Nombre real de Supabase no cambia el apodo local si el usuario escribió uno.
             if (!string.IsNullOrEmpty(nombreCompleto))
             {
                 PlayerPrefs.SetString("PlayerFullName", nombreCompleto);

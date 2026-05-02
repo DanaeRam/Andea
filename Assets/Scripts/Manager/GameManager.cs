@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
         SolicitarProgresoInicialSiExisteCodigo();
     }
 
-    // INICIO / SESIÓN
+    // INICIO DE SESIÓN
     public void SolicitarProgresoInicialSiExisteCodigo()
     {
         if (progresoInicialSolicitado)
@@ -211,7 +211,7 @@ public class GameManager : MonoBehaviour
         muertesNivel++;
     }
 
-    // CIERRE DE SESIÓN / NIVEL
+    // CIERRE DE SESIÓN
     public IEnumerator CompletarNivelCoroutine(System.Action onFinished = null)
     {
         if (rewardSystem == null)
@@ -366,7 +366,7 @@ public class GameManager : MonoBehaviour
         ActualizarTodoElTexto();
     }
 
-    // RESETEO GENERAL
+    // RESETEO 
     public void ResetearRecompensasGlobales()
     {
         if (rewardSystem == null)
@@ -441,7 +441,7 @@ public class GameManager : MonoBehaviour
         ActualizarTodoElTexto();
     }
 
-    // RUNAS / TIENDA
+    // RUNAS EN LA TIENDA
     public bool TieneMonedasTiendaSuficientes(int costo)
     {
         return runasServidor >= costo;

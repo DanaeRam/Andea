@@ -57,7 +57,6 @@ public class SMGalleryLauncher : MonoBehaviour
                 "SM",
                 onSuccess: (data) =>
                 {
-                    // Reiniciamos las claves locales de SM antes de aplicar lo que viene de Supabase.
                     PlayerPrefs.SetInt(puzzle1Key, 0);
                     PlayerPrefs.SetInt(puzzle2Key, 0);
                     PlayerPrefs.SetInt(puzzle3Key, 0);

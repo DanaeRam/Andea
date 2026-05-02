@@ -154,8 +154,6 @@ public class PlayerLessonsApi : MonoBehaviour
         onSuccess?.Invoke(response);
     }
 
-    // Versión de compatibilidad.
-    // Antes mandaba siempre LE. Ahora usa CurrentWorldCode para evitar errores con MA o SM.
     public IEnumerator CompletarLeccion(
         string leccionId,
         Action<CompletarLeccionResponse> onSuccess,
@@ -171,7 +169,6 @@ public class PlayerLessonsApi : MonoBehaviour
         yield return CompletarLeccion(mundoActual, leccionId, onSuccess, onError);
     }
 
-    // Versión correcta para LE, MA y SM.
     public IEnumerator CompletarLeccion(
         string mundo,
         string leccionId,

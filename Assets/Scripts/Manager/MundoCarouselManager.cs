@@ -8,9 +8,9 @@ public class MundoCarouselManager : MonoBehaviour
 {
     public enum PlayMode
     {
-        LectoRandom,     // Para LE: usa LectoGameSessionManager
-        FixedScene,      // Para MA: carga flujo de escena fija
-        None             // Para mundos sin botón Jugar
+        LectoRandom,     
+        FixedScene,      
+        None             
     }
 
     [Header("Mundo")]
